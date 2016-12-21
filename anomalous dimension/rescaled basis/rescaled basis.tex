@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+%\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+                     
+\usepackage{braket,slashed,bm}
+\usepackage{array,multirow}
+\usepackage{simplewick}
+\usepackage[T1]{fontenc} % if needed
+
+%\usepackage{blkarray}
+%\usepackage{multirow}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri,automata,shadows,calendar,mindmap,
+decorations.markings,calc}
+
+%\usepackage{showlabels}
+
+\def\nn{\nonumber\\ }
+\def\rd{{\rm d}}
+\def\abs#1{\left| #1 \right| }
+\def\lsix{ \mathcal{L}^{(6)}}
+\def\lchi{\Lambda_\chi}
+\def\lqcd{ \Lambda_{\text{QCD}}}
+\def\vev#1{\left\langle #1 \right\rangle}
+\def\msbar{$\overline{\hbox{MS}}$}
+\def\hyp{\mathsf{y}}
+\def\tr{{\rm Tr}\,}
+
+%{\count255=\time\divide\count255 by 60 \xdef\hourmin{\number\count255}
+%  \multiply\count255 by-60\advance\count255 by\time
+%  \xdef\hourmin{\hourmin:\ifnum\count255<10 0\fi\the\count255}}
+%
+\begin{document} 
+
+\begin{table}
+\renewcommand{\arraycolsep}{0.15cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{align*}
+\begin{array}{cc|cccccccc}
+&& g X^3 & \frac{1}{\lambda}H^6 & H^4 D^2 & X^2 H^2 & \frac{1}{y}\psi^2 H^3 &\frac{g}{y} \psi^2 X H & \psi^2 H^2 D & \psi^4 \\
+&& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\hline
+%
+%
+g X^3 & 1 & 0 & 0 & 0 &g^2 & 0 & 0 & 0 & 0 \\
+\frac{1}{\lambda} H^6 & 2 & g^2 & 0 & g^2,\lambda & g^2 & y^2 & 0 & g^2, y^2 & 0 \\
+H^4 D^2 & 3 & g^2 & 0 & g^2  &g^2  & 0 & y^2  & g^2 & 0 \\
+ X^2 H^2 & 4 &  g^2 & 0 & 0 &  0  & 0 & 0 & 0 & 0 \\
+\frac{1}{y} \psi^2 H^3 & 5 & g^2 & 0 & g^2,\lambda,y^2 &  g^2  & y^2 & \lambda, y^2 & g^2,\lambda,y^2 & \lambda,y^2 \\
+\frac{g}{y} \psi^2 X H & 6 & g^2  & 0 & 0 &  0 & 0 & g^2, y^2 & g^2  &  g^2 \\
+\psi^2 H^2 D & 7 & g^2 & 0 & g^2 &  g^2  & 0 & y^2 & g^2,y^2 & g^2,y^2 \\
+\psi^4 & 8 & g^2 & 0 & 0 &  0 & 0 & y^2 & g^2,y^2 & g^2,y^2 \\
+\end{array}
+\end{align*}
+\caption{EOM contributions.}
+\begin{align*}
+\begin{array}{cc|cccccccc}
+&& g X^3 & \frac{1}{\lambda}H^6 & H^4 D^2 & X^2 H^2 & \frac{1}{y}\psi^2 H^3 &\frac{g}{y} \psi^2 X H & \psi^2 H^2 D & \psi^4 \\
+&& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\hline
+%
+%
+g X^3 & 1 & g^2 & 0 & 0 & g^2 & 0 & 0 & 0 & 0 \\
+\frac{1}{\lambda}H^6 & 2 & 0 & \lambda, g^2 & \frac{g^4}{\lambda},g^2 ,\lambda &  \frac{g^4}{\lambda},g^2  & \frac{y^4}{\lambda} & 0 & \frac{y^4}{\lambda} & 0 \\
+H^4 D^2 & 3 & 0 & 0 & g^2 ,\lambda &  g^2 & y^2 & 0 & y^2 & 0 \\
+X^2 H^2 & 4 &  g^2 & 0 & g^2 &  g^2,\lambda & 0 & y^2 & g^2 & 0 \\
+\frac{1}{y}\psi^2 H^3 & 5 & 0 & 0 & g^2,y^2 &  g^2  &g^2, \lambda,y^2 & g^2, \lambda,y^2 & g^2 , \lambda  , y^2 & y^2 \\
+\frac{g}{y}\psi^2 X H & 6 & g^2  & 0 & 0 &  g^2 & g^2 & g^2,y^2 & g^2 & g^2 \\
+\psi^2 H^2 D & 7 & 0 & 0 & y^2 &  g^2 & y^2 & y^2 & g^2,\lambda,y^2 & y^2 \\
+\psi^4 & 8 & 0 & 0 & 0 &  0 & 0 & y^2 & y^2 & g^2,y^2 \\
+\end{array}
+\end{align*}
+\caption{Direct contributions.}
+\end{table}
+
+
+
+\end{document}
