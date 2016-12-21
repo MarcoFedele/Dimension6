@@ -1,0 +1,455 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     17664,        446]
+NotebookOptionsPosition[     15684,        381]
+NotebookOutlinePosition[     16039,        397]
+CellTagsIndexPosition[     15996,        394]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData["\<\"/Users/marco/Documents/universita\:0300/D6/notebooks/OG/H/G_\
+WF\"\>"], "Output",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGDQBmKlXwvfe7q+dtRSfKnqBaT/WNkVgOgos822vkB61cV3
+CwKAtAmz9p0VQDruy+Ytq0B8j4qzIFrF2WrxaiDdv3zfIn+3145SuXr5gUBa
+h2VSLYh+Wyy1HkSfi7twGETv8Wt6D6Kn9qVbVgDpcFVTpUog/Wx1W2s1kI7q
+K94Coq3OfDsyHUjH30v7NQtIy5esqT8MpI88LG4F0ZyHYrpBdI/bupkg2ojl
+2/EjQDpsXgD3USBt+eiz9Ckg7cbBLPUX5B7F2NUS7q8dz6zus5IE0vvuPPQB
+0dMWTo8C0W3b5uaDaKa0FzdBtDDvjaeqQHr2DeX3rp6vHU8sXeiW6/XaUW6n
+0Il8IL1rch5fAZB+c05jykwgnSLb0iXq89pRT7hgrhiQBgD2mKd8
+  "]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "G_WFgen.m"}]], "Input",
+ CellChangeTimes->{{3.6602058731822042`*^9, 3.6602058807485657`*^9}, {
+  3.660205951363799*^9, 3.6602059618176413`*^9}, {3.660404137253501*^9, 
+  3.6604041375477037`*^9}, {3.6610971697604628`*^9, 3.661097170235941*^9}, {
+  3.662899770280843*^9, 3.662899773095788*^9}, {3.662905461220937*^9, 
+  3.662905461526087*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859651293*^9}],
+
+Cell[BoxData["\<\"FeynArts 3.9\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.66377085965237*^9}],
+
+Cell[BoxData["\<\"by Hagen Eck, Sepp Kueblbeck, and Thomas Hahn\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708596536093`*^9}],
+
+Cell[BoxData["\<\"last revised 2 Dec 14\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859654873*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859710088*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\"\>", "\[InvisibleSpace]", "\<\"loading \"\>", 
+   "\[InvisibleSpace]", "\<\"generic\"\>", 
+   "\[InvisibleSpace]", "\<\" model file \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/marco/FeynArts/FeynArts/Models/Mine/OG.gen\"\>"}],
+  SequenceForm[
+  "", "loading ", "generic", " model file ", 
+   "/Users/marco/FeynArts/FeynArts/Models/Mine/OG.gen"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859711494*^9}],
+
+Cell[BoxData["\<\"> $GenericMixing is OFF\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708597478437`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"generic model \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "\<\"Mine/OG\"\>", "}"}], 
+   "\[InvisibleSpace]", "\<\" initialized\"\>"}],
+  SequenceForm["generic model ", {"Mine/OG"}, " initialized"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.66377085974916*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859750271*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\"\>", "\[InvisibleSpace]", "\<\"loading \"\>", 
+   "\[InvisibleSpace]", "\<\"classes\"\>", 
+   "\[InvisibleSpace]", "\<\" model file \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/marco/FeynArts/FeynArts/Models/Mine/OG.mod\"\>"}],
+  SequenceForm[
+  "", "loading ", "classes", " model file ", 
+   "/Users/marco/FeynArts/FeynArts/Models/Mine/OG.mod"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708597517357`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> \"\>", "\[InvisibleSpace]", "46", 
+   "\[InvisibleSpace]", "\<\" particles (incl. antiparticles) in \"\>", 
+   "\[InvisibleSpace]", "18", "\[InvisibleSpace]", "\<\" classes\"\>"}],
+  SequenceForm[
+  "> ", 46, " particles (incl. antiparticles) in ", 18, " classes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859753302*^9}],
+
+Cell[BoxData["\<\"> $CounterTerms are ON\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708597736387`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> \"\>", "\[InvisibleSpace]", "75", 
+   "\[InvisibleSpace]", "\<\" vertices\"\>"}],
+  SequenceForm["> ", 75, " vertices"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859775463*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"classes model \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "\<\"Mine/OG\"\>", "}"}], 
+   "\[InvisibleSpace]", "\<\" initialized\"\>"}],
+  SequenceForm["classes model ", {"Mine/OG"}, " initialized"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708597768373`*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859778139*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"inserting at level(s) \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "Particles", "}"}]}],
+  SequenceForm["inserting at level(s) ", {FeynArts`Particles}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708597796497`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"4 Particles insertions\"\>"}],
+  SequenceForm["> Top. ", 1, ": ", "4 Particles insertions"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859781127*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"8 Particles insertions\"\>"}],
+  SequenceForm["> Top. ", 2, ": ", "8 Particles insertions"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859815123*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"in total: \"\>", 
+   "\[InvisibleSpace]", "\<\"12 Particles insertions\"\>"}],
+  SequenceForm["in total: ", "12 Particles insertions"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859817264*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708598194427`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"creating amplitudes at level(s) \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", "Particles", "}"}]}],
+  SequenceForm["creating amplitudes at level(s) ", {FeynArts`Particles}],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859821967*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"4 Particles amplitudes\"\>"}],
+  SequenceForm["> Top. ", 1, ": ", "4 Particles amplitudes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859823852*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"8 Particles amplitudes\"\>"}],
+  SequenceForm["> Top. ", 2, ": ", "8 Particles amplitudes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859825872*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"in total: \"\>", 
+   "\[InvisibleSpace]", "\<\"12 Particles amplitudes\"\>"}],
+  SequenceForm["in total: ", "12 Particles amplitudes"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859827516*^9}],
+
+Cell[BoxData["\<\"amplitudes created\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859829014*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"4 diagrams\"\>"}],
+  SequenceForm["> Top. ", 1, ": ", "4 diagrams"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770859830594*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\": \"\>", 
+   "\[InvisibleSpace]", "\<\"8 diagrams\"\>"}],
+  SequenceForm["> Top. ", 2, ": ", "8 diagrams"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.6637708598321877`*^9}],
+
+Cell[BoxData["\<\"File written\"\>"], "Print",
+ CellChangeTimes->{{3.66290547333923*^9, 3.662905475439288*^9}, 
+   3.6629904974293623`*^9, 3.663768660276554*^9, 3.663770860733852*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "G_WFdiag.m"}]], "Input",
+ CellChangeTimes->{{3.66020630220397*^9, 3.6602063268604317`*^9}, {
+   3.6604041430041733`*^9, 3.660404143242365*^9}, 3.660405849190559*^9, 
+   3.660405944242654*^9, {3.6610971731861877`*^9, 3.6610971737038937`*^9}, {
+   3.6629001051021*^9, 3.6629001075323772`*^9}, {3.662905713909747*^9, 
+   3.662905714173173*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 4, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.663770861491798*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 5, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.6637708615244303`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 6, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.6637708615260563`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 7, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.6637708615267057`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 8, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.6637708615274773`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 9, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.6637708615280952`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 10, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.663770861528616*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 11, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.663770861529233*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Diagram number \"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\" included\"\>"}],
+  SequenceForm["Diagram number ", 12, " included"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.663770861590472*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Total number of diagrams included: \"\>", "\[InvisibleSpace]", 
+   "9", "\[InvisibleSpace]", "\<\"/\"\>", "\[InvisibleSpace]", "12"}],
+  SequenceForm["Total number of diagrams included: ", 9, "/", 12],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.662905714676702*^9, 3.662905716375946*^9}, 
+   3.662990499418582*^9, 3.662990540692541*^9, {3.6629905749783573`*^9, 
+   3.662990599710229*^9}, 3.663768662585122*^9, 3.663770861591386*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 196, 4, 28, "Input"],
+Cell[778, 28, 561, 10, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1376, 43, 371, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[1772, 53, 171, 2, 21, "Print"],
+Cell[1946, 57, 182, 2, 22, "Print"],
+Cell[2131, 61, 218, 2, 22, "Print"],
+Cell[2352, 65, 192, 2, 21, "Print"],
+Cell[2547, 69, 171, 2, 21, "Print"],
+Cell[2721, 73, 565, 12, 22, "Print"],
+Cell[3289, 87, 196, 2, 22, "Print"],
+Cell[3488, 91, 413, 8, 22, "Print"],
+Cell[3904, 101, 171, 2, 21, "Print"],
+Cell[4078, 105, 567, 12, 22, "Print"],
+Cell[4648, 119, 483, 9, 22, "Print"],
+Cell[5134, 130, 195, 2, 21, "Print"],
+Cell[5332, 134, 338, 7, 21, "Print"],
+Cell[5673, 143, 416, 8, 21, "Print"],
+Cell[6092, 153, 171, 2, 21, "Print"],
+Cell[6266, 157, 370, 7, 22, "Print"],
+Cell[6639, 166, 417, 8, 22, "Print"],
+Cell[7059, 176, 417, 8, 22, "Print"],
+Cell[7479, 186, 351, 7, 21, "Print"],
+Cell[7833, 195, 173, 2, 21, "Print"],
+Cell[8009, 199, 388, 7, 22, "Print"],
+Cell[8400, 208, 417, 8, 22, "Print"],
+Cell[8820, 218, 417, 8, 22, "Print"],
+Cell[9240, 228, 351, 7, 22, "Print"],
+Cell[9594, 237, 189, 2, 22, "Print"],
+Cell[9786, 241, 393, 8, 22, "Print"],
+Cell[10182, 251, 395, 8, 22, "Print"],
+Cell[10580, 261, 183, 2, 21, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10812, 269, 371, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[11208, 279, 435, 8, 22, "Print"],
+Cell[11646, 289, 437, 8, 22, "Print"],
+Cell[12086, 299, 437, 8, 22, "Print"],
+Cell[12526, 309, 437, 8, 22, "Print"],
+Cell[12966, 319, 437, 8, 22, "Print"],
+Cell[13406, 329, 437, 8, 22, "Print"],
+Cell[13846, 339, 437, 8, 22, "Print"],
+Cell[14286, 349, 437, 8, 22, "Print"],
+Cell[14726, 359, 437, 8, 22, "Print"],
+Cell[15166, 369, 490, 8, 22, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

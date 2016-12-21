@@ -1,0 +1,745 @@
+(***************************************************************************************************************)
+(******                       This is the FeynRules mod-file for the Top effective theory                 ******)
+(******                                                                                                   ******)
+(******     Authors: C. Degrande                                                                          ******)
+(******                                                                                                   ******)
+(***************************************************************************************************************)
+
+M$ModelName = "TopEFTFCNC";
+
+
+M$Information = {Authors -> {"C. Degrande"}, 
+             Version -> "1",
+             Date -> "11. 04. 2013",
+             Institutions -> {"UIUC"},
+             Emails -> {"cdegrand@illinois.edu"},
+             URLs -> "http://feynrules.phys.ucl.ac.be"};
+
+FeynmanGauge = True;
+
+
+M$InteractionOrderHierarchy = {
+{QCD,2},
+{QED,4},
+{NP,1}
+}
+
+M$InteractionOrderLimit = {
+{NP,2}
+}
+
+
+
+(****************  Parameters *************)
+
+M$Parameters = {
+
+  (* External parameters *)
+
+  Lambda== {
+        ParameterType -> External,
+        ParameterName -> Lambda,
+        BlockName -> DIM6,
+	  InteractionOrder -> {NP,-1},
+        Value -> 1000,
+	  TeX -> \[CapitalLambda],
+        Description -> "Scale of the new physics"},
+        
+  RCtphi== {
+        ParameterType -> External,
+        ParameterName -> RCtphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[RC,t\[Phi]],
+        Description -> "Real part of the coefficient of Otphi"},
+
+  ICtphi== {
+        ParameterType -> External,
+        ParameterName -> ICtphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[IC,t\[Phi]],
+        Description -> "Imaginary part of the coefficient of Otphi"},
+        
+  RCtG== {
+        ParameterType -> External,
+        ParameterName -> RCtG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tG],
+        Description -> "Real part of the coefficient of OtG"},
+
+  ICtG== {
+        ParameterType -> External,
+        ParameterName -> ICtG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tG],
+        Description -> "Imaginary part of the coefficient of OtG"},
+        
+  RCtW== {
+        ParameterType -> External,
+        ParameterName -> RCtW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tW],
+        Description -> "Real part of the coefficient of OtW"},
+
+  ICtW== {
+        ParameterType -> External,
+        ParameterName -> ICtW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tW],
+        Description -> "Imaginary part of the coefficient of OtW"},
+        
+  RCtB== {
+        ParameterType -> External,
+        ParameterName -> RCtB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tB],
+        Description -> "Real part of the coefficient of OtB"},
+
+  ICtB== {
+        ParameterType -> External,
+        ParameterName -> ICtB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tB],
+        Description -> "Imaginary part of the coefficient of OtB"},
+
+(* with the up*)
+
+  RCuphi== {
+        ParameterType -> External,
+        ParameterName -> RCuphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[RC,u\[Phi]],
+        Description -> "Real part of the coefficient of Ouphi"},
+
+  ICuphi== {
+        ParameterType -> External,
+        ParameterName -> ICuphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[IC,u\[Phi]],
+        Description -> "Imaginary part of the coefficient of Ouphi"},
+        
+  RCuG== {
+        ParameterType -> External,
+        ParameterName -> RCuG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,uG],
+        Description -> "Real part of the coefficient of OuG"},
+
+  ICuG== {
+        ParameterType -> External,
+        ParameterName -> ICuG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,uG],
+        Description -> "Imaginary part of the coefficienu of OuG"},
+        
+  RCuW== {
+        ParameterType -> External,
+        ParameterName -> RCuW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,uW],
+        Description -> "Real part of the coefficient of OuW"},
+
+  ICuW== {
+        ParameterType -> External,
+        ParameterName -> ICuW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,uW],
+        Description -> "Imaginary part of the coefficient of OuW"},
+        
+  RCuB== {
+        ParameterType -> External,
+        ParameterName -> RCuB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,uB],
+        Description -> "Real part of the coefficient of OuB"},
+
+  ICuB== {
+        ParameterType -> External,
+        ParameterName -> ICuB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,uB],
+        Description -> "Imaginary part of the coefficient of OuB"},
+
+(* currents 1-3 *)
+        
+  RC1utR== {
+        ParameterType -> External,
+        ParameterName -> RC1utR,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,utR,1],
+        Description -> "Real part of the coefficient of O1utR"},
+
+  IC1utR== {
+        ParameterType -> External,
+        ParameterName -> IC1utR,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,utR,1],
+        Description -> "Imaginary part of the coefficient of O1utR"},
+        
+  RC1utL== {
+        ParameterType -> External,
+        ParameterName -> RC1utL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,utL,1],
+        Description -> "Real part of the coefficient of O1utL"},
+
+  IC1utL== {
+        ParameterType -> External,
+        ParameterName -> IC1utL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,utL,1],
+        Description -> "Imaginary part of the coefficient of O1utL"},
+        
+  RC3utL== {
+        ParameterType -> External,
+        ParameterName -> RC3utL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,utL,3],
+        Description -> "Real part of the coefficient of O3utL"},
+
+  IC3utL== {
+        ParameterType -> External,
+        ParameterName -> IC3utL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,utL,3],
+        Description -> "Imaginary part of the coefficient of O3utL"},
+
+(* with the charm*)
+        
+  RCtcphi== {
+        ParameterType -> External,
+        ParameterName -> RCtcphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[RC,tc\[Phi]],
+        Description -> "Real part of the coefficient of Otcphi"},
+
+  ICtcphi== {
+        ParameterType -> External,
+        ParameterName -> ICtcphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[IC,tc\[Phi]],
+        Description -> "Imaginary part of the coefficient of Otcphi"},
+        
+  RCtcG== {
+        ParameterType -> External,
+        ParameterName -> RCtcG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tcG],
+        Description -> "Real part of the coefficient of OtcG"},
+
+  ICtcG== {
+        ParameterType -> External,
+        ParameterName -> ICtcG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tcG],
+        Description -> "Imaginary part of the coefficient of OtcG"},
+        
+  RCtcW== {
+        ParameterType -> External,
+        ParameterName -> RCtcW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tcW],
+        Description -> "Real part of the coefficient of OtcW"},
+
+  ICtcW== {
+        ParameterType -> External,
+        ParameterName -> ICtcW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tcW],
+        Description -> "Imaginary part of the coefficient of OtcW"},
+        
+  RCtcB== {
+        ParameterType -> External,
+        ParameterName -> RCtcB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,tcB],
+        Description -> "Real part of the coefficient of OtcB"},
+
+  ICtcB== {
+        ParameterType -> External,
+        ParameterName -> ICtcB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,tcB],
+        Description -> "Imaginary part of the coefficient of OtcB"},
+
+(* with the top-charm*)
+        
+  RCctphi== {
+        ParameterType -> External,
+        ParameterName -> RCctphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[RC,ct\[Phi]],
+        Description -> "Real part of the coefficient of Octphi"},
+
+  ICctphi== {
+        ParameterType -> External,
+        ParameterName -> ICctphi,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,3},
+        Value -> 1,
+	  TeX -> Subscript[IC,ct\[Phi]],
+        Description -> "Imaginary part of the coefficient of Octphi"},
+        
+  RCctG== {
+        ParameterType -> External,
+        ParameterName -> RCctG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,ctG],
+        Description -> "Real part of the coefficient of OctG"},
+
+  ICctG== {
+        ParameterType -> External,
+        ParameterName -> ICctG,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,ctG],
+        Description -> "Imaginary part of the coefficient of OctG"},
+        
+  RCctW== {
+        ParameterType -> External,
+        ParameterName -> RCctW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,ctW],
+        Description -> "Real part of the coefficient of OctW"},
+
+  ICctW== {
+        ParameterType -> External,
+        ParameterName -> ICctW,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,ctW],
+        Description -> "Imaginary part of the coefficient of OctW"},
+        
+  RCctB== {
+        ParameterType -> External,
+        ParameterName -> RCctB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[RC,ctB],
+        Description -> "Real part of the coefficient of OctB"},
+
+  ICctB== {
+        ParameterType -> External,
+        ParameterName -> ICctB,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subscript[IC,ctB],
+        Description -> "Imaginary part of the coefficient of OtcB"},
+
+(* currents 2-3 *)
+        
+  RC1ctR== {
+        ParameterType -> External,
+        ParameterName -> RC1ctR,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,ctR,1],
+        Description -> "Real part of the coefficient of O1ctR"},
+
+  IC1ctR== {
+        ParameterType -> External,
+        ParameterName -> IC1ctR,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,ctR,1],
+        Description -> "Imaginary part of the coefficient of O1ctR"},
+        
+  RC1ctL== {
+        ParameterType -> External,
+        ParameterName -> RC1ctL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,ctL,1],
+        Description -> "Real part of the coefficient of O1ctL"},
+
+  IC1ctL== {
+        ParameterType -> External,
+        ParameterName -> IC1ctL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,ctL,1],
+        Description -> "Imaginary part of the coefficient of O1ctL"},
+        
+  RC3ctL== {
+        ParameterType -> External,
+        ParameterName -> RC3ctL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[RC,ctL,3],
+        Description -> "Real part of the coefficient of O3ctL"},
+
+  IC3ctL== {
+        ParameterType -> External,
+        ParameterName -> IC3ctL,
+        BlockName -> DIM6,
+	  InteractionOrder -> {QED,1},
+        Value -> 1,
+	  TeX -> Subsuperscript[IC,ctL,3],
+        Description -> "Imaginary part of the coefficient of O3utL"},
+
+(* Internal parameters *)
+
+  Ctphi== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,3},
+        ParameterName -> Ctphi,
+        Value -> RCtphi + I ICtphi,
+	  TeX -> Subscript[C,t\[Phi]],
+        Description -> "coefficient of Otphi"},    
+
+  CtG== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtG,
+        Value -> RCtG + I ICtG,
+	  TeX -> Subscript[C,tG],
+        Description -> "coefficient of OtG"},    
+
+  CtW== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtW,
+        Value -> RCtW + I ICtW,
+	  TeX -> Subscript[C,tW],
+        Description -> "coefficient of OtW"},    
+
+  CtB== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtB,
+        Value -> RCtB + I ICtB,
+	  TeX -> Subscript[C,tB],
+        Description -> "coefficient of OtB"},
+
+  Cuphi== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,3},
+        ParameterName -> Cuphi,
+        Value -> RCuphi + I ICuphi,
+	  TeX -> Subscript[C,u\[Phi]],
+        Description -> "coefficient of Ouphi"},    
+
+  CuG== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CuG,
+        Value -> RCuG + I ICuG,
+	  TeX -> Subscript[C,uG],
+        Description -> "coefficient of OuG"},    
+
+  CuW== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CuW,
+        Value -> RCuW + I ICuW,
+	  TeX -> Subscript[C,uW],
+        Description -> "coefficient of OuW"},    
+
+  CuB== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CuB,
+        Value -> RCuB + I ICuB,
+	  TeX -> Subscript[C,uB],
+        Description -> "coefficient of OuB"},   
+
+  C1utR== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C1utR,
+        Value -> RC1utR + I IC1utR,
+	  TeX -> Subsuperscript[C,utR,1],
+        Description -> "coefficient of O1utR"}, 
+
+  C1utL== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C1utL,
+        Value -> RC1utL + I IC1utL,
+	  TeX -> Subsuperscript[C,utL,1],
+        Description -> "coefficient of O1utL"},
+
+  C3utL== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C3utL,
+        Value -> RC3utL + I IC3utL,
+	  TeX -> Subsuperscript[C,utL,3],
+        Description -> "coefficient of O3utL"},
+        
+(* with the charm *)         
+
+  Ctcphi== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,3},
+        ParameterName -> Ctcphi,
+        Value -> RCtcphi + I ICtcphi,
+	  TeX -> Subscript[C,tc\[Phi]],
+        Description -> "coefficient of Otcphi"},    
+
+  CtcG== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtcG,
+        Value -> RCtcG + I ICtcG,
+	  TeX -> Subscript[C,tcG],
+        Description -> "coefficient of OtcG"},    
+
+  CtcW== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtcW,
+        Value -> RCtcW + I ICtcW,
+	  TeX -> Subscript[C,tcW],
+        Description -> "coefficient of OtcW"},    
+
+  CtcB== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CtcB,
+        Value -> RCtcB + I ICtcB,
+	  TeX -> Subscript[C,tcB],
+        Description -> "coefficient of OtcB"},
+
+Cctphi== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,3},
+        ParameterName -> Cctphi,
+        Value -> RCctphi + I ICctphi,
+	  TeX -> Subscript[C,ct\[Phi]],
+        Description -> "coefficient of Octphi"},    
+
+  CctG== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CctG,
+        Value -> RCctG + I ICctG,
+	  TeX -> Subscript[C,ctG],
+        Description -> "coefficient of OctG"},    
+
+  CctW== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CctW,
+        Value -> RCctW + I ICctW,
+	  TeX -> Subscript[C,ctW],
+        Description -> "coefficient of OctW"},    
+
+  CctB== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> CctB,
+        Value -> RCctB + I ICctB,
+	  TeX -> Subscript[C,ctB],
+        Description -> "coefficient of OctB"},   
+
+  C1ctR== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C1ctR,
+        Value -> RC1ctR + I IC1ctR,
+	  TeX -> Subsuperscript[C,ctR,1],
+        Description -> "coefficient of O1ctR"}, 
+
+  C1ctL== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C1ctL,
+        Value -> RC1ctL + I IC1ctL,
+	  TeX -> Subsuperscript[C,ctL,1],
+        Description -> "coefficient of O1ctL"},
+
+  C3ctL== {
+        ParameterType -> Internal,
+	  ComplexParameter->True,
+	  InteractionOrder -> {QED,1},
+        ParameterName -> C3ctL,
+        Value -> RC3ctL + I IC3ctL,
+	  TeX -> Subsuperscript[C,ctL,3],
+        Description -> "coefficient of O3ctL"}        
+
+}
+
+(*1-3*)
+
+LtphinH := Ctphi/Lambda^2 ExpandIndices[
+  Module[{sp, ii, cc, jj, kk}, 
+   QLbar[sp, ii, 1, cc].uR[sp, 3, cc] Phibar[jj] Eps[ii,jj] (Phibar[kk] Phi[kk] - vev^2/2)], FlavorExpand -> {SU2D}];
+Ltphi := LtphinH+HC[LtphinH];
+
+LtGnH := I*CtG*gs/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 1, i].uR [r, 3, j] Phibar[jj] Eps[ii, jj]  T[a,i,j] (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[G,mu,nu,a],FlavorExpand->{SU2D,SU2W}]];
+LtG := LtGnH+HC[LtGnH];
+
+LtWnH := I*CtW*gw/Lambda^2 Module[{a, s, r, i, t, u, mu, nu, ii, jj, kk}, ExpandIndices[QLbar[s, kk, 1, i].uR[r, 3, i] Phibar[jj] Eps[ii, jj] 2 Ta[a, kk,ii] (Ga[mu, s, t] Ga[nu, t, u]) ProjP[u, r] FS[Wi, mu, nu, a], FlavorExpand -> {SU2D, SU2W}]];
+      LtW := LtWnH+HC[LtWnH];
+
+LtBnH := I*CtB*g1/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 1, i].uR [r, 3, i] Phibar[jj] Eps[ii, jj]   (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[B,mu,nu],FlavorExpand->{SU2D,SU2W}]];
+LtB := LtBnH+HC[LtBnH];
+
+(*3-1*)
+
+LuphinH := Cuphi/Lambda^2 ExpandIndices[
+  Module[{sp, ii, cc, jj, kk}, 
+   QLbar[sp, ii, 3, cc].uR[sp, 1, cc] Phibar[jj] Eps[ii,jj] (Phibar[kk] Phi[kk] - vev^2/2)], FlavorExpand -> {SU2D}];
+Luphi := LuphinH+HC[LuphinH];
+
+LuGnH := I*CuG*gs/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 3, i].uR [r, 1, j] Phibar[jj] Eps[ii, jj]  T[a,i,j] (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[G,mu,nu,a],FlavorExpand->{SU2D,SU2W}]];
+LuG := LuGnH+HC[LuGnH];
+
+LuWnH := I*CuW*gw/Lambda^2 Module[{a, s, r, i, t, u, mu, nu, ii, jj, kk}, ExpandIndices[QLbar[s, kk, 3, i].uR[r, 1, i] Phibar[jj] Eps[ii, jj] 2 Ta[a, kk,ii] (Ga[mu, s, t] Ga[nu, t, u]) ProjP[u, r] FS[Wi, mu, nu, a], FlavorExpand -> {SU2D, SU2W}]];
+      LuW := LuWnH+HC[LuWnH];
+
+LuBnH := I*CuB*g1/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 3, i].uR [r, 1, i] Phibar[jj] Eps[ii, jj]   (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[B,mu,nu],FlavorExpand->{SU2D,SU2W}]];
+LuB := LuBnH+HC[LuBnH];
+
+(*Currents*)
+
+L1utRnH := I* C1utR/Lambda^2 Module[{jj,mu,r,j,s},ExpandIndices[(Phibar[jj]DC[Phi[jj],mu]-DC[Phibar[jj],mu]Phi[jj])(uRbar[r,1,j].uR[s,3,j]Ga[mu,r,s]), FlavorExpand -> {SU2D, SU2W}]];
+L1utR:=L1utRnH + HC[L1utRnH];
+
+L1utLnH := I* C1utL/Lambda^2 Module[{jj,mu,r,ii,j,s},ExpandIndices[(Phibar[jj] DC[Phi[jj], mu] - DC[Phibar[jj], mu] Phi[jj]) (QLbar[r, ii, 1, j].QL[s, ii, 3, j] Ga[mu, r, s]), FlavorExpand -> {SU2D, SU2W}]];
+L1utL:=L1utLnH+HC[L1utLnH];
+
+L3utLnH := I* C3utL/Lambda^2 Module[{jj,mu,r,ii,j,s,i,kk,c},ExpandIndices[2 (Phibar[jj] Ta[kk, jj, ii] DC[Phi[ii], mu] - DC[Phibar[jj], mu] Ta[kk, jj, ii] Phi[ii]) (QLbar[r, j, 1, c].QL[s, i, 3, c] 2 Ta[kk, j, i] Ga[mu, r, s]), FlavorExpand -> {SU2D, SU2W}]];
+L3utL:=L3utLnH+HC[L3utLnH];
+
+(* with the charm *)
+
+LtcphinH := Ctcphi/Lambda^2 ExpandIndices[
+  Module[{sp, ii, cc, jj, kk}, 
+   QLbar[sp, ii, 2, cc].uR[sp, 3, cc] Phibar[jj] Eps[ii,jj] (Phibar[kk] Phi[kk] - vev^2/2)], FlavorExpand -> {SU2D}];
+Ltcphi := LtcphinH+HC[LtcphinH];
+
+
+LtcGnH := I*CtcG*gs/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 2, i].uR [r, 3, j] Phibar[jj] Eps[ii, jj]  T[a,i,j] (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[G,mu,nu,a],FlavorExpand->{SU2D,SU2W}]];
+LtcG := LtcGnH+HC[LtcGnH];
+
+LtcWnH := I*CtcW*gw/Lambda^2 Module[{a, s, r, i, t, u, mu, nu, ii, jj, kk}, ExpandIndices[QLbar[s, kk, 2, i].uR[r, 3, i] Phibar[jj] Eps[ii, jj] 2 Ta[a, kk,ii] (Ga[mu, s, t] Ga[nu, t, u]) ProjP[u, r] FS[Wi, mu, nu, a], FlavorExpand -> {SU2D, SU2W}]];
+      LtcW := LtcWnH+HC[LtcWnH];
+
+LtcBnH := I*CtcB*g1/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 2, i].uR [r, 3, i] Phibar[jj] Eps[ii, jj]   (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[B,mu,nu],FlavorExpand->{SU2D,SU2W}]];
+LtcB := LtcBnH+HC[LtcBnH];
+
+(* with the top - charm *)
+
+LctphinH := Cctphi/Lambda^2 ExpandIndices[
+  Module[{sp, ii, cc, jj, kk}, 
+   QLbar[sp, ii, 3, cc].uR[sp, 2, cc] Phibar[jj] Eps[ii,jj] (Phibar[kk] Phi[kk] - vev^2/2)], FlavorExpand -> {SU2D}];
+Lctphi := LctphinH+HC[LctphinH];
+
+
+LctGnH := I*CctG*gs/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 3, i].uR [r, 2, j] Phibar[jj] Eps[ii, jj]  T[a,i,j] (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[G,mu,nu,a],FlavorExpand->{SU2D,SU2W}]];
+LctG := LctGnH+HC[LctGnH];
+
+LctWnH := I*CctW*gw/Lambda^2 Module[{a, s, r, i, t, u, mu, nu, ii, jj, kk}, ExpandIndices[QLbar[s, kk, 3, i].uR[r, 2, i] Phibar[jj] Eps[ii, jj] 2 Ta[a, kk,ii] (Ga[mu, s, t] Ga[nu, t, u]) ProjP[u, r] FS[Wi, mu, nu, a], FlavorExpand -> {SU2D, SU2W}]];
+      LctW := LctWnH+HC[LctWnH];
+
+LctBnH := I*CctB*g1/Lambda^2 Module[{a,s,r,i,j,t,u,mu,nu,ii,jj},ExpandIndices[QLbar[s, ii, 3, i].uR [r, 2, i] Phibar[jj] Eps[ii, jj]   (Ga[mu,s,t] Ga[nu,t,u]) ProjP[u,r]  FS[B,mu,nu],FlavorExpand->{SU2D,SU2W}]];
+LctB := LctBnH+HC[LctBnH];
+
+
+(*Currents 2-3*)
+
+L1ctRnH := I* C1ctR/Lambda^2 Module[{jj,mu,r,j,s},ExpandIndices[(Phibar[jj]DC[Phi[jj],mu]-DC[Phibar[jj],mu]Phi[jj])(uRbar[r,2,j].uR[s,3,j]Ga[mu,r,s]), FlavorExpand -> {SU2D, SU2W}]];
+L1ctR:=L1ctRnH + HC[L1ctRnH];
+
+L1ctLnH := I* C1ctL/Lambda^2 Module[{jj,mu,r,ii,j,s},ExpandIndices[(Phibar[jj] DC[Phi[jj], mu] - DC[Phibar[jj], mu] Phi[jj]) (QLbar[r, ii, 2, j].QL[s, ii, 3, j] Ga[mu, r, s]), FlavorExpand -> {SU2D, SU2W}]];
+L1ctL:=L1ctLnH+HC[L1ctLnH];
+
+L3ctLnH := I* C3ctL/Lambda^2 Module[{jj,mu,r,ii,j,s,i,kk,c},ExpandIndices[2 (Phibar[jj] Ta[kk, jj, ii] DC[Phi[ii], mu] - DC[Phibar[jj], mu] Ta[kk, jj, ii] Phi[ii]) (QLbar[r, j, 2, c].QL[s, i, 3, c] 2 Ta[kk, j, i] Ga[mu, r, s]), FlavorExpand -> {SU2D, SU2W}]];
+L3ctL:=L3ctLnH+HC[L3ctLnH];

@@ -1,0 +1,1685 @@
+(***************************************************************************************************************)
+(******                       This is the FeynRules mod-file for the D6   model                           ******)
+(******                                                                                                   ******)
+(******     Authors: M. Fedele                                                                            ******)
+(******                                                                                                   ******)
+(***************************************************************************************************************)
+
+M$ModelName = "D6";
+
+
+M$Information = {
+	Authors -> {"M. Fedele"}, 
+   	Date->"06/09/2016",
+   	Institutions -> {"INFN RM1"}, 
+   	Emails -> {"marco.fedele@uniroma1.it"},
+   	Version -> "1.0" (* CKM REMOVED from QL and LYukawa, yl yu yd commented, fermion masses set to 0 *)
+};
+
+FeynmanGauge = True;
+
+(*********      vevs      **********)
+
+M$vevs = { {Phi[2],vev} };
+
+
+
+(************** Gauge Groups ******************)
+
+M$GaugeGroups = {
+
+  U1Y == {
+        Abelian -> True,
+        GaugeBoson -> B,
+        Charge -> Y,
+        CouplingConstant -> g1},
+
+  SU2L == {
+        Abelian -> False,
+        GaugeBoson -> Wi,
+        StructureConstant -> Eps,
+        CouplingConstant -> gw , 
+    	Representations   -> {Ta,SU2D}, 
+    	Definitions       -> {Ta[a_,b_,c_]->PauliSigma[a,b,c]/2, FSU2L[i_,j_,k_]:> I Eps[i,j,k]} },
+
+  SU3C == {
+        Abelian -> False,
+        GaugeBoson -> G,
+        StructureConstant -> f,
+        SymmetricTensor -> dSUN,
+        Representations -> {T, Colour},
+        CouplingConstant -> gs}
+}
+
+
+(******* Index definitions ********)
+
+IndexRange[ Index[Generation] ] = Range[3];
+IndexRange[ Index[Colour] ] = NoUnfold[Range[3]];
+IndexRange[ Index[Gluon] ] = NoUnfold[Range[8]];
+IndexRange[ Index[SU2W] ] = Unfold[Range[3]];
+(* IndexRange[ Index[SU2W] ] = Range[3]; *)
+IndexRange[ Index[SU2D] ] = Unfold[Range[2]];
+
+IndexStyle[Colour, i];
+IndexStyle[Generation, f];
+IndexStyle[Gluon, a];
+IndexStyle[SU2W, j];
+IndexStyle[SU2D, k];
+
+(****************   Orders ****************)
+
+M$InteractionOrderHierarchy = {
+{QCD, 1},
+{NP, 1},
+{QED, 2}
+}
+
+M$InteractionOrderLimit = {
+{QCD, 99},
+{QED, 99},
+{NP, 2}
+}
+
+(******* Gauge parameters (for FeynArts) ********)
+
+GaugeXi[ V[1] ] = GaugeXi[A];
+GaugeXi[ V[2] ] = GaugeXi[Z];
+GaugeXi[ V[3] ] = GaugeXi[W];
+GaugeXi[ V[4] ] = GaugeXi[G];
+GaugeXi[ S[1] ] = 1;
+GaugeXi[ S[2] ] = GaugeXi[Z];
+GaugeXi[ S[3] ] = GaugeXi[W];
+GaugeXi[ U[1] ] = GaugeXi[A];
+GaugeXi[ U[2] ] = GaugeXi[Z];
+GaugeXi[ U[31] ] = GaugeXi[W];
+GaugeXi[ U[32] ] = GaugeXi[W];
+GaugeXi[ U[4] ] = GaugeXi[G];
+
+(****************  Parameters *************)
+
+M$Parameters = {
+
+  (* External SM parameters *)
+
+  aEWM1== {
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+    	OrderBlock -> 1, 
+        InteractionOrder -> {QED, -2},
+        Value -> 127.9,
+        Description -> "Inverse of the EW coupling constant at the Z pole"},
+
+  Gf == {
+    	TeX -> Subscript[G,f],
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+    	OrderBlock -> 2,
+        InteractionOrder -> {QED, 2},
+        Value -> 1.16639 * 10^(-5),
+        Description -> "Fermi constant"},
+
+  aS == {
+    	TeX -> Subscript[\[Alpha],s],
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+    	OrderBlock -> 3,
+        InteractionOrder -> {QCD, 2},
+        Value -> 0.118,
+        Description -> "Strong coupling constant at the Z pole."},
+
+  ZM == {
+        ParameterType -> External,
+        BlockName -> SMINPUTS,
+        Value -> 91.188,
+        Description -> "Z mass"},
+
+  ymdo == {
+    	ParameterType -> External,
+    	BlockName     -> YUKAWA,
+    	OrderBlock    -> 1,
+    	Value         -> 5.04*^-3,
+    	Description   -> "Down Yukawa mass"},
+
+  ymup == {
+    	ParameterType -> External,
+    	BlockName     -> YUKAWA,
+    	OrderBlock    -> 2,
+    	Value         -> 2.55*^-3,
+    	Description   -> "Up Yukawa mass"},
+
+  yms == {
+    	ParameterType -> External,
+    	BlockName     -> YUKAWA,
+    	OrderBlock    -> 3,
+    	Value         -> 0.101,
+    	Description   -> "Strange Yukawa mass"},
+
+  ymc == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 1.42,
+        OrderBlock -> {4},
+        Description -> "Charm Yukawa mass"},
+
+  ymb == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 4.7,
+        OrderBlock -> {5},
+        Description -> "Bottom Yukawa mass"},
+
+  ymt == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 174.3,
+        OrderBlock -> {6},
+        Description -> "Top Yukawa mass"},
+
+  yme == {
+    	ParameterType -> External,
+    	BlockName     -> YUKAWA,
+    	OrderBlock    -> 11,
+    	Value         -> 5.11*^-4,
+    	Description   -> "Electron Yukawa mass"},
+  
+  ymm == {
+    	ParameterType -> External,
+    	BlockName     -> YUKAWA,
+    	OrderBlock    -> 13,
+    	Value         -> 0.10566,
+    	Description   -> "Muon Yukawa mass"},
+
+  ymtau == {
+        ParameterType -> External,
+        BlockName -> YUKAWA,
+        Value -> 1.777,
+        OrderBlock -> {15},
+        Description -> "Tau Yukawa mass"},
+
+  cabi == {
+    	ParameterType -> External,
+    	BlockName     -> CKMBLOCK,
+    	OrderBlock    -> 1,
+    	Value         -> 0.227736,
+    	TeX           -> Subscript[\[Theta], c],
+    	Description   -> "Cabibbo angle"},
+
+
+	(* External D6 Parameter *)
+
+  LAMBDA =={
+	TeX -> \[Lambda], 
+	ParameterType -> External,
+	Value -> 1 ,
+        InteractionOrder -> {NP, -1},
+	Description -> "D6 scale"},
+
+  cG =={
+	TeX -> Subscript[c,G], 
+	ParameterType -> External,
+	Value -> 1,
+	Description -> "Wilson coefficient of operator OG"},
+
+  cB =={
+	TeX -> Subscript[c,B], 
+	ParameterType -> External,
+	Value -> 1,
+	Description -> "Wilson coefficient of operator OB"},
+
+  cW =={
+	TeX -> Subscript[c,W], 
+	ParameterType -> External,
+	Value -> 1,
+	Description -> "Wilson coefficient of operator OW"},
+
+  cWB =={
+	TeX -> Subscript[c,WB], 
+	ParameterType -> External,
+	Value -> 1,
+	Description -> "Wilson coefficient of operator OWB"},
+
+
+   (* Internal Parameters *)
+
+  aEW == {
+    	TeX -> Subscript[\[Alpha], EW],
+        ParameterType -> Internal,
+        Value -> 1/aEWM1,
+        InteractionOrder -> {QED, 2},
+        Description -> "Electroweak coupling contant"},
+
+
+  MW == { 
+    	TeX -> Subscript[M,W], 
+        ParameterType -> Internal,
+        Value -> Sqrt[MZ^2/2+Sqrt[MZ^4/4-Pi/Sqrt[2]*aEW/Gf*MZ^2]],
+        Description -> "W mass"},
+
+  sw2 == {
+        ParameterType -> Internal,
+        Value -> 1-(MW/MZ)^2,
+        Description -> "Squared Sin of the Weinberg angle"},
+
+  ee == {
+        TeX -> e,
+        ParameterType -> Internal,
+        Value -> Sqrt[4 Pi aEW],
+        InteractionOrder -> {QED, 1},
+        Description -> "Electric coupling constant"},
+
+  cw == {
+        TeX -> Subscript[c, w],
+        ParameterType -> Internal,
+        Value -> Sqrt[1 - sw2],
+        Description -> "Cos of the Weinberg angle"},  
+
+  sw == {
+        TeX -> Subscript[s, w],
+        ParameterType -> Internal,
+        Value -> Sqrt[sw2],
+        Description -> "Sin of the Weinberg angle"},  
+
+  gw == {
+        TeX -> Subscript[g, w],
+        ParameterType -> Internal,
+        Value -> ee / sw,
+        InteractionOrder -> {QED, 1},
+        Description -> "Weak coupling constant at the Z pole"},
+
+  g1 == {
+        TeX -> Subscript[g, 1],
+        ParameterType -> Internal,
+        Value -> ee / cw,
+        InteractionOrder -> {QED, 1},
+        Description -> "U(1)Y coupling constant at the Z pole"},
+
+  gs == {
+        TeX -> Subscript[g, s],
+        ParameterType -> Internal,
+        Value -> Sqrt[4 Pi \[Alpha]S],
+        InteractionOrder -> {QCD, 1},
+        ParameterName -> G,
+        Description -> "Strong coupling constant at the Z pole"},
+
+  vev == {
+        ParameterType -> Internal,
+        Value -> 2*MW*sw/ee,
+        InteractionOrder -> {QED, -1},
+        Description -> "Higgs VEV"},
+
+  lam == {
+        ParameterType -> Internal,
+        Value -> MH^2/(2*vev^2),
+        InteractionOrder -> {QED, 2},
+        Description -> "Higgs quartic coupling"},
+
+  muH == {
+        ParameterType -> Internal,
+        Value -> Sqrt[v^2 lam],
+        TeX -> \[Mu],
+        Description -> "Coefficient of the quadratic piece of the Higgs potential"},
+
+(*  yl == {
+    	ParameterType    -> Internal,
+    	Indices          -> {Index[Generation], Index[Generation]},
+    	Definitions      -> {yl[i_?NumericQ, j_?NumericQ] :> 0  /; (i =!= j)},
+    	Value            -> {yl[1,1] -> Sqrt[2] yme / vev, yl[2,2] -> Sqrt[2] ymm / vev, yl[3,3] -> Sqrt[2] ymtau / vev},  
+    	InteractionOrder -> {QED, 1},
+    	ParameterName    -> {yl[1,1] -> ye, yl[2,2] -> ym, yl[3,3] -> ytau},  
+    	TeX              -> Superscript[y, l],
+    	Description      -> "Lepton Yukawa couplings"},
+  
+  yu == {
+    	ParameterType    -> Internal,
+    	Indices          -> {Index[Generation], Index[Generation]},
+    	Definitions      -> {yu[i_?NumericQ, j_?NumericQ] :> 0  /; (i =!= j)},
+    	Value            -> {yu[1,1] -> Sqrt[2] ymup/vev, yu[2,2] -> Sqrt[2] ymc/vev, yu[3,3] -> Sqrt[2] ymt/vev},  
+    	InteractionOrder -> {QED, 1},
+    	ParameterName    -> {yu[1,1] -> yup, yu[2,2] -> yc, yu[3,3] -> yt},  
+    	TeX              -> Superscript[y, u],
+    	Description      -> "Up-type Yukawa couplings"},
+  
+  yd == {
+    	ParameterType    -> External,
+    	Indices          -> {Index[Generation], Index[Generation]},
+    	Definitions      -> {yd[i_?NumericQ, j_?NumericQ] :> 0  /; (i =!= j)},
+    	Value            -> {yd[1,1] -> Sqrt[2] ymdo/vev, yd[2,2] -> Sqrt[2] yms/vev, yd[3,3] -> Sqrt[2] ymb/vev},  
+    	InteractionOrder -> {QED, 1},
+    	ParameterName    -> {yd[1,1] -> ydo, yd[2,2] -> ys, yd[3,3] -> yb},
+    	TeX              -> Superscript[y, d],
+    	Description      -> "Down-type Yukawa couplings"},  *)
+
+  CKM == {
+   	TeX -> Superscript[V,CKM],
+    	ParameterType -> Internal,
+       	Indices -> {Index[Generation], Index[Generation]},
+       	ComplexParameter -> True,
+       	Unitary -> True,
+       	Definitions -> {CKM[3, 3] -> 1,
+       	                CKM[i_, 3] :> 0 /; i != 3,
+       	                CKM[3, i_] :> 0 /; i != 3},
+       	Value -> {CKM[1,2] -> Sin[cabi],
+       	            CKM[1,1] -> Cos[cabi],
+       	            CKM[2,1] -> -Sin[cabi],
+       	            CKM[2,2] -> Cos[cabi]},
+       	Description -> "CKM-Matrix"}
+}
+
+(********* Particle Classes **********)
+
+M$ClassesDescription = {
+
+(********** Fermions ************)
+	(* Leptons (neutrino_L): I_3 = +1/2, Q = 0 *)
+  F[1] == {
+        ClassName -> vlL,
+        ClassMembers -> {veL,vmL,vtauL},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation]},
+        Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {LeptonNumber -> 1},
+	PropagatorLabel -> {"\[Nu]", "Subscript[\[Nu], Subscript[e, L]]", "Subscript[\[Nu], Subscript[\[Mu], L]]", "Subscript[\[Nu], Subscript[\[Tau], L]]"} ,
+	PropagatorType -> S,
+	PropagatorArrow -> Forward,
+        PDG -> {12,14,16},
+    	ParticleName     -> {"Subscript[\[Nu], Subscript[e, L]]", "Subscript[\[Nu], Subscript[\[Mu], L]]", "Subscript[\[Nu], Subscript[\[Tau], L]]"},
+    	AntiParticleName -> {"Subscript[\[Nu], Subscript[e, L]]~", "Subscript[\[Nu], Subscript[\[Mu], L]]~", "Subscript[\[Nu], Subscript[\[Tau], L]]~"},
+        FullName -> {"Electron-neutrino_L", "Mu-neutrino_L", "Tau-neutrino_L"} },
+
+	(* Leptons (electron_L): I_3 = -1/2, Q = -1 *)
+  F[2] == {
+        ClassName -> elL,
+        ClassMembers -> {eL, mL, tauL},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation]},
+     (* Mass -> {Ml, {ME, 0.51*^-3}, {MM, 106*^-3}, {MTA, 1.777}}, *)
+	Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {Q -> -1, LeptonNumber -> 1},
+	PropagatorLabel -> {"Subscript[l,L]", "Subscript[e,L]", "Subscript[\[Mu],L]", "Subscript[\[Tau],L]"},
+	PropagatorType -> Straight,
+        ParticleName -> {"Subsuperscript[e,L,-]", "Subsuperscript[\[Mu],L,-]", "Subsuperscript[\[Tau],L,-]"},
+        AntiParticleName -> {"Subsuperscript[e,L,+]", "Subsuperscript[\[Mu],L,+]", "Subsuperscript[\[Tau],L,+]"},
+	PropagatorArrow -> Forward,
+        PDG -> {11, 13, 15},
+        FullName -> {"Electron_L", "Muon_L", "Tau_L"} },
+
+	(* Quarks (u_L): I_3 = +1/2, Q = +2/3 *)
+  F[3] == {
+        ClassName -> uqL,
+        ClassMembers -> {uL, cL, tL},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+     (* Mass -> {Mu, {MU, 2.55*^-3}, {MC,1.27}, {MT, 174.3}}, *)
+	Mass -> 0,
+        Width -> {0, 0, {WT, 1.50833649}},
+	QuantumNumbers -> {Q -> 2/3},
+	PropagatorLabel -> {"uqL", "uL", "cL", "tL"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {2, 4, 6}, 
+   	ParticleName     -> {"uL", "cL", "tL"},
+    	AntiParticleName -> {"uL~", "uL~", "uL~"},
+        FullName -> {"u-quark_L", "c-quark_L", "t-quark_L"}},
+
+	(* Quarks (dL): I_3 = -1/2, Q = -1/3 *) 
+  F[4] == {
+        ClassName -> dqL,
+        ClassMembers -> {dL, sL, bL},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+     (* Mass -> {Md, {MD,5.04*^-3}, {MS,0.101}, {MB, 4.7}}, *)
+	Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {Q -> -1/3},
+	PropagatorLabel -> {"dq", "dL", "sL", "bL"},
+	PropagatorType -> Straight, 
+	PropagatorArrow -> Forward,
+        PDG -> {1,3,5},
+    	ParticleName     -> {"dL", "sL", "bL"},
+ 	AntiParticleName -> {"dL~", "sL~", "bL~"},
+        FullName -> {"d-quark_L", "s-quark_L", "b-quark_L"} },
+
+	(* Leptons (electron_R): I_3 = -1/2, Q = -1 *)
+  F[5] == {
+        ClassName -> elR,
+        ClassMembers -> {e, m, tau},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation]},
+     (* Mass -> {Ml, {ME, 0.51*^-3}, {MM, 106*^-3}, {MTA, 1.777}}, *)
+	Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {Q -> -1, LeptonNumber -> 1},
+	PropagatorLabel -> {"Subscript[l,R]", "Subscript[e,R]", "Subscript[\[Mu],R]", "Subscript[\[Tau],R]"},
+	PropagatorType -> Straight,
+        ParticleName -> {"Subsuperscript[e,R,-]", "Subsuperscript[\[Mu],R,-]", "Subsuperscript[\[Tau],R,-]"},
+        AntiParticleName -> {"Subsuperscript[e,R,+]", "Subsuperscript[\[Mu],R,+]", "Subsuperscript[\[Tau],R,+]"},
+	PropagatorArrow -> Forward,
+        PDG -> {11, 13, 15},
+        FullName -> {"Electron_R", "Muon_R", "Tau_R"} },
+
+	(* Quarks (u_R): I_3 = +1/2, Q = +2/3 *)
+  F[6] == {
+        ClassName -> uqR,
+        ClassMembers -> {u, c, t},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+     (* Mass -> {Mu, {MU, 2.55*^-3}, {MC,1.27}, {MT, 174.3}}, *)
+	Mass -> 0,
+        Width -> {0, 0, {WT, 1.50833649}},
+	QuantumNumbers -> {Q -> 2/3},
+	PropagatorLabel -> {"uqR", "uR", "cR", "tR"},
+	PropagatorType -> Straight,
+	PropagatorArrow -> Forward,
+        PDG -> {2, 4, 6}, 
+   	ParticleName     -> {"uR", "cR", "tR"},
+    	AntiParticleName -> {"uR~", "cR~", "tR~"},
+        FullName -> {"u-quark_R", "c-quark_R", "t-quark_R"}},
+
+	(* Quarks (d_R): I_3 = -1/2, Q = -1/3 *) 
+  F[7] == {
+        ClassName -> dqR,
+        ClassMembers -> {d, s, b},
+        FlavorIndex -> Generation,
+	SelfConjugate -> False,
+	Indices -> {Index[Generation], Index[Colour]},
+     (* Mass -> {Md, {MD,5.04*^-3}, {MS,0.101}, {MB, 4.7}}, *)
+	Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {Q -> -1/3},
+	PropagatorLabel -> {"dqR", "dR", "sR", "bR"},
+	PropagatorType -> Straight, 
+	PropagatorArrow -> Forward,
+        PDG -> {1,3,5},
+    	ParticleName     -> {"dR", "sR", "bR"},
+ 	AntiParticleName -> {"dR~", "sR~", "bR~"},
+        FullName -> {"d-quark_R", "s-quark_R", "b-quark_R"} },
+
+
+	(* Fermions: unphysical fields *)
+  F[11] == { 
+    	ClassName      -> LL, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[SU2D], Index[Generation]},
+    	FlavorIndex    -> SU2D,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> -1/2},
+    	Definitions    -> { LL[sp1_,1,ff_] :> vlL[sp1,ff], LL[sp1_,2,ff_] :> elL[sp1,ff] }},
+
+  F[12] == { 
+    	ClassName      -> lR, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[Generation]},
+    	FlavorIndex    -> Generation,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> -1},
+    	Definitions    -> { lR[sp1_,ff_] :> elR[sp1,ff] }},
+
+  F[13] == { 
+    	ClassName      -> QL, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[SU2D], Index[Generation], Index[Colour]},
+    	FlavorIndex    -> SU2D,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> 1/6},
+    	Definitions    -> { QL[sp1_,1,ff_,cc_] :> uqL[sp1,ff,cc], QL[sp1_,2,ff_,cc_] :> dqL[sp1,ff,cc] }},
+
+  F[14] == { 
+    	ClassName      -> uR, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[Generation], Index[Colour]},
+    	FlavorIndex    -> Generation,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> 2/3},
+    	Definitions    -> { uR[sp1_,ff_,cc_] :> uqR[sp1,ff,cc] }},
+
+  F[15] == { 
+    	ClassName      -> dR, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[Generation], Index[Colour]},
+    	FlavorIndex    -> Generation,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> -1/3},
+    	Definitions    -> { dR[sp1_,ff_,cc_] :> dqR[sp1,ff,cc] }},
+
+
+(************ Gauge Bosons ***************)
+	(* Gauge bosons: Q = 0 *)
+  V[1] == {
+        ClassName -> A,
+	SelfConjugate -> True,
+	Indices -> {},
+	Mass -> 0,
+        Width -> 0,
+	PropagatorLabel -> "\\gamma",
+	PropagatorType -> W,
+	PropagatorArrow -> None,
+        PDG -> 22,
+        FullName -> "Photon" },
+
+  V[2] == {
+        ClassName -> W0,
+	SelfConjugate -> True, 
+	Indices -> {},
+	Mass -> 0,
+        Width -> 0,
+	PropagatorLabel -> "W^0",
+	PropagatorType -> Sine,
+	PropagatorArrow -> None,
+        FullName -> "W^0" },
+
+	(* Gauge bosons: Q = -1 *)
+  V[3] == {
+        ClassName -> W,
+	SelfConjugate -> False,
+	Indices -> {},
+	Mass -> 0,
+        Width -> 0,
+	QuantumNumbers -> {Q -> 1},
+	PropagatorLabel -> "W",
+	PropagatorType -> Sine,
+	PropagatorArrow -> Forward,
+	ParticleName ->"W+",
+	AntiParticleName ->"W-",
+        PDG -> 24,
+        FullName -> "W" },
+
+  V[4] == {
+        ClassName -> Wi,
+
+        Unphysical -> True, 
+        Definitions -> {Wi[mu_, 1] -> (W[mu] + Wbar[mu])/Sqrt[2],
+                        Wi[mu_, 2] -> (Wbar[mu] - W[mu])/Sqrt[2]/I,
+                        Wi[mu_, 3] -> W0[mu]},
+
+        SelfConjugate -> True,
+        Indices -> {Index[SU2W]},
+        FlavorIndex -> SU2W,
+        Mass -> 0,
+        Width -> 0,
+    	ParticleName -> "W", 
+        PropagatorLabel -> "W",
+	PropagatorType -> Sine,
+	PropagatorArrow -> None,
+        FullName -> "Wi" },
+
+  V[5] == {
+        ClassName -> G,
+	SelfConjugate -> True,
+	Indices -> {Index[Gluon]},
+	Mass -> 0,
+        Width -> 0,
+    	ParticleName -> "g", 
+        PropagatorLabel -> "G",
+	PropagatorType -> C,
+	PropagatorArrow -> None,
+        PDG -> 21,
+        FullName -> "G" },
+
+  V[6] == {
+        ClassName -> B,
+	SelfConjugate -> True,
+
+        (* Definitions -> {B[mu_] -> -sw Z[mu] + cw A[mu]}, 
+        Unphysical -> True, *)
+
+	Indices -> {},
+	Mass -> 0,
+	Width -> 0,
+    	ParticleName -> "B", 
+        PropagatorLabel -> "B",
+	PropagatorType -> Sine,
+	PropagatorArrow -> None,
+        FullName -> "B" },
+
+(********** Ghosts **********)
+  U[1] == {
+	ClassName -> ghA,
+	SelfConjugate -> False,
+	Indices -> {},
+	Ghost -> A,
+	Mass -> 0,
+	QuantumNumbers -> {GhostNumber -> 1},
+	PropagatorLabel -> uA,
+	PropagatorType -> GhostDash,
+	PropagatorArrow -> Forward},
+
+  U[2] == {
+	ClassName -> ghW0,
+	SelfConjugate -> False,
+	Indices -> {},
+	Mass -> 0, 
+	Width -> 0,
+	Ghost -> W0,
+	QuantumNumbers -> {GhostNumber -> 1},
+	PropagatorLabel -> uW0,
+	PropagatorType -> GhostDash,
+	PropagatorArrow -> Forward},
+
+  U[31] == {
+	ClassName -> ghWp,
+	SelfConjugate -> False,
+	Indices -> {},
+	Mass -> 0,
+	Width -> 0,
+	Ghost -> W,
+	QuantumNumbers -> {Q-> 1, GhostNumber -> 1},
+	PropagatorLabel -> uWp,
+	PropagatorType -> GhostDash,
+	PropagatorArrow -> Forward},
+
+  U[32] == {
+	ClassName -> ghWm,
+	SelfConjugate -> False,
+	Indices -> {},
+	Mass -> 0,
+	Width -> 0,
+	Ghost -> Wbar,
+	QuantumNumbers -> {Q-> -1, GhostNumber -> 1},
+	PropagatorLabel -> uWm,
+	PropagatorType -> GhostDash,
+	PropagatorArrow -> Forward},
+
+  U[4] == {
+	ClassName -> ghG,
+	SelfConjugate -> False,
+	Indices -> {Index[Gluon]},
+	Ghost -> G,
+	Mass -> 0,
+	Width -> 0,
+	QuantumNumbers -> {GhostNumber -> 1},
+	PropagatorLabel -> uG,
+	PropagatorType -> GhostDash,
+	PropagatorArrow -> Forward},
+
+  U[5] == {
+	ClassName -> ghWi,
+
+	Unphysical -> True,
+	Definitions -> {ghWi[1] -> (ghWp + ghWm)/Sqrt[2],
+	               ghWi[2] -> (ghWm - ghWp)/Sqrt[2]/I,
+	               ghWi[3] -> ghW0},
+
+	SelfConjugate -> False,
+	Ghost -> Wi,
+	Indices -> {Index[SU2W]},
+	FlavorIndex -> SU2W,
+	Mass -> 0,
+	Width -> 0,
+	QuantumNumbers -> {GhostNumber -> 1},
+	PropagatorLabel -> uWi,
+	PropagatorType -> GhostDash},
+
+  U[6] == {
+	ClassName -> ghB,
+	SelfConjugate -> False,
+        
+	(* Unphysical -> True,
+        Definitions -> {ghB -> -sw ghZ + cw ghA}, *)
+
+	Indices -> {},
+        Ghost -> B,
+	Mass -> 0,
+	Width -> 0,
+	QuantumNumbers -> {GhostNumber -> 1},
+	PropagatorLabel -> uB,
+	PropagatorType -> GhostDash},
+
+
+(************ Scalar Fields **********)
+	(* physical Higgs: Q = 0 *) 
+  S[1] == {
+        ClassName -> H,
+	SelfConjugate -> True,
+	Mass -> {MH, 125},
+        Width -> {WH, 0.00575308848},
+	PropagatorLabel -> "H",
+	PropagatorType -> D,
+	PropagatorArrow -> None,
+        PDG -> 25,
+    	ParticleName -> "H",
+        FullName -> "H" },
+
+  S[2] == {
+        ClassName       -> G0,
+    	SelfConjugate   -> True,
+    (*	Goldstone       -> Z,
+    	Mass            -> {MZ, 91.1876},
+    	Width           -> {WZ, 2.4952},  *)
+	Mass		-> MH,
+	Width		-> WG0, 
+    	PropagatorLabel -> "Go",
+    	PropagatorType  -> D,
+    	PropagatorArrow -> None,
+    	PDG             -> 250,
+    	ParticleName    -> "G0",
+    	FullName        -> "G0" },
+
+  S[3] == {
+    	ClassName        -> GP,
+    	SelfConjugate    -> False,
+    (*	Goldstone        -> W,
+    	Mass             -> {MW, Internal},
+    	Width            -> {WW, 2.085},   *)
+	Mass		 -> MH,
+	Width		 -> WGP,
+    	QuantumNumbers   -> {Q -> 1},
+    	PropagatorLabel  -> "GP",
+    	PropagatorType   -> D,
+    	PropagatorArrow  -> None,
+    	PDG              -> 251,
+    	ParticleName     -> "G+",
+    	AntiParticleName -> "G-",
+    	FullName         -> "GP" },
+
+	(* unphysical Higgs *)
+  S[11] == { 
+    	ClassName      -> Phi, 
+    	Unphysical     -> True, 
+    	Indices        -> {Index[SU2D]},
+    	FlavorIndex    -> SU2D,
+    	SelfConjugate  -> False,
+    	QuantumNumbers -> {Y -> 1/2},
+    	Definitions    -> { Phi[1] -> - I GP, Phi[2] -> (H + I G0)/Sqrt[2] } }  (* + vev removed from H + I G0 *)
+}
+
+
+
+(*****************************************************************************************)
+
+(* SM Lagrangian *)
+
+(******************** Gauge F^2 Lagrangian terms*************************)
+LGauge := Block[{mu,nu,ii,aa}, 
+  ExpandIndices[-1/4 FS[B,mu,nu] FS[B,mu,nu] - 1/4 FS[Wi,mu,nu,ii] FS[Wi,mu,nu,ii] - 1/4 FS[G,mu,nu,aa] FS[G,mu,nu,aa], FlavorExpand->SU2W]];
+
+(*  LGauge := Block[{mu,nu,ii,aa}, 
+  -1/4 FS[B,mu,nu] FS[B,mu,nu] - 1/4 FS[Wi,mu,nu,ii] FS[Wi,mu,nu,ii] - 1/4 FS[G,mu,nu,aa] FS[G,mu,nu,aa]]; *)
+
+
+(********************* Fermion Lagrangian terms*************************)
+LFermions := Block[{mu}, 
+  ExpandIndices[I*(
+    QLbar.Ga[mu].DC[QL, mu] + LLbar.Ga[mu].DC[LL, mu] + uRbar.Ga[mu].DC[uR, mu] + dRbar.Ga[mu].DC[dR, mu] + lRbar.Ga[mu].DC[lR, mu]), 
+  FlavorExpand->{SU2W,SU2D}]/.{CKM[a_,b_] Conjugate[CKM[a_,c_]]->IndexDelta[b,c], CKM[b_,a_] Conjugate[CKM[c_,a_]]->IndexDelta[b,c]}];
+
+(* LFermions := Block[{mu}, 
+  ExpandIndices[I*(
+    QLbar.Ga[mu].DC[QL, mu] + LLbar.Ga[mu].DC[LL, mu] + uRbar.Ga[mu].DC[uR, mu] + dRbar.Ga[mu].DC[dR, mu] + lRbar.Ga[mu].DC[lR, mu]), 
+  FlavorExpand->{SU2D}]/.{CKM[a_,b_] Conjugate[CKM[a_,c_]]->IndexDelta[b,c], CKM[b_,a_] Conjugate[CKM[c_,a_]]->IndexDelta[b,c]}]; *)
+
+
+(******************** Higgs Lagrangian terms****************************)
+LHiggs := Block[{ii,mu, feynmangaugerules},
+  feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}];
+ 
+  ExpandIndices[DC[Phibar[ii],mu] DC[Phi[ii],mu] + muH^2 Phibar[ii] Phi[ii] - lam Phibar[ii] Phi[ii] Phibar[jj] Phi[jj], FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules
+ ];
+
+(* LHiggs := Block[{ii,mu, feynmangaugerules},
+  feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}];
+ 
+  ExpandIndices[DC[Phibar[ii],mu] DC[Phi[ii],mu] + muH^2 Phibar[ii] Phi[ii] - lam Phibar[ii] Phi[ii] Phibar[jj] Phi[jj]]/.feynmangaugerules
+ ];  *)  
+
+
+(*************** Yukawa Lagrangian***********************)
+LYukawa := Block[{sp,ii,jj,cc,ff1,ff2,ff3,yuk,feynmangaugerules},
+  feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}];
+ 
+  yuk = ExpandIndices[
+ (*  -yd[ff2, ff3] CKM[ff1, ff2] QLbar[sp, ii, ff1, cc].dR [sp, ff3, cc] Phi[ii] -                       CKM REMOVED       *)
+   -yd[ff1, ff3] QLbar[sp, ii, ff1, cc].dR [sp, ff3, cc] Phi[ii] - 
+    yl[ff1, ff3] LLbar[sp, ii, ff1].lR [sp, ff3] Phi[ii] - 
+    yu[ff1, ff2] QLbar[sp, ii, ff1, cc].uR [sp, ff2, cc] Phibar[jj] Eps[ii, jj], FlavorExpand -> SU2D];
+  yuk = yuk /. { CKM[a_, b_] Conjugate[CKM[a_, c_]] -> IndexDelta[b, c], CKM[b_, a_] Conjugate[CKM[c_, a_]] -> IndexDelta[b, c]};
+  yuk+HC[yuk]/.feynmangaugerules
+ ];
+
+
+(**************Ghost terms**************************)
+LGhost := Block[{LGh1,LGhw,LGhs,LGhphi,mu, generators,gh,ghbar,Vectorize,phi1,phi2,togoldstones,doublet,doublet0},
+  (* Pure gauge piece *) 	
+  LGh1 = -ghBbar.del[DC[ghB,mu],mu];
+  LGhw = -ghWibar.del[DC[ghWi,mu],mu];
+  LGhs = -ghGbar.del[DC[ghG,mu],mu];
+
+  (* Scalar pieces: see Peskin pages 739-742 *)
+  (* phi1 and phi2 are the real degrees of freedom of GP *)
+  (* Vectorize transforms a doublet in a vector in the phi-basis, i.e. the basis of real degrees of freedom *)
+  gh    = {ghB, ghWi[1], ghWi[2], ghWi[3]};
+  ghbar = {ghBbar, ghWibar[1], ghWibar[2], ghWibar[3]};
+  generators = {-I/2 g1 IdentityMatrix[2], -I/2 gw PauliSigma[1], -I/2 gw PauliSigma[2], -I/2 gw PauliSigma[3]};
+  doublet = Expand[{(-I phi1 - phi2)/Sqrt[2], Phi[2]} /. MR$Definitions /. vev -> 0]; 
+  doublet0 = {0, vev/Sqrt[2]};
+  doublet0 = {0, 0};                (* VEV PUT TO 0 IN DOUBLET0 BY HAND *)
+  Vectorize[{a_, b_}]:= Simplify[{Sqrt[2] Re[Expand[a]], Sqrt[2] Im[Expand[a]], Sqrt[2] Re[Expand[b]], Sqrt[2] Im[Expand[b]]}/.{Im[_]->0, Re[num_]->num}];
+  togoldstones := {phi1 -> (GP + GPbar)/Sqrt[2], phi2 -> (-GP + GPbar)/(I Sqrt[2])};
+  LGhphi=Plus@@Flatten[Table[-ghbar[[kkk]].gh[[lll]] Vectorize[generators[[kkk]].doublet0].Vectorize[generators[[lll]].(doublet+doublet0)],{kkk,4},{lll,4}]] /.togoldstones;
+
+ExpandIndices[ LGhs + If[FeynmanGauge, LGh1 + LGhw + LGhphi,0], FlavorExpand->SU2W]];
+	
+	
+(*********Total SM Lagrangian*******)	 	
+LSM :=  LGauge + LFermions + LHiggs + LYukawa + LGhost;
+
+
+
+(**************    USEFUL SHORT-HAND NOTATION FOR D6     ********************)
+
+HH := ExpandIndices[Phibar[ii] Phi[ii]];
+HDH[mu_] := ExpandIndices[Phibar[ii] DC[Phi[ii], mu]];
+
+HDDH[mu_] := ExpandIndices[(Phibar[jj] DC[Phi[jj], mu] - DC[Phibar[jj], mu] Phi[jj])];
+HDDIH[kk_, mu_] := ExpandIndices[(Phibar[jj] 2 Ta[kk, jj, ii] DC[Phi[ii], mu] - DC[Phibar[jj], mu] 2 Ta[kk, jj, ii] Phi[ii])];
+
+PHI := {ExpandIndices[Phi[1]], ExpandIndices[Phi[2]]};
+PHIbar := {ExpandIndices[Phibar[1]], ExpandIndices[Phibar[2]]};
+Phitilde[ii_] := Eps[ii, jj] Phibar[jj];
+
+
+PMVec = Table[PauliSigma[i], {i, 3}];   
+Wvec[mu_] := {Wi[mu, 1], Wi[mu, 2], Wi[mu, 3]};
+FSWVec[mu_,nu_] := {FS[Wi,mu,nu,1],FS[Wi,mu,nu,2],FS[Wi,mu,nu,3]};
+ 
+
+(**************    D6 LAGRANGIAN STARTING POINT     ********************)
+
+
+(**************                  1: X^3                  **************)
+
+
+LG := cG/LAMBDA^2 Module[{mu,nu,ro,a,b,c}, ExpandIndices[FSU3C[a,b,c] FS[G,mu,nu,a] FS[G,nu,ro,b] FS[G,ro,mu,c]] ];
+LGt := cGt/LAMBDA^2 Module[{al,be,mu,nu,ro,a,b,c}, ExpandIndices[FSU3C[a,b,c] Eps[mu,nu,al,be] FS[G,al,be,a] FS[G,nu,ro,b] FS[G,ro,mu,c]] ];
+
+LW := cW/LAMBDA^2 Module[{mu,nu,ro,i,j,k}, ExpandIndices[Eps[i,j,k] FS[Wi,mu,nu,i] FS[Wi,nu,ro,j] FS[Wi,ro,mu,k]] ];
+LWt := cWt/LAMBDA^2 Module[{al,be,mu,nu,ro,i,j,k}, ExpandIndices[Eps[i,j,k] Eps[mu,nu,al,be] FS[Wi,al,be,i] FS[Wi,nu,ro,j] FS[Wi,ro,mu,k]] ];
+
+LD61t := LGt + LWt;
+
+LD61 := LG + LW;
+
+
+(**************                  2: H^6                  **************)
+
+
+LH := cH/LAMBDA^2 ExpandIndices[ HH^3 ] ;
+
+LD62 := LH;
+
+
+(**************                3: H^4 D^2                **************)
+
+
+LHD := cHD/LAMBDA^2 Expand[HC[HDH[mu]] HDH[mu]];
+
+LHBOX := cHBOX/LAMBDA^2 ExpandIndices[HH DC[DC[Phibar[ii] Phi[ii], mu], mu]];
+
+LD63 := LHD + LHBOX;
+
+
+(**************                4: X^2 H^2                **************)
+
+
+LHG := cHG/LAMBDA^2 Module[{mu,nu,a}, ExpandIndices[HH FS[G,mu,nu,a] FS[G,mu,nu,a]] ];
+LHGt := cHGt/LAMBDA^2 Module[{mu,nu,ro,sig,a}, ExpandIndices[ HH Eps[mu,nu,ro,sig] FS[G,mu,nu,a] FS[G,ro,sig,a]/2] ];
+
+LHB := cHB/LAMBDA^2 Module[{mu,nu}, ExpandIndices[HH FS[B,mu,nu] FS[B,mu,nu]] ];
+LHBt := cHBt/LAMBDA^2 Module[{mu,nu,ro,sig,a}, ExpandIndices[ HH Eps[mu,nu,ro,sig] FS[B,mu,nu] FS[B,ro,sig]/2] ];
+
+LHW := cHW/LAMBDA^2 Module[{mu,nu,a}, ExpandIndices[HH FS[Wi,mu,nu,a] FS[Wi,mu,nu,a]] ];
+LHWt := cHWt/LAMBDA^2 Module[{mu,nu,ro,sig,a}, ExpandIndices[ HH Eps[mu,nu,ro,sig] FS[Wi,mu,nu,a] FS[Wi,ro,sig,a]/2] ];
+
+LHWB := cHWB/LAMBDA^2 Module[{mu,nu,i}, ExpandIndices[PHIbar.PauliSigma[i].PHI FS[Wi,mu,nu,i] FS[B,mu,nu]] ];
+LHWBt := cHWBt/LAMBDA^2 Module[{mu,nu,ro,sig,i}, ExpandIndices[ PHIbar.PauliSigma[i].PHI Eps[mu,nu,ro,sig] FS[Wi,mu,nu,i] FS[B,ro,sig]/2] ];
+
+LD64t := LHGt + LHBt + LHWt + LHWBt;
+
+LD64 := LHG + LHB + LHW + LHWB;
+
+
+(**************               5: psi^2 H^3               **************)
+
+
+luH11 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].uR[s,1,c] Phitilde[i] HH] ];
+luH12 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].uR[s,2,c] Phitilde[i] HH] ];
+luH13 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].uR[s,3,c] Phitilde[i] HH] ];
+luH21 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].uR[s,1,c] Phitilde[i] HH] ];
+luH22 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].uR[s,2,c] Phitilde[i] HH] ];
+luH23 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].uR[s,3,c] Phitilde[i] HH] ];
+luH31 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].uR[s,1,c] Phitilde[i] HH] ];
+luH32 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].uR[s,2,c] Phitilde[i] HH] ];
+luH33 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].uR[s,3,c] Phitilde[i] HH] ];
+LuH11 = cuH11/LAMBDA^2 (luH11 + HC[luH11]);
+LuH12 = cuH12/LAMBDA^2 (luH12 + HC[luH12]);
+LuH13 = cuH13/LAMBDA^2 (luH13 + HC[luH13]);
+LuH21 = cuH21/LAMBDA^2 (luH21 + HC[luH21]);
+LuH22 = cuH22/LAMBDA^2 (luH22 + HC[luH22]);
+LuH23 = cuH23/LAMBDA^2 (luH23 + HC[luH23]);
+LuH31 = cuH31/LAMBDA^2 (luH31 + HC[luH31]);
+LuH32 = cuH32/LAMBDA^2 (luH32 + HC[luH32]);
+LuH33 = cuH33/LAMBDA^2 (luH33 + HC[luH33]);
+LuH = LuH11 + LuH12 + LuH13 + LuH21 + LuH22 + LuH23 + LuH31 + LuH32 + LuH33;
+
+ldH11 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].dR[s,1,c] Phi[i] HH] ];
+ldH12 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].dR[s,2,c] Phi[i] HH] ];
+ldH13 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,1,c].dR[s,3,c] Phi[i] HH] ];
+ldH21 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].dR[s,1,c] Phi[i] HH] ];
+ldH22 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].dR[s,2,c] Phi[i] HH] ];
+ldH23 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,2,c].dR[s,3,c] Phi[i] HH] ];
+ldH31 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].dR[s,1,c] Phi[i] HH] ];
+ldH32 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].dR[s,2,c] Phi[i] HH] ];
+ldH33 = Module[{s,i,c}, ExpandIndices[QLbar[s,i,3,c].dR[s,3,c] Phi[i] HH] ];
+LdH11 = cdH11/LAMBDA^2 (ldH11 + HC[ldH11]);
+LdH12 = cdH12/LAMBDA^2 (ldH12 + HC[ldH12]);
+LdH13 = cdH13/LAMBDA^2 (ldH13 + HC[ldH13]);
+LdH21 = cdH21/LAMBDA^2 (ldH21 + HC[ldH21]);
+LdH22 = cdH22/LAMBDA^2 (ldH22 + HC[ldH22]);
+LdH23 = cdH23/LAMBDA^2 (ldH23 + HC[ldH23]);
+LdH31 = cdH31/LAMBDA^2 (ldH31 + HC[ldH31]);
+LdH32 = cdH32/LAMBDA^2 (ldH32 + HC[ldH32]);
+LdH33 = cdH33/LAMBDA^2 (ldH33 + HC[ldH33]);
+LdH = LdH11 + LdH12 + LdH13 + LdH21 + LdH22 + LdH23 + LdH31 + LdH32 + LdH33;
+
+leH11 = Module[{s,i}, ExpandIndices[LLbar[s,i,1].lR[s,1] Phi[i] HH] ];
+leH12 = Module[{s,i}, ExpandIndices[LLbar[s,i,1].lR[s,2] Phi[i] HH] ];
+leH13 = Module[{s,i}, ExpandIndices[LLbar[s,i,1].lR[s,3] Phi[i] HH] ];
+leH21 = Module[{s,i}, ExpandIndices[LLbar[s,i,2].lR[s,1] Phi[i] HH] ];
+leH22 = Module[{s,i}, ExpandIndices[LLbar[s,i,2].lR[s,2] Phi[i] HH] ];
+leH23 = Module[{s,i}, ExpandIndices[LLbar[s,i,2].lR[s,3] Phi[i] HH] ];
+leH31 = Module[{s,i}, ExpandIndices[LLbar[s,i,3].lR[s,1] Phi[i] HH] ];
+leH32 = Module[{s,i}, ExpandIndices[LLbar[s,i,3].lR[s,2] Phi[i] HH] ];
+leH33 = Module[{s,i}, ExpandIndices[LLbar[s,i,3].lR[s,3] Phi[i] HH] ];
+LeH11 = ceH11/LAMBDA^2 (leH11 + HC[leH11]);
+LeH12 = ceH12/LAMBDA^2 (leH12 + HC[leH12]);
+LeH13 = ceH13/LAMBDA^2 (leH13 + HC[leH13]);
+LeH21 = ceH21/LAMBDA^2 (leH21 + HC[leH21]);
+LeH22 = ceH22/LAMBDA^2 (leH22 + HC[leH22]);
+LeH23 = ceH23/LAMBDA^2 (leH23 + HC[leH23]);
+LeH31 = ceH31/LAMBDA^2 (leH31 + HC[leH31]);
+LeH32 = ceH32/LAMBDA^2 (leH32 + HC[leH32]);
+LeH33 = ceH33/LAMBDA^2 (leH33 + HC[leH33]);
+LeH = LeH11 + LeH12 + LeH13 + LeH21 + LeH22 + LeH23 + LeH31 + LeH32 + LeH33;
+
+LD65 := LuH + LdH + LeH;
+
+
+(**************                6: psi^2 X H                **************)
+
+
+leW11 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,1].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW12 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,1].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW13 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,1].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW21 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,2].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW22 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,2].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW23 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,2].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW31 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,3].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW32 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,3].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+leW33 := I Module[{mu,nu,r,s,t,i,j,k}, LLbar[r,j,3].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+LeW11 := ceW11/LAMBDA^2 (leW11 + HC[leW11]);
+LeW12 := ceW12/LAMBDA^2 (leW12 + HC[leW12]);
+LeW13 := ceW13/LAMBDA^2 (leW13 + HC[leW13]);
+LeW21 := ceW21/LAMBDA^2 (leW21 + HC[leW21]);
+LeW22 := ceW22/LAMBDA^2 (leW22 + HC[leW22]);
+LeW23 := ceW23/LAMBDA^2 (leW23 + HC[leW23]);
+LeW31 := ceW31/LAMBDA^2 (leW31 + HC[leW31]);
+LeW32 := ceW32/LAMBDA^2 (leW32 + HC[leW32]);
+LeW33 := ceW33/LAMBDA^2 (leW33 + HC[leW33]);
+LeW := LeW11 + LeW12 + LeW13 + LeW21 + LeW22 + LeW23 + LeW31 + LeW32 + LeW33;
+
+leB11 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,1].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB12 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,1].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB13 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,1].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB21 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,2].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB22 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,2].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB23 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,2].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB31 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,3].lR[s,1] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB32 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,3].lR[s,2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+leB33 := I Module[{mu,nu,r,s,t,i,j}, LLbar[r,j,3].lR[s,3] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+LeB11 := ceB11/LAMBDA^2 (leB11 + HC[leB11]);
+LeB12 := ceB12/LAMBDA^2 (leB12 + HC[leB12]);
+LeB13 := ceB13/LAMBDA^2 (leB13 + HC[leB13]);
+LeB21 := ceB21/LAMBDA^2 (leB21 + HC[leB21]);
+LeB22 := ceB22/LAMBDA^2 (leB22 + HC[leB22]);
+LeB23 := ceB23/LAMBDA^2 (leB23 + HC[leB23]);
+LeB31 := ceB31/LAMBDA^2 (leB31 + HC[leB31]);
+LeB32 := ceB32/LAMBDA^2 (leB32 + HC[leB32]);
+LeB33 := ceB33/LAMBDA^2 (leB33 + HC[leB33]);
+LeB := LeB11 + LeB12 + LeB13 + LeB21 + LeB22 + LeB23 + LeB31 + LeB32 + LeB33;
+
+luG11 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].uR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG12 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].uR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG13 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].uR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG21 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].uR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG22 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].uR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG23 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].uR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG31 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].uR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG32 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].uR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+luG33 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].uR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phitilde[j] FS[G,mu,nu,a] ];
+LuG11 := cuG11/LAMBDA^2 (luG11 + HC[luG11]);
+LuG12 := cuG12/LAMBDA^2 (luG12 + HC[luG12]);
+LuG13 := cuG13/LAMBDA^2 (luG13 + HC[luG13]);
+LuG21 := cuG21/LAMBDA^2 (luG21 + HC[luG21]);
+LuG22 := cuG22/LAMBDA^2 (luG22 + HC[luG22]);
+LuG23 := cuG23/LAMBDA^2 (luG23 + HC[luG23]);
+LuG31 := cuG31/LAMBDA^2 (luG31 + HC[luG31]);
+LuG32 := cuG32/LAMBDA^2 (luG32 + HC[luG32]);
+LuG33 := cuG33/LAMBDA^2 (luG33 + HC[luG33]);
+LuG := LuG11 + LuG12 + LuG13 + LuG21 + LuG22 + LuG23 + LuG31 + LuG32 + LuG33;
+
+luW11 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW12 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW13 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW21 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW22 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW23 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW31 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW32 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+luW33 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phitilde[k] FS[Wi,mu,nu,i] ];
+LuW11 := cuW11/LAMBDA^2 (luW11 + HC[luW11]);
+LuW12 := cuW12/LAMBDA^2 (luW12 + HC[luW12]);
+LuW13 := cuW13/LAMBDA^2 (luW13 + HC[luW13]);
+LuW21 := cuW21/LAMBDA^2 (luW21 + HC[luW21]);
+LuW22 := cuW22/LAMBDA^2 (luW22 + HC[luW22]);
+LuW23 := cuW23/LAMBDA^2 (luW23 + HC[luW23]);
+LuW31 := cuW31/LAMBDA^2 (luW31 + HC[luW31]);
+LuW32 := cuW32/LAMBDA^2 (luW32 + HC[luW32]);
+LuW33 := cuW33/LAMBDA^2 (luW33 + HC[luW33]);
+LuW := LuW11 + LuW12 + LuW13 + LuW21 + LuW22 + LuW23 + LuW31 + LuW32 + LuW33;
+
+luB11 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB12 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB13 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB21 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB22 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB23 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB31 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].uR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB32 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].uR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+luB33 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].uR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phitilde[j] FS[B,mu,nu] ];
+LuB11 := cuB11/LAMBDA^2 (luB11 + HC[luB11]);
+LuB12 := cuB12/LAMBDA^2 (luB12 + HC[luB12]);
+LuB13 := cuB13/LAMBDA^2 (luB13 + HC[luB13]);
+LuB21 := cuB21/LAMBDA^2 (luB21 + HC[luB21]);
+LuB22 := cuB22/LAMBDA^2 (luB22 + HC[luB22]);
+LuB23 := cuB23/LAMBDA^2 (luB23 + HC[luB23]);
+LuB31 := cuB31/LAMBDA^2 (luB31 + HC[luB31]);
+LuB32 := cuB32/LAMBDA^2 (luB32 + HC[luB32]);
+LuB33 := cuB33/LAMBDA^2 (luB33 + HC[luB33]);
+LuB := LuB11 + LuB12 + LuB13 + LuB21 + LuB22 + LuB23 + LuB31 + LuB32 + LuB33;
+
+ldG11 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].dR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG12 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].dR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG13 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,1,c1].dR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG21 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].dR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG22 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].dR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG23 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,2,c1].dR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG31 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].dR[s,1,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG32 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].dR[s,2,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+ldG33 := I Module[{mu,nu,r,s,t,i,j,a,c1,c2}, QLbar[r,j,3,c1].dR[s,3,c2] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) T[a,c1,c2] Phi[j] FS[G,mu,nu,a] ];
+LdG11 := cdG11/LAMBDA^2 (ldG11 + HC[ldG11]);
+LdG12 := cdG12/LAMBDA^2 (ldG12 + HC[ldG12]);
+LdG13 := cdG13/LAMBDA^2 (ldG13 + HC[ldG13]);
+LdG21 := cdG21/LAMBDA^2 (ldG21 + HC[ldG21]);
+LdG22 := cdG22/LAMBDA^2 (ldG22 + HC[ldG22]);
+LdG23 := cdG23/LAMBDA^2 (ldG23 + HC[ldG23]);
+LdG31 := cdG31/LAMBDA^2 (ldG31 + HC[ldG31]);
+LdG32 := cdG32/LAMBDA^2 (ldG32 + HC[ldG32]);
+LdG33 := cdG33/LAMBDA^2 (ldG33 + HC[ldG33]);
+LdG := LdG11 + LdG12 + LdG13 + LdG21 + LdG22 + LdG23 + LdG31 + LdG32 + LdG33;
+
+ldW11 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW12 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW13 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,1,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW21 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW22 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW23 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,2,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW31 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW32 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+ldW33 := I Module[{mu,nu,r,s,t,i,j,k,c}, QLbar[r,j,3,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) 2 Ta[i,j,k] Phi[k] FS[Wi,mu,nu,i] ];
+LdW11 := cdW11/LAMBDA^2 (ldW11 + HC[ldW11]);
+LdW12 := cdW12/LAMBDA^2 (ldW12 + HC[ldW12]);
+LdW13 := cdW13/LAMBDA^2 (ldW13 + HC[ldW13]);
+LdW21 := cdW21/LAMBDA^2 (ldW21 + HC[ldW21]);
+LdW22 := cdW22/LAMBDA^2 (ldW22 + HC[ldW22]);
+LdW23 := cdW23/LAMBDA^2 (ldW23 + HC[ldW23]);
+LdW31 := cdW31/LAMBDA^2 (ldW31 + HC[ldW31]);
+LdW32 := cdW32/LAMBDA^2 (ldW32 + HC[ldW32]);
+LdW33 := cdW33/LAMBDA^2 (ldW33 + HC[ldW33]);
+LdW := LdW11 + LdW12 + LdW13 + LdW21 + LdW22 + LdW23 + LdW31 + LdW32 + LdW33;
+
+ldB11 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB12 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB13 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,1,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB21 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB22 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB23 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,2,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB31 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].dR[s,1,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB32 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].dR[s,2,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+ldB33 := I Module[{mu,nu,r,s,t,i,j,c}, QLbar[r,j,3,c].dR[s,3,c] I/2 (Ga[mu, r, t] Ga[nu, t, s] - Ga[nu, r, t] Ga[mu, t, s]) Phi[j] FS[B,mu,nu] ];
+LdB11 := cdB11/LAMBDA^2 (ldB11 + HC[ldB11]);
+LdB12 := cdB12/LAMBDA^2 (ldB12 + HC[ldB12]);
+LdB13 := cdB13/LAMBDA^2 (ldB13 + HC[ldB13]);
+LdB21 := cdB21/LAMBDA^2 (ldB21 + HC[ldB21]);
+LdB22 := cdB22/LAMBDA^2 (ldB22 + HC[ldB22]);
+LdB23 := cdB23/LAMBDA^2 (ldB23 + HC[ldB23]);
+LdB31 := cdB31/LAMBDA^2 (ldB31 + HC[ldB31]);
+LdB32 := cdB32/LAMBDA^2 (ldB32 + HC[ldB32]);
+LdB33 := cdB33/LAMBDA^2 (ldB33 + HC[ldB33]);
+LdB := LdB11 + LdB12 + LdB13 + LdB21 + LdB22 + LdB23 + LdB31 + LdB32 + LdB33;
+
+LD66 := LeW + LeB + LuG + LuW + LuB + LdG + LdW + LdB;
+
+
+(**************               7: psi^2 H^2 D               **************)
+
+
+LHl111 := I cHl111/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])]];
+LHl112 := I cHl112/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,1].LL[s,i,2]Ga[mu,r,s])]];
+LHl113 := I cHl113/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])]];
+LHl121 := I cHl121/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,2].LL[s,i,1]Ga[mu,r,s])]];
+LHl122 := I cHl122/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])]];
+LHl123 := I cHl123/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])]];
+LHl131 := I cHl131/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])]];
+LHl132 := I cHl132/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])]];
+LHl133 := I cHl133/LAMBDA^2 Module[{mu,r,i,s}, ExpandIndices[HDDH[mu](LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])]];
+LHl1 := LHl111 + LHl112 + LHl113 + LHl121 + LHl122 + LHl123 + LHl131 + LHl132 + LHl133;
+
+LHl311 := I cHl311/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,1].LL[s,i,1] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl312 := I cHl312/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,1].LL[s,i,2] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl313 := I cHl313/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,1].LL[s,i,3] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl321 := I cHl321/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,2].LL[s,i,1] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl322 := I cHl322/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,2].LL[s,i,2] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl323 := I cHl323/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,2].LL[s,i,3] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl331 := I cHl331/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,3].LL[s,i,1] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl332 := I cHl332/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,3].LL[s,i,2] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl333 := I cHl333/LAMBDA^2 Module[{mu,kk,r,i,j,s}, ExpandIndices[HDDIH[kk,mu](LLbar[r,j,3].LL[s,i,3] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHl3 := LHl311 + LHl312 + LHl313 + LHl321 + LHl322 + LHl323 + LHl331 + LHl332 + LHl333;
+
+LHe11 := I cHe11/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,1].lR[s,1]Ga[mu,r,s])]];
+LHe12 := I cHe12/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,1].lR[s,2]Ga[mu,r,s])]];
+LHe13 := I cHe13/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,1].lR[s,3]Ga[mu,r,s])]];
+LHe21 := I cHe21/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,2].lR[s,1]Ga[mu,r,s])]];
+LHe22 := I cHe22/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,2].lR[s,2]Ga[mu,r,s])]];
+LHe23 := I cHe23/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,2].lR[s,3]Ga[mu,r,s])]];
+LHe31 := I cHe31/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,3].lR[s,1]Ga[mu,r,s])]];
+LHe32 := I cHe32/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,3].lR[s,2]Ga[mu,r,s])]];
+LHe33 := I cHe33/LAMBDA^2 Module[{mu,r,s}, ExpandIndices[HDDH[mu](lRbar[r,3].lR[s,3]Ga[mu,r,s])]];
+LHe := LHe11 + LHe12 + LHe13 + LHe21 + LHe22 + LHe23 + LHe31 + LHe32 + LHe33;
+
+LHq111 := I cHq111/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,1,j].QL[s,i,1,j]Ga[mu,r,s])]];
+LHq112 := I cHq112/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,1,j].QL[s,i,2,j]Ga[mu,r,s])]];
+LHq113 := I cHq113/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,1,j].QL[s,i,3,j]Ga[mu,r,s])]];
+LHq121 := I cHq121/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,2,j].QL[s,i,1,j]Ga[mu,r,s])]];
+LHq122 := I cHq122/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,2,j].QL[s,i,2,j]Ga[mu,r,s])]];
+LHq123 := I cHq123/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,2,j].QL[s,i,3,j]Ga[mu,r,s])]];
+LHq131 := I cHq131/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,3,j].QL[s,i,1,j]Ga[mu,r,s])]];
+LHq132 := I cHq132/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,3,j].QL[s,i,2,j]Ga[mu,r,s])]];
+LHq133 := I cHq133/LAMBDA^2 Module[{mu,r,i,j,s}, ExpandIndices[HDDH[mu](QLbar[r,i,3,j].QL[s,i,3,j]Ga[mu,r,s])]];
+LHq1 := LHq111 + LHq112 + LHq113 + LHq121 + LHq122 + LHq123 + LHq131 + LHq132 + LHq133;
+
+LHq311 := I cHq311/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,1,c].QL[s,i,1,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq312 := I cHq312/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,1,c].QL[s,i,2,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq313 := I cHq313/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,1,c].QL[s,i,3,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq321 := I cHq321/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,2,c].QL[s,i,1,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq322 := I cHq322/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,2,c].QL[s,i,2,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq323 := I cHq323/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,2,c].QL[s,i,3,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq331 := I cHq331/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,3,c].QL[s,i,1,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq332 := I cHq332/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,3,c].QL[s,i,2,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq333 := I cHq333/LAMBDA^2 Module[{mu,kk,r,i,j,s,c}, ExpandIndices[HDDIH[kk,mu](QLbar[r,j,3,c].QL[s,i,3,c] 2 Ta[kk, j, i] Ga[mu,r,s])]];
+LHq3 := LHq311 + LHq312 + LHq313 + LHq321 + LHq322 + LHq323 + LHq331 + LHq332 + LHq333;
+
+LHu11 := I cHu11/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,1,j].uR[s,1,j]Ga[mu,r,s])]];
+LHu12 := I cHu12/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,1,j].uR[s,2,j]Ga[mu,r,s])]];
+LHu13 := I cHu13/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,1,j].uR[s,3,j]Ga[mu,r,s])]];
+LHu21 := I cHu21/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,2,j].uR[s,1,j]Ga[mu,r,s])]];
+LHu22 := I cHu22/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,2,j].uR[s,2,j]Ga[mu,r,s])]];
+LHu23 := I cHu23/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,2,j].uR[s,3,j]Ga[mu,r,s])]];
+LHu31 := I cHu31/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,3,j].uR[s,1,j]Ga[mu,r,s])]];
+LHu32 := I cHu32/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,3,j].uR[s,2,j]Ga[mu,r,s])]];
+LHu33 := I cHu33/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](uRbar[r,3,j].uR[s,3,j]Ga[mu,r,s])]];
+LHu := LHu11 + LHu12 + LHu13 + LHu21 + LHu22 + LHu23 + LHu31 + LHu32 + LHu33;
+
+LHd11 := I cHd11/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,1,j].dR[s,1,j]Ga[mu,r,s])]];
+LHd12 := I cHd12/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,1,j].dR[s,2,j]Ga[mu,r,s])]];
+LHd13 := I cHd13/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,1,j].dR[s,3,j]Ga[mu,r,s])]];
+LHd21 := I cHd21/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,2,j].dR[s,1,j]Ga[mu,r,s])]];
+LHd22 := I cHd22/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,2,j].dR[s,2,j]Ga[mu,r,s])]];
+LHd23 := I cHd23/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,2,j].dR[s,3,j]Ga[mu,r,s])]];
+LHd31 := I cHd31/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,3,j].dR[s,1,j]Ga[mu,r,s])]];
+LHd32 := I cHd32/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,3,j].dR[s,2,j]Ga[mu,r,s])]];
+LHd33 := I cHd33/LAMBDA^2 Module[{mu,r,j,s}, ExpandIndices[HDDH[mu](dRbar[r,3,j].dR[s,3,j]Ga[mu,r,s])]];
+LHd := LHd11 + LHd12 + LHd13 + LHd21 + LHd22 + LHd23 + LHd31 + LHd32 + LHd33;
+
+lHud11 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,1,j].dR[s,1,j]Ga[mu,r,s])]];
+lHud12 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,1,j].dR[s,2,j]Ga[mu,r,s])]];
+lHud13 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,1,j].dR[s,3,j]Ga[mu,r,s])]];
+lHud21 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,2,j].dR[s,1,j]Ga[mu,r,s])]];
+lHud22 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,2,j].dR[s,2,j]Ga[mu,r,s])]];
+lHud23 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,2,j].dR[s,3,j]Ga[mu,r,s])]];
+lHud31 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,3,j].dR[s,1,j]Ga[mu,r,s])]];
+lHud32 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,3,j].dR[s,2,j]Ga[mu,r,s])]];
+lHud33 := I Module[{ii,mu,r,j,s}, ExpandIndices[HC[Phitilde[ii]] DC[Phi[ii], mu](uRbar[r,3,j].dR[s,3,j]Ga[mu,r,s])]];
+LHud11 := cHud11/LAMBDA^2 (lHud11 + HC[lHud11]);
+LHud12 := cHud12/LAMBDA^2 (lHud12 + HC[lHud12]);
+LHud13 := cHud13/LAMBDA^2 (lHud13 + HC[lHud13]);
+LHud21 := cHud21/LAMBDA^2 (lHud21 + HC[lHud21]);
+LHud22 := cHud22/LAMBDA^2 (lHud22 + HC[lHud22]);
+LHud23 := cHud23/LAMBDA^2 (lHud23 + HC[lHud23]);
+LHud31 := cHud31/LAMBDA^2 (lHud31 + HC[lHud31]);
+LHud32 := cHud32/LAMBDA^2 (lHud32 + HC[lHud32]);
+LHud33 := cHud33/LAMBDA^2 (lHud33 + HC[lHud33]);
+LHud := LHud11 + LHud12 + LHud13 + LHud21 + LHud22 + LHud23 + LHud31 + LHud32 + LHud33;
+
+LD67 := LHl1 + LHl3 + LHe + LHq1 + LHq3 + LHu + LHd + LHud;
+
+
+(**************               8 LLLL: psi^4               **************)
+
+
+Lll1111 := cll1111/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(LLbar[t,j,1].LL[u,j,1]Ga[mu,t,u])]];
+Lll1123 := cll1123/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(LLbar[t,j,2].LL[u,j,3]Ga[mu,t,u])]];
+Lll1133 := cll1133/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(LLbar[t,j,3].LL[u,j,3]Ga[mu,t,u])]];
+Lll1331 := cll1331/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,3].LL[u,j,1]Ga[mu,t,u])]];
+Lll2233 := cll2233/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])(LLbar[t,j,3].LL[u,j,3]Ga[mu,t,u])]];
+Lll2332 := cll2332/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,3].LL[u,j,2]Ga[mu,t,u])]];
+Lll3113 := cll3113/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])(LLbar[t,j,1].LL[u,j,3]Ga[mu,t,u])]];
+Lll3223 := cll3223/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])(LLbar[t,j,2].LL[u,j,3]Ga[mu,t,u])]];
+Lll3311 := cll3311/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,1].LL[u,j,1]Ga[mu,t,u])]];
+Lll3322 := cll3322/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,2].LL[u,j,2]Ga[mu,t,u])]];
+Lll3323 := cll3323/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,2].LL[u,j,3]Ga[mu,t,u])]];
+Lll3333 := cll3333/LAMBDA^2 Module[{mu,r,i,j,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(LLbar[t,j,3].LL[u,j,3]Ga[mu,t,u])]];
+Lll := Lll1111 + Lll1123 + Lll1133 + Lll1331 + Lll2233 + Lll2332 + Lll3113 + Lll3223 + Lll3311 + Lll3322 + Lll3333;
+
+Lqq11111 := cqq11111/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(QLbar[t,j,1,c2].QL[u,j,1,c2]Ga[mu,t,u])]];
+Lqq11133 := cqq11133/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(QLbar[t,j,3,c2].QL[u,j,3,c2]Ga[mu,t,u])]];
+Lqq11331 := cqq11331/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,3,c1]Ga[mu,r,s])(QLbar[t,j,3,c2].QL[u,j,1,c2]Ga[mu,t,u])]];
+Lqq12233 := cqq12233/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,2,c1]Ga[mu,r,s])(QLbar[t,j,3,c2].QL[u,j,3,c2]Ga[mu,t,u])]];
+Lqq12332 := cqq12332/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,3,c1]Ga[mu,r,s])(QLbar[t,j,3,c2].QL[u,j,2,c2]Ga[mu,t,u])]];
+Lqq13113 := cqq13113/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,1,c1]Ga[mu,r,s])(QLbar[t,j,1,c2].QL[u,j,3,c2]Ga[mu,t,u])]];
+Lqq13223 := cqq13223/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,2,c1]Ga[mu,r,s])(QLbar[t,j,2,c2].QL[u,j,3,c2]Ga[mu,t,u])]];
+Lqq13311 := cqq13311/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(QLbar[t,j,1,c2].QL[u,j,1,c2]Ga[mu,t,u])]];
+Lqq13322 := cqq13322/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(QLbar[t,j,2,c2].QL[u,j,2,c2]Ga[mu,t,u])]];
+Lqq13333 := cqq13333/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(QLbar[t,j,3,c2].QL[u,j,3,c2]Ga[mu,t,u])]];
+Lqq1 := Lqq11111 + Lqq11133 + Lqq11331 + Lqq12233 + Lqq12332 + Lqq13113 + Lqq13223 + Lqq13311 + Lqq13322 + Lqq13333;
+
+Lqq31111 := cqq31111/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,1,c1].QL[s,k,1,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c2].QL[u,m,1,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq31133 := cqq31133/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,1,c1].QL[s,k,1,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c2].QL[u,m,3,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq31331 := cqq31331/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,1,c1].QL[s,k,3,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c2].QL[u,m,1,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq32233 := cqq32233/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,2,c1].QL[s,k,2,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c2].QL[u,m,3,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq32332 := cqq32332/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,2,c1].QL[s,k,3,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c2].QL[u,m,2,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq33113 := cqq33113/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,3,c1].QL[s,k,1,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c2].QL[u,m,3,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq33223 := cqq33223/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,3,c1].QL[s,k,2,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,2,c2].QL[u,m,3,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq33311 := cqq33311/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,3,c1].QL[s,k,3,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c2].QL[u,m,1,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq33322 := cqq33322/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,3,c1].QL[s,k,3,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,2,c2].QL[u,m,2,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq33333 := cqq33333/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,j,3,c1].QL[s,k,3,c1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c2].QL[u,m,3,c2]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Lqq3 := Lqq31111 + Lqq31133 + Lqq31331 + Lqq32233 + Lqq32332 + Lqq33113 + Lqq33223 + Lqq33311 + Lqq33322 + Lqq33333;
+
+Llq11111 := clq11111/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(QLbar[t,j,1,c].QL[u,j,1,c]Ga[mu,t,u])]];
+Llq11133 := clq11133/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(QLbar[t,j,3,c].QL[u,j,3,c]Ga[mu,t,u])]];
+Llq11331 := clq11331/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])(QLbar[t,j,3,c].QL[u,j,1,c]Ga[mu,t,u])]];
+Llq12233 := clq12233/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])(QLbar[t,j,3,c].QL[u,j,3,c]Ga[mu,t,u])]];
+Llq12332 := clq12332/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])(QLbar[t,j,3,c].QL[u,j,2,c]Ga[mu,t,u])]];
+Llq13113 := clq13113/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])(QLbar[t,j,1,c].QL[u,j,3,c]Ga[mu,t,u])]];
+Llq13223 := clq13223/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])(QLbar[t,j,2,c].QL[u,j,3,c]Ga[mu,t,u])]];
+Llq13311 := clq13311/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(QLbar[t,j,1,c].QL[u,j,1,c]Ga[mu,t,u])]];
+Llq13322 := clq13322/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(QLbar[t,j,2,c].QL[u,j,2,c]Ga[mu,t,u])]];
+Llq13333 := clq13333/LAMBDA^2 Module[{mu,r,i,j,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(QLbar[t,j,3,c].QL[u,j,3,c]Ga[mu,t,u])]];
+Llq1 := Llq11111 + Llq11133 + Llq11331 + Llq12233 + Llq12332 + Llq13113 + Llq13223 + Llq13311 + Llq13322 + Llq13333;
+
+Llq31111 := clq31111/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,1].LL[s,k,1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c].QL[u,m,1,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq31133 := clq31133/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,1].LL[s,k,1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c].QL[u,m,3,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq31331 := clq31331/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,1].LL[s,k,3]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c].QL[u,m,1,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq32233 := clq32233/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,2].LL[s,k,2]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c].QL[u,m,3,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq32332 := clq32332/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,2].LL[s,k,3]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c].QL[u,m,2,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq33113 := clq33113/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,3].LL[s,k,1]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c].QL[u,m,3,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq33223 := clq33223/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,3].LL[s,k,2]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,2,c].QL[u,m,3,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq33311 := clq33311/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,3].LL[s,k,3]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,1,c].QL[u,m,1,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq33322 := clq33322/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,3].LL[s,k,3]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,2,c].QL[u,m,2,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq33333 := clq33333/LAMBDA^2 Module[{mu,r,i,j,k,l,m,s,t,u,c}, ExpandIndices[(LLbar[r,j,3].LL[s,k,3]Ga[mu,r,s] 2 Ta[i,j,k])(QLbar[t,l,3,c].QL[u,m,3,c]Ga[mu,t,u] 2 Ta[i,l,m])]];
+Llq3 := Llq31111 + Llq31133 + Llq31331 + Llq32233 + Llq32332 + Llq33113 + Llq33223 + Llq33311 + Llq33322 + Llq33333;
+
+LD68LLLL := Lll + Lqq1 + Lqq3 + Llq1 + Llq3;
+
+
+(**************               8 RRRR: psi^4               **************)
+
+
+Lee1111 := cee1111/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lee1133 := cee1133/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lee1331 := cee1331/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,1].lR[s,3]Ga[mu,r,s])(lRbar[t,3].lR[u,1]Ga[mu,t,u])]];
+Lee2233 := cee2233/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,2].lR[s,2]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lee2332 := cee2332/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,2].lR[s,3]Ga[mu,r,s])(lRbar[t,3].lR[u,2]Ga[mu,t,u])]];
+Lee3113 := cee3113/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,3].lR[s,1]Ga[mu,r,s])(lRbar[t,1].lR[u,3]Ga[mu,t,u])]];
+Lee3223 := cee3223/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,3].lR[s,2]Ga[mu,r,s])(lRbar[t,2].lR[u,3]Ga[mu,t,u])]];
+Lee3311 := cee3311/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lee3322 := cee3322/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(lRbar[t,2].lR[u,2]Ga[mu,t,u])]];
+Lee3333 := cee3333/LAMBDA^2 Module[{mu,r,s,t,u}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lee := Lee1111 + Lee1133 + Lee1331 + Lee2233 + Lee2332 + Lee3113 + Lee3223 + Lee3311 + Lee3322 + Lee3333;
+
+Luu1111 := cuu1111/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Luu1133 := cuu1133/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Luu1331 := cuu1331/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Luu2233 := cuu2233/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,2,c1].uR[s,2,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Luu2332 := cuu2332/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,2,c1].uR[s,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,2,c2]Ga[mu,t,u])]];
+Luu3113 := cuu3113/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,1,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Luu3223 := cuu3223/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,2,c1]Ga[mu,r,s])(uRbar[t,2,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Luu3311 := cuu3311/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Luu3322 := cuu3322/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(uRbar[t,2,c2].uR[u,2,c2]Ga[mu,t,u])]];
+Luu3333 := cuu3333/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Luu := Luu1111 + Luu1133 + Luu1331 + Luu2233 + Luu2332 + Luu3113 + Luu3223 + Luu3311 + Luu3322 + Luu3333;
+
+Ldd1111 := cdd1111/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,1,c1].dR[s,1,c1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Ldd1133 := cdd1133/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,1,c1].dR[s,1,c1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Ldd1331 := cdd1331/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,1,c1].dR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,1,c]Ga[mu,t,u])]];
+Ldd2233 := cdd2233/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,2,c1].dR[s,2,c1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Ldd2332 := cdd2332/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,2,c1].dR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,2,c]Ga[mu,t,u])]];
+Ldd3113 := cdd3113/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,3,c1].dR[s,1,c1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,3,c]Ga[mu,t,u])]];
+Ldd3223 := cdd3223/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,3,c1].dR[s,2,c1]Ga[mu,r,s])(dRbar[t,2,c].dR[u,3,c]Ga[mu,t,u])]];
+Ldd3311 := cdd3311/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,3,c1].dR[s,3,c1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Ldd3322 := cdd3322/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,3,c1].dR[s,3,c1]Ga[mu,r,s])(dRbar[t,2,c].dR[u,2,c]Ga[mu,t,u])]];
+Ldd3333 := cdd3333/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(dRbar[r,3,c1].dR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Ldd := Ldd1111 + Ldd1133 + Ldd1331 + Ldd2233 + Ldd2332 + Ldd3113 + Ldd3223 + Ldd3311 + Ldd3322 + Ldd3333;
+
+Leu1111 := ceu1111/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(uRbar[t,1,c].uR[u,1,c]Ga[mu,t,u])]];
+Leu1133 := ceu1133/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Leu1331 := ceu1331/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,1,c]Ga[mu,t,u])]];
+Leu2233 := ceu2233/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,2].lR[s,2]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Leu2332 := ceu2332/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,2].lR[s,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,2,c]Ga[mu,t,u])]];
+Leu3113 := ceu3113/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,1]Ga[mu,r,s])(uRbar[t,1,c].uR[u,3,c]Ga[mu,t,u])]];
+Leu3223 := ceu3223/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,2]Ga[mu,r,s])(uRbar[t,2,c].uR[u,3,c]Ga[mu,t,u])]];
+Leu3311 := ceu3311/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(uRbar[t,1,c].uR[u,1,c]Ga[mu,t,u])]];
+Leu3322 := ceu3322/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(uRbar[t,2,c].uR[u,2,c]Ga[mu,t,u])]];
+Leu3333 := ceu3333/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Leu := Leu1111 + Leu1133 + Leu1331 + Leu2233 + Leu2332 + Leu3113 + Leu3223 + Leu3311 + Leu3322 + Leu3333;
+
+Led1111 := ced1111/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Led1133 := ced1133/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Led1331 := ced1331/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,1].lR[s,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,1,c]Ga[mu,t,u])]];
+Led2233 := ced2233/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,2].lR[s,2]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Led2332 := ced2332/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,2].lR[s,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,2,c]Ga[mu,t,u])]];
+Led3113 := ced3113/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,3,c]Ga[mu,t,u])]];
+Led3223 := ced3223/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,2]Ga[mu,r,s])(dRbar[t,2,c].dR[u,3,c]Ga[mu,t,u])]];
+Led3311 := ced3311/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Led3322 := ced3322/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(dRbar[t,2,c].dR[u,2,c]Ga[mu,t,u])]];
+Led3333 := ced3333/LAMBDA^2 Module[{mu,r,s,t,u,c}, ExpandIndices[(lRbar[r,3].lR[s,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Led := Led1111 + Led1133 + Led1331 + Led2233 + Led2332 + Led3113 + Led3223 + Led3311 + Led3322 + Led3333;
+
+Lud11111 := cud11111/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lud11133 := cud11133/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lud11331 := cud11331/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,1,c1].uR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lud12233 := cud12233/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,2,c1].uR[s,2,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lud12332 := cud12332/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,2,c1].uR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,2,c2]Ga[mu,t,u])]];
+Lud13113 := cud13113/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,1,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lud13223 := cud13223/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,2,c1]Ga[mu,r,s])(dRbar[t,2,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lud13311 := cud13311/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lud13322 := cud13322/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(dRbar[t,2,c2].dR[u,2,c2]Ga[mu,t,u])]];
+Lud13333 := cud13333/LAMBDA^2 Module[{mu,r,s,t,u,c1,c2}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lud1 := Lud11111 + Lud11133 + Lud11331 + Lud12233 + Lud12332 + Lud13113 + Lud13223 + Lud13311 + Lud13322 + Lud13333;
+
+Lud81111 := cud81111/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud81133 := cud81133/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,1,c1].uR[s,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud81331 := cud81331/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,1,c1].uR[s,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud82233 := cud82233/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,2,c1].uR[s,2,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud82332 := cud82332/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,2,c1].uR[s,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud83113 := cud83113/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,3,c1].uR[s,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud83223 := cud83223/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,3,c1].uR[s,2,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,2,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud83311 := cud83311/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud83322 := cud83322/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,2,c3].dR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud83333 := cud83333/LAMBDA^2 Module[{mu,aa,r,s,t,u,c1,c2,c3,c4}, ExpandIndices[(uRbar[r,3,c1].uR[s,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lud8 := Lud81111 + Lud81133 + Lud81331 + Lud82233 + Lud82332 + Lud83113 + Lud83223 + Lud83311 + Lud83322 + Lud83333;
+
+LD68RRRR := Lee + Luu + Ldd + Leu + Led + Lud1 + Lud8;
+
+
+(**************               8 LLRR: psi^4               **************)
+
+
+Lle1111 := cle1111/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lle1133 := cle1133/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lle1331 := cle1331/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])(lRbar[t,3].lR[u,1]Ga[mu,t,u])]];
+Lle2233 := cle2233/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lle2332 := cle2332/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])(lRbar[t,3].lR[u,2]Ga[mu,t,u])]];
+Lle3113 := cle3113/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])(lRbar[t,1].lR[u,3]Ga[mu,t,u])]];
+Lle3223 := cle3223/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])(lRbar[t,2].lR[u,3]Ga[mu,t,u])]];
+Lle3311 := cle3311/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lle3322 := cle3322/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(lRbar[t,2].lR[u,2]Ga[mu,t,u])]];
+Lle3333 := cle3333/LAMBDA^2 Module[{mu,r,i,s,t,u}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lle := Lle1111 + Lle1133 + Lle1331 + Lle2233 + Lle2332 + Lle3113 + Lle3223 + Lle3311 + Lle3322 + Lle3333;
+
+Llu1111 := clu1111/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(uRbar[t,1,c].uR[u,1,c]Ga[mu,t,u])]];
+Llu1133 := clu1133/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Llu1331 := clu1331/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,1,c]Ga[mu,t,u])]];
+Llu2233 := clu2233/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Llu2332 := clu2332/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,2,c]Ga[mu,t,u])]];
+Llu3113 := clu3113/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])(uRbar[t,1,c].uR[u,3,c]Ga[mu,t,u])]];
+Llu3223 := clu3223/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])(uRbar[t,2,c].uR[u,3,c]Ga[mu,t,u])]];
+Llu3311 := clu3311/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(uRbar[t,1,c].uR[u,1,c]Ga[mu,t,u])]];
+Llu3322 := clu3322/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(uRbar[t,2,c].uR[u,2,c]Ga[mu,t,u])]];
+Llu3333 := clu3333/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(uRbar[t,3,c].uR[u,3,c]Ga[mu,t,u])]];
+Llu := Llu1111 + Llu1133 + Llu1331 + Llu2233 + Llu2332 + Llu3113 + Llu3223 + Llu3311 + Llu3322 + Llu3333;
+
+Lld1111 := cld1111/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Lld1133 := cld1133/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,1]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Lld1331 := cld1331/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,1].LL[s,i,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,1,c]Ga[mu,t,u])]];
+Lld2233 := cld2233/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,2]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Lld2332 := cld2332/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,2].LL[s,i,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,2,c]Ga[mu,t,u])]];
+Lld3113 := cld3113/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,1]Ga[mu,r,s])(dRbar[t,1,c].dR[u,3,c]Ga[mu,t,u])]];
+Lld3223 := cld3223/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,2]Ga[mu,r,s])(dRbar[t,2,c].dR[u,3,c]Ga[mu,t,u])]];
+Lld3311 := cld3311/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(dRbar[t,1,c].dR[u,1,c]Ga[mu,t,u])]];
+Lld3322 := cld3322/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(dRbar[t,2,c].dR[u,2,c]Ga[mu,t,u])]];
+Lld3333 := cld3333/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(LLbar[r,i,3].LL[s,i,3]Ga[mu,r,s])(dRbar[t,3,c].dR[u,3,c]Ga[mu,t,u])]];
+Lld := Lld1111 + Lld1133 + Lld1331 + Lld2233 + Lld2332 + Lld3113 + Lld3223 + Lld3311 + Lld3322 + Lld3333;
+
+Lqe1111 := cqe1111/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,1,c].QL[s,i,1,c]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lqe1133 := cqe1133/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,1,c].QL[s,i,1,c]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lqe1331 := cqe1331/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,1,c].QL[s,i,3,c]Ga[mu,r,s])(lRbar[t,3].lR[u,1]Ga[mu,t,u])]];
+Lqe2233 := cqe2233/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,2,c].QL[s,i,2,c]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lqe2332 := cqe2332/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,2,c].QL[s,i,3,c]Ga[mu,r,s])(lRbar[t,3].lR[u,2]Ga[mu,t,u])]];
+Lqe3113 := cqe3113/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,3,c].QL[s,i,1,c]Ga[mu,r,s])(lRbar[t,1].lR[u,3]Ga[mu,t,u])]];
+Lqe3223 := cqe3223/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,3,c].QL[s,i,2,c]Ga[mu,r,s])(lRbar[t,2].lR[u,3]Ga[mu,t,u])]];
+Lqe3311 := cqe3311/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,3,c].QL[s,i,3,c]Ga[mu,r,s])(lRbar[t,1].lR[u,1]Ga[mu,t,u])]];
+Lqe3322 := cqe3322/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,3,c].QL[s,i,3,c]Ga[mu,r,s])(lRbar[t,2].lR[u,2]Ga[mu,t,u])]];
+Lqe3333 := cqe3333/LAMBDA^2 Module[{mu,r,i,s,t,u,c}, ExpandIndices[(QLbar[r,i,3,c].QL[s,i,3,c]Ga[mu,r,s])(lRbar[t,3].lR[u,3]Ga[mu,t,u])]];
+Lqe := Lqe1111 + Lqe1133 + Lqe1331 + Lqe2233 + Lqe2332 + Lqe3113 + Lqe3223 + Lqe3311 + Lqe3322 + Lqe3333;
+
+Lqu11111 := cqu11111/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Lqu11133 := cqu11133/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Lqu11331 := cqu11331/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Lqu12233 := cqu12233/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,2,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Lqu12332 := cqu12332/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,2,c2]Ga[mu,t,u])]];
+Lqu13113 := cqu13113/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,1,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Lqu13223 := cqu13223/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,2,c1]Ga[mu,r,s])(uRbar[t,2,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Lqu13311 := cqu13311/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(uRbar[t,1,c2].uR[u,1,c2]Ga[mu,t,u])]];
+Lqu13322 := cqu13322/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(uRbar[t,2,c2].uR[u,2,c2]Ga[mu,t,u])]];
+Lqu13333 := cqu13333/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(uRbar[t,3,c2].uR[u,3,c2]Ga[mu,t,u])]];
+Lqu1 := Lqu11111 + Lqu11133 + Lqu11331 + Lqu12233 + Lqu12332 + Lqu13113 + Lqu13223 + Lqu13311 + Lqu13322 + Lqu13333;
+
+Lqu81111 := cqu81111/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,1,c3].uR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu81133 := cqu81133/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,3,c3].uR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu81331 := cqu81331/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,3,c3].uR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu82233 := cqu82233/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,2,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,3,c3].uR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu82332 := cqu82332/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,3,c3].uR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu83113 := cqu83113/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,1,c3].uR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu83223 := cqu83223/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,2,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,2,c3].uR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu83311 := cqu83311/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,1,c3].uR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu83322 := cqu83322/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,2,c3].uR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu83333 := cqu83333/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(uRbar[t,3,c3].uR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqu8 := Lqu81111 + Lqu81133 + Lqu81331 + Lqu82233 + Lqu82332 + Lqu83113 + Lqu83223 + Lqu83311 + Lqu83322 + Lqu83333;
+
+Lqd11111 := cqd11111/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lqd11133 := cqd11133/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lqd11331 := cqd11331/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lqd12233 := cqd12233/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,2,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lqd12332 := cqd12332/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,2,c2]Ga[mu,t,u])]];
+Lqd13113 := cqd13113/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,1,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lqd13223 := cqd13223/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,2,c1]Ga[mu,r,s])(dRbar[t,2,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lqd13311 := cqd13311/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(dRbar[t,1,c2].dR[u,1,c2]Ga[mu,t,u])]];
+Lqd13322 := cqd13322/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(dRbar[t,2,c2].dR[u,2,c2]Ga[mu,t,u])]];
+Lqd13333 := cqd13333/LAMBDA^2 Module[{mu,r,i,s,t,u,c1,c2}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c1]Ga[mu,r,s])(dRbar[t,3,c2].dR[u,3,c2]Ga[mu,t,u])]];
+Lqd1 := Lqd11111 + Lqd11133 + Lqd11331 + Lqd12233 + Lqd12332 + Lqd13113 + Lqd13223 + Lqd13311 + Lqd13322 + Lqd13333;
+
+Lqd81111 := cqd81111/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd81133 := cqd81133/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd81331 := cqd81331/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,1,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd82233 := cqd82233/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,2,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd82332 := cqd82332/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,2,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd83113 := cqd83113/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,1,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd83223 := cqd83223/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,2,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,2,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd83311 := cqd83311/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,1,c3].dR[u,1,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd83322 := cqd83322/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,2,c3].dR[u,2,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd83333 := cqd83333/LAMBDA^2 Module[{mu,aa,r,i,s,t,u,c1,c2,c3,c4}, ExpandIndices[(QLbar[r,i,3,c1].QL[s,i,3,c2]Ga[mu,r,s]T[aa,c1,c2])(dRbar[t,3,c3].dR[u,3,c4]Ga[mu,t,u]T[aa,c3,c4])]];
+Lqd8 := Lqd81111 + Lqd81133 + Lqd81331 + Lqd82233 + Lqd82332 + Lqd83113 + Lqd83223 + Lqd83311 + Lqd83322 + Lqd83333;
+
+LD68LLRR := Lle + Llu + Lld + Lqe + Lqu1 + Lqu8 + Lqd1 + Lqd8;
+
+
+(**************               8 LRRL: psi^4               **************)
+
+
+lledq1111 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,1].lR[i,1])(dRbar[j,1,c].QL[j,r,1,c])]];
+lledq1133 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,1].lR[i,1])(dRbar[j,3,c].QL[j,r,3,c])]];
+lledq1331 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,1].lR[i,3])(dRbar[j,3,c].QL[j,r,1,c])]];
+lledq2233 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,2].lR[i,2])(dRbar[j,3,c].QL[j,r,3,c])]];
+lledq2332 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,2].lR[i,3])(dRbar[j,3,c].QL[j,r,2,c])]];
+lledq3113 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,3].lR[i,1])(dRbar[j,1,c].QL[j,r,3,c])]];
+lledq3223 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,3].lR[i,2])(dRbar[j,2,c].QL[j,r,3,c])]];
+lledq3311 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])(dRbar[j,1,c].QL[j,r,1,c])]];
+lledq3322 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])(dRbar[j,2,c].QL[j,r,2,c])]];
+lledq3333 := Module[{r,j,i,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])(dRbar[j,3,c].QL[j,r,3,c])]];
+Lledq1111 := cledq1111/LAMBDA^2 (lledq1111 + HC[lledq1111]);
+Lledq1133 := cledq1133/LAMBDA^2 (lledq1133 + HC[lledq1133]);
+Lledq1331 := cledq1331/LAMBDA^2 (lledq1331 + HC[lledq1331]);
+Lledq2233 := cledq2233/LAMBDA^2 (lledq2233 + HC[lledq2233]);
+Lledq2332 := cledq2332/LAMBDA^2 (lledq2332 + HC[lledq2332]);
+Lledq3113 := cledq3113/LAMBDA^2 (lledq3113 + HC[lledq3113]);
+Lledq3223 := cledq3223/LAMBDA^2 (lledq3223 + HC[lledq3223]);
+Lledq3311 := cledq3311/LAMBDA^2 (lledq3311 + HC[lledq3311]);
+Lledq3322 := cledq3322/LAMBDA^2 (lledq3322 + HC[lledq3322]);
+Lledq3333 := cledq3333/LAMBDA^2 (lledq3333 + HC[lledq3333]);
+Lledq := Lledq1111 + Lledq1133 + Lledq1331 + Lledq2233 + Lledq2332 + Lledq3113 + Lledq3223 + Lledq3311 + Lledq3322 + Lledq3333;
+
+LD68LRRL := Lledq;
+
+
+(**************               8 LRLR: psi^4               **************)
+
+
+lquqd11111 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,1,c1])Eps[r,s](QLbar[j,s,1,c2].dR[j,1,c2])]];
+lquqd11133 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,1,c1])Eps[r,s](QLbar[j,s,3,c2].dR[j,3,c2])]];
+lquqd11331 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,3,c1])Eps[r,s](QLbar[j,s,3,c2].dR[j,1,c2])]];
+lquqd12233 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,2,c1].uR[i,2,c1])Eps[r,s](QLbar[j,s,3,c2].dR[j,3,c2])]];
+lquqd12332 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,2,c1].uR[i,3,c1])Eps[r,s](QLbar[j,s,3,c2].dR[j,2,c2])]];
+lquqd13113 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,1,c1])Eps[r,s](QLbar[j,s,1,c2].dR[j,3,c2])]];
+lquqd13223 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,2,c1])Eps[r,s](QLbar[j,s,2,c2].dR[j,3,c2])]];
+lquqd13311 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c1])Eps[r,s](QLbar[j,s,1,c2].dR[j,1,c2])]];
+lquqd13322 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c1])Eps[r,s](QLbar[j,s,2,c2].dR[j,2,c2])]];
+lquqd13333 := Module[{r,s,i,j,c1,c2}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c1])Eps[r,s](QLbar[j,s,3,c2].dR[j,3,c2])]];
+Lquqd11111 := cquqd11111/LAMBDA^2 (lquqd11111 + HC[lquqd11111]);
+Lquqd11133 := cquqd11133/LAMBDA^2 (lquqd11133 + HC[lquqd11133]);
+Lquqd11331 := cquqd11331/LAMBDA^2 (lquqd11331 + HC[lquqd11331]); 
+Lquqd12233 := cquqd12233/LAMBDA^2 (lquqd12233 + HC[lquqd12233]);
+Lquqd12332 := cquqd12332/LAMBDA^2 (lquqd12332 + HC[lquqd12332]);
+Lquqd13113 := cquqd13113/LAMBDA^2 (lquqd13113 + HC[lquqd13113]);
+Lquqd13223 := cquqd13223/LAMBDA^2 (lquqd13223 + HC[lquqd13223]);
+Lquqd13311 := cquqd13311/LAMBDA^2 (lquqd13311 + HC[lquqd13311]);
+Lquqd13322 := cquqd13322/LAMBDA^2 (lquqd13322 + HC[lquqd13322]);
+Lquqd13333 := cquqd13333/LAMBDA^2 (lquqd13333 + HC[lquqd13333]);
+Lquqd1 := Lquqd11111 + Lquqd11133 + Lquqd11331 + Lquqd12233 + Lquqd12332 + Lquqd13113 + Lquqd13223 + Lquqd13311 + Lquqd13322 + Lquqd13333;
+
+lquqd81111 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,1,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,1,c3].dR[j,1,c4]T[aa,c3,c4])]];
+lquqd81133 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,1,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,3,c3].dR[j,3,c4]T[aa,c3,c4])]];
+lquqd81331 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,1,c1].uR[i,3,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,3,c3].dR[j,1,c4]T[aa,c3,c4])]];
+lquqd82233 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,2,c1].uR[i,2,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,3,c3].dR[j,3,c4]T[aa,c3,c4])]];
+lquqd82332 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,2,c1].uR[i,3,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,3,c3].dR[j,2,c4]T[aa,c3,c4])]];
+lquqd83113 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,1,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,1,c3].dR[j,3,c4]T[aa,c3,c4])]];
+lquqd83223 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,2,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,2,c3].dR[j,3,c4]T[aa,c3,c4])]];
+lquqd83311 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,1,c3].dR[j,1,c4]T[aa,c3,c4])]];
+lquqd83322 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,2,c3].dR[j,2,c4]T[aa,c3,c4])]];
+lquqd83333 := Module[{r,s,i,j,c1,c2,c3,c4}, ExpandIndices[(QLbar[i,r,3,c1].uR[i,3,c2]T[aa,c1,c2])Eps[r,s](QLbar[j,s,3,c3].dR[j,3,c4]T[aa,c3,c4])]];
+Lquqd81111 := cquqd81111/LAMBDA^2 (lquqd81111 + HC[lquqd81111]);
+Lquqd81133 := cquqd81133/LAMBDA^2 (lquqd81133 + HC[lquqd81133]);
+Lquqd81331 := cquqd81331/LAMBDA^2 (lquqd81331 + HC[lquqd81331]); 
+Lquqd82233 := cquqd82233/LAMBDA^2 (lquqd82233 + HC[lquqd82233]);
+Lquqd82332 := cquqd82332/LAMBDA^2 (lquqd82332 + HC[lquqd82332]);
+Lquqd83113 := cquqd83113/LAMBDA^2 (lquqd83113 + HC[lquqd83113]);
+Lquqd83223 := cquqd83223/LAMBDA^2 (lquqd83223 + HC[lquqd83223]);
+Lquqd83311 := cquqd83311/LAMBDA^2 (lquqd83311 + HC[lquqd83311]);
+Lquqd83322 := cquqd83322/LAMBDA^2 (lquqd83322 + HC[lquqd83322]);
+Lquqd83333 := cquqd83333/LAMBDA^2 (lquqd83333 + HC[lquqd83333]);
+Lquqd8 := Lquqd81111 + Lquqd81133 + Lquqd81331 + Lquqd82233 + Lquqd82332 + Lquqd83113 + Lquqd83223 + Lquqd83311 + Lquqd83322 + Lquqd83333;
+
+llequ11111 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,1].lR[i,1])Eps[r,s](QLbar[j,s,1,c].uR[j,1,c])]];
+llequ11133 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,1].lR[i,1])Eps[r,s](QLbar[j,s,3,c].uR[j,3,c])]];
+llequ11331 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,1].lR[i,3])Eps[r,s](QLbar[j,s,3,c].uR[j,1,c])]];
+llequ12233 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,2].lR[i,2])Eps[r,s](QLbar[j,s,3,c].uR[j,3,c])]];
+llequ12332 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,2].lR[i,3])Eps[r,s](QLbar[j,s,3,c].uR[j,2,c])]];
+llequ13113 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,3].lR[i,1])Eps[r,s](QLbar[j,s,1,c].uR[j,3,c])]];
+llequ13223 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,3].lR[i,2])Eps[r,s](QLbar[j,s,2,c].uR[j,3,c])]];
+llequ13311 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])Eps[r,s](QLbar[j,s,1,c].uR[j,1,c])]];
+llequ13322 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])Eps[r,s](QLbar[j,s,2,c].uR[j,2,c])]];
+llequ13333 := Module[{r,s,i,j,c}, ExpandIndices[(LLbar[i,r,3].lR[i,3])Eps[r,s](QLbar[j,s,3,c].uR[j,3,c])]];
+Llequ11111 := clequ11111/LAMBDA^2 (llequ11111 + HC[llequ11111]);
+Llequ11133 := clequ11133/LAMBDA^2 (llequ11133 + HC[llequ11133]);
+Llequ11331 := clequ11331/LAMBDA^2 (llequ11331 + HC[llequ11331]);
+Llequ12233 := clequ12233/LAMBDA^2 (llequ12233 + HC[llequ12233]);
+Llequ12332 := clequ12332/LAMBDA^2 (llequ12332 + HC[llequ12332]);
+Llequ13113 := clequ13113/LAMBDA^2 (llequ13113 + HC[llequ13113]);
+Llequ13223 := clequ13223/LAMBDA^2 (llequ13223 + HC[llequ13223]);
+Llequ13311 := clequ13311/LAMBDA^2 (llequ13311 + HC[llequ13311]);
+Llequ13322 := clequ13322/LAMBDA^2 (llequ13322 + HC[llequ13322]);
+Llequ13333 := clequ13333/LAMBDA^2 (llequ13333 + HC[llequ13333]);
+Llequ1 := Llequ11111 + Llequ11133 + Llequ11331 + Llequ12233 + Llequ12332 + Llequ13113 + Llequ13223 + Llequ13311 + Llequ13322 + Llequ13333;
+
+llequ31111 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,1].lR[j,1])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,1,c].uR[l,1,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ31133 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,1].lR[j,1])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,3,c].uR[l,3,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ31331 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,1].lR[j,3])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,3,c].uR[l,1,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ32233 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,2].lR[j,2])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,3,c].uR[l,3,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ32332 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,2].lR[j,3])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,3,c].uR[l,2,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ33113 := Module[{r,s,i,j,k,l,t,u,c,mu,nu},  
+	ExpandIndices[(LLbar[i,r,3].lR[j,1])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,1,c].uR[l,3,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ33223 := Module[{r,s,i,j,k,l,t,u,c,mu,nu},  
+	ExpandIndices[(LLbar[i,r,3].lR[j,2])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,2,c].uR[l,3,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ33311 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,3].lR[j,3])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,1,c].uR[l,1,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ33322 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,3].lR[j,3])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,2,c].uR[l,2,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+llequ33333 := Module[{r,s,i,j,k,l,t,u,c,mu,nu}, 
+	ExpandIndices[(LLbar[i,r,3].lR[j,3])I/2(Ga[mu, i, t]Ga[nu, t, j] - Ga[nu, i, t]Ga[mu, t, j])Eps[r,s](QLbar[k,s,3,c].uR[l,3,c])I/2(Ga[mu, k, u]Ga[nu, u, l] - Ga[nu, k, u]Ga[mu, u, l])]];
+Llequ31111 := clequ31111/LAMBDA^2 (llequ31111 + HC[llequ31111]);
+Llequ31133 := clequ31133/LAMBDA^2 (llequ31133 + HC[llequ31133]);
+Llequ31331 := clequ31331/LAMBDA^2 (llequ31331 + HC[llequ31331]);
+Llequ32233 := clequ32233/LAMBDA^2 (llequ32233 + HC[llequ32233]);
+Llequ32332 := clequ32332/LAMBDA^2 (llequ32332 + HC[llequ32332]);
+Llequ33113 := clequ33113/LAMBDA^2 (llequ33113 + HC[llequ33113]);
+Llequ33223 := clequ33223/LAMBDA^2 (llequ33223 + HC[llequ33223]);
+Llequ33311 := clequ33311/LAMBDA^2 (llequ33311 + HC[llequ33311]);
+Llequ33322 := clequ33322/LAMBDA^2 (llequ33322 + HC[llequ33322]);
+Llequ33333 := clequ33333/LAMBDA^2 (llequ33333 + HC[llequ33333]);
+Llequ3 := Llequ31111 + Llequ31133 + Llequ31331 + Llequ32233 + Llequ32332 + Llequ33113 + Llequ33223 + Llequ33311 + Llequ33322 + Llequ33333;
+
+LD68LRLR := Lquqd1 + Lquqd8 + Llequ1 + Llequ3;
+
+
+(**************                  8: psi^4                 **************)
+
+
+LD68 := LD68LLLL + LD68RRRR + LD68LLRR + LD68LRRL + LD68LRLR;
+
+
+(**************                    LD6                    **************)
+
+LD6 := LD61 + LD62 + LD63 + LD64 + LD65 + LD66 + LD67 + LD68;
+

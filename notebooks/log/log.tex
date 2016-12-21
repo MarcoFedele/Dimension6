@@ -1,0 +1,201 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsthm,amssymb, mathrsfs}
+\usepackage{graphicx, subfigure}
+\usepackage{hyperref}
+\usepackage[italian]{babel}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage{slashed}
+\usepackage{cite}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+
+
+\newcommand\m{\mu}
+\newcommand\la{\lambda}
+\newcommand\g{\gamma}
+\newcommand\s{\sigma}
+\newcommand\al{\alpha}
+\newcommand\e{\epsilon}
+\newcommand\thet{\theta}
+\newcommand\SI{\Sigma}
+\newcommand\DE{\Delta}
+\newcommand\LA{\Lambda}
+
+\newcommand\va{\rightarrow}
+\newcommand\re{\operatorname{Re}}
+\newcommand\im{\operatorname{Im}}
+\newcommand{\cor}[1]{\mathscr{#1}}
+\newcommand\ov[1]{\frac{1}{#1}}
+\newcommand\de{\partial}
+\newcommand\imp{\Rightarrow}
+\newcommand\av[1]{\left\langle #1\right\rangle}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\itm}{\item[-]}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand\li{\mathrm{Li_2}}
+\newcommand\Var[1]{\mathrm{Var}(#1)}
+\newcommand\Cov[1]{\mathrm{Cov}(#1)}
+
+
+\begin{document} 
+
+
+\section*{1301.2588, \url{http://arxiv.org/pdf/1301.2588v1.pdf}}
+Dimensione anomala degli operatori $O_{HB,HW,HWB,HG}$ e $\tilde O_{HB,HW,HWB,HG}$: calcolo ultimato.\\
+\emph{Note}:
+\bit
+\itm calcolo svolto nella gauge di Feynman;
+\itm nella definizione degli operatori è presente la costante $g_i^2/2$;
+\itm i bosoni vettori sono scelti come campi entranti, e i loro indici di Lorentz vengono contratti nel diag, attraverso la seguete espressione; \\
+\begin{lstlisting}%
+[frame=trbl]
+exp = Expand[ exp FourVector[Ep1, Index[Lorentz,1]] *
+               FourVector[Ep2, Index[Lorentz,2]] ];
+\end{lstlisting}
+la conseguenza di questa contrazione è che bisogna elimare i seguenti termini spuri: \\
+\begin{lstlisting}%
+[frame=trbl]
+exp =  exp /. {sp[Ep1,q1] -> 0, sp[Ep2,q2] -> 0};
+\end{lstlisting}
+\itm i bosoni vettori sono a massa nulla: bisogna quindi porre \\
+\begin{lstlisting}%
+[frame=trbl]
+exp =  exp /. {sp[q1,q1] -> 0, sp[q2,q2] -> 0};
+\end{lstlisting}
+di conseguenza, le $B_0$ in cui la particella del loop è massless e che hanno come unica scala il momento esterno di uno dei bosoni vettori sono nulle. Questa eliminazione viene eseguita nel \emph{pp0simplify}, in cui vengono rimosse non solo le $A_0$ massless ma anche le $B_0$ massless in cui l'unico momento presente è $q1$ o $q2$;
+\itm il contributo della wavefunction dell'higgs viene aggiunto a mano, dopo aver caricato il file H\_WF.res .
+\eit
+
+
+
+\newpage
+
+
+
+\section*{1308.2627, \url{http://arxiv.org/pdf/1308.2627v3.pdf}}
+Dimensione anomala di tutti gli operatori, termini proporzionali a $\la$, $\la^2$ e $\la y^2$. Due tipi di contributi: quelli diretti, e quelli indiretti ottenuti tramite l'applicazione delle equazioni del moto (stile operatori pinguino). Per quanto riguarda i termini indiretti, ho proceduto calcolando i diagrammi 1PR e considerando la parte non dipendente dal propagatore esterno al loop.
+\subsection*{Classe $H^6$}
+Calcolo ultimato, incongruenze numeriche relativamente agli opertori della classe $H^4D^2$. Non sono stati (ancora) calcolati i diagrammi 1PR data l'elevata complicazione le ridurre il risultato finale ad una forma priva di sp.
+\subsection*{Classe $X^2H^2$}
+Calcolo ultimato.
+\subsection*{Classe $H^4D^2$}
+Calcolo ultimato. Questi operatori mixano anche con il quartico dello SM $O_{\la}$, quindi sono necessari alcuni accorgimenti per ottenere il risultato esatto:
+\bit
+\itm per quanto riguarda l'operatore $O_{HD}$, si è sfruttato il fatto che il vertice $h\phi^0\phi^+\phi^-$ non fosse presente in $O_{\la}$;
+\itm per quanto riguarda l'operatore $O_{H\Box}$, si sono sfruttate considerazioni cinematiche ed equazioni del moto del tipo
+\beq
+h = q_1\cdot q_1 = q_1\cdot q_3 + q_1\cdot q_4 - q_1\cdot q_2 = 3h -2q_2\cdot q_3-2q_2\cdot q_4+2q_3\cdot q_4  \nonumber
+\eeq
+per riuscire a scrivere il risultato come combinazione lineare dei soli operatori  $O_{H\Box}$ e  $O_{\la}$.
+\eit
+Per entrambi gli operatori, si è eseguito il calcolo per tutti i possibili vertici, assicurandosi di ottenere sempre lo stesso risultato.
+\subsection*{Classe $\psi^2H^3$}
+Calcolo ultimato, incongruenze numeriche relativamente agli opertori della classe $H^4D^2$: risultati diversi a seconda del vertice considerato, in molti dei vertici non si riescono a rimuovere tutti gli sp (che non sono presenti nella struttura di lorentz del vertice da rinormalizzare, e sembrano quindi spuri).
+
+
+
+\newpage
+
+
+
+\section*{1310.4838, \url{http://arxiv.org/pdf/1310.4838v2.pdf}}
+Dimensione anomala di tutti gli operatori, termini proporzionali a $y^i$. Due tipi di contributi: quelli diretti, e quelli indiretti ottenuti tramite l'applicazione delle equazioni del moto (stile operatori pinguino). Per quanto riguarda i termini indiretti, ho proceduto calcolando i diagrammi 1PR e considerando la parte non dipendente dal propagatore esterno al loop.
+\subsection*{Classe $H^6$}
+Calcolo ultimato, fattore 3/4 overall.
+\subsection*{Classe $H^4D^2$}
+Calcolo ultimato.
+\subsection*{Classe $X^2H^2$}
+Calcolo ultimato, fattore 2 overall (tranne che in $O_{HG}$), incapacità nel distinguere i contributi per $O_X$ da quelli per $\tilde O_X$. Risultato immaginario, come dovrebbe essere quello per $\tilde O_X$ ma non quello per $O_X$.
+\subsection*{Classe $\psi^2H^3$}
+Calcolo ultimato solo per 1PI, varie discrepanze numeriche.
+\subsection*{Classe $\psi^2XH$}
+Risultato sempre pari a 0, probabilmente dovuto all'incapacità di identificare correttamente la struttura di Lorentz dell'operatore.
+\subsection*{Classe $\psi^2H^2D$}
+Calcolo ultimato solo per 1PI, varie discrepanze numeriche.
+\subsection*{Classe $\psi^4$}
+Calcolo ultimato solo per 1PI, con le seguenti (relativamente) poche discrepanze numeriche: fattore 2 davanti a tutti i contributi di $O_{lequ}^{(3)}$, fattore 2 in quasi tutti gli elementi di $O_{le}$, $O_{qu}^{(1,8)}$, $O_{qd}^{(1,8)}$ e $O_{quqd}^{(1,8)}$, impossibilità di riprodurre/distinguere $O_{lequ}^{(3)}$ da $O_{lequ}^{(1)}$. \\
+\emph{Note}:
+\bit
+\itm calcolo svolto differenziando esplicitamente i campi L dai campi R. Questa operazione ha avuto come conseguenza il fatto che ogni vertice $\psi^4$ venisse effettivamente contato 4 volte da FeynRules: il risultato finale viene quindi ottenuto dividendo il risultato del calcolo per 4;
+\itm negli operatori tipo $O_{ee}^{jklm}$, dove tutti i campi sono uguali, vale la seguente equivalenza tra operatori con indici di flavor espliciti:
+\beq
+O_{ee}^{1133}=O_{ee}^{3311},\qquad O_{ee}^{1331}=O_{ee}^{3113} \nonumber
+\eeq
+occorre dunque dividere ulteriormente per 2, per ottenere il risultato corretto.
+\eit
+
+
+
+
+
+\newpage
+
+
+\section*{Compendio}
+In questa sezione vengono riportate le funzioni introdotte, il loro ruolo e la logica di base.
+\bit
+\itm {\bf ComputeCheckdiag}\\ Conta il numero di termini presenti per ogni diagramma, restituendo una lista ordinata di 1 (per ogni diagramma formato da più termini) e di 0 (per ogni diagramma formato da un singolo termine).
+\itm {\bf ppcounter}\\ Conta il numero di pp[\_\_\_] presenti in ogni termine di ogni diagramma. Esempio: \\
+\begin{lstlisting}%
+[frame=trbl]
+{
+{2,2,2,2},        <-- I diag, 4 term
+{2,2},            <-- II diag, 2 term
+{2,2,3,3,2,3}     <-- III diag, 6 term
+}
+\end{lstlisting}
+\itm {\bf spcounter}\\ Conta il numero di sp[\_\_\_] presenti in ogni termine di ogni diagramma. Esempio:  \\
+\begin{lstlisting}%
+[frame=trbl]
+{
+{2,1,1,1},        <-- I diag, 4 term
+{0,0},            <-- II diag, 2 term
+{2,1,2,2,1,0}     <-- III diag, 6 term
+}
+\end{lstlisting}
+\itm {\bf ppspcounter}\\ Crea una lista in cui viene inserito \{pp,sp\} per ogni termine di ogni diagramma. Esempio:  \\
+\begin{lstlisting}%
+[frame=trbl]
+{
+{ {2,2},{2,1},{2,1},{2,1} },  <-- I diag, 4 term
+{ {2,0},{2,0} },              <-- II diag, 2 term
+{ {2,2},{2,1},{3,2},{3,2},{2,1},{3,0} } <-- III d, 6 t
+}
+\end{lstlisting}
+\itm {\bf pp0simplify}\\ Rimuove i diagrammi senza scala, e quindi nulli, in regolarizzazione dimensionale.
+\itm {\bf diagSimplify}\\ Semplifica i diagrammi applicando, nell'ordine, ppSimplify,  ppAbsorbMomenta, ExpandScalarProducts e pp0simplify.
+\itm {\bf PV}\\ Esegue la riduzione ad integrali scalari con il metodo Passerino-Veltmann, con il seguente procedimento:
+\bit
+\itm viene eseguito ComputeCheckdiag; a seconda del risultato, ci si concentrerà nelle successive iterazioni su ppspcounter[[DIAG,TERM]] o su ppspcounter[[DIAG,1]];
+\itm si legge il valore di ppspcounter;
+\itm per \{0,0\}, non si fa nulla;
+\itm per \{1,0\},\{2,0\},\{3,0\} e \{4,0\} si scrive il risultato in termini delle fuonzioni PV;
+\itm per gli altri casi si eseguono prima le sostituzioni ( /. ruleXY ), poi le semplificazioni ( diagSimplify ), e infine si scrive il risultato in termini delle funzioni PV; da notare che prima di rule21 e rule22 viene eseguito uno shift per essere sicuri che a denominatore ci sia almeno un'espressione della forma pp[p, \_ ]; infine, nel caso \{3,2\}, vengono applicate sia le rule3X che le rule2X, intervallate da un diagSimplify.
+\itm ogni risultato temporale (chiamato temp1) viene appeso alla lista temp0, che verrà infine spacchettata tramite l'uso di ResumDiag; nei casi in cui sp è almeno 1, viene appeso temp1[[1]]
+\eit
+\eit
+Il modo corretto per chiamarla su un singolo diagramma costituito rispettivamente da un singolo termine o da più termini è il seguente: PV[\{diag\},\{\{\{pp,sp\}\}\}] o PV[\{diag\},\{\{\{pp$_1$,sp$_1$\},\{pp$_2$,sp$_2$\},\dots\}\}].
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
