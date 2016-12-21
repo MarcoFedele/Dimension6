@@ -1,0 +1,3027 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    111859,       3018]
+NotebookOptionsPosition[    103134,       2786]
+NotebookOutlinePosition[    103489,       2802]
+CellTagsIndexPosition[    103446,       2799]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData["\<\"/Users/marco/Documents/universita\:0300/D6/notebooks/1308.\
+2627/OdH/bb3h\"\>"], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.660206994940179*^9, 
+   3.6602071497115717`*^9, 3.660207305749024*^9, 3.660207678630128*^9, 
+   3.660210782061194*^9, 3.660210906225379*^9, 3.660218959117879*^9, 
+   3.6602192262990103`*^9, 3.6602192666532383`*^9, 3.660745459835804*^9, 
+   3.660745743767976*^9, 3.660746992729007*^9, 3.6608250743976583`*^9, 
+   3.660827685907452*^9, 3.660832311698306*^9, 3.6608903511139174`*^9, 
+   3.66089160763066*^9, 3.660892606659823*^9, 3.6608962388644876`*^9, 
+   3.660898241801324*^9, 3.6609794221917667`*^9, 3.6609929514989023`*^9, 
+   3.6610972878037567`*^9, 3.661098382643963*^9, 3.661154784090414*^9, 
+   3.661155214451932*^9, 3.6611552873363543`*^9, 3.661156056463328*^9, 
+   3.661172700249012*^9, 3.661178636648919*^9, 3.661180739012721*^9, 
+   3.662294919999524*^9, 3.663160318546132*^9, 3.663160418250904*^9, 
+   3.663315724316245*^9, 3.6633160605513763`*^9, 3.6633163488424063`*^9, 
+   3.663317260549099*^9, 3.663336651864995*^9, {3.66642167515348*^9, 
+   3.6664216779903803`*^9}, {3.666422436819418*^9, 3.666422439087799*^9}, 
+   3.666625822872087*^9, 3.6667700872620087`*^9, 3.666776482948881*^9, 
+   3.666777176718341*^9, 3.666777720074822*^9, 3.6668769785639553`*^9, 
+   3.667283247331622*^9, 3.6676436789550323`*^9, 3.667643892645694*^9, 
+   3.6676439892901993`*^9, 3.667644056428838*^9, 3.667672081033506*^9, 
+   3.667673869348653*^9, 3.667673965147849*^9, 3.667674104880134*^9, 
+   3.667674701496207*^9, 3.667676374509039*^9, 3.667741137807808*^9, 
+   3.6678207626622047`*^9, {3.667820961615717*^9, 3.667820970623375*^9}, {
+   3.6712523600944977`*^9, 3.6712523756364527`*^9}, 3.671715150023855*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "bb3Hdiagsimp.m"}]], "Input",
+ CellChangeTimes->{{3.667676378948493*^9, 3.6676763798238707`*^9}, {
+  3.667820964352995*^9, 3.667820964879117*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Remove", "::", "rmnsm"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"There are no symbols matching \
+\\\"\[NoBreak]\\!\\(\\\"Tracer`Private`*\\\"\\)\[NoBreak]\\\". \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Remove/rmnsm\\\", \
+ButtonNote -> \\\"Remove::rmnsm\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6717151501447983`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\" \\n                               T R A C E R\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151501842327`*^9}],
+
+Cell[BoxData["\<\"                              =============\\n \\n\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150185223*^9}],
+
+Cell[BoxData["\<\"     A MATHEMATICA PACKAGE FOR GAMMA-ALGEBRA IN ARBITRARY \
+DIMENSIONS\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150186467*^9}],
+
+Cell[BoxData["\<\"                     by M. Jamin and M.E. \
+Lautenbacher\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150188385*^9}],
+
+Cell[BoxData["\<\"              Physics Dept. T31, Technical University \
+Munich\\n \\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150190453*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"             Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.1\"\>", 
+   "\[InvisibleSpace]", "\<\" from \"\>", 
+   "\[InvisibleSpace]", "\<\"Mon Dec 30 15:36:00 MET 1991\"\>"}],
+  SequenceForm[
+  "             Version ", "1.1.1", " from ", "Mon Dec 30 15:36:00 MET 1991"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150191839*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"                    (based on MATHEMATICA Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2\"\>", 
+   "\[InvisibleSpace]", "\<\")\\n \\n\"\>"}],
+  SequenceForm[
+  "                    (based on MATHEMATICA Version ", "1.2", ")\n \n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150193097*^9}],
+
+Cell[BoxData["\<\"The package defines the following \
+commands:\\n\\n\\\"AntiCommute\\\", \\\"ContractEpsGamma\\\", \\\"Eps\\\", \\\
+\"G\\\",\\n\\\"GammaTrace\\\", \\\"G5\\\", \\\"H\\\",\\n\\\"ListCommands\\\", \
+\\\"NoSpur\\\",\\n\\\"OnShell\\\", \\\"OutputFormat\\\", \\\"RemoveHatMomenta\
+\\\",\\n\\n\\\"RemoveNCM\\\", \\\"S\\\", \\\"Sigma\\\", \\\"SortLine\\\", \
+\\\"Spur\\\", \\\"T\\\",\\n\\\"ToDiracBasis\\\",\\n\\\"ToHatTilde\\\", \
+\\\"ToOtimes\\\", \\\"ToUG5\\\", \\\"U\\\",\\n\\\"VectorDimension\\\", \
+\\\"Version\\\".\\n\\n                                    Help on usage as \
+usual per ?Name.\\n\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151501943207`*^9}],
+
+Cell[BoxData["\<\"DEFAULT SETTINGS ON \
+STARTUP:\\n\\n----------------------------\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150195675*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"NonCommutativeMultiply will be \"\>", 
+   "\[InvisibleSpace]", "\<\"removed.\"\>"}],
+  SequenceForm["NonCommutativeMultiply will be ", "removed."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151501967363`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Current OutputFormat is set to \"\>", 
+   "\[InvisibleSpace]", "\<\"\\\"texlike\\\"\"\>", 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Current OutputFormat is set to ", "\"texlike\"", "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150197792*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses a non anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"d\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses a non anticommuting G5 in \"", "d", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150198848*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Dimension set to \\\"\"\>", "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\". Used type of G5 left unchanged.\"\>"}],
+  SequenceForm[
+  "Dimension set to \"", "nd", "\". Used type of G5 left unchanged."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151501999283`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses the usual anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses the usual anticommuting G5 in \"", "nd", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150200976*^9}],
+
+Cell[BoxData["\<\"WARNING: Use of the Epsilon tensor in d != 4 dimensions \
+with\\n         anticommuting G5 is algebraically inconsistent.\"\>"], "Print",\
+
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151502019777`*^9}],
+
+Cell[BoxData["\<\"The gamma matrix line(s) \\\"lferm\\\" will be \
+traced.\"\>"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150202976*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150203949*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150311923*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151504614897`*^9}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150591844*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151507278137`*^9}],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150862568*^9}],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715150994391*^9}],
+
+Cell[BoxData["8"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715151165601*^9}],
+
+Cell[BoxData["9"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151513094273`*^9}],
+
+Cell[BoxData["10"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151514568872`*^9}],
+
+Cell[BoxData["11"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151515853243`*^9}],
+
+Cell[BoxData["12"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715151708076*^9}],
+
+Cell[BoxData["13"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151518393*^9}],
+
+Cell[BoxData["14"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715152006472*^9}],
+
+Cell[BoxData["15"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715152177291*^9}],
+
+Cell[BoxData["16"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151523191643`*^9}],
+
+Cell[BoxData["17"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151524497967`*^9}],
+
+Cell[BoxData["18"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715152573729*^9}],
+
+Cell[BoxData["19"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715152742064*^9}],
+
+Cell[BoxData["20"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715152953125*^9}],
+
+Cell[BoxData["21"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151530574837`*^9}],
+
+Cell[BoxData["22"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715153240821*^9}],
+
+Cell[BoxData["23"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151533863373`*^9}],
+
+Cell[BoxData["24"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715153524522*^9}],
+
+Cell[BoxData["25"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715153670957*^9}],
+
+Cell[BoxData["26"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151538495398`*^9}],
+
+Cell[BoxData["27"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156375341*^9}],
+
+Cell[BoxData["28"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156376945*^9}],
+
+Cell[BoxData["29"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156378503*^9}],
+
+Cell[BoxData["30"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156380118*^9}],
+
+Cell[BoxData["31"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151563833017`*^9}],
+
+Cell[BoxData["32"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156385016*^9}],
+
+Cell[BoxData["33"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151563866377`*^9}],
+
+Cell[BoxData["34"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.67171515638829*^9}],
+
+Cell[BoxData["35"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156389892*^9}],
+
+Cell[BoxData["36"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156391333*^9}],
+
+Cell[BoxData["37"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151563927307`*^9}],
+
+Cell[BoxData["38"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151563941193`*^9}],
+
+Cell[BoxData["39"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156395574*^9}],
+
+Cell[BoxData["40"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156396942*^9}],
+
+Cell[BoxData["41"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156398265*^9}],
+
+Cell[BoxData["42"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156399617*^9}],
+
+Cell[BoxData["43"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.671715156401225*^9}],
+
+Cell[BoxData["44"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151564025517`*^9}],
+
+Cell[BoxData["45"], "Print",
+ CellChangeTimes->{
+  3.667820970742482*^9, {3.671252360292782*^9, 3.671252375745905*^9}, 
+   3.6717151564038773`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "bb3Hamp.m"}]], "Input",
+ CellChangeTimes->{{3.6602066912186947`*^9, 3.6602067026052*^9}, {
+  3.660745551156487*^9, 3.660745552412341*^9}, {3.661097295521875*^9, 
+  3.661097296057787*^9}, {3.666774826920175*^9, 3.666774828191824*^9}, {
+  3.667676384531323*^9, 3.667676385237529*^9}, {3.667820969422913*^9, 
+  3.667820969782609*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Diagrams\"\>"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156683289*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156683947*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156685232*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156685676*^9}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171515668611*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156686532*^9}],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156686976*^9}],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566874113`*^9}],
+
+Cell[BoxData["8"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156687845*^9}],
+
+Cell[BoxData["9"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566882677`*^9}],
+
+Cell[BoxData["10"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156688693*^9}],
+
+Cell[BoxData["11"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566891212`*^9}],
+
+Cell[BoxData["12"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156689554*^9}],
+
+Cell[BoxData["13"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156689987*^9}],
+
+Cell[BoxData["14"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171515669042*^9}],
+
+Cell[BoxData["15"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566908484`*^9}],
+
+Cell[BoxData["16"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566913033`*^9}],
+
+Cell[BoxData["17"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171515669176*^9}],
+
+Cell[BoxData["18"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156692192*^9}],
+
+Cell[BoxData["19"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156692624*^9}],
+
+Cell[BoxData["20"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566930523`*^9}],
+
+Cell[BoxData["21"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156693488*^9}],
+
+Cell[BoxData["22"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566939287`*^9}],
+
+Cell[BoxData["23"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156694447*^9}],
+
+Cell[BoxData["24"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566950283`*^9}],
+
+Cell[BoxData["25"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156695483*^9}],
+
+Cell[BoxData["26"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156695998*^9}],
+
+Cell[BoxData["27"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156696457*^9}],
+
+Cell[BoxData["28"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156696931*^9}],
+
+Cell[BoxData["29"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156697431*^9}],
+
+Cell[BoxData["30"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156697957*^9}],
+
+Cell[BoxData["31"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171515669841*^9}],
+
+Cell[BoxData["32"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156698883*^9}],
+
+Cell[BoxData["33"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566993523`*^9}],
+
+Cell[BoxData["34"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151566998167`*^9}],
+
+Cell[BoxData["35"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151567002783`*^9}],
+
+Cell[BoxData["36"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156700746*^9}],
+
+Cell[BoxData["37"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156701212*^9}],
+
+Cell[BoxData["38"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156701673*^9}],
+
+Cell[BoxData["39"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171515670214*^9}],
+
+Cell[BoxData["40"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156702609*^9}],
+
+Cell[BoxData["41"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156703071*^9}],
+
+Cell[BoxData["42"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156703539*^9}],
+
+Cell[BoxData["43"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156704008*^9}],
+
+Cell[BoxData["44"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156704474*^9}],
+
+Cell[BoxData["45"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156704946*^9}],
+
+Cell[BoxData["\<\"Computing color factors\"\>"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715156705415*^9}],
+
+Cell["\<\
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\
+\>", "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151567584476`*^9}],
+
+Cell[BoxData["\<\"Color factors computed\"\>"], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715159599231*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 1, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715159689157*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 2, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151597825747`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 3, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151598595743`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 4, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715159895865*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 5, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151599557753`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 6, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151600098333`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 7, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160094795*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 8, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160189704*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 9, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151602707853`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 10, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160355564*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 11, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160401408*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 12, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160444437*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 13, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160532497*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 14, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151606256247`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 15, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160714613*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 16, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160786509*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 17, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160831943*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 18, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715160877377*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 19, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151610272427`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 20, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161168844*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "21", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 21, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161314465*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "22", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 22, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161401202*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "23", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 23, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161493925*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "24", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 24, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161581765*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "25", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 25, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161710334*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "26", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 26, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715161846224*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "27", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 27, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516197987*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "28", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 28, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151620714893`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "29", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 29, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162161998*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "30", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 30, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151622357893`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 31, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162374016*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "32", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 32, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162507881*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "33", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 33, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162672402*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "34", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 34, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151627448463`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "35", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 35, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151628478117`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "36", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 36, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162911643*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "37", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 37, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162934855*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "38", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 38, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162935803*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "39", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 39, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162936561*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "40", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 40, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629373617`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "41", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 41, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162938113*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "42", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 42, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162938858*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "43", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 43, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162939596*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "44", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 44, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629403343`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "45", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"DELTA", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", 
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}]}], "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "1"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}], " ", 
+    RowBox[{"SumOver", "[", 
+     RowBox[{
+      RowBox[{"Index", "[", 
+       RowBox[{"Colour", ",", "2"}], "]"}], ",", "3", ",", "External"}], 
+     "]"}]}]}],
+  SequenceForm["Color factor of diag ", 45, ":    ", $CellContext`DELTA[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     $CellContext`Index[$CellContext`Colour, 2]] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 1], 
+     3, $CellContext`External] $CellContext`SumOver[
+     $CellContext`Index[$CellContext`Colour, 2], 3, $CellContext`External]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162941077*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp3: \"\>", "\[InvisibleSpace]", "45"}],
+  
+  SequenceForm["N\[Degree] of diag in amp3: ", 45],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629417057`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "45"}],
+  
+  SequenceForm["N\[Degree] of diag in amp2: ", 45],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162942789*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "38", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 1, " in amp2 correspond to diag n. ", {{38}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162943407*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "39", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 2, " in amp2 correspond to diag n. ", {{39}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629452257`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "37", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 3, " in amp2 correspond to diag n. ", {{37}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516294593*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "41", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 4, " in amp2 correspond to diag n. ", {{41}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516294704*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "42", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 5, " in amp2 correspond to diag n. ", {{42}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516294809*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "40", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 6, " in amp2 correspond to diag n. ", {{40}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162948723*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "44", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 7, " in amp2 correspond to diag n. ", {{44}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162949368*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "45", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 8, " in amp2 correspond to diag n. ", {{45}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629500017`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "43", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 9, " in amp2 correspond to diag n. ", {{43}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162950673*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 10, " in amp2 correspond to diag n. ", {{1}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162951336*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "11", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "4", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 11, " in amp2 correspond to diag n. ", {{4}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162951976*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "12", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "7", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 12, " in amp2 correspond to diag n. ", {{7}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162952622*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "13", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "10", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 13, " in amp2 correspond to diag n. ", {{10}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162953261*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "14", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "13", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 14, " in amp2 correspond to diag n. ", {{13}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629538927`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "15", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "16", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 15, " in amp2 correspond to diag n. ", {{16}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516295453*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "16", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "5", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 16, " in amp2 correspond to diag n. ", {{5}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162955163*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "17", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "2", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 17, " in amp2 correspond to diag n. ", {{2}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162955799*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "18", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "11", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 18, " in amp2 correspond to diag n. ", {{11}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162956427*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "19", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "8", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 19, " in amp2 correspond to diag n. ", {{8}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162957065*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "17", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 20, " in amp2 correspond to diag n. ", {{17}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629577017`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "21", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "14", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 21, " in amp2 correspond to diag n. ", {{14}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162958335*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "22", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "31", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 22, " in amp2 correspond to diag n. ", {{31}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629589777`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "23", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "25", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 23, " in amp2 correspond to diag n. ", {{25}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162959612*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "24", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "19", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 24, " in amp2 correspond to diag n. ", {{19}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516296025*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "25", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "32", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 25, " in amp2 correspond to diag n. ", {{32}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162960881*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "26", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "26", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 26, " in amp2 correspond to diag n. ", {{26}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.6717151629615183`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "27", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "20", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 27, " in amp2 correspond to diag n. ", {{20}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162962179*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "28", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "6", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 28, " in amp2 correspond to diag n. ", {{6}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162962837*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "29", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "3", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 29, " in amp2 correspond to diag n. ", {{3}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162963539*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "30", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "12", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 30, " in amp2 correspond to diag n. ", {{12}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.67171516296418*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "31", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "9", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 31, " in amp2 correspond to diag n. ", {{9}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162964827*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "32", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "18", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 32, " in amp2 correspond to diag n. ", {{18}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162965479*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "33", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "15", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 33, " in amp2 correspond to diag n. ", {{15}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162966119*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "34", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "33", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 34, " in amp2 correspond to diag n. ", {{33}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162966762*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "35", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "27", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 35, " in amp2 correspond to diag n. ", {{27}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162967404*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "36", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "21", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 36, " in amp2 correspond to diag n. ", {{21}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162968122*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "37", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "34", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 37, " in amp2 correspond to diag n. ", {{34}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162968829*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "38", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "28", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 38, " in amp2 correspond to diag n. ", {{28}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162969487*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "39", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "22", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 39, " in amp2 correspond to diag n. ", {{22}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162970149*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "40", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "35", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 40, " in amp2 correspond to diag n. ", {{35}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162970797*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "41", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "29", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 41, " in amp2 correspond to diag n. ", {{29}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162971449*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "42", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "23", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 42, " in amp2 correspond to diag n. ", {{23}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162972094*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "43", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "36", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 43, " in amp2 correspond to diag n. ", {{36}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162972736*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "44", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "30", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 44, " in amp2 correspond to diag n. ", {{30}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162973385*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "45", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "24", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 45, " in amp2 correspond to diag n. ", {{24}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162974024*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "45", 
+   "\[InvisibleSpace]", "\<\";   order of diag compared to amp3: \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", "38", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "39", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "37", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "41", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "42", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "40", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "44", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "45", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "43", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "1", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "4", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "7", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "10", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "13", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "16", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "5", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "2", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "11", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "8", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "17", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "14", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "31", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "25", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "19", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "32", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "26", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "20", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "6", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "3", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "12", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "9", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "18", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "15", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "33", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "27", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "21", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "34", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "28", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "22", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "35", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "29", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "23", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "36", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "30", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "24", "}"}], "}"}]}], "}"}]}],
+  SequenceForm[
+  "N\[Degree] of diag in amp2: ", 45, 
+   ";   order of diag compared to amp3: ", {{{38}}, {{39}}, {{37}}, {{41}}, {{
+   42}}, {{40}}, {{44}}, {{45}}, {{43}}, {{1}}, {{4}}, {{7}}, {{10}}, {{
+   13}}, {{16}}, {{5}}, {{2}}, {{11}}, {{8}}, {{17}}, {{14}}, {{31}}, {{
+   25}}, {{19}}, {{32}}, {{26}}, {{20}}, {{6}}, {{3}}, {{12}}, {{9}}, {{
+   18}}, {{15}}, {{33}}, {{27}}, {{21}}, {{34}}, {{28}}, {{22}}, {{35}}, {{
+   29}}, {{23}}, {{36}}, {{30}}, {{24}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162975421*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"If everything has been done correctly, a zero must happear \
+here: \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm[
+  "If everything has been done correctly, a zero must happear here: ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.667820970968091*^9, 3.671252379293038*^9, 
+  3.671715162976574*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1439, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 196, 4, 28, "Input"],
+Cell[778, 28, 1785, 25, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2600, 58, 175, 3, 28, "Input"],
+Cell[2778, 63, 476, 10, 24, "Message"],
+Cell[CellGroupData[{
+Cell[3279, 77, 201, 4, 37, "Print"],
+Cell[3483, 83, 203, 4, 52, "Print"],
+Cell[3689, 89, 221, 4, 21, "Print"],
+Cell[3913, 95, 207, 4, 22, "Print"],
+Cell[4123, 101, 220, 4, 53, "Print"],
+Cell[4346, 107, 473, 12, 21, "Print"],
+Cell[4822, 121, 429, 10, 52, "Print"],
+Cell[5254, 133, 745, 11, 227, "Print"],
+Cell[6002, 146, 215, 4, 52, "Print"],
+Cell[6220, 152, 345, 8, 22, "Print"],
+Cell[6568, 162, 396, 9, 22, "Print"],
+Cell[6967, 173, 425, 10, 22, "Print"],
+Cell[7395, 185, 423, 9, 22, "Print"],
+Cell[7821, 196, 435, 10, 22, "Print"],
+Cell[8259, 208, 276, 5, 38, "Print"],
+Cell[8538, 215, 207, 4, 22, "Print"],
+Cell[8748, 221, 144, 3, 21, "Print"],
+Cell[8895, 226, 144, 3, 21, "Print"],
+Cell[9042, 231, 146, 3, 21, "Print"],
+Cell[9191, 236, 144, 3, 21, "Print"],
+Cell[9338, 241, 146, 3, 21, "Print"],
+Cell[9487, 246, 144, 3, 21, "Print"],
+Cell[9634, 251, 144, 3, 21, "Print"],
+Cell[9781, 256, 144, 3, 21, "Print"],
+Cell[9928, 261, 146, 3, 21, "Print"],
+Cell[10077, 266, 147, 3, 21, "Print"],
+Cell[10227, 271, 147, 3, 21, "Print"],
+Cell[10377, 276, 145, 3, 21, "Print"],
+Cell[10525, 281, 143, 3, 21, "Print"],
+Cell[10671, 286, 145, 3, 21, "Print"],
+Cell[10819, 291, 145, 3, 21, "Print"],
+Cell[10967, 296, 147, 3, 21, "Print"],
+Cell[11117, 301, 147, 3, 21, "Print"],
+Cell[11267, 306, 145, 3, 21, "Print"],
+Cell[11415, 311, 145, 3, 21, "Print"],
+Cell[11563, 316, 145, 3, 21, "Print"],
+Cell[11711, 321, 147, 3, 21, "Print"],
+Cell[11861, 326, 145, 3, 21, "Print"],
+Cell[12009, 331, 147, 3, 21, "Print"],
+Cell[12159, 336, 145, 3, 21, "Print"],
+Cell[12307, 341, 145, 3, 21, "Print"],
+Cell[12455, 346, 147, 3, 21, "Print"],
+Cell[12605, 351, 145, 3, 21, "Print"],
+Cell[12753, 356, 145, 3, 21, "Print"],
+Cell[12901, 361, 145, 3, 21, "Print"],
+Cell[13049, 366, 145, 3, 21, "Print"],
+Cell[13197, 371, 147, 3, 21, "Print"],
+Cell[13347, 376, 145, 3, 21, "Print"],
+Cell[13495, 381, 147, 3, 21, "Print"],
+Cell[13645, 386, 144, 3, 21, "Print"],
+Cell[13792, 391, 145, 3, 21, "Print"],
+Cell[13940, 396, 145, 3, 21, "Print"],
+Cell[14088, 401, 147, 3, 21, "Print"],
+Cell[14238, 406, 147, 3, 21, "Print"],
+Cell[14388, 411, 145, 3, 21, "Print"],
+Cell[14536, 416, 145, 3, 21, "Print"],
+Cell[14684, 421, 145, 3, 21, "Print"],
+Cell[14832, 426, 145, 3, 21, "Print"],
+Cell[14980, 431, 145, 3, 21, "Print"],
+Cell[15128, 436, 147, 3, 21, "Print"],
+Cell[15278, 441, 147, 3, 21, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15474, 450, 361, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[15860, 460, 131, 2, 22, "Print"],
+Cell[15994, 464, 116, 2, 21, "Print"],
+Cell[16113, 468, 116, 2, 21, "Print"],
+Cell[16232, 472, 116, 2, 21, "Print"],
+Cell[16351, 476, 115, 2, 21, "Print"],
+Cell[16469, 480, 116, 2, 21, "Print"],
+Cell[16588, 484, 116, 2, 21, "Print"],
+Cell[16707, 488, 118, 2, 21, "Print"],
+Cell[16828, 492, 116, 2, 21, "Print"],
+Cell[16947, 496, 118, 2, 21, "Print"],
+Cell[17068, 500, 117, 2, 21, "Print"],
+Cell[17188, 504, 119, 2, 21, "Print"],
+Cell[17310, 508, 117, 2, 21, "Print"],
+Cell[17430, 512, 117, 2, 21, "Print"],
+Cell[17550, 516, 116, 2, 21, "Print"],
+Cell[17669, 520, 119, 2, 21, "Print"],
+Cell[17791, 524, 119, 2, 21, "Print"],
+Cell[17913, 528, 116, 2, 21, "Print"],
+Cell[18032, 532, 117, 2, 21, "Print"],
+Cell[18152, 536, 117, 2, 21, "Print"],
+Cell[18272, 540, 119, 2, 21, "Print"],
+Cell[18394, 544, 117, 2, 21, "Print"],
+Cell[18514, 548, 119, 2, 21, "Print"],
+Cell[18636, 552, 117, 2, 21, "Print"],
+Cell[18756, 556, 119, 2, 21, "Print"],
+Cell[18878, 560, 117, 2, 21, "Print"],
+Cell[18998, 564, 117, 2, 21, "Print"],
+Cell[19118, 568, 117, 2, 21, "Print"],
+Cell[19238, 572, 117, 2, 21, "Print"],
+Cell[19358, 576, 117, 2, 21, "Print"],
+Cell[19478, 580, 117, 2, 21, "Print"],
+Cell[19598, 584, 116, 2, 21, "Print"],
+Cell[19717, 588, 117, 2, 21, "Print"],
+Cell[19837, 592, 119, 2, 21, "Print"],
+Cell[19959, 596, 119, 2, 21, "Print"],
+Cell[20081, 600, 119, 2, 21, "Print"],
+Cell[20203, 604, 117, 2, 21, "Print"],
+Cell[20323, 608, 117, 2, 21, "Print"],
+Cell[20443, 612, 117, 2, 21, "Print"],
+Cell[20563, 616, 116, 2, 21, "Print"],
+Cell[20682, 620, 117, 2, 21, "Print"],
+Cell[20802, 624, 117, 2, 21, "Print"],
+Cell[20922, 628, 117, 2, 21, "Print"],
+Cell[21042, 632, 117, 2, 21, "Print"],
+Cell[21162, 636, 117, 2, 21, "Print"],
+Cell[21282, 640, 117, 2, 21, "Print"],
+Cell[21402, 644, 146, 2, 22, "Print"],
+Cell[21551, 648, 161, 4, 21, "Print"],
+Cell[21715, 654, 145, 2, 22, "Print"],
+Cell[21863, 658, 1204, 29, 22, "Print"],
+Cell[23070, 689, 1206, 29, 22, "Print"],
+Cell[24279, 720, 1206, 29, 22, "Print"],
+Cell[25488, 751, 1204, 29, 22, "Print"],
+Cell[26695, 782, 1206, 29, 22, "Print"],
+Cell[27904, 813, 1206, 29, 22, "Print"],
+Cell[29113, 844, 1204, 29, 22, "Print"],
+Cell[30320, 875, 1204, 29, 22, "Print"],
+Cell[31527, 906, 1206, 29, 22, "Print"],
+Cell[32736, 937, 1206, 29, 22, "Print"],
+Cell[33945, 968, 1206, 29, 22, "Print"],
+Cell[35154, 999, 1206, 29, 22, "Print"],
+Cell[36363, 1030, 1206, 29, 22, "Print"],
+Cell[37572, 1061, 1208, 29, 22, "Print"],
+Cell[38783, 1092, 1206, 29, 22, "Print"],
+Cell[39992, 1123, 1206, 29, 22, "Print"],
+Cell[41201, 1154, 1206, 29, 22, "Print"],
+Cell[42410, 1185, 1206, 29, 22, "Print"],
+Cell[43619, 1216, 1208, 29, 22, "Print"],
+Cell[44830, 1247, 1206, 29, 22, "Print"],
+Cell[46039, 1278, 1206, 29, 22, "Print"],
+Cell[47248, 1309, 1206, 29, 22, "Print"],
+Cell[48457, 1340, 1206, 29, 22, "Print"],
+Cell[49666, 1371, 1206, 29, 22, "Print"],
+Cell[50875, 1402, 1206, 29, 22, "Print"],
+Cell[52084, 1433, 1206, 29, 22, "Print"],
+Cell[53293, 1464, 1205, 29, 22, "Print"],
+Cell[54501, 1495, 1208, 29, 22, "Print"],
+Cell[55712, 1526, 1206, 29, 22, "Print"],
+Cell[56921, 1557, 1208, 29, 22, "Print"],
+Cell[58132, 1588, 1206, 29, 22, "Print"],
+Cell[59341, 1619, 1206, 29, 22, "Print"],
+Cell[60550, 1650, 1206, 29, 22, "Print"],
+Cell[61759, 1681, 1208, 29, 22, "Print"],
+Cell[62970, 1712, 1208, 29, 22, "Print"],
+Cell[64181, 1743, 1206, 29, 22, "Print"],
+Cell[65390, 1774, 1206, 29, 22, "Print"],
+Cell[66599, 1805, 1206, 29, 22, "Print"],
+Cell[67808, 1836, 1206, 29, 22, "Print"],
+Cell[69017, 1867, 1208, 29, 22, "Print"],
+Cell[70228, 1898, 1206, 29, 22, "Print"],
+Cell[71437, 1929, 1206, 29, 22, "Print"],
+Cell[72646, 1960, 1206, 29, 22, "Print"],
+Cell[73855, 1991, 1208, 29, 22, "Print"],
+Cell[75066, 2022, 1206, 29, 22, "Print"],
+Cell[76275, 2053, 288, 7, 22, "Print"],
+Cell[76566, 2062, 286, 7, 22, "Print"],
+Cell[76855, 2071, 488, 11, 22, "Print"],
+Cell[77346, 2084, 490, 11, 22, "Print"],
+Cell[77839, 2097, 487, 11, 22, "Print"],
+Cell[78329, 2110, 487, 11, 22, "Print"],
+Cell[78819, 2123, 487, 11, 22, "Print"],
+Cell[79309, 2136, 488, 11, 22, "Print"],
+Cell[79800, 2149, 488, 11, 22, "Print"],
+Cell[80291, 2162, 490, 11, 22, "Print"],
+Cell[80784, 2175, 488, 11, 22, "Print"],
+Cell[81275, 2188, 491, 12, 22, "Print"],
+Cell[81769, 2202, 491, 12, 22, "Print"],
+Cell[82263, 2216, 491, 12, 22, "Print"],
+Cell[82757, 2230, 490, 11, 22, "Print"],
+Cell[83250, 2243, 492, 11, 22, "Print"],
+Cell[83745, 2256, 489, 11, 22, "Print"],
+Cell[84237, 2269, 491, 12, 22, "Print"],
+Cell[84731, 2283, 491, 12, 22, "Print"],
+Cell[85225, 2297, 490, 11, 22, "Print"],
+Cell[85718, 2310, 491, 12, 22, "Print"],
+Cell[86212, 2324, 492, 11, 22, "Print"],
+Cell[86707, 2337, 490, 11, 22, "Print"],
+Cell[87200, 2350, 492, 11, 22, "Print"],
+Cell[87695, 2363, 490, 11, 22, "Print"],
+Cell[88188, 2376, 489, 11, 22, "Print"],
+Cell[88680, 2389, 490, 11, 22, "Print"],
+Cell[89173, 2402, 492, 11, 22, "Print"],
+Cell[89668, 2415, 490, 11, 22, "Print"],
+Cell[90161, 2428, 491, 12, 22, "Print"],
+Cell[90655, 2442, 491, 12, 22, "Print"],
+Cell[91149, 2456, 489, 11, 22, "Print"],
+Cell[91641, 2469, 491, 12, 22, "Print"],
+Cell[92135, 2483, 490, 11, 22, "Print"],
+Cell[92628, 2496, 490, 11, 22, "Print"],
+Cell[93121, 2509, 490, 11, 22, "Print"],
+Cell[93614, 2522, 490, 11, 22, "Print"],
+Cell[94107, 2535, 490, 11, 22, "Print"],
+Cell[94600, 2548, 490, 11, 22, "Print"],
+Cell[95093, 2561, 490, 11, 22, "Print"],
+Cell[95586, 2574, 490, 11, 22, "Print"],
+Cell[96079, 2587, 490, 11, 22, "Print"],
+Cell[96572, 2600, 490, 11, 22, "Print"],
+Cell[97065, 2613, 490, 11, 22, "Print"],
+Cell[97558, 2626, 490, 11, 22, "Print"],
+Cell[98051, 2639, 490, 11, 22, "Print"],
+Cell[98544, 2652, 490, 11, 22, "Print"],
+Cell[99037, 2665, 3706, 107, 53, "Print"],
+Cell[102746, 2774, 360, 8, 22, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

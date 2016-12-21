@@ -1,0 +1,170 @@
+diag=
+{(Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q3, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (sp[p, p] + sp[p, q2] - 2*sp[p, q3])*(cHe31*HC[yl[3, 1]] - 
+    cHl131*yl[1, 3] - cHl331*yl[1, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q3, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (sp[p, p] + sp[p, q2] - 2*sp[p, q3])*(cHe32*HC[yl[3, 2]] - 
+    cHl132*yl[2, 3] - cHl332*yl[2, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, MTA]*pp[p + q2 - q3, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (cHe33*MT*HC[yl[3, 3]]*sp[p, p] + cHl133*MTA*HC[yl[3, 3]]*sp[p, q1] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[p, q1] + cHe33*MT*HC[yl[3, 3]]*sp[p, q2] - 
+    2*cHe33*MT*HC[yl[3, 3]]*sp[p, q3] + cHl133*MTA*HC[yl[3, 3]]*sp[q1, q2] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[q1, q2] - 2*cHl133*MTA*HC[yl[3, 3]]*
+     sp[q1, q3] - 2*cHl333*MTA*HC[yl[3, 3]]*sp[q1, q3] - 
+    cHl133*MT*sp[p, p]*yl[3, 3] - cHl333*MT*sp[p, p]*yl[3, 3] - 
+    cHe33*MTA*sp[p, q1]*yl[3, 3] - cHl133*MT*sp[p, q2]*yl[3, 3] - 
+    cHl333*MT*sp[p, q2]*yl[3, 3] + 2*cHl133*MT*sp[p, q3]*yl[3, 3] + 
+    2*cHl333*MT*sp[p, q3]*yl[3, 3] - cHe33*MTA*sp[q1, q2]*yl[3, 3] + 
+    2*cHe33*MTA*sp[q1, q3]*yl[3, 3]))/(LAMBDA^2*MT), 
+ (-2*Sqrt[2]*cHl331*lam*pp[p, 0]*pp[p + q2 - q3, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q3])*
+   yl[1, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl332*lam*pp[p, 0]*pp[p + q2 - q3, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q3])*
+   yl[2, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl333*lam*pp[p, 0]*pp[p + q2 - q3, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q3])*
+   yl[3, 3])/LAMBDA^2, (Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q4, MG0]*
+   pp[p + q2 - q3 - q4 - q5, MG0]*(sp[p, p] + sp[p, q2] - 2*sp[p, q4])*
+   (cHe31*HC[yl[3, 1]] - cHl131*yl[1, 3] - cHl331*yl[1, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q4, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (sp[p, p] + sp[p, q2] - 2*sp[p, q4])*(cHe32*HC[yl[3, 2]] - 
+    cHl132*yl[2, 3] - cHl332*yl[2, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, MTA]*pp[p + q2 - q4, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (cHe33*MT*HC[yl[3, 3]]*sp[p, p] + cHl133*MTA*HC[yl[3, 3]]*sp[p, q1] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[p, q1] + cHe33*MT*HC[yl[3, 3]]*sp[p, q2] - 
+    2*cHe33*MT*HC[yl[3, 3]]*sp[p, q4] + cHl133*MTA*HC[yl[3, 3]]*sp[q1, q2] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[q1, q2] - 2*cHl133*MTA*HC[yl[3, 3]]*
+     sp[q1, q4] - 2*cHl333*MTA*HC[yl[3, 3]]*sp[q1, q4] - 
+    cHl133*MT*sp[p, p]*yl[3, 3] - cHl333*MT*sp[p, p]*yl[3, 3] - 
+    cHe33*MTA*sp[p, q1]*yl[3, 3] - cHl133*MT*sp[p, q2]*yl[3, 3] - 
+    cHl333*MT*sp[p, q2]*yl[3, 3] + 2*cHl133*MT*sp[p, q4]*yl[3, 3] + 
+    2*cHl333*MT*sp[p, q4]*yl[3, 3] - cHe33*MTA*sp[q1, q2]*yl[3, 3] + 
+    2*cHe33*MTA*sp[q1, q4]*yl[3, 3]))/(LAMBDA^2*MT), 
+ (-2*Sqrt[2]*cHl331*lam*pp[p, 0]*pp[p + q2 - q4, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q4])*
+   yl[1, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl332*lam*pp[p, 0]*pp[p + q2 - q4, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q4])*
+   yl[2, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl333*lam*pp[p, 0]*pp[p + q2 - q4, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q4])*
+   yl[3, 3])/LAMBDA^2, (Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q5, MG0]*
+   pp[p + q2 - q3 - q4 - q5, MG0]*(sp[p, p] + sp[p, q2] - 2*sp[p, q5])*
+   (cHe31*HC[yl[3, 1]] - cHl131*yl[1, 3] - cHl331*yl[1, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, 0]*pp[p + q2 - q5, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (sp[p, p] + sp[p, q2] - 2*sp[p, q5])*(cHe32*HC[yl[3, 2]] - 
+    cHl132*yl[2, 3] - cHl332*yl[2, 3]))/LAMBDA^2, 
+ (Sqrt[2]*lam*pp[p, MTA]*pp[p + q2 - q5, MG0]*pp[p + q2 - q3 - q4 - q5, MG0]*
+   (cHe33*MT*HC[yl[3, 3]]*sp[p, p] + cHl133*MTA*HC[yl[3, 3]]*sp[p, q1] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[p, q1] + cHe33*MT*HC[yl[3, 3]]*sp[p, q2] - 
+    2*cHe33*MT*HC[yl[3, 3]]*sp[p, q5] + cHl133*MTA*HC[yl[3, 3]]*sp[q1, q2] + 
+    cHl333*MTA*HC[yl[3, 3]]*sp[q1, q2] - 2*cHl133*MTA*HC[yl[3, 3]]*
+     sp[q1, q5] - 2*cHl333*MTA*HC[yl[3, 3]]*sp[q1, q5] - 
+    cHl133*MT*sp[p, p]*yl[3, 3] - cHl333*MT*sp[p, p]*yl[3, 3] - 
+    cHe33*MTA*sp[p, q1]*yl[3, 3] - cHl133*MT*sp[p, q2]*yl[3, 3] - 
+    cHl333*MT*sp[p, q2]*yl[3, 3] + 2*cHl133*MT*sp[p, q5]*yl[3, 3] + 
+    2*cHl333*MT*sp[p, q5]*yl[3, 3] - cHe33*MTA*sp[q1, q2]*yl[3, 3] + 
+    2*cHe33*MTA*sp[q1, q5]*yl[3, 3]))/(LAMBDA^2*MT), 
+ (-2*Sqrt[2]*cHl331*lam*pp[p, 0]*pp[p + q2 - q5, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q5])*
+   yl[1, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl332*lam*pp[p, 0]*pp[p + q2 - q5, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q5])*
+   yl[2, 3])/LAMBDA^2, (-2*Sqrt[2]*cHl333*lam*pp[p, 0]*pp[p + q2 - q5, MGP]*
+   pp[p + q2 - q3 - q4 - q5, MGP]*(sp[p, p] + sp[p, q2] - 2*sp[p, q5])*
+   yl[3, 3])/LAMBDA^2, -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*
+    pp[p - q2 + q4 + q5, MG0]*(sp[p, p] - sp[p, q2] - sp[p, q3] + sp[p, q4] + 
+     sp[p, q5])*(cHl113*HC[yl[1, 3]] + cHl313*HC[yl[1, 3]] - cHe13*yl[3, 1]))/
+   LAMBDA^2), -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*
+    pp[p - q2 + q4 + q5, MG0]*(sp[p, p] - sp[p, q2] - sp[p, q3] + sp[p, q4] + 
+     sp[p, q5])*(cHl123*HC[yl[2, 3]] + cHl323*HC[yl[2, 3]] - cHe23*yl[3, 2]))/
+   LAMBDA^2), -((Sqrt[2]*lam*pp[p, MTA]*pp[p - q2, MG0]*
+    pp[p - q2 + q4 + q5, MG0]*(cHl133*MT*HC[yl[3, 3]]*sp[p, p] + 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, p] - cHe33*MTA*HC[yl[3, 3]]*sp[p, q1] - 
+     cHl133*MT*HC[yl[3, 3]]*sp[p, q2] - cHl333*MT*HC[yl[3, 3]]*sp[p, q2] - 
+     cHl133*MT*HC[yl[3, 3]]*sp[p, q3] - cHl333*MT*HC[yl[3, 3]]*sp[p, q3] + 
+     cHl133*MT*HC[yl[3, 3]]*sp[p, q4] + cHl333*MT*HC[yl[3, 3]]*sp[p, q4] + 
+     cHl133*MT*HC[yl[3, 3]]*sp[p, q5] + cHl333*MT*HC[yl[3, 3]]*sp[p, q5] + 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q2] + cHe33*MTA*HC[yl[3, 3]]*sp[q1, q3] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q4] - cHe33*MTA*HC[yl[3, 3]]*sp[q1, q5] - 
+     cHe33*MT*sp[p, p]*yl[3, 3] + cHl133*MTA*sp[p, q1]*yl[3, 3] + 
+     cHl333*MTA*sp[p, q1]*yl[3, 3] + cHe33*MT*sp[p, q2]*yl[3, 3] + 
+     cHe33*MT*sp[p, q3]*yl[3, 3] - cHe33*MT*sp[p, q4]*yl[3, 3] - 
+     cHe33*MT*sp[p, q5]*yl[3, 3] - cHl133*MTA*sp[q1, q2]*yl[3, 3] - 
+     cHl333*MTA*sp[q1, q2]*yl[3, 3] - cHl133*MTA*sp[q1, q3]*yl[3, 3] - 
+     cHl333*MTA*sp[q1, q3]*yl[3, 3] + cHl133*MTA*sp[q1, q4]*yl[3, 3] + 
+     cHl333*MTA*sp[q1, q4]*yl[3, 3] + cHl133*MTA*sp[q1, q5]*yl[3, 3] + 
+     cHl333*MTA*sp[q1, q5]*yl[3, 3]))/(LAMBDA^2*MT)), 
+ (-2*Sqrt[2]*cHl313*lam*HC[yl[1, 3]]*pp[p, 0]*pp[p - q2, MGP]*
+   pp[p - q2 + q4 + q5, MGP]*(sp[p, p] - sp[p, q2] - sp[p, q3] + sp[p, q4] + 
+    sp[p, q5]))/LAMBDA^2, (-2*Sqrt[2]*cHl323*lam*HC[yl[2, 3]]*pp[p, 0]*
+   pp[p - q2, MGP]*pp[p - q2 + q4 + q5, MGP]*(sp[p, p] - sp[p, q2] - 
+    sp[p, q3] + sp[p, q4] + sp[p, q5]))/LAMBDA^2, 
+ (-2*Sqrt[2]*cHl333*lam*HC[yl[3, 3]]*pp[p, 0]*pp[p - q2, MGP]*
+   pp[p - q2 + q4 + q5, MGP]*(sp[p, p] - sp[p, q2] - sp[p, q3] + sp[p, q4] + 
+    sp[p, q5]))/LAMBDA^2, 
+ -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*pp[p - q2 + q3 + q5, MG0]*
+    (sp[p, p] - sp[p, q2] + sp[p, q3] - sp[p, q4] + sp[p, q5])*
+    (cHl113*HC[yl[1, 3]] + cHl313*HC[yl[1, 3]] - cHe13*yl[3, 1]))/LAMBDA^2), 
+ -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*pp[p - q2 + q3 + q5, MG0]*
+    (sp[p, p] - sp[p, q2] + sp[p, q3] - sp[p, q4] + sp[p, q5])*
+    (cHl123*HC[yl[2, 3]] + cHl323*HC[yl[2, 3]] - cHe23*yl[3, 2]))/LAMBDA^2), 
+ -((Sqrt[2]*lam*pp[p, MTA]*pp[p - q2, MG0]*pp[p - q2 + q3 + q5, MG0]*
+    (cHl133*MT*HC[yl[3, 3]]*sp[p, p] + cHl333*MT*HC[yl[3, 3]]*sp[p, p] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[p, q1] - cHl133*MT*HC[yl[3, 3]]*sp[p, q2] - 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q2] + cHl133*MT*HC[yl[3, 3]]*sp[p, q3] + 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q3] - cHl133*MT*HC[yl[3, 3]]*sp[p, q4] - 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q4] + cHl133*MT*HC[yl[3, 3]]*sp[p, q5] + 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q5] + cHe33*MTA*HC[yl[3, 3]]*sp[q1, q2] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q3] + cHe33*MTA*HC[yl[3, 3]]*sp[q1, q4] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q5] - cHe33*MT*sp[p, p]*yl[3, 3] + 
+     cHl133*MTA*sp[p, q1]*yl[3, 3] + cHl333*MTA*sp[p, q1]*yl[3, 3] + 
+     cHe33*MT*sp[p, q2]*yl[3, 3] - cHe33*MT*sp[p, q3]*yl[3, 3] + 
+     cHe33*MT*sp[p, q4]*yl[3, 3] - cHe33*MT*sp[p, q5]*yl[3, 3] - 
+     cHl133*MTA*sp[q1, q2]*yl[3, 3] - cHl333*MTA*sp[q1, q2]*yl[3, 3] + 
+     cHl133*MTA*sp[q1, q3]*yl[3, 3] + cHl333*MTA*sp[q1, q3]*yl[3, 3] - 
+     cHl133*MTA*sp[q1, q4]*yl[3, 3] - cHl333*MTA*sp[q1, q4]*yl[3, 3] + 
+     cHl133*MTA*sp[q1, q5]*yl[3, 3] + cHl333*MTA*sp[q1, q5]*yl[3, 3]))/
+   (LAMBDA^2*MT)), (-2*Sqrt[2]*cHl313*lam*HC[yl[1, 3]]*pp[p, 0]*
+   pp[p - q2, MGP]*pp[p - q2 + q3 + q5, MGP]*(sp[p, p] - sp[p, q2] + 
+    sp[p, q3] - sp[p, q4] + sp[p, q5]))/LAMBDA^2, 
+ (-2*Sqrt[2]*cHl323*lam*HC[yl[2, 3]]*pp[p, 0]*pp[p - q2, MGP]*
+   pp[p - q2 + q3 + q5, MGP]*(sp[p, p] - sp[p, q2] + sp[p, q3] - sp[p, q4] + 
+    sp[p, q5]))/LAMBDA^2, (-2*Sqrt[2]*cHl333*lam*HC[yl[3, 3]]*pp[p, 0]*
+   pp[p - q2, MGP]*pp[p - q2 + q3 + q5, MGP]*(sp[p, p] - sp[p, q2] + 
+    sp[p, q3] - sp[p, q4] + sp[p, q5]))/LAMBDA^2, 
+ -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*pp[p - q2 + q3 + q4, MG0]*
+    (sp[p, p] - sp[p, q2] + sp[p, q3] + sp[p, q4] - sp[p, q5])*
+    (cHl113*HC[yl[1, 3]] + cHl313*HC[yl[1, 3]] - cHe13*yl[3, 1]))/LAMBDA^2), 
+ -((Sqrt[2]*lam*pp[p, 0]*pp[p - q2, MG0]*pp[p - q2 + q3 + q4, MG0]*
+    (sp[p, p] - sp[p, q2] + sp[p, q3] + sp[p, q4] - sp[p, q5])*
+    (cHl123*HC[yl[2, 3]] + cHl323*HC[yl[2, 3]] - cHe23*yl[3, 2]))/LAMBDA^2), 
+ -((Sqrt[2]*lam*pp[p, MTA]*pp[p - q2, MG0]*pp[p - q2 + q3 + q4, MG0]*
+    (cHl133*MT*HC[yl[3, 3]]*sp[p, p] + cHl333*MT*HC[yl[3, 3]]*sp[p, p] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[p, q1] - cHl133*MT*HC[yl[3, 3]]*sp[p, q2] - 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q2] + cHl133*MT*HC[yl[3, 3]]*sp[p, q3] + 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q3] + cHl133*MT*HC[yl[3, 3]]*sp[p, q4] + 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q4] - cHl133*MT*HC[yl[3, 3]]*sp[p, q5] - 
+     cHl333*MT*HC[yl[3, 3]]*sp[p, q5] + cHe33*MTA*HC[yl[3, 3]]*sp[q1, q2] - 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q3] - cHe33*MTA*HC[yl[3, 3]]*sp[q1, q4] + 
+     cHe33*MTA*HC[yl[3, 3]]*sp[q1, q5] - cHe33*MT*sp[p, p]*yl[3, 3] + 
+     cHl133*MTA*sp[p, q1]*yl[3, 3] + cHl333*MTA*sp[p, q1]*yl[3, 3] + 
+     cHe33*MT*sp[p, q2]*yl[3, 3] - cHe33*MT*sp[p, q3]*yl[3, 3] - 
+     cHe33*MT*sp[p, q4]*yl[3, 3] + cHe33*MT*sp[p, q5]*yl[3, 3] - 
+     cHl133*MTA*sp[q1, q2]*yl[3, 3] - cHl333*MTA*sp[q1, q2]*yl[3, 3] + 
+     cHl133*MTA*sp[q1, q3]*yl[3, 3] + cHl333*MTA*sp[q1, q3]*yl[3, 3] + 
+     cHl133*MTA*sp[q1, q4]*yl[3, 3] + cHl333*MTA*sp[q1, q4]*yl[3, 3] - 
+     cHl133*MTA*sp[q1, q5]*yl[3, 3] - cHl333*MTA*sp[q1, q5]*yl[3, 3]))/
+   (LAMBDA^2*MT)), (-2*Sqrt[2]*cHl313*lam*HC[yl[1, 3]]*pp[p, 0]*
+   pp[p - q2, MGP]*pp[p - q2 + q3 + q4, MGP]*(sp[p, p] - sp[p, q2] + 
+    sp[p, q3] + sp[p, q4] - sp[p, q5]))/LAMBDA^2, 
+ (-2*Sqrt[2]*cHl323*lam*HC[yl[2, 3]]*pp[p, 0]*pp[p - q2, MGP]*
+   pp[p - q2 + q3 + q4, MGP]*(sp[p, p] - sp[p, q2] + sp[p, q3] + sp[p, q4] - 
+    sp[p, q5]))/LAMBDA^2, (-2*Sqrt[2]*cHl333*lam*HC[yl[3, 3]]*pp[p, 0]*
+   pp[p - q2, MGP]*pp[p - q2 + q3 + q4, MGP]*(sp[p, p] - sp[p, q2] + 
+    sp[p, q3] + sp[p, q4] - sp[p, q5]))/LAMBDA^2, 
+ (-9*Sqrt[2]*ceH33*lam*pp[p, MH]*pp[p + q3 + q4, MH])/LAMBDA^2, 
+ -((Sqrt[2]*ceH33*lam*pp[p, MG0]*pp[p + q3 + q4, MG0])/LAMBDA^2), 
+ (-2*Sqrt[2]*ceH33*lam*pp[p, MGP]*pp[p + q3 + q4, MGP])/LAMBDA^2, 
+ (-9*Sqrt[2]*ceH33*lam*pp[p, MH]*pp[p + q3 + q5, MH])/LAMBDA^2, 
+ -((Sqrt[2]*ceH33*lam*pp[p, MG0]*pp[p + q3 + q5, MG0])/LAMBDA^2), 
+ (-2*Sqrt[2]*ceH33*lam*pp[p, MGP]*pp[p + q3 + q5, MGP])/LAMBDA^2, 
+ (-9*Sqrt[2]*ceH33*lam*pp[p, MH]*pp[p + q4 + q5, MH])/LAMBDA^2, 
+ -((Sqrt[2]*ceH33*lam*pp[p, MG0]*pp[p + q4 + q5, MG0])/LAMBDA^2), 
+ (-2*Sqrt[2]*ceH33*lam*pp[p, MGP]*pp[p + q4 + q5, MGP])/LAMBDA^2}
