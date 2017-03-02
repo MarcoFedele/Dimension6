@@ -7,7 +7,7 @@
 << H_WF.res;
 
 diag = diag/.pp[a_,b_] -> pp[a, b^2];
-diag = diag/.{MH->Sqrt[h], MG0->Sqrt[mg0], MGP->Sqrt[mgp] };
+diag = diag/.{MH->Sqrt[h], MG0->Sqrt[h], MGP->Sqrt[h] };
 
 diag = diagSimplify[diag] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
 
@@ -177,7 +177,7 @@ diag = diag /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0} /. {q1
 diag = diag /. {B0[ - q1_ - q2_ , m1_ , m2_ ] -> B0[ q1 + q2 , m1 , m2 ], q3^2 -> h, q4^2 -> h};
 diag = diag /. {sp[Ep1, q1] -> 0, sp[Ep2, q2] -> 0} /. {sp[Epa_, q_] :>  sp[q, Epa] /; MatchQ[Epa, Ep1 | Ep2] && ! MatchQ[q, Ep1 | Ep2]};
 
-(*Print["prefactor:"];
+Print["prefactor:"];
  Print[prefactor];
  Print[""];
  Print["diag before PV:"];
@@ -187,14 +187,14 @@ diag = diag /. {sp[Ep1, q1] -> 0, sp[Ep2, q2] -> 0} /. {sp[Epa_, q_] :>  sp[q, E
  Do[Print[lista[[i,1]], " : ", ppspcounter[[i]]],{i,Length[ppspcounter]}];
  Print[""];
  Print["diag after PV:"];
- Print[diag];*)
+ Print[diag];
 postPVdiag = diag;
 diag = diag /. nd -> 4;
 diag = diag /.{ A0[m_] -> m, B0[___,___,___] -> 1, C0[___,___,___,___,___] -> 0};
 diag = Simplify[diag];
-(*Print[""];
+Print[""];
  Print[" simplified diag div:"];
- Print[diag];*)
+ Print[diag];
 Print[""];
 Print[""];
 Print["ANOMALOUS DIMENSION ENTRIES."];

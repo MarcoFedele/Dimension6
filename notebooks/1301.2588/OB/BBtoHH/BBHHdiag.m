@@ -48,7 +48,7 @@ SetAttributes[ Pair, Orderless];
                   FourMomentum[Incoming, 1]->q1,
                   FourMomentum[Incoming, 2]->q2,
                   FourMomentum[Outgoing, 1]->q3,
-                  FourMomentum[Outgoing, 2]->q4 };
+                  FourMomentum[Outgoing, 2]->q1 + q2 - q3 };
 
 
 
