@@ -105,6 +105,7 @@ If[Length[DiagramComplement[ins1, DiagramExtract[ins1, finaldiag]]] != 0,
   Pair = sp;
   SW = Sqrt[s2];
   CW = Sqrt[1-s2];
+sw = cw*g1/gw;
 
 
 FILE = NotebookDirectory[]<>"Hggdiag.res";

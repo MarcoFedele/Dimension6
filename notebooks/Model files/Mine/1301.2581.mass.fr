@@ -821,3 +821,7 @@ LWB := cWB gw g1/2/LAMBDA^2 ExpandIndices[ PHIbar. PauliSigma[i].PHI FS[Wi, mu, 
 LD6 := LG + LB + LW + LWB;
 
 
+
+Lgam := C\[Gamma]\[Gamma]/2/LAMBDA^2 ExpandIndices[ HH FS[A,mu,nu] FS[A,mu,nu] ] ;
+
+
