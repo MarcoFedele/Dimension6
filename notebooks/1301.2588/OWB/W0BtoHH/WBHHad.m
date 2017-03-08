@@ -224,6 +224,8 @@ total = Collect[total, {e, Log[_], B0[___], C0[___]}, Simplify];
 
 total = total //. 3/2 sp[q1, q2] -> h //. -(3/2) sp[q1, q2] -> -h;
 
+total = total - cWB HWF (sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]);
+
 totale = Coefficient[total,e,-1];
 total0 = Coefficient[total,e,0];
 
@@ -234,14 +236,14 @@ Print["ANOMALOUS DIMENSION ENTRIES."];
 Print[""];
 Print[""];
 total = Total[diag];
-Table[Print["div relative to ", c, " : \n", Expand[ 2 Simplify[ Coefficient[totale,c]* (-1/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] + If[c === cWB,HWF,0] ],"\n"],{c,{cB,cW,cWB}}];
+Table[Print["div relative to ", c, " : \n", Expand[ 2 Simplify[ Coefficient[totale,c]* (-1/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] ],"\n"],{c,{cB,cW,cWB}}];
 
 Print[""];
 Print[""];
 Print["FINITE TERMS."];
 Print[""];
 Print[""];
-Print[Collect[Simplify[2 * total0 * (-1/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]))] /. sp[q1, q2] -> 2/3 h
+Print[Collect[Simplify[total0 * (-1/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]))] /. sp[q1, q2] -> 2/3 h
               , {cB, cW, cWB, Log[_], B0[___], C0[___]}
               , Simplify]];
 
@@ -259,7 +261,7 @@ WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  FINITE TERMS  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"finiteterms:=\n"];
-Write[FILE, Collect[Simplify[total0/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])] /. sp[q1, q2] -> 2/3 h
+Write[FILE, Collect[Simplify[total0 * (-1/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])) ] /. sp[q1, q2] -> 2/3 h
                     , {cB, cW, cWB, Log[_], B0[___], C0[___]}
                     , Simplify]];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];

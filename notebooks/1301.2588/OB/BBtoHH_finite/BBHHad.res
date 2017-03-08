@@ -13,6 +13,18 @@ cWBentry:=
 
 
 
+########  FINITE TERMS  ########
+
+finiteterms:=
+cWB*((15*gw^2)/2 - (3*gw^2*B0[q1 - q3, 0, h])/2 - 
+   (3*gw^2*B0[q2 - q3, 0, h])/2 + (3*gw^2*h*C0[0, h, h, h, 0])/2 - 
+   (9*gw^2*Log[h])/2) + cB*(3*(g1^2 - 2*gw^2) + 
+   ((g1^2 + 3*(gw^2 + 8*lam))*B0[q1 + q2, h, h])/4 - g1^2*B0[q1 - q3, 0, h] - 
+   g1^2*B0[q2 - q3, 0, h] + g1^2*h*C0[0, h, h, h, 0] - 
+   ((g1^2 + 3*gw^2)*h*C0[-h, h, 0, h, h])/3 + (-2*g1^2 + 3*gw^2)*Log[h] + 
+   B0[h, t, t]*yu[3, 3]^2)
+
+
 ########  intermediate steps  ########
 
 prefactor=
@@ -9869,9 +9881,16 @@ diagtotal=
   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) - 
  (5*cB*g1^2 - 3*cB*gw^2 + 9*cWB*gw^2)*Log[h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
    sp[q1, Ep2]*sp[q2, Ep1]) - cB*(g1^2 + 3*gw^2)*C0[-h, h, 0, h, h]*
-  sp[q1, q2]*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1])
+  sp[q1, q2]*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) + 
+ 2*cB*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1])*
+  (-g1^2 - 3*gw^2 + (g1^2*Log[h])/2 + (3*gw^2*Log[h])/2 + 
+   B0[h, t, t]*yu[3, 3]^2 + (-g1^2/2 - (3*gw^2)/2 + yu[3, 3]^2)/e)
 
 diagdiv=
-(3*(2*cWB*gw^2 + cB*(g1^2 - gw^2 + 8*lam))*(sp[Ep1, Ep2]*sp[q1, q2] - 
-   sp[q1, Ep2]*sp[q2, Ep1]))/2
+(cB*g1^2*sp[Ep1, Ep2]*sp[q1, q2])/2 - (9*cB*gw^2*sp[Ep1, Ep2]*sp[q1, q2])/2 + 
+ 3*cWB*gw^2*sp[Ep1, Ep2]*sp[q1, q2] + 12*cB*lam*sp[Ep1, Ep2]*sp[q1, q2] - 
+ (cB*g1^2*sp[q1, Ep2]*sp[q2, Ep1])/2 + (9*cB*gw^2*sp[q1, Ep2]*sp[q2, Ep1])/
+  2 - 3*cWB*gw^2*sp[q1, Ep2]*sp[q2, Ep1] - 12*cB*lam*sp[q1, Ep2]*
+  sp[q2, Ep1] + 2*cB*sp[Ep1, Ep2]*sp[q1, q2]*yu[3, 3]^2 - 
+ 2*cB*sp[q1, Ep2]*sp[q2, Ep1]*yu[3, 3]^2
 
