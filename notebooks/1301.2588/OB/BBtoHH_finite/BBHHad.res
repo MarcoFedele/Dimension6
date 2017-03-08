@@ -9857,41 +9857,21 @@ postPVdiag=
     sp[q2, q3]^3)/(-(h*(h + 2*sp[q1, q2] - 2*sp[q1, q3] - 2*sp[q2, q3])) + 
     (h - sp[q1, q3] - sp[q2, q3])^2)}
 
+diagtotal=
+(8*cB*g1^2 - 6*cB*gw^2 + 15*cWB*gw^2)*(sp[Ep1, Ep2]*sp[q1, q2] - 
+   sp[q1, Ep2]*sp[q2, Ep1]) + (3*(2*cWB*gw^2 + cB*(g1^2 - gw^2 + 8*lam))*
+   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/(2*e) + 
+ (cB*(g1^2 + 3*(gw^2 + 8*lam))*B0[q1 + q2, h, h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
+    sp[q1, Ep2]*sp[q2, Ep1]))/2 - (2*cB*g1^2 + 3*cWB*gw^2)*B0[q1 - q3, 0, h]*
+  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) - 
+ (2*cB*g1^2 + 3*cWB*gw^2)*B0[q2 - q3, 0, h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
+   sp[q1, Ep2]*sp[q2, Ep1]) + (2*cB*g1^2 + 3*cWB*gw^2)*h*C0[0, h, h, h, 0]*
+  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) - 
+ (5*cB*g1^2 - 3*cB*gw^2 + 9*cWB*gw^2)*Log[h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
+   sp[q1, Ep2]*sp[q2, Ep1]) - cB*(g1^2 + 3*gw^2)*C0[-h, h, 0, h, h]*
+  sp[q1, q2]*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1])
+
 diagdiv=
-{2*cB*lam*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- 4*cB*lam*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- 6*cB*lam*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- (cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q3] - sp[q1, Ep2]*sp[q3, Ep1]))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*sp[q1, q3] - sp[q1, Ep2]*sp[q3, Ep1]))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q3] - sp[q1, Ep2]*sp[q3, Ep1]))/4, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1])))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1])))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1])))/4, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] + sp[q1, q3] - sp[q2, q3]) - 
-    sp[q1, Ep2]*(sp[q2, Ep1] + sp[q3, Ep1]) + sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*(sp[q1, q2] + sp[q1, q3] - sp[q2, q3]) - 
-    sp[q1, Ep2]*(sp[q2, Ep1] + sp[q3, Ep1]) + sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] + sp[q1, q3] - sp[q2, q3]) - 
-    sp[q1, Ep2]*(sp[q2, Ep1] + sp[q3, Ep1]) + sp[q2, Ep1]*sp[q3, Ep2]))/4, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3] + sp[q2, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1]) - sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3] + sp[q2, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1]) - sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q1, q3] + sp[q2, q3]) + 
-    sp[q1, Ep2]*(-sp[q2, Ep1] + sp[q3, Ep1]) - sp[q2, Ep1]*sp[q3, Ep2]))/4, 
- (cWB*gw^2*(sp[Ep1, Ep2]*sp[q2, q3] - sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*sp[q2, q3] - sp[q2, Ep1]*sp[q3, Ep2]))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*sp[q2, q3] - sp[q2, Ep1]*sp[q3, Ep2]))/4, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q2, q3]) + 
-    sp[q2, Ep1]*(-sp[q1, Ep2] + sp[q3, Ep2])))/2, 
- (cB*g1^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q2, q3]) + 
-    sp[q2, Ep1]*(-sp[q1, Ep2] + sp[q3, Ep2])))/2, 
- (cWB*gw^2*(sp[Ep1, Ep2]*(sp[q1, q2] - sp[q2, q3]) + 
-    sp[q2, Ep1]*(-sp[q1, Ep2] + sp[q3, Ep2])))/4, 
- (cB*g1^2*(-(sp[Ep1, Ep2]*sp[q1, q2]) + sp[q1, Ep2]*sp[q2, Ep1]))/2, 
- (cB*gw^2*(-(sp[Ep1, Ep2]*sp[q1, q2]) + sp[q1, Ep2]*sp[q2, Ep1]))/2, 
- cB*gw^2*(-(sp[Ep1, Ep2]*sp[q1, q2]) + sp[q1, Ep2]*sp[q2, Ep1])}
+(3*(2*cWB*gw^2 + cB*(g1^2 - gw^2 + 8*lam))*(sp[Ep1, Ep2]*sp[q1, q2] - 
+   sp[q1, Ep2]*sp[q2, Ep1]))/2
 
