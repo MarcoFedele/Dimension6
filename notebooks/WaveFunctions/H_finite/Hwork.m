@@ -189,14 +189,14 @@ Print[""];
 Print["ANOMALOUS DIMENSION CONTRIBUTE"];
 Print[""];
 Print[""];
-ad = Expand [2 totale];
+ad = Expand [totale];
 Print[ad];
 Print[""];
 Print[""];
 Print["FINITE TERM"];
 Print[""];
 Print[""];
-ft = Expand [2 total0];
+ft = Expand [total0];
 Print[ft];
 
 
