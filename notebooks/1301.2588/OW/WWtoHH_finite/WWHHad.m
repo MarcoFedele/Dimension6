@@ -194,6 +194,8 @@ diag = diag /.{ A0[m_] -> m/e - m Log[m] + m, B0[x_, m1_, m2_] -> 1/e + B0[x, m1
 
 total = Normal[Series[Total[diag],{e, 0, 0}]];
 
+totalnorm = total;
+
 Reorder := {B0[-q1, m1_, m2_] -> B0[q1, m1, m2],
             B0[-q2, m1_, m2_] -> B0[q2, m1, m2],
             B0[-q3, m1_, m2_] -> B0[h, m1, m2],

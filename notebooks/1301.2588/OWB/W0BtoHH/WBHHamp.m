@@ -28,7 +28,7 @@ Print["Diagrams"];
 Do[
  Print[jj];
  Diag = diag[[jj]];
-   q4 = q1 +q2 - q3;
+   (*q4 = q1 +q2 - q3;*)
    Diag =  ExpandScalarProducts[Diag];
    
    
@@ -132,7 +132,7 @@ Print["If everything has been done correctly, a zero must happear here: ", tot];
 amp2 = Expand[amp2 /. {SumOver[___] -> 1, DELTA[___] -> 1}];
 col = col /. {SumOver[___] -> 1, DELTA[___] -> 1};
 
-amp2 = amp2 /. - q1 - q2 + q3 -> - q123;
+(*amp2 = amp2 /. - q1 - q2 + q3 -> - q123;*)
 
 FILE = NotebookDirectory[]<>"WBHHamp.res";
 
