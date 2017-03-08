@@ -253,6 +253,13 @@ Do[WriteString[FILE,ToString[c]<>"entry:=\n"];
    WriteString[FILE,"\n"];
    ,{c,{cB,cW,cWB}}];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+WriteString[FILE,"########  FINITE TERMS  ########"];
+WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+WriteString[FILE,"finiteterms:=\n"];
+Write[FILE, Collect[Simplify[total0/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])] /. sp[q1, q2] -> 2/3 h
+                    , {cB, cWB, Log[_], B0[___], C0[___]}
+                    , Simplify]];
+WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  intermediate steps  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"prefactor=\n"]; Write[FILE,prefactor];

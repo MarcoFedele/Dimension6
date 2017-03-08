@@ -23,8 +23,8 @@
 
  diag = Expand[diag];
 diag = diag /. {Tracer`Private`eps[{a__,b__,c__,d__}] -> 0};
-diag = diag /. q4 -> q1 +q2 - q3;
-diag = diag /. {-q1 -q2 +q3 -> -q123 , q1 +q2 -q3 -> q123};
+(*diag = diag /. q4 -> q1 +q2 - q3;
+diag = diag /. {-q1 -q2 +q3 -> -q123 , q1 +q2 -q3 -> q123};*)
 
 Print["Diagrams"];
 Do[
