@@ -177,7 +177,7 @@ Print[""];
 Print["ANOMALOUS DIMENSION CONTRIBUTE"];
 Print[""];
 Print[""];
-ad = Collect[Expand [2 Coefficient[Total[diag], q1^2] /.{A0[m_] -> 0, B0[_,_,_] -> 1}],{g1,gw}, Simplify]/.cw^2->1-sw^2;
+ad = Collect[Expand [2 Coefficient[Total[diag], q1^2] /.{A0[m_] -> 0, B0[_,_,_] -> 1}/. cw^2 -> gw^2/(g1^2 + gw^2)]//Simplify,{g1,gw}, Simplify];
 Print[ad];
 
 

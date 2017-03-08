@@ -5,7 +5,7 @@
 << Utils.m;
 
 diag = diag/.pp[a_,b_] -> pp[a, b^2];
-diag = diag/.{MG0->Sqrt[mg0], MGP->Sqrt[mgp], MT->Sqrt[t]};
+diag = diag/.{MG0->Sqrt[h], MGP->Sqrt[h], MT->Sqrt[t]};
 
 diag = diagSimplify[diag]  ;
 
@@ -158,10 +158,10 @@ Module[{temp, checkdiag, count, temp0, temp1},
        Return[ResumDiag[temp, Rest[temp0]]];
        ];
 
-diag=diag/.{}
+
 prePVdiag = diag;
-diag = PV[diag, ppspcounter] /. {B0[ - q1_ - q2_ , m1_ , m2_ ] -> B0[ q1 + q2 , m1 , m2 ]};
-diag = diag /. {sp[Ep1, q1] -> 0, sp[Ep2, q2] -> 0} /. {sp[Epa_, q_] :>  sp[q, Epa] /; MatchQ[Epa, Ep1 | Ep2] && ! MatchQ[q, Ep1 | Ep2]};
+diag = PV[diag, ppspcounter];
+
 
 (*Print["diag before PV:"];
 Print[prePVdiag];
@@ -171,17 +171,36 @@ Do[Print[ppspcounter[[i]]],{i,Length[ppspcounter]}];
 Print[""];
 Print["diag after PV:"];
 Print[diag];*)
-diag = diag /. nd -> 4;
+diag = diag /. nd -> 4 - 2 e;
+
+Reorder := {B0[-q1, m1_, m2_] -> B0[h, m1, m2],
+            B0[m_, m_, 0] -> B0[m, 0, m],
+            B0[m_, 0, m_] -> -Log[m] + 2};
+
+total = Coefficient[Total[diag], q1, 2] /. B0[x_, m1_, m2_] -> 1/e + B0[x, m1, m2] //. Reorder;
+
+total = Normal[Series[total, {e, 0, 0}]];
+
+totale = Coefficient[total,e,-1];
+total0 = Coefficient[total,e,0];
+
 Print[""];
 Print[""];
 Print["ANOMALOUS DIMENSION CONTRIBUTE"];
 Print[""];
 Print[""];
-ad = Expand [2 Coefficient[Total[diag], q1^2] /.{A0[m_] -> 0, B0[_,_,_] -> 1}];
+ad = Expand [2 totale];
 Print[ad];
+Print[""];
+Print[""];
+Print["FINITE TERM"];
+Print[""];
+Print[""];
+ft = Expand [2 total0];
+Print[ft];
 
 
 FILE = NotebookDirectory[]<>"H_WF.res";
 DeleteFile[FILE]; OpenWrite[FILE];
-WriteString[FILE,"HWF=\n"]; Write[FILE,ad];
+WriteString[FILE,"HWF=\n"]; Write[FILE,total];
 Close[FILE];
