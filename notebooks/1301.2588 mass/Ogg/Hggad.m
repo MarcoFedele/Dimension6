@@ -88,7 +88,7 @@ Module[{temp, checkdiag, count, temp0, temp1},
           If[checkdiag[[DIAG]] == 1,
              Do[
                 If[count[[DIAG, TERM]] == {0, 0},
-                   temp0 = Append[temp0, temp[[DIAG, TERM]]],
+                   temp0 = Append[temp0, 0*temp[[DIAG, TERM]]],
                    If[count[[DIAG, TERM]] == {1, 0},
                       temp1 = temp[[DIAG,TERM]] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0} ;
                       temp1 = temp1 //. PVsub;
@@ -127,7 +127,7 @@ Module[{temp, checkdiag, count, temp0, temp1},
                 , {TERM, 1, Length[temp[[DIAG]]]}
                 ],
              If[count[[DIAG]][[1]] == {0, 0},
-                temp0 = Append[temp0, temp[[DIAG]]],
+                temp0 = Append[temp0, 0*temp[[DIAG]]],
                 If[count[[DIAG]][[1]] == {1, 0},
                    temp1 = temp[[DIAG]] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
                    temp1 = temp1 //. PVsub;
@@ -193,32 +193,36 @@ postPVdiag = diag;
  Print["diag after PV:"];
  Print[postPVdiag]; *)
 
-diag = diag /. nd -> 4;
-diag = diag /.{ A0[m_] -> m, B0[___,___,___] -> 1, C0[___,___,___,___,___] -> 0};
+diag = diag /. nd -> 4 - 2 e;
+diag = diag /.{ A0[m_] -> m/e, B0[___] -> 1/e, C0[___] -> 0};
+diag = Normal[Series[diag,{e,0,0}]];
+diag = Coefficient[diag, e, -1];
 diag = Simplify[diag];
+
+(*Print[""];
+ Print["simplified diag div:"];
+ Print[diag];*)
 
 total = Total[diag];
 
+AD = Collect[total /. sw -> cw*g1/gw /. cWs -> c\[Gamma]\[Gamma] + cWB - cB
+             , {sp[Ep1, Ep2] sp[q1, q2], sp[q1, Ep2] sp[q2, Ep1], sp[Ep1, Ep2] , cw, g1, cB , cW, cWB},
+             Simplify] /. cw^2 g1^2 -> e^2;
+
 If[!MatchQ[Simplify[Coefficient[ total, sp[Ep1, Ep2] sp[q1,  q2]] ] ,
            Simplify[Coefficient[-total, sp[q1,  Ep2] sp[q2, Ep1]] ] ],
+   
    Print["There's something rotten in the state of Denmark..."],
-   ad = Coefficient[total, sp[Ep1, Ep2] sp[q1, q2]];
-   ad = Collect[ad /. sw -> cw g1/gw, {cw, g1, lam, cB, cW, cWB}, Simplify] /. cw^2 g1^2 -> e^2 ;
-   Print["ad : ", ad]
+   
+   ad = Coefficient[ AD, sp[Ep1, Ep2]sp[q1,  q2] ];
+   (* Print["ad : ", ad ]; *)
+   Print[""];
+   Print["ANOMALOUS DIMENSION ENTRIES."];
+   Print[""];
+   Table[Print["Entry relative to ", c, " : \n", Expand[Coefficient[ad, e^2 * c]] + If[c === c\[Gamma]\[Gamma],HWF,0],"\n"],{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}]
    ];
 
 Collect[Coefficient[Total[diag], sp[Ep1, Ep2] sp[q1, q2]], {cB , cW, cWB}, Simplify]
-
-(*Print[""];
- Print[" simplified diag div:"];
- Print[diag];
- Print[""];
- Print[""];
- Print["ANOMALOUS DIMENSION ENTRIES."];
- Print[""];
- Print[""];
- 
- Table[Print["Entry relative to ", c, " : \n", Expand[ 2 Simplify[ Coefficient[total, c] * (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] + If[c === cB,HWF,0] ],"\n"],{c,{cB,cW,cWB}}];*)
 
 
 FILE = NotebookDirectory[]<>"Hggad.res";
@@ -227,9 +231,9 @@ WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  ANOMALOUS DIMENSION ENTRIES  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 Do[WriteString[FILE,ToString[c]<>"entry:=\n"];
-   Write[FILE, Expand[ 2 Simplify[ Coefficient[total,c]* (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] + If[c === cB,HWF,0] ] ];
+   Write[FILE, Expand[Coefficient[ad, e^2 * c]] + If[c === c\[Gamma]\[Gamma],HWF,0] ];
    WriteString[FILE,"\n"];
-   ,{c,{cB,cW,cWB}}];
+   ,{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  intermediate steps  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
@@ -240,6 +244,8 @@ WriteString[FILE,"\n"];
 WriteString[FILE,"postPVdiag=\n"]; Write[FILE,postPVdiag];
 WriteString[FILE,"\n"];
 WriteString[FILE,"diagdiv=\n"]; Write[FILE,diag];
+WriteString[FILE,"\n"];
+WriteString[FILE,"AD=\n"]; Write[FILE,AD];
 WriteString[FILE,"\n"];
 
 Close[FILE];

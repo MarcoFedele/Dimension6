@@ -11,7 +11,7 @@ diag = diag/.{MH->Sqrt[h], MG0->Sqrt[h], MGP->Sqrt[h], MW->Sqrt[w], MZ->Sqrt[z] 
 
 diag = diagSimplify[diag] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
 
-prefactor = vev / LAMBDA^2;
+prefactor = 1 / LAMBDA^2;
 
 diag = Expand[diag / prefactor];
 diag = diag /. {sp[Epa_, q_] :>  sp[q, Epa] /; MatchQ[Epa, Ep1 | Ep2] && ! MatchQ[q, Ep1 | Ep2]}
