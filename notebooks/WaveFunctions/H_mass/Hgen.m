@@ -9,7 +9,7 @@ process1 = {S[1]} -> {S[1]};
 
 top = CreateTopologies[1, 1 -> 1, Adjacencies -> {3, 4, 5, 6}, ExcludeTopologies -> {Internal, Tadpoles} ];
 
-ins1 = InsertFields[ top[[2]], process1, Model -> "Mine/1301.2581.mass", GenericModel -> "Mine/1301.2581.mass", InsertionLevel->{Particles}, ExcludeParticles -> {F[1|2|3|4, {1, ___}], F[1|2|3|4, {2, ___}], F[1|2|4, {3, ___}]} ];
+ins1 = InsertFields[ top[[2]], process1, Model -> "Mine/1301.2581.mass2", GenericModel -> "Mine/1301.2581.mass", InsertionLevel->{Particles}, ExcludeParticles -> {F[1|2|3|4, {1, ___}], F[1|2|3|4, {2, ___}], F[1|2|4, {3, ___}]} ];
 
 
 amp0 = CreateFeynAmp[ ins1, Truncated->True,   PreFactor -> 1];

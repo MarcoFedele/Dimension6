@@ -1,7 +1,7 @@
 amp0=
 FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} -> 
     {{S[1], FourMomentum[Outgoing, 1], MH, {}}}, 
-  Model -> {"Mine/1301.2581.mass"}, GenericModel -> {"Mine/1301.2581.mass"}, 
+  Model -> {"Mine/1301.2581.mass2"}, GenericModel -> {"Mine/1301.2581.mass"}, 
   AmplitudeLevel -> {Particles}, ExcludeParticles -> 
    {-F[1, {1}], F[1, {1}], -F[1, {2}], F[1, {2}], -F[1, {3}], F[1, {3}], 
     -F[2, {1}], F[2, {1}], -F[2, {2}], F[2, {2}], -F[2, {3}], F[2, {3}], 
@@ -42,21 +42,19 @@ FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} ->
       PropagatorDenominator[FourMomentum[Internal, 1] - 
         FourMomentum[Outgoing, 1], 0]]*MetricTensor[Index[Lorentz, 1], 
       Index[Lorentz, 2]]*MetricTensor[Index[Lorentz, 3], Index[Lorentz, 4]]*
-     (((2*I)*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*vev*
+     (((2*I)*(cB*cw^2*g1^2 + cw*g1*(cw*cW*g1 - cw*cWB*g1))*vev*
         FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 3]]*
         FourVector[FourMomentum[Internal, 1] - FourMomentum[Outgoing, 1], 
-         Index[Lorentz, 1]])/LAMBDA^2 + (I/2)*(cw*g1 - gw*sw)^2*vev*
-       MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]] - 
-      ((2*I)*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*vev*
+         Index[Lorentz, 1]])/LAMBDA^2 - 
+      ((2*I)*(cB*cw^2*g1^2 + cw*g1*(cw*cW*g1 - cw*cWB*g1))*vev*
         MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]]*
         ScalarProduct[-FourMomentum[Internal, 1], FourMomentum[Internal, 1] - 
           FourMomentum[Outgoing, 1]])/LAMBDA^2)*
-     (((2*I)*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*vev*
+     (((2*I)*(cB*cw^2*g1^2 + cw*g1*(cw*cW*g1 - cw*cWB*g1))*vev*
         FourVector[FourMomentum[Internal, 1], Index[Lorentz, 4]]*
         FourVector[-FourMomentum[Internal, 1] + FourMomentum[Outgoing, 1], 
-         Index[Lorentz, 2]])/LAMBDA^2 + (I/2)*(cw*g1 - gw*sw)^2*vev*
-       MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]] - 
-      ((2*I)*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*vev*
+         Index[Lorentz, 2]])/LAMBDA^2 - 
+      ((2*I)*(cB*cw^2*g1^2 + cw*g1*(cw*cW*g1 - cw*cWB*g1))*vev*
         MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]]*
         ScalarProduct[FourMomentum[Internal, 1], -FourMomentum[Internal, 1] + 
           FourMomentum[Outgoing, 1]])/LAMBDA^2))/2], 
@@ -66,21 +64,21 @@ FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} ->
       PropagatorDenominator[FourMomentum[Internal, 1] - 
         FourMomentum[Outgoing, 1], MZ]]*MetricTensor[Index[Lorentz, 1], 
       Index[Lorentz, 2]]*MetricTensor[Index[Lorentz, 3], Index[Lorentz, 4]]*
-     (((2*I)*(cw^2*cW*gw^2 + cw*cWB*g1*gw*sw + cB*g1^2*sw^2)*vev*
+     (((2*I)*(cw^2*cWB*g1^2 + (cB*cw^2*g1^4)/gw^2 + cw^2*cW*gw^2)*vev*
         FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 3]]*
         FourVector[FourMomentum[Internal, 1] - FourMomentum[Outgoing, 1], 
-         Index[Lorentz, 1]])/LAMBDA^2 + (I/2)*(cw*gw + g1*sw)^2*vev*
+         Index[Lorentz, 1]])/LAMBDA^2 + (I/2)*((cw*g1^2)/gw + cw*gw)^2*vev*
        MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]] - 
-      ((2*I)*(cw^2*cW*gw^2 + cw*cWB*g1*gw*sw + cB*g1^2*sw^2)*vev*
+      ((2*I)*(cw^2*cWB*g1^2 + (cB*cw^2*g1^4)/gw^2 + cw^2*cW*gw^2)*vev*
         MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]]*
         ScalarProduct[-FourMomentum[Internal, 1], FourMomentum[Internal, 1] - 
           FourMomentum[Outgoing, 1]])/LAMBDA^2)*
-     (((2*I)*(cw^2*cW*gw^2 + cw*cWB*g1*gw*sw + cB*g1^2*sw^2)*vev*
+     (((2*I)*(cw^2*cWB*g1^2 + (cB*cw^2*g1^4)/gw^2 + cw^2*cW*gw^2)*vev*
         FourVector[FourMomentum[Internal, 1], Index[Lorentz, 4]]*
         FourVector[-FourMomentum[Internal, 1] + FourMomentum[Outgoing, 1], 
-         Index[Lorentz, 2]])/LAMBDA^2 + (I/2)*(cw*gw + g1*sw)^2*vev*
+         Index[Lorentz, 2]])/LAMBDA^2 + (I/2)*((cw*g1^2)/gw + cw*gw)^2*vev*
        MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]] - 
-      ((2*I)*(cw^2*cW*gw^2 + cw*cWB*g1*gw*sw + cB*g1^2*sw^2)*vev*
+      ((2*I)*(cw^2*cWB*g1^2 + (cB*cw^2*g1^4)/gw^2 + cw^2*cW*gw^2)*vev*
         MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]]*
         ScalarProduct[FourMomentum[Internal, 1], -FourMomentum[Internal, 1] + 
           FourMomentum[Outgoing, 1]])/LAMBDA^2))/2], 
@@ -90,23 +88,25 @@ FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} ->
      PropagatorDenominator[FourMomentum[Internal, 1] - 
        FourMomentum[Outgoing, 1], MZ]]*MetricTensor[Index[Lorentz, 1], 
      Index[Lorentz, 2]]*MetricTensor[Index[Lorentz, 3], Index[Lorentz, 4]]*
-    (((-I)*(cw^2*cWB*g1*gw + 2*cw*(cB*g1^2 - cW*gw^2)*sw - cWB*g1*gw*sw^2)*
-       vev*FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 3]]*
+    (((-I)*(-((cw^2*cWB*g1^3)/gw) + cw^2*cWB*g1*gw + 
+        (2*cw^2*g1*(cB*g1^2 - cW*gw^2))/gw)*vev*
+       FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 3]]*
        FourVector[FourMomentum[Internal, 1] - FourMomentum[Outgoing, 1], 
-        Index[Lorentz, 1]])/LAMBDA^2 - (I/2)*(cw*gw + g1*sw)*(cw*g1 - gw*sw)*
-      vev*MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]] + 
-     (I*(cw^2*cWB*g1*gw + 2*cw*(cB*g1^2 - cW*gw^2)*sw - cWB*g1*gw*sw^2)*vev*
-       MetricTensor[Index[Lorentz, 1], Index[Lorentz, 3]]*
-       ScalarProduct[-FourMomentum[Internal, 1], FourMomentum[Internal, 1] - 
+        Index[Lorentz, 1]])/LAMBDA^2 + 
+     (I*(-((cw^2*cWB*g1^3)/gw) + cw^2*cWB*g1*gw + 
+        (2*cw^2*g1*(cB*g1^2 - cW*gw^2))/gw)*vev*MetricTensor[
+        Index[Lorentz, 1], Index[Lorentz, 3]]*ScalarProduct[
+        -FourMomentum[Internal, 1], FourMomentum[Internal, 1] - 
          FourMomentum[Outgoing, 1]])/LAMBDA^2)*
-    (((-I)*(cw^2*cWB*g1*gw + 2*cw*(cB*g1^2 - cW*gw^2)*sw - cWB*g1*gw*sw^2)*
-       vev*FourVector[FourMomentum[Internal, 1], Index[Lorentz, 4]]*
+    (((-I)*(-((cw^2*cWB*g1^3)/gw) + cw^2*cWB*g1*gw + 
+        (2*cw^2*g1*(cB*g1^2 - cW*gw^2))/gw)*vev*
+       FourVector[FourMomentum[Internal, 1], Index[Lorentz, 4]]*
        FourVector[-FourMomentum[Internal, 1] + FourMomentum[Outgoing, 1], 
-        Index[Lorentz, 2]])/LAMBDA^2 - (I/2)*(cw*gw + g1*sw)*(cw*g1 - gw*sw)*
-      vev*MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]] + 
-     (I*(cw^2*cWB*g1*gw + 2*cw*(cB*g1^2 - cW*gw^2)*sw - cWB*g1*gw*sw^2)*vev*
-       MetricTensor[Index[Lorentz, 2], Index[Lorentz, 4]]*
-       ScalarProduct[FourMomentum[Internal, 1], -FourMomentum[Internal, 1] + 
+        Index[Lorentz, 2]])/LAMBDA^2 + 
+     (I*(-((cw^2*cWB*g1^3)/gw) + cw^2*cWB*g1*gw + 
+        (2*cw^2*g1*(cB*g1^2 - cW*gw^2))/gw)*vev*MetricTensor[
+        Index[Lorentz, 2], Index[Lorentz, 4]]*ScalarProduct[
+        FourMomentum[Internal, 1], -FourMomentum[Internal, 1] + 
          FourMomentum[Outgoing, 1]])/LAMBDA^2))], 
  FeynAmp[GraphID[Topology == 1, Generic == 3, Particles == 4, Number == 8], 
   Integral[FourMomentum[Internal, 1]], 
@@ -150,26 +150,23 @@ FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} ->
    Number == 10], Integral[FourMomentum[Internal, 1]], 
   FeynAmpDenominator[PropagatorDenominator[FourMomentum[Internal, 1], MZ], 
     PropagatorDenominator[FourMomentum[Internal, 1] - 
-      FourMomentum[Outgoing, 1], 0]]*
-   (((cw*g1 - gw*sw)*FourVector[FourMomentum[Incoming, 1], 
-       Index[Lorentz, 1]])/2 + ((-(cw*g1) + gw*sw)*
-      FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 1]])/2)*
-   (((-(cw*g1) + gw*sw)*FourVector[FourMomentum[Internal, 1], 
-       Index[Lorentz, 2]])/2 + 
-    ((cw*g1 - gw*sw)*FourVector[-FourMomentum[Outgoing, 1], 
-       Index[Lorentz, 2]])/2)*MetricTensor[Index[Lorentz, 1], 
-    Index[Lorentz, 2]]], FeynAmp[GraphID[Topology == 1, Generic == 4, 
-   Particles == 2, Number == 11], Integral[FourMomentum[Internal, 1]], 
-  FeynAmpDenominator[PropagatorDenominator[FourMomentum[Internal, 1], MZ], 
-    PropagatorDenominator[FourMomentum[Internal, 1] - 
       FourMomentum[Outgoing, 1], MZ]]*
-   (((-(cw*gw) - g1*sw)*FourVector[FourMomentum[Incoming, 1], 
-       Index[Lorentz, 1]])/2 + 
-    ((cw*gw + g1*sw)*FourVector[-FourMomentum[Internal, 1], 
-       Index[Lorentz, 1]])/2)*
-   (((cw*gw + g1*sw)*FourVector[FourMomentum[Internal, 1], 
-       Index[Lorentz, 2]])/2 + ((-(cw*gw) - g1*sw)*
+   (((-((cw*g1^2)/gw) - cw*gw)*FourVector[FourMomentum[Incoming, 1], 
+       Index[Lorentz, 1]])/2 + (((cw*g1^2)/gw + cw*gw)*
+      FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 1]])/2)*
+   ((((cw*g1^2)/gw + cw*gw)*FourVector[FourMomentum[Internal, 1], 
+       Index[Lorentz, 2]])/2 + ((-((cw*g1^2)/gw) - cw*gw)*
       FourVector[-FourMomentum[Outgoing, 1], Index[Lorentz, 2]])/2)*
+   MetricTensor[Index[Lorentz, 1], Index[Lorentz, 2]]], 
+ FeynAmp[GraphID[Topology == 1, Generic == 4, Particles == 2, Number == 11], 
+  Integral[FourMomentum[Internal, 1]], 
+  FeynAmpDenominator[PropagatorDenominator[FourMomentum[Internal, 1], MW], 
+    PropagatorDenominator[FourMomentum[Internal, 1] - 
+      FourMomentum[Outgoing, 1], MW]]*
+   (-(gw*FourVector[FourMomentum[Incoming, 1], Index[Lorentz, 1]])/2 + 
+    (gw*FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 1]])/2)*
+   ((gw*FourVector[FourMomentum[Internal, 1], Index[Lorentz, 2]])/2 - 
+    (gw*FourVector[-FourMomentum[Outgoing, 1], Index[Lorentz, 2]])/2)*
    MetricTensor[Index[Lorentz, 1], Index[Lorentz, 2]]], 
  FeynAmp[GraphID[Topology == 1, Generic == 4, Particles == 3, Number == 12], 
   Integral[FourMomentum[Internal, 1]], 
@@ -180,19 +177,9 @@ FeynAmpList[Process -> {{S[1], FourMomentum[Incoming, 1], MH, {}}} ->
     (gw*FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 1]])/2)*
    ((gw*FourVector[FourMomentum[Internal, 1], Index[Lorentz, 2]])/2 - 
     (gw*FourVector[-FourMomentum[Outgoing, 1], Index[Lorentz, 2]])/2)*
-   MetricTensor[Index[Lorentz, 1], Index[Lorentz, 2]]], 
- FeynAmp[GraphID[Topology == 1, Generic == 4, Particles == 4, Number == 13], 
-  Integral[FourMomentum[Internal, 1]], 
-  FeynAmpDenominator[PropagatorDenominator[FourMomentum[Internal, 1], MW], 
-    PropagatorDenominator[FourMomentum[Internal, 1] - 
-      FourMomentum[Outgoing, 1], MW]]*
-   (-(gw*FourVector[FourMomentum[Incoming, 1], Index[Lorentz, 1]])/2 + 
-    (gw*FourVector[-FourMomentum[Internal, 1], Index[Lorentz, 1]])/2)*
-   ((gw*FourVector[FourMomentum[Internal, 1], Index[Lorentz, 2]])/2 - 
-    (gw*FourVector[-FourMomentum[Outgoing, 1], Index[Lorentz, 2]])/2)*
    MetricTensor[Index[Lorentz, 1], Index[Lorentz, 2]]]]
 ins1=
-TopologyList[Process -> {S[1]} -> {S[1]}, Model -> {"Mine/1301.2581.mass"}, 
+TopologyList[Process -> {S[1]} -> {S[1]}, Model -> {"Mine/1301.2581.mass2"}, 
   GenericModel -> {"Mine/1301.2581.mass"}, InsertionLevel -> {Particles}, 
   ExcludeParticles -> {-F[1, {1}], F[1, {1}], -F[1, {2}], F[1, {2}], 
     -F[1, {3}], F[1, {3}], -F[2, {1}], F[2, {1}], -F[2, {2}], F[2, {2}], 
@@ -229,9 +216,7 @@ TopologyList[Process -> {S[1]} -> {S[1]}, Model -> {"Mine/1301.2581.mass"},
    FeynmanGraph[1, Generic == 4][Field[1] -> S[1], Field[2] -> S[1], 
      Field[3] -> S, Field[4] -> V] -> Insertions[Particles][
      FeynmanGraph[1, Particles == 1][Field[1] -> S[1], Field[2] -> S[1], 
-      Field[3] -> S[2], Field[4] -> V[1]], FeynmanGraph[1, Particles == 2][
-      Field[1] -> S[1], Field[2] -> S[1], Field[3] -> S[2], 
-      Field[4] -> V[2]], FeynmanGraph[1, Particles == 3][Field[1] -> S[1], 
-      Field[2] -> S[1], Field[3] -> -S[3], Field[4] -> V[3]], 
-     FeynmanGraph[1, Particles == 4][Field[1] -> S[1], Field[2] -> S[1], 
-      Field[3] -> S[3], Field[4] -> -V[3]]]]]
+      Field[3] -> S[2], Field[4] -> V[2]], FeynmanGraph[1, Particles == 2][
+      Field[1] -> S[1], Field[2] -> S[1], Field[3] -> -S[3], 
+      Field[4] -> V[3]], FeynmanGraph[1, Particles == 3][Field[1] -> S[1], 
+      Field[2] -> S[1], Field[3] -> S[3], Field[4] -> -V[3]]]]]

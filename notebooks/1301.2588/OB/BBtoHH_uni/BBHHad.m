@@ -177,7 +177,7 @@ diag = diag /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0} /. {q1
 diag = diag /. {B0[ - q1_ - q2_ , m1_ , m2_ ] -> B0[ q1 + q2 , m1 , m2 ], q3^2 -> h, q4^2 -> h};
 diag = diag /. {sp[Ep1, q1] -> 0, sp[Ep2, q2] -> 0} /. {sp[Epa_, q_] :>  sp[q, Epa] /; MatchQ[Epa, Ep1 | Ep2] && ! MatchQ[q, Ep1 | Ep2]};
 
-Print["prefactor:"];
+(*Print["prefactor:"];
  Print[prefactor];
  Print[""];
  Print["diag before PV:"];
@@ -187,21 +187,62 @@ Print["prefactor:"];
  Do[Print[lista[[i,1]], " : ", ppspcounter[[i]]],{i,Length[ppspcounter]}];
  Print[""];
  Print["diag after PV:"];
- Print[diag];
+ Print[diag];*)
 postPVdiag = diag;
-diag = diag /. nd -> 4;
-diag = diag /.{ A0[m_] -> m, B0[___,___,___] -> 1, C0[___,___,___,___,___] -> 0};
-diag = Simplify[diag];
-Print[""];
- Print[" simplified diag div:"];
- Print[diag];
+diag = diag /. nd -> 4 - 2 e;
+diag = diag /.{ A0[m_] -> m/e - m Log[m] + m, B0[x_, m1_, m2_] -> 1/e + B0[x, m1, m2]};
+
+total = Normal[Series[Total[diag],{e, 0, 0}]];
+
+Reorder := {B0[-q1, m1_, m2_] -> B0[q1, m1, m2],
+            B0[-q2, m1_, m2_] -> B0[q2, m1, m2],
+            B0[-q3, m1_, m2_] -> B0[h, m1, m2],
+            B0[q3, m1_, m2_] -> B0[h, m1, m2],
+            B0[-q4, m1_, m2_] -> B0[h, m1, m2],
+            B0[q4, m1_, m2_] -> B0[h, m1, m2],
+            B0[-q1 - q2, m1_, m2_] -> B0[q1 + q2, m1, m2],
+            B0[-q1 + q3, m1_, m2_] -> B0[q1 - q3, m1, m2],
+            B0[-q2 + q3, m1_, m2_] -> B0[q2 - q3, m1, m2],
+            B0[-q1 - q2 + q3, m1_, m2_] -> B0[h, m1, m2],
+            B0[q1 + q2 - q3, m1_, m2_] -> B0[h, m1, m2],
+            B0[q_, m_, 0] -> B0[q, 0, m],
+            B0[a_, 0, a_] -> -Log[a] + 2,
+            C0[-q1, q2_, m1_, m2_, m3_] -> C0[q1, q1 + q2, m2, m1, m3],
+            C0[-q2, q3_, m1_, m2_, m3_] -> C0[q2, q2 + q3, m2, m1, m3]};
+
+total = Simplify[total /. {sp[q1, q3] -> h/3,
+                           sp[q2, q3] -> h/3,
+                           sp[q1, q2] -> 2/3 h,
+                           sp[q3, Ep1] -> 1/2 sp[q2, Ep1],
+                           sp[q3, Ep2] -> 1/2 sp[q1, Ep2],
+                           -q1 - q2 + q3 -> -q4  } //. Reorder
+                 ] /. h -> 3/2 sp[q1, q2];
+
+total = Collect[total, {e, Log[_], B0[___], C0[___]}, Simplify];
+
+total = total //. 3/2 sp[q1, q2] -> h //. -(3/2) sp[q1, q2] -> -h;
+
+total = total + cB HWF 2 (sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]);
+
+totale = Coefficient[total,e,-1];
+total0 = Coefficient[total,e,0];
+
 Print[""];
 Print[""];
 Print["ANOMALOUS DIMENSION ENTRIES."];
 Print[""];
 Print[""];
-total = Total[diag];
-Table[Print["Entry relative to ", c, " : \n", Expand[ 2 Simplify[ Coefficient[total, c] * (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] + If[c === cB,HWF,0] ],"\n"],{c,{cB,cW,cWB}}];
+
+Table[Print["Entry relative to ", c, " : \n", Expand[ 2 Simplify[ Coefficient[totale, c] * (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] ],"\n"],{c,{cB,cW,cWB}}];
+
+Print[""];
+Print[""];
+Print["FINITE TERMS."];
+Print[""];
+Print[""];
+Print[Collect[Simplify[total0/2/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])] /. sp[q1, q2] -> 2/3 h
+              , {cB, cWB, Log[_], B0[___], C0[___]}
+              , Simplify]];
 
 
 FILE = NotebookDirectory[]<>"BBHHad.res";
@@ -210,9 +251,16 @@ WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  ANOMALOUS DIMENSION ENTRIES  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 Do[WriteString[FILE,ToString[c]<>"entry:=\n"];
-   Write[FILE, Expand[ 2 Simplify[ Coefficient[total,c]* (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] + If[c === cB,HWF,0] ] ];
+   Write[FILE, Expand[ 2 Simplify[ Coefficient[totale,c]* (1/2/(sp[Ep1,Ep2] sp[q1,q2]-sp[q1,Ep2] sp[q2,Ep1])) ] ] ];
    WriteString[FILE,"\n"];
    ,{c,{cB,cW,cWB}}];
+WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+WriteString[FILE,"########  FINITE TERMS  ########"];
+WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+WriteString[FILE,"finiteterms:=\n"];
+Write[FILE, Collect[Simplify[total0/2/(sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])] /. sp[q1, q2] -> 2/3 h
+                    , {cB, cWB, Log[_], B0[___], C0[___]}
+                    , Simplify]];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  intermediate steps  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
@@ -222,7 +270,9 @@ WriteString[FILE,"prePVdiag=\n"]; Write[FILE,prePVdiag];
 WriteString[FILE,"\n"];
 WriteString[FILE,"postPVdiag=\n"]; Write[FILE,postPVdiag];
 WriteString[FILE,"\n"];
-WriteString[FILE,"diagdiv=\n"]; Write[FILE,diag];
+WriteString[FILE,"diagtotal=\n"]; Write[FILE,total];
+WriteString[FILE,"\n"];
+WriteString[FILE,"diagdiv=\n"]; Write[FILE,totale];
 WriteString[FILE,"\n"];
 
 Close[FILE];

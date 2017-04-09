@@ -1,10 +1,10 @@
 
 
 GSdue0q =
-S[{al,be}];
+c1due*S[{al,be}];
 
 GSquattro0q =
-S[{al,be}]*S[{ga,de}] + S[{al,ga}]*S[{be,de}] + S[{al,de}]*S[{be,ga}] ;
+c1quattro*S[{al,be}]*S[{ga,de}] + c1quattro*S[{al,ga}]*S[{be,de}] + c1quattro*S[{al,de}]*S[{be,ga}] ;
 
 
 GSuno1q =
@@ -41,14 +41,14 @@ sp[p,p]^2/nd/(nd + 2)
 C1uno[p_,Q1_] :=
 sp[p, Q1]/sp[Q1, Q1]
 
-(*C1due[p_,Q1_] :=
+C1due[p_,Q1_] :=
 (sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])/((1 - nd)*sp[Q1, Q1])
 C2due[p_,Q1_] :=
-(nd*sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)*)
+(nd*sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
 
-C1due[p_,Q1_] :=
+(*C1due[p_,Q1_] :=
 sp[Q1, Q1]/(4(1- nd))
-C2due[p_,Q1_] :=nd/(4(nd - 1))
+C2due[p_,Q1_] :=nd/(4(nd - 1))*)
 
 C1tre[p_,Q1_] :=
 (-sp[p, Q1]^3 + sp[p, p]*sp[p, Q1]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
@@ -113,6 +113,18 @@ SRules = {
 
 ExpandSProducts[exp_] := FixedPoint[(Expand[#] /. SRules)&,exp]/. {S[a_, b_] -> sp[a, b]}
 
+rule11 := {pp[p,m_]sp[p,q_] -> 0};
+
+rule12shift := {p^2 pp[p + q_ + r_, x_] ->
+                        x pp[p, x] + q^2 pp[p, x] + r^2 pp[p, x] + 2 sp[q, r]pp[p, x],
+                p^2 pp[p + q_, x_] -> x pp[p, x] + q^2 pp[p, x],
+                pp[p + q_, x_] sp[p,q1_] sp[p,q2_] ->
+                        pp[p, x] sp[q,q1] sp[q,q2] + pp[p, x] sp[p,q1] sp[p,q2]}
+
+rule12 := {pp[p, m_] sp[p,q1_] sp[p,q2_] ->
+                GSdue0q pp[p, m] S[q1, {al}] S[q2, {be}] /. c1due -> C1due[p],
+           pp[p, m_] sp[p,q1_]^2 ->
+                GSdue0q pp[p, m] S[q1, {al}] S[q1, {be}] /. c1due -> C1due[p]}
 
 rule21shift := {pp[p + x_, m1_] pp[p + y_, m2_] sp[p, q_] ->
                     pp[p, m1] pp[p - x + y, m2] sp[p, q] -pp[p, m1] pp[p - x + y, m2] sp[x, q]}

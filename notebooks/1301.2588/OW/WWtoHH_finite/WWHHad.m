@@ -200,6 +200,8 @@ Reorder := {B0[-q1, m1_, m2_] -> B0[q1, m1, m2],
             B0[-q2, m1_, m2_] -> B0[q2, m1, m2],
             B0[-q3, m1_, m2_] -> B0[h, m1, m2],
             B0[q3, m1_, m2_] -> B0[h, m1, m2],
+            B0[-q4, m1_, m2_] -> B0[h, m1, m2],
+            B0[q4, m1_, m2_] -> B0[h, m1, m2],
             B0[-q1 - q2, m1_, m2_] -> B0[q1 + q2, m1, m2],
             B0[-q1 + q3, m1_, m2_] -> B0[q1 - q3, m1, m2],
             B0[-q2 + q3, m1_, m2_] -> B0[q2 - q3, m1, m2],
@@ -207,17 +209,15 @@ Reorder := {B0[-q1, m1_, m2_] -> B0[q1, m1, m2],
             B0[q1 + q2 - q3, m1_, m2_] -> B0[h, m1, m2],
             B0[q_, m_, 0] -> B0[q, 0, m],
             B0[a_, 0, a_] -> -Log[a] + 2,
-            C0[-q1, xyz___] -> C0[0, xyz],
-            C0[-q2, xyz___] -> C0[0, xyz],
-            C0[q3, xyz___] -> C0[h, xyz],
-            C0[p1_, -q3, xyz___] -> C0[p1, h, xyz],
-            C0[p1_, -q1 - q2 + q3, xyz___] -> C0[-p1, h, xyz]};
+            C0[-q1, q2_, m1_, m2_, m3_] -> C0[q1, q1 + q2, m2, m1, m3],
+            C0[-q2, q3_, m1_, m2_, m3_] -> C0[q2, q2 + q3, m2, m1, m3]};
 
 total = Simplify[total /. {sp[q1, q3] -> h/3,
                            sp[q2, q3] -> h/3,
                            sp[q1, q2] -> 2/3 h,
                            sp[q3, Ep1] -> 1/2 sp[q2, Ep1],
-                           sp[q3, Ep2] -> 1/2 sp[q1, Ep2] } //. Reorder
+                           sp[q3, Ep2] -> 1/2 sp[q1, Ep2],
+                           -q1 - q2 + q3 -> -q4 } //. Reorder
                  ] /. h -> 3/2 sp[q1, q2];
 
 total = Collect[total, {e, Log[_], B0[___], C0[___]}, Simplify];

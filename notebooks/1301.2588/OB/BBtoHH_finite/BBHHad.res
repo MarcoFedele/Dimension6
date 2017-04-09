@@ -17,11 +17,16 @@ cWBentry:=
 
 finiteterms:=
 cWB*((15*gw^2)/2 - (3*gw^2*B0[q1 - q3, 0, h])/2 - 
-   (3*gw^2*B0[q2 - q3, 0, h])/2 + (3*gw^2*h*C0[0, h, h, h, 0])/2 - 
-   (9*gw^2*Log[h])/2) + cB*(3*(g1^2 - 2*gw^2) + 
-   ((g1^2 + 3*(gw^2 + 8*lam))*B0[q1 + q2, h, h])/4 - g1^2*B0[q1 - q3, 0, h] - 
-   g1^2*B0[q2 - q3, 0, h] + g1^2*h*C0[0, h, h, h, 0] - 
-   ((g1^2 + 3*gw^2)*h*C0[-h, h, 0, h, h])/3 + (-2*g1^2 + 3*gw^2)*Log[h] + 
+   (3*gw^2*B0[q2 - q3, 0, h])/2 + (3*gw^2*h*C0[q1, q1 - q3, h, h, 0])/8 + 
+   (3*gw^2*h*C0[q1, q1 - q4, h, h, 0])/8 + 
+   (3*gw^2*h*C0[q2, q2 - q3, h, h, 0])/8 + 
+   (3*gw^2*h*C0[q2, q2 - q4, h, h, 0])/8 - (9*gw^2*Log[h])/2) + 
+ cB*(3*(g1^2 - 2*gw^2) + ((g1^2 + 3*(gw^2 + 8*lam))*B0[q1 + q2, h, h])/4 - 
+   g1^2*B0[q1 - q3, 0, h] - g1^2*B0[q2 - q3, 0, h] + 
+   (g1^2*h*C0[q1, q1 - q3, h, h, 0])/4 + (g1^2*h*C0[q1, q1 - q4, h, h, 0])/
+    4 + (g1^2*h*C0[q2, q2 - q3, h, h, 0])/4 + 
+   (g1^2*h*C0[q2, q2 - q4, h, h, 0])/4 - 
+   ((g1^2 + 3*gw^2)*h*C0[q3, -q4, 0, h, h])/3 + (-2*g1^2 + 3*gw^2)*Log[h] + 
    B0[h, t, t]*yu[3, 3]^2)
 
 
@@ -9877,11 +9882,18 @@ diagtotal=
     sp[q1, Ep2]*sp[q2, Ep1]))/2 - (2*cB*g1^2 + 3*cWB*gw^2)*B0[q1 - q3, 0, h]*
   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) - 
  (2*cB*g1^2 + 3*cWB*gw^2)*B0[q2 - q3, 0, h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
-   sp[q1, Ep2]*sp[q2, Ep1]) + (2*cB*g1^2 + 3*cWB*gw^2)*h*C0[0, h, h, h, 0]*
-  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) - 
- (5*cB*g1^2 - 3*cB*gw^2 + 9*cWB*gw^2)*Log[h]*(sp[Ep1, Ep2]*sp[q1, q2] - 
-   sp[q1, Ep2]*sp[q2, Ep1]) - cB*(g1^2 + 3*gw^2)*C0[-h, h, 0, h, h]*
-  sp[q1, q2]*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) + 
+   sp[q1, Ep2]*sp[q2, Ep1]) - (5*cB*g1^2 - 3*cB*gw^2 + 9*cWB*gw^2)*Log[h]*
+  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) + 
+ (3*(2*cB*g1^2 + 3*cWB*gw^2)*C0[q1, q1 - q3, h, h, 0]*sp[q1, q2]*
+   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/8 + 
+ (3*(2*cB*g1^2 + 3*cWB*gw^2)*C0[q1, q1 - q4, h, h, 0]*sp[q1, q2]*
+   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/8 + 
+ (3*(2*cB*g1^2 + 3*cWB*gw^2)*C0[q2, q2 - q3, h, h, 0]*sp[q1, q2]*
+   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/8 + 
+ (3*(2*cB*g1^2 + 3*cWB*gw^2)*C0[q2, q2 - q4, h, h, 0]*sp[q1, q2]*
+   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/8 - 
+ cB*(g1^2 + 3*gw^2)*C0[q3, -q4, 0, h, h]*sp[q1, q2]*
+  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]) + 
  2*cB*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1])*
   (-g1^2 - 3*gw^2 + (g1^2*Log[h])/2 + (3*gw^2*Log[h])/2 + 
    B0[h, t, t]*yu[3, 3]^2 + (-g1^2/2 - (3*gw^2)/2 + yu[3, 3]^2)/e)

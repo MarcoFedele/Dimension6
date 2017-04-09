@@ -7,7 +7,7 @@
 << H_WF.res;
 
 diag = diag/.pp[a_,b_] -> pp[a, b^2];
-diag = diag/.{MH->Sqrt[h], MG0->Sqrt[h], MGP->Sqrt[h], MW->Sqrt[w], MZ->Sqrt[z] };
+diag = diag/.{MH->Sqrt[h], MW->Sqrt[w], MZ->Sqrt[z] };
 
 diag = diagSimplify[diag] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
 
@@ -193,47 +193,135 @@ postPVdiag = diag;
  Print["diag after PV:"];
  Print[postPVdiag]; *)
 
-diag = diag /. nd -> 4 - 2 e;
-diag = diag /.{ A0[m_] -> m/e, B0[___] -> 1/e, C0[___] -> 0};
-diag = Normal[Series[diag,{e,0,0}]];
-diag = Coefficient[diag, e, -1];
-diag = Simplify[diag];
+diag = diag /. nd -> 4 - 2 \[Epsilon];
+diag = diag /.{ A0[m_] -> m/\[Epsilon] - m Log[m] + m, B0[x_, m1_, m2_] -> 1/\[Epsilon] + B0[x, m1, m2]};
 
-(*Print[""];
- Print["simplified diag div:"];
- Print[diag];*)
+total = Normal[Series[Total[diag],{\[Epsilon], 0, 0}]];
 
-total = Total[diag];
+Reorder := {B0[- q1, m1_, m2_] -> B0[0, m1, m2],
+            B0[  q1, m1_, m2_] -> B0[0, m1, m2],
+            B0[- q2, m1_, m2_] -> B0[0, m1, m2],
+            B0[  q2, m1_, m2_] -> B0[0, m1, m2],
+            B0[- q1 - q2, m1_, m2_] -> B0[h, m1, m2],
+            B0[  q1 + q2, m1_, m2_] -> B0[h, m1, m2],
+            B0[q_, m_, 0] -> B0[q, 0, m],
+            B0[a_, 0, a_] -> -Log[a] + 2,
+            C0[-q1, xyz___] -> C0[0, xyz],
+            C0[-q2, xyz___] -> C0[0, xyz],
+            C0[0, q1, xyz___] -> C0[0, 0, xyz],
+            C0[0, q2, xyz___] -> C0[0, 0, xyz],
+            C0[ q3, xyz___] -> C0[h, xyz],
+            C0[p1_, -q3, xyz___] -> C0[p1, h, xyz],
+            C0[p1_, -q1 - q2 + q3, xyz___] -> C0[-p1, h, xyz]};
 
-AD = Collect[total /. sw -> cw*g1/gw /. cWs -> c\[Gamma]\[Gamma] + cWB - cB
-             , {sp[Ep1, Ep2] sp[q1, q2], sp[q1, Ep2] sp[q2, Ep1], sp[Ep1, Ep2] , cw, g1, cB , cW, cWB},
-             Simplify] /. cw^2 g1^2 -> e^2;
+total = Collect[total //. Reorder /. q1 + q2 -> h
+                , {e, Log[_], B0[___], C0[___]}
+                , Simplify];
 
-If[!MatchQ[Simplify[Coefficient[ total, sp[Ep1, Ep2] sp[q1,  q2]] ] ,
-           Simplify[Coefficient[-total, sp[q1,  Ep2] sp[q2, Ep1]] ] ],
+total = total + c\[Gamma]\[Gamma] e^2 HWF 2 (sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]);
+total = total /. sp[q1, Ep2] sp[q2, Ep1] -> - AAAA + sp[Ep1, Ep2] sp[q1, q2] /. sp[q1, q2] -> h/2;
+total = total /. cB -> c\[Gamma]\[Gamma] + cWB - cW;
+total = total /. sw -> cw*g1/gw /. cw^2 g1^2 -> e^2;
+
+Collect[total
+        , {\[Epsilon], e, AAAA, sp[Ep1, Ep2],
+            c\[Gamma]\[Gamma], cW, cWB,
+            Log[_], B0[___], C0[___], vev, w}
+        , Simplify];
+
+totale = Coefficient[total,\[Epsilon],-1];
+total0 = Coefficient[total,\[Epsilon],0];
+
+Print[""];
+Print[""];
+Print["##########     DIVERGENT TERMS     ##########"];
+Print[""];
+Print[""];
+
+If[!MatchQ[Coefficient[totale, AAAA], 0] ,
    
-   Print["There's something rotten in the state of Denmark..."],
+   ad = Coefficient[totale, AAAA];
+   Print["ANOMALOUS DIMENSION ENTRIES (divergent terms proportional to sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])."];
+   Print[""];
+   Table[Print["Entry relative to ", c, " : ", Expand[Coefficient[ad, c e^2]] ,"\n"],{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}],
    
-   ad = Coefficient[ AD, sp[Ep1, Ep2]sp[q1,  q2] ];
-   (* Print["ad : ", ad ]; *)
-   Print[""];
-   Print["ANOMALOUS DIMENSION ENTRIES."];
-   Print[""];
-   Table[Print["Entry relative to ", c, " : \n", Expand[Coefficient[ad, e^2 * c]] + If[c === c\[Gamma]\[Gamma],HWF,0],"\n"],{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}]
+   Print["There's something rotten in the state of Denmark..."];
+   
    ];
 
-Collect[Coefficient[Total[diag], sp[Ep1, Ep2] sp[q1, q2]], {cB , cW, cWB}, Simplify]
+If[!MatchQ[Coefficient[totale, AAAA, 0], 0] ,
+   
+   Print[""];
+   Print["There's something else!"]
+   Print[""];
+   Print[ Simplify[Coefficient[totale, AAAA, 0]] ];
+   
+   ];
 
+
+Print[""];
+Print[""];
+Print["##########     FINITE TERMS     ##########"];
+Print[""];
+Print[""];
+
+If[!MatchQ[Coefficient[total0, AAAA], 0] ,
+   
+   ft = Collect[ Coefficient[total0/2, AAAA], {e, c\[Gamma]\[Gamma], cW, cWB,
+    Log[_], B0[___], C0[___], vev, w}, Simplify];
+   Print["FINITE TERMS (proportional to sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])."];
+   Print[""];
+   Print[ft],
+   
+   Print["There's something rotten in the state of Denmark..."];
+   
+   ];
+
+If[!MatchQ[Coefficient[total0, AAAA, 0], 0] ,
+   
+   Print[""];
+   Print["There's something else!"]
+   Print[""];
+   Print[ Simplify[Coefficient[total0, AAAA, 0]] ];
+   
+   ];
 
 FILE = NotebookDirectory[]<>"Hggad.res";
 DeleteFile[FILE]; OpenWrite[FILE];
-WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+
+
+WriteString[FILE,"\n"];
 WriteString[FILE,"########  ANOMALOUS DIMENSION ENTRIES  ########"];
-WriteString[FILE,"\n"];WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
 Do[WriteString[FILE,ToString[c]<>"entry:=\n"];
-   Write[FILE, Expand[Coefficient[ad, e^2 * c]] + If[c === c\[Gamma]\[Gamma],HWF,0] ];
+   Write[FILE, Expand[Coefficient[ad, e^2 * c]] ];
    WriteString[FILE,"\n"];
    ,{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}];
+
+
+WriteString[FILE,"########  EXTRA DIVERGENT TERM  ########"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"extradiv=\n"];
+Write[FILE, Simplify[Coefficient[totale, AAAA, 0]] ];
+
+WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"########  FINITE TERMS  ########"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"finterm=\n"];
+Write[FILE, ft ];
+WriteString[FILE,"\n"];
+
+WriteString[FILE,"########  EXTRA FINITE TERM  ########"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"\n"];
+WriteString[FILE,"extrafin=\n"];
+Write[FILE, Simplify[Coefficient[total0, AAAA, 0]] ];
+
+
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
 WriteString[FILE,"########  intermediate steps  ########"];
 WriteString[FILE,"\n"];WriteString[FILE,"\n"];
@@ -243,7 +331,7 @@ WriteString[FILE,"prePVdiag=\n"]; Write[FILE,prePVdiag];
 WriteString[FILE,"\n"];
 WriteString[FILE,"postPVdiag=\n"]; Write[FILE,postPVdiag];
 WriteString[FILE,"\n"];
-WriteString[FILE,"diagdiv=\n"]; Write[FILE,diag];
+WriteString[FILE,"total=\n"]; Write[FILE,total];
 WriteString[FILE,"\n"];
 WriteString[FILE,"AD=\n"]; Write[FILE,AD];
 WriteString[FILE,"\n"];

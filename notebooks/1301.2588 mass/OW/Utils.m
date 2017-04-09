@@ -80,7 +80,7 @@ pp0simplify[exp_] := Module[{temp0, temp, diagtemp, check1, check2a, check2b, co
                                      If[! MatchQ[temp0[[DIAG, TERM]], Times[_, ___]],
                                         If[! MatchQ[temp0[[DIAG, TERM]], pp[___, 0]], temp = temp + temp0[[DIAG, TERM]]],
                                         counter = 0;
-                                        check1 = 0;
+                                        check1  = 0;
                                         check2a = 0;
                                         check2b = 0;
                                         While[i <= Length[temp0[[DIAG, TERM]]],
@@ -89,7 +89,9 @@ pp0simplify[exp_] := Module[{temp0, temp, diagtemp, check1, check2a, check2b, co
                                               If[MatchQ[temp0[[DIAG, TERM, i]], pp[p, 0]], check2b++];
                                               If[MatchQ[temp0[[DIAG, TERM, i]], pp[___, ___]], counter++];
                                               i++];
-                                        If[! ((counter == 1) && (check1 == 1)) && ! ((counter == 2) && (check2a check2b == 1)) ,
+                                        If[   !   counter == 0
+                                           && ! ((counter == 1) && (check1 == 1))
+                                           && ! ((counter == 2) && (check2a check2b == 1)) ,
                                            temp = temp + temp0[[DIAG, TERM]]
                                            ]
                                         ],
@@ -99,7 +101,7 @@ pp0simplify[exp_] := Module[{temp0, temp, diagtemp, check1, check2a, check2b, co
                                   If[! MatchQ[temp0[[DIAG]], Times[_, ___]],
                                      If[! MatchQ[temp0[[DIAG]], pp[___, 0]], temp = temp + temp0[[DIAG]]],
                                      counter = 0;
-                                     check1 = 0;
+                                     check1  = 0;
                                      check2a = 0;
                                      check2b = 0;
                                      While[i <= Length[temp0[[DIAG]]],
@@ -108,7 +110,9 @@ pp0simplify[exp_] := Module[{temp0, temp, diagtemp, check1, check2a, check2b, co
                                            If[MatchQ[temp0[[DIAG, i]], pp[p, 0]], check2b++];
                                            If[MatchQ[temp0[[DIAG, i]], pp[___, ___]], counter++];
                                            i++];
-                                     If[! ((counter == 1) && (check1 == 1)) && !((counter == 2) && (check2a check2b == 1)),
+                                     If[   !   counter == 0
+                                        && ! ((counter == 1) && (check1 == 1))
+                                        && ! ((counter == 2) && (check2a check2b == 1)),
                                         temp = temp + temp0[[DIAG]]
                                         ]
                                      ]
@@ -120,9 +124,47 @@ pp0simplify[exp_] := Module[{temp0, temp, diagtemp, check1, check2a, check2b, co
                             Return[temp0]
                             ];
 
+Fun[exp_] := Module[{temp, checkdiag, temp0, count, res},
+                    
+                    temp = exp;
+                    checkdiag = ComputeCheckdiag[temp];
+                    res = {};
+                    
+                    Do[temp0 = 0;
+                       
+                       If[checkdiag[[DIAG]] == 1,
+                          
+                          Do[i = 1;
+                             count = Count[temp[[DIAG, TERM]], pp, Infinity, Heads -> True];
+                             If[   ! (count === 0)
+                                && ! ( (count === 1) && (!FreeQ[temp[[DIAG, TERM]], pp[___, 0]]) )
+                                && ! ( (count === 2) && (!FreeQ[temp[[DIAG, TERM]],
+                                                               pp[p, 0] pp[p + (n_Integer: 1) q_, 0] /;
+                                                               MatchQ[q, q1 | q2]]) )
+                                , temp0 += temp[[DIAG, TERM]]
+                                ];
+                             , {TERM, Length[temp[[DIAG]]]}
+                             ],
+                          
+                          count = Count[temp[[DIAG]], pp, Infinity, Heads -> True];
+                          If[   ! (count === 0)
+                             && ! ( (count === 1) && (! FreeQ[temp[[DIAG]], pp[___, 0]]) )
+                             && ! ( (count === 2) && (! FreeQ[temp[[DIAG]],
+                                                            pp[p, 0] pp[p + (n_Integer: 1) q_, 0] /;
+                                                            MatchQ[q, q1 | q2]]) )
+                             , temp0 += temp[[DIAG]]
+                             ];
+                          
+                          ];
+                       
+                       res = Append[res, temp0]
+                       , {DIAG, Length[temp]}];
+                    Return[res]
+                    ];
+
 
 diagSimplify[exp_] := pp0simplify[ExpandScalarProducts[ppAbsorbMomenta[ppSimplify[exp]]]];
-
+diagSimplify[exp_] := Fun[ExpandScalarProducts[ppAbsorbMomenta[ppSimplify[exp]]]];
 
 
 

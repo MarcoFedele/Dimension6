@@ -1,9 +1,8 @@
 
-
 ########  ANOMALOUS DIMENSION ENTRIES  ########
 
 c\[Gamma]\[Gamma]entry:=
--g1^2 - 3*gw^2 + 2*yu[3, 3]^2
+0
 
 cBentry:=
 0
@@ -14,6 +13,188 @@ cWentry:=
 cWBentry:=
 0
 
+########  EXTRA DIVERGENT TERM  ########
+
+extradiv=
+(3*gw^2*(cW*gw^2*vev^2 + 2*cWB*g1^2*(vev^2 + z/(g1^2 + gw^2)))*sp[Ep1, Ep2])/8
+
+
+########  FINITE TERMS  ########
+
+finterm=
+cB*((5*(g1^2 + gw^2)*s2)/2 + ((g1^2*w)/2 + ((-g1^2 + gw^2)*s2*z)/2)/q1^2 + 
+   ((-3*g1^2*w)/2 - ((g1^2 + 7*gw^2)*s2*z)/2)/h + 
+   (3*gw^2*s2 + (2*gw^2*lam*s2*vev^2)/h + (3*gw^2*s2*w)/h - (gw^2*s2*w)/q1^2)*
+    B0[0, 0, w] + (-((g1^2 + gw^2)*s2) + ((g1^2 + gw^2)*s2*z)/h)*
+    B0[0, h, z] + (-2*g1^2 - (g1^2*gw^2*vev^2)/(2*h) + (2*g1^2*w)/h)*
+    B0[0, w, h] + (((g1^2 - 5*gw^2)*s2)/2 + (2*g1^2*lam*s2*vev^2)/h + 
+     (-3*gw^2*s2*w + 3*gw^2*s2*z)/h + (((-g1^2 + gw^2)*s2*w)/2 + 
+       ((g1^2 - gw^2)*s2*z)/2)/q1^2)*B0[0, w, z] + 
+   (3*gw^2*s2 + (gw^4*s2*vev^2)/(2*h) - (gw^2*s2*w)/h)*B0[h, 0, w] + 
+   ((-2*g1^2*lam*vev^2)/h - (gw^2*s2*z)/h)*B0[h, w, h] + 
+   ((3*(g1^2 - gw^2)*s2)/2 + (g1^2*gw^2*s2*vev^2)/(2*h) + 
+     (-((g1^2 - gw^2)*s2*w)/2 + ((-g1^2 + gw^2)*s2*z)/2)/h)*B0[h, w, z] + 
+   (6*gw^2*h*s2 + ((gw^4 + 4*gw^2*lam)*s2*vev^2)/2 - gw^2*s2*w)*
+    C0[0, h, w, h, 0] + (2*(g1^2 - 2*gw^2)*h*s2 - g1^2*s2*w - 
+     (g1^2 - 2*gw^2)*s2*z + vev^2*((g1^2*(gw^2 + 4*lam)*s2)/2 - 
+       (g1^2*(gw^2 + 4*lam)*s2*z)/(2*h)) + (g1^2*s2*w*z - gw^2*s2*z^2)/h)*
+    C0[0, h, w, h, z] - 2*g1^2*Log[h] + 
+   ((3*g1^2*w)/(2*h) - (g1^2*w)/(2*q1^2))*Log[w] + 
+   (((g1^2 + 7*gw^2)*s2*z)/(2*h) + ((g1^2 - gw^2)*s2*z)/(2*q1^2))*Log[z]) + 
+ cW*((5*gw^2*(g1^2 + gw^2)*s2)/(2*g1^2) + 
+   ((gw^2*w)/2 + (gw^2*(g1^2 - gw^2)*s2*z)/(2*g1^2))/q1^2 + 
+   (vev^2*((gw^4*w)/2 + (gw^4*(41 - gw^2/g1^2)*s2*z)/4))/h^2 + 
+   ((-11*gw^2*w)/2 + (gw^2*(1 + (7*gw^2)/g1^2)*s2*z)/2)/h + 
+   (3*gw^2*s2 + (3*gw^2*s2*w)/h - (gw^2*s2*w)/q1^2 + 
+     vev^2*((2*gw^2*lam*s2)/h - (21*gw^4*s2*w)/h^2))*B0[0, 0, w] + 
+   (gw^2*s2 + (gw^4*s2)/g1^2 - (gw^2*(g1^2 + gw^2)*s2*z)/(g1^2*h))*
+    B0[0, h, z] + (-4*gw^2 + (4*gw^2*w)/h + 
+     vev^2*((3*gw^4)/(2*h) - (gw^4*w)/(2*h^2)))*B0[0, w, h] + 
+   (-2*gw^2 + (((3*gw^4)/2 + 2*gw^2*lam)*vev^2)/h)*B0[0, w, w] + 
+   ((gw^2*(-1 + (5*gw^2)/g1^2)*s2)/2 + 
+     ((3*gw^4*s2*w)/g1^2 - (3*gw^4*s2*z)/g1^2)/h + 
+     ((gw^2*(1 - gw^2/g1^2)*s2*w)/2 + (gw^2*(-1 + gw^2/g1^2)*s2*z)/2)/q1^2 + 
+     vev^2*((gw^2*(gw^4 + g1^2*(gw^2 - 4*lam))*s2)/(2*g1^2*h) + 
+       ((gw^4*(41 - gw^2/g1^2)*s2*w)/2 + (gw^4*(-41 + gw^2/g1^2)*s2*z)/2)/
+        h^2))*B0[0, w, z] + (3*gw^2*s2 - (gw^2*s2*w)/h + 
+     vev^2*(-(gw^4*s2)/(2*h) + (21*gw^4*s2*w)/(2*h^2)))*B0[h, 0, w] + 
+   (gw^2 - (gw^2*w)/(2*h) + vev^2*(((-7*gw^4)/4 - 2*gw^2*lam)/h + 
+       (gw^4*w)/(4*h^2)))*B0[h, h, w] + 
+   (-((gw^2*(g1^2 + gw^2)*s2)/g1^2) + (-(gw^2*w)/2 + (gw^4*s2*z)/g1^2)/h)*
+    B0[h, w, h] + ((3*gw^2*(-g1^2 + gw^2)*s2)/(2*g1^2) - 
+     (gw^4*s2*vev^2)/(2*h) + ((gw^2*(g1^2 - gw^2)*s2*w)/(2*g1^2) + 
+       (gw^2*(g1^2 - gw^2)*s2*z)/(2*g1^2))/h)*B0[h, w, z] + 
+   vev^2*(-(gw^4*(g1^2 + 3*gw^2)*s2)/(2*g1^2*h) + 
+     (((-41*g1^2*gw^4 + gw^6)*s2*w)/(4*g1^2) + (gw^4*(41 - gw^2/g1^2)*s2*z)/
+        4)/h^2)*B0[h, z, w] + vev^2*(-6*gw^4*s2 + (19*gw^4*s2*w)/(2*h))*
+    C0[0, h, 0, w, w] + 
+   (-2*gw^2*h + vev^2*(-gw^4/2 + 2*gw^2*lam - (gw^2*(gw^2 + 8*lam)*w)/(4*h)))*
+    C0[0, h, h, w, w] + (6*gw^2*h*s2 + ((gw^4 + 4*gw^2*lam)*s2*vev^2)/2 - 
+     gw^2*s2*w)*C0[0, h, w, h, 0] + (h*(-2*gw^2*s2 + (4*gw^4*s2)/g1^2) + 
+     gw^2*s2*w + (gw^2*s2 - (2*gw^4*s2)/g1^2)*z + 
+     vev^2*(-((gw^4 + 4*gw^2*lam)*s2)/2 + ((gw^4 + 4*gw^2*lam)*s2*z)/(2*h)) + 
+     (-(gw^2*s2*w*z) + (gw^4*s2*z^2)/g1^2)/h)*C0[0, h, w, h, z] + 
+   vev^2*(gw^4*(5 - gw^2/g1^2)*s2 + ((gw^4*(-41 - (3*gw^2)/g1^2)*s2*w)/4 + 
+       (gw^6*s2*z)/g1^2)/h)*C0[0, h, z, w, w] + 
+   (-2*gw^2 + (gw^4*vev^2)/(4*h))*Log[h] + 
+   ((11*gw^2*w)/(2*h) - (gw^2*w)/(2*q1^2) - (gw^4*vev^2*w)/(2*h^2))*Log[w] + 
+   (-(gw^2*(g1^2 + 7*gw^2)*s2*z)/(2*g1^2*h) + (gw^2*(-g1^2 + gw^2)*s2*z)/
+      (2*g1^2*q1^2) + (gw^4*(-41*g1^2 + gw^2)*s2*vev^2*z)/(4*g1^2*h^2))*
+    Log[z]) + cWB*(-((3*g1^4 + 7*g1^2*gw^2 + 4*gw^4)*s2)/(4*g1^2) + 
+   ((gw^2*(g1^2 + gw^2)*h*s2)/(4*g1^2) + ((g1^2 - gw^2)*w)/4 - 
+     ((g1^2 - 3*gw^2)*s2*z)/4)/q1^2 + 
+   (((5*g1^2 + 8*gw^2 + (3*gw^4)/g1^2)*s2*w)/4 - 
+     ((g1^4 - 9*g1^2*gw^2 + 4*gw^4)*s2*z)/(4*g1^2))/h + 
+   (-(gw^2*s2*w*z) - 5*gw^2*s2*z^2)/h^2 + 
+   vev^2*(-(gw^2*(g1^2 + gw^2)*s2)/(2*h) + (-(g1^2*gw^2*w) + g1^2*gw^2*s2*z)/
+      h^2) + (2*gw^2*s2 - (7*gw^2*s2*w)/h - (gw^2*s2*w)/q1^2 + 
+     (12*gw^2*s2*w^2)/h^2 + vev^2*(-((5*gw^4 + 8*gw^2*lam)*s2)/(4*h) + 
+       (2*gw^4*s2*w)/h^2))*B0[0, 0, w] + 
+   (((g1^4 - gw^4)*s2)/(2*g1^2) + ((-g1^4 + gw^4)*s2*z)/(2*g1^2*h))*
+    B0[0, h, z] + (g1^2 + gw^2/4 - (gw^2*(-2*g1^2 + gw^2 - 8*lam)*vev^2)/
+      (8*h) - (g1^2*w)/h + (-(gw^2*h)/4 + (gw^2*w)/4)/q1^2)*B0[0, w, h] + 
+   (-(g1^2*gw^2*vev^2)/(2*h) + (gw^2*s2*z)/h)*B0[0, w, w] + 
+   (((g1^2 - 3*gw^2 + (4*gw^4)/g1^2)*s2)/4 + 
+     (-((g1^2 - 3*gw^2)*s2*w)/4 + ((g1^2 - 3*gw^2)*s2*z)/4)/q1^2 + 
+     (((-2*g1^2 + 9*gw^2 - (3*gw^4)/g1^2)*s2*w)/2 + 
+       (g1^2 - 3*gw^2 + gw^4/g1^2)*s2*z)/h + 
+     (-12*gw^2*s2*w^2 + 2*gw^2*s2*w*z + 10*gw^2*s2*z^2)/h^2 + 
+     vev^2*(((gw^4 + 4*gw^2*lam - 4*g1^2*(gw^2 + lam))*s2)/(4*h) + 
+       (2*g1^2*gw^2*s2*w - 2*g1^2*gw^2*s2*z)/h^2))*B0[0, w, z] + 
+   (-(gw^2*s2) + (7*gw^2*s2*w)/h - (6*gw^2*s2*w^2)/h^2 + 
+     vev^2*((3*gw^4*s2)/(2*h) - (gw^4*s2*w)/h^2))*B0[h, 0, w] + 
+   (gw^2 + 2*lam + ((gw^4 - 8*gw^2*lam)*vev^2)/(8*h) - (gw^2*w)/(2*h))*
+    B0[h, h, w] + ((gw^2*(g1^2 + gw^2)*s2)/(2*g1^2) + (g1^2*lam*vev^2)/h + 
+     ((gw^2*w)/4 + (gw^2*(1 - gw^2/g1^2)*s2*z)/2)/h)*B0[h, w, h] - 
+   gw^2*B0[h, w, w] + ((3*(-g1^2 + gw^2)*s2)/4 + 
+     (gw^2*(-g1^2 + gw^2)*s2*vev^2)/(4*h) + 
+     (((g1^4 - 3*g1^2*gw^2 + 2*gw^4)*s2*w)/(4*g1^2) + ((g1^2 - gw^2)*s2*z)/4)/
+      h)*B0[h, w, z] + 
+   ((g1^2*s2)/2 + (((g1^4 - 9*g1^2*gw^2 + gw^4)*s2*w)/(2*g1^2) - 
+       ((g1^2 - 4*gw^2)*s2*z)/2)/h + (6*gw^2*s2*w^2 - gw^2*s2*w*z - 
+       5*gw^2*s2*z^2)/h^2 + vev^2*(-(gw^2*(-3*g1^2 + gw^2)*s2)/(2*h) + 
+       (-(g1^2*gw^2*s2*w) + g1^2*gw^2*s2*z)/h^2))*B0[h, z, w] + 
+   ((-g1^2 - gw^2)*B0[h, z, z])/2 + (-2*gw^2*h*s2 + 6*gw^2*s2*w - 
+     (6*gw^2*s2*w^2)/h + vev^2*((7*gw^4*s2)/4 - (gw^4*s2*w)/(4*h)))*
+    C0[0, h, 0, w, w] + ((gw^4*vev^2)/4 - (gw^2*w)/2)*C0[0, h, h, w, w] + 
+   (-6*gw^2*h*s2 - ((gw^4 + 4*gw^2*lam)*s2*vev^2)/2 + gw^2*s2*w)*
+    C0[0, h, w, h, 0] + ((-g1^2 + 3*gw^2 - (2*gw^4)/g1^2)*h*s2 + 
+     ((g1^2 - gw^2)*s2*w)/2 + ((g1^4 - 3*g1^2*gw^2 + 2*gw^4)*s2*z)/(2*g1^2) + 
+     vev^2*(((-g1^2 + gw^2)*(gw^2 + 4*lam)*s2)/4 + 
+       ((g1^2 - gw^2)*(gw^2 + 4*lam)*s2*z)/(4*h)) + 
+     (((-g1^2 + gw^2)*s2*w*z)/2 + (gw^2*(g1^2 - gw^2)*s2*z^2)/(2*g1^2))/h)*
+    C0[0, h, w, h, z] + (2*gw^2*h*s2 + ((2*g1^2 - 11*gw^2 - gw^4/g1^2)*s2*w)/
+      2 - 3*gw^2*s2*z + (6*gw^2*s2*w^2 + 4*gw^2*s2*w*z + gw^2*s2*z^2)/h + 
+     vev^2*((3*g1^2*gw^2*s2)/4 - gw^4*s2 + (-(gw^2*(2*g1^2 + gw^2)*s2*w)/4 + 
+         (gw^2*(-2*g1^2 + gw^2)*s2*z)/4)/h))*C0[0, h, z, w, w] + 
+   (g1^2 - gw^2/4 - (gw^2*h)/(4*q1^2))*Log[h] + 
+   (((-g1^2 + gw^2)*w)/(4*q1^2) - ((5*g1^4 + 8*g1^2*gw^2 + 3*gw^4)*s2*w)/
+      (4*g1^2*h) + (g1^2*gw^2*vev^2*w)/h^2 - (5*gw^2*s2*w*z)/h^2)*Log[w] + 
+   (((g1^4 + g1^2*gw^2 + 4*gw^4)*s2*z)/(4*g1^2*h) + 
+     ((g1^2 - 3*gw^2)*s2*z)/(4*q1^2) - (g1^2*gw^2*s2*vev^2*z)/h^2 + 
+     (6*gw^2*s2*w*z + 5*gw^2*s2*z^2)/h^2)*Log[z] + B0[h, t, t]*yu[3, 3]^2)
+
+########  EXTRA FINITE TERM  ########
+
+extrafin=
+(cB*((g1^2 + gw^2)*h*s2 - (g1^2*w)/2 - ((g1^2 + 3*gw^2)*s2*z)/2 + 
+    gw^2*s2*w*B0[0, 0, w] + (-((g1^2 + gw^2)*h*s2)/2 + 
+      ((g1^2 + gw^2)*s2*z)/2)*B0[0, h, z] + (-(g1^2*h)/2 + (g1^2*w)/2)*
+     B0[0, w, h] + (-(gw^2*s2*w) + gw^2*s2*z)*B0[0, w, z] - g1^2*h*Log[h] + 
+    (g1^2*w*Log[w])/2 + ((g1^2 + 3*gw^2)*s2*z*Log[z])/2) + 
+  cW*(h*(gw^2*s2 + (gw^4*s2)/g1^2) - (5*gw^2*w)/2 + 
+    (gw^2*(1 + (3*gw^2)/g1^2)*s2*z)/2 + 
+    vev^2*(-(gw^4*(g1^2 + gw^2)*s2)/(16*g1^2) + 
+      ((gw^4*w)/8 + (gw^4*(41 - gw^2/g1^2)*s2*z)/16)/h) + 
+    (gw^2*s2*w - (21*gw^4*s2*vev^2*w)/(4*h))*B0[0, 0, w] + 
+    ((gw^2*(g1^2 + gw^2)*h*s2)/(2*g1^2) - (gw^2*(g1^2 + gw^2)*s2*z)/(2*g1^2))*
+     B0[0, h, z] + ((-3*gw^2*h)/2 + (3*gw^2*w)/2 + 
+      vev^2*((3*gw^4)/8 - (gw^4*w)/(8*h)))*B0[0, w, h] + 
+    (3*gw^4*vev^2*B0[0, w, w])/4 + ((gw^4*s2*w)/g1^2 - (gw^4*s2*z)/g1^2 + 
+      vev^2*((gw^4*(g1^2 + gw^2)*s2)/(2*g1^2) + 
+        ((gw^4*(41 - gw^2/g1^2)*s2*w)/8 + (gw^4*(-41 + gw^2/g1^2)*s2*z)/8)/
+         h))*B0[0, w, z] + vev^2*((-17*gw^4*s2)/8 + (21*gw^4*s2*w)/(8*h))*
+     B0[h, 0, w] + vev^2*((-5*gw^4)/8 + (gw^4*w)/(16*h))*B0[h, h, w] + 
+    vev^2*((gw^4*(25 - (9*gw^2)/g1^2)*s2)/16 + 
+      (((-41*g1^2*gw^4 + gw^6)*s2*w)/(16*g1^2) + (gw^4*(41 - gw^2/g1^2)*s2*z)/
+         16)/h)*B0[h, z, w] - gw^4*s2*vev^2*w*C0[0, h, 0, w, w] + 
+    vev^2*((gw^4*h)/4 - (gw^4*w)/4)*C0[0, h, h, w, w] + 
+    vev^2*(-(gw^4*(g1^2 + gw^2)*h*s2)/(4*g1^2) + gw^4*s2*w + 
+      (gw^4*(3 + gw^2/g1^2)*s2*z)/4)*C0[0, h, z, w, w] + 
+    (-(gw^2*h) + (gw^4*vev^2)/16)*Log[h] + 
+    ((5*gw^2*w)/2 - (gw^4*vev^2*w)/(8*h))*Log[w] + 
+    (-(gw^2*(g1^2 + 3*gw^2)*s2*z)/(2*g1^2) + 
+      (gw^4*(-41*g1^2 + gw^2)*s2*vev^2*z)/(16*g1^2*h))*Log[z]) + 
+  cWB*(((-2*g1^4 - g1^2*gw^2 + gw^4)*h*s2)/(4*g1^2) + 
+    ((3*g1^2 + 4*gw^2 + gw^4/g1^2)*s2*w)/4 - 
+    ((g1^4 + 3*g1^2*gw^2 + 2*gw^4)*s2*z)/(4*g1^2) + 
+    (-(gw^2*s2*w*z)/4 - (5*gw^2*s2*z^2)/4)/h + 
+    vev^2*(-(gw^2*(g1^2 + gw^2)*s2)/4 + 
+      (-(g1^2*gw^2*w)/4 + (g1^2*gw^2*s2*z)/4)/h) + 
+    (-(gw^2*s2*w) + (3*gw^2*s2*w^2)/h + 
+      vev^2*(-(gw^4*s2)/8 + (gw^4*s2*w)/(2*h)))*B0[0, 0, w] + 
+    (((g1^4 - gw^4)*h*s2)/(4*g1^2) + ((-g1^4 + gw^4)*s2*z)/(4*g1^2))*
+     B0[0, h, z] + ((g1^2*h)/4 - (g1^2*w)/4)*B0[0, w, h] + 
+    (g1^2*gw^2*vev^2*B0[0, w, w])/8 + 
+    (-((2*g1^4 - g1^2*gw^2 + gw^4)*s2*w)/(4*g1^2) + 
+      ((2*g1^4 - g1^2*gw^2 + gw^4)*s2*z)/(4*g1^2) + 
+      (-3*gw^2*s2*w^2 + (gw^2*s2*w*z)/2 + (5*gw^2*s2*z^2)/2)/h + 
+      vev^2*((gw^4*s2)/8 + ((g1^2*gw^2*s2*w)/2 - (g1^2*gw^2*s2*z)/2)/h))*
+     B0[0, w, z] + ((3*gw^2*s2*w)/2 - (3*gw^2*s2*w^2)/(2*h) + 
+      vev^2*((7*gw^4*s2)/8 - (gw^4*s2*w)/(4*h)))*B0[h, 0, w] + 
+    ((-3*gw^2*s2*w)/2 + (3*gw^2*s2*z)/4 + 
+      ((3*gw^2*s2*w^2)/2 - (gw^2*s2*w*z)/4 - (5*gw^2*s2*z^2)/4)/h + 
+      vev^2*((gw^2*(5*g1^2 - 2*gw^2)*s2)/8 + (-(g1^2*gw^2*s2*w)/4 + 
+          (g1^2*gw^2*s2*z)/4)/h))*B0[h, z, w] + 
+    vev^2*((gw^4*h*s2)/8 + (gw^4*s2*w)/2)*C0[0, h, 0, w, w] + 
+    (-(gw^2*s2*w*z) + vev^2*(-(gw^4*h*s2)/8 + ((3*g1^2*gw^2 - gw^4)*s2*w)/8 + 
+        (gw^2*(g1^2 + gw^2)*s2*z)/8))*C0[0, h, z, w, w] + 
+    ((2*g1^2 - gw^2)*h*Log[h])/4 + 
+    (-((3*g1^4 + 4*g1^2*gw^2 + gw^4)*s2*w)/(4*g1^2) + 
+      (g1^2*gw^2*vev^2*w)/(4*h) - (5*gw^2*s2*w*z)/(4*h))*Log[w] + 
+    (((g1^4 - g1^2*gw^2 + 2*gw^4)*s2*z)/(4*g1^2) - (g1^2*gw^2*s2*vev^2*z)/
+       (4*h) + ((3*gw^2*s2*w*z)/2 + (5*gw^2*s2*z^2)/4)/h)*Log[z]))*
+ sp[Ep1, Ep2]
 
 
 ########  intermediate steps  ########
@@ -1166,37 +1347,80 @@ postPVdiag=
     sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
   (I*cW*gw^2*h*lam*vev^2*C0[-q1, q2, w, h, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    sp[q1, q2] + (I*cW*gw^2*lam*vev^2*w*C0[-q1, q2, w, h, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2], (-I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] + 
+    sp[q2, Ep1])/sp[q1, q2], (-I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
+  ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) + 
   (I/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2] + (I/2)*cW*gw^4*sw^2*vev^2*
    B0[q1 + q2, 0, w]*sp[Ep1, Ep2] - (I/2)*cW*gw^4*nd*sw^2*vev^2*
    B0[q1 + q2, 0, w]*sp[Ep1, Ep2] - I*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*
-   sp[Ep1, Ep2] + (I/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2] + 
-  (2*I)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2] + 
-  ((I/2)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2])/(1 - nd) - 
-  I*cWB*gw^2*nd*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
-  (I/2)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1] + 
-  ((I/4)*cWB*gw^2*nd*sw^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   (-1 + nd) - ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] + ((I/4)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2], I*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
+   sp[Ep1, Ep2] - ((I/2)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
+   (1 - nd) + (I/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2] - 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
+   ((1 - nd)*sp[q1, q2]) + (2*I)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*
+   sp[q1, q2] + ((I/2)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*
+    sp[q1, q2])/(1 - nd) - I*cWB*gw^2*nd*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*
+   sp[q1, q2] - (I/2)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*
+   sp[q2, Ep1] + ((I/4)*cWB*gw^2*nd*sw^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/(-1 + nd) - ((I/16)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
+  ((I/16)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/sp[q1, q2] - ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) + 
+  (((3*I)/8)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) + ((I/4)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
+  ((I/4)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]), I*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] + 
+  ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) - 
   (I/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2] + I*cWB*gw^2*sw^2*A0[z]*
-   sp[Ep1, Ep2] - (I/2)*cWB*gw^2*nd*sw^2*A0[z]*sp[Ep1, Ep2] - 
-  (I/2)*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
-  (I/2)*cW*gw^4*nd*sw^2*vev^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
-  I*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2] - 
-  (I/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
-  I*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2] - 
-  (I/2)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2] - 
-  (2*I)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
-  ((I/2)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*sp[q1, q2])/(1 - nd) + 
-  I*cWB*gw^2*nd*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*sp[q1, q2] + 
-  (I/2)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1] - 
-  ((I/4)*cWB*gw^2*nd*sw^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   (-1 + nd) + ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - ((I/4)*cWB*gw^2*sw^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - ((I/4)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2] + ((I/4)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2], 
+   sp[Ep1, Ep2] + ((I/4)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2])/(1 - nd) - 
+  (I/2)*cWB*gw^2*nd*sw^2*A0[z]*sp[Ep1, Ep2] - (I/2)*cW*gw^4*sw^2*vev^2*
+   B0[q1 + q2, z, w]*sp[Ep1, Ep2] + (I/2)*cW*gw^4*nd*sw^2*vev^2*
+   B0[q1 + q2, z, w]*sp[Ep1, Ep2] + I*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*
+   sp[Ep1, Ep2] + ((I/2)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   (1 - nd) - (I/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
+  I*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
+  ((I/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(1 - nd) - 
+  (I/2)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((1 - nd)*sp[q1, q2]) + ((I/4)*cWB*gw^2*sw^2*w*z*B0[q1 + q2, z, w]*
+    sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*z^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((1 - nd)*sp[q1, q2]) - (2*I)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*
+   sp[q1, q2] - ((I/2)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*
+    sp[q1, q2])/(1 - nd) + I*cWB*gw^2*nd*sw^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2]*
+   sp[q1, q2] + (I/2)*cWB*gw^2*sw^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*
+   sp[q2, Ep1] - ((I/4)*cWB*gw^2*nd*sw^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/(-1 + nd) + ((I/16)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) - 
+  ((I/16)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) - ((I/16)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
+  ((I/16)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) - ((I/16)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
+  ((I/8)*cWB*gw^2*nd*sw^2*w*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) - ((I/16)*cWB*gw^2*nd*sw^2*z^2*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
+  ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - (((3*I)/8)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) - 
+  ((I/4)*cWB*gw^2*sw^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((I/8)*cWB*gw^2*nd*sw^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - ((I/4)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((I/4)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) + ((I/4)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((I/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - ((I/4)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]), 
  (I/4)*cw*cWB*g1*gw*sw*A0[w]*sp[Ep1, Ep2] - (I/4)*cWB*g1^2*sw^2*A0[w]*
    sp[Ep1, Ep2] + (I/4)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
   ((I/4)*cWB*g1*gw*sw^3*A0[w]*sp[Ep1, Ep2])/cw - 
@@ -2275,13 +2499,44 @@ postPVdiag=
     sp[q2, Ep1])/sp[q1, q2] - ((I/4)*cWB*g1^2*gw^2*sw^2*vev^2*w*
     C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
   ((I/4)*cWB*g1^2*gw^2*sw^2*vev^2*z*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2], ((3*I)/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
+    sp[q2, Ep1])/sp[q1, q2], ((3*I)/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] + 
+  (((3*I)/4)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
   (I/2)*cWB*gw^2*sw^2*w*B0[-q1, 0, w]*sp[Ep1, Ep2] + 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, 0, w]*sp[Ep1, Ep2])/(1 - nd) - 
+  (I*cWB*gw^2*nd*sw^2*w*B0[-q1, 0, w]*sp[Ep1, Ep2])/(1 - nd) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*w^2*B0[-q1, 0, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[-q1, 0, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
   (3*I)*cWB*gw^2*sw^2*B0[-q1, 0, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
   (3*I)*cWB*gw^2*sw^2*B0[-q1, 0, w]*sp[q1, Ep2]*sp[q2, Ep1], 
- ((-3*I)/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] + (I/2)*cWB*gw^2*sw^2*A0[z]*
-   sp[Ep1, Ep2] + (I/2)*cWB*gw^2*sw^2*w*B0[-q1, z, w]*sp[Ep1, Ep2] - 
-  ((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, z, w]*sp[Ep1, Ep2] + 
+ ((-3*I)/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
+  (((3*I)/4)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2] - 
+  (((3*I)/4)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2])/(1 - nd) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*A0[z]*sp[Ep1, Ep2])/(1 - nd) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (I/2)*cWB*gw^2*sw^2*w*B0[-q1, z, w]*sp[Ep1, Ep2] - 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, z, w]*sp[Ep1, Ep2])/(1 - nd) + 
+  (I*cWB*gw^2*nd*sw^2*w*B0[-q1, z, w]*sp[Ep1, Ep2])/(1 - nd) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*w^2*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, z, w]*sp[Ep1, Ep2] - 
+  (((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, z, w]*sp[Ep1, Ep2])/(1 - nd) + 
+  (I*cWB*gw^2*nd*sw^2*z*B0[-q1, z, w]*sp[Ep1, Ep2])/(1 - nd) - 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*z*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (I*cWB*gw^2*nd*sw^2*w*z*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*z^2*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*z^2*B0[-q1, z, w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
   (3*I)*cw^2*cWB*gw^2*B0[-q1, z, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
   (3*I)*cw^2*cWB*gw^2*B0[-q1, z, w]*sp[q1, Ep2]*sp[q2, Ep1], 
  (I/2)*cW*gw^2*B0[-q2, w, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
@@ -3143,21 +3398,45 @@ postPVdiag=
    sp[q1, q2] - ((I/4)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]), 
  (I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] + 
+  ((2*I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) + 
   ((4*I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (((3*I)/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) - 
   (I*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(-2 + nd) + 
-  (I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2] - 
-  ((4*I)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2])/(-2 + nd) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2] + 
+  ((I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((4*I)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2])/(-2 + nd) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*A0[z]*sp[Ep1, Ep2])/(1 - nd) + 
   (I*cWB*gw^2*nd*sw^2*A0[z]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
   (I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, z]*sp[Ep1, Ep2] - 
   ((I/4)*cWB*g1*gw^3*sw^3*vev^2*B0[-q1, w, z]*sp[Ep1, Ep2])/cw + 
-  ((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2] - 
-  ((8*I)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) + 
-  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) + 
+  ((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2] + 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((8*I)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (I*cWB*gw^2*nd*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(1 - nd) + 
+  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*w^2*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  (((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2])/(1 - nd) + 
   ((8*I)*cWB*gw^2*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) - 
-  ((2*I)*cWB*gw^2*nd*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (I*cWB*gw^2*nd*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((2*I)*cWB*gw^2*nd*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2])/(-2 + nd) + 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*z*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  (I*cWB*gw^2*nd*sw^2*w*z*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*z^2*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*z^2*B0[-q1, w, z]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
   (I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*sp[Ep1, Ep2] - 
   ((I/8)*cWB*g1*gw^3*sw^3*vev^2*B0[q2, w, w]*sp[Ep1, Ep2])/cw + 
   I*cWB*gw^2*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2] + 
+  ((3*I)*cWB*gw^2*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2])/(1 - nd) + 
   (I/2)*cWB*gw^2*sw^2*z*B0[q2, w, w]*sp[Ep1, Ep2] - 
   I*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2] + 
   ((3*I)*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(-2 + nd) - 
@@ -3166,8 +3445,10 @@ postPVdiag=
   (((3*I)/8)*cWB*g1*gw^3*sw^3*vev^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
    (cw*(-2 + nd)) - ((I/4)*cWB*g1*gw^3*nd*sw^3*vev^2*B0[q1 + q2, z, w]*
     sp[Ep1, Ep2])/(cw*(-2 + nd)) - I*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*
-   sp[Ep1, Ep2] + ((3*I)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   (-2 + nd) - (((11*I)/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   sp[Ep1, Ep2] - ((I/2)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   (1 - nd) + ((3*I)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   (-2 + nd) - ((I/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   (1 - nd) - (((11*I)/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
    (-2 + nd) + ((2*I)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
    (-2 + nd) - ((3*I)/2)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*
    sp[Ep1, Ep2] + ((6*I)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*
@@ -3190,8 +3471,10 @@ postPVdiag=
   (((3*I)/16)*cWB*g1*gw^3*sw^3*vev^2*A0[w]*sp[Ep1, Ep2])/
    (cw*(-2 + nd)*sp[q1, q2]) - ((I/8)*cWB*g1*gw^3*nd*sw^3*vev^2*A0[w]*
     sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
   ((I/2)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
-  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*z*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
   (((3*I)/4)*cWB*gw^2*sw^2*z*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
   ((I/2)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   (((3*I)/2)*cW*gw^4*sw^2*vev^2*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
@@ -3199,8 +3482,10 @@ postPVdiag=
   (((3*I)/16)*cWB*g1*gw^3*sw^3*vev^2*A0[z]*sp[Ep1, Ep2])/
    (cw*(-2 + nd)*sp[q1, q2]) + ((I/8)*cWB*g1*gw^3*nd*sw^3*vev^2*A0[z]*
     sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[z]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
   ((I/2)*cWB*gw^2*sw^2*w*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
+  ((I/8)*cWB*gw^2*sw^2*z*A0[z]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
   (((3*I)/4)*cWB*gw^2*sw^2*z*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   ((I/2)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   ((3*I)*cW*gw^4*sw^2*vev^2*w*B0[-q1, w, z]*sp[Ep1, Ep2])/
@@ -3227,23 +3512,28 @@ postPVdiag=
     sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
   (((3*I)/16)*cWB*g1*gw^3*sw^3*vev^2*w*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
    (cw*(-2 + nd)*sp[q1, q2]) - ((I/8)*cWB*g1*gw^3*nd*sw^3*vev^2*w*
-    B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, z, w]*
-    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
-  (((3*I)/2)*cW*gw^4*sw^2*vev^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) + (I*cW*gw^4*nd*sw^2*vev^2*z*B0[q1 + q2, z, w]*
-    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
-  (((3*I)/16)*cWB*g1*gw^3*sw^3*vev^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   (cw*(-2 + nd)*sp[q1, q2]) + ((I/8)*cWB*g1*gw^3*nd*sw^3*vev^2*z*
-    B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) - 
+    B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((1 - nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, z, w]*
+    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((-2 + nd)*sp[q1, q2]) - (((3*I)/2)*cW*gw^4*sw^2*vev^2*z*B0[q1 + q2, z, w]*
+    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  (I*cW*gw^4*nd*sw^2*vev^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((-2 + nd)*sp[q1, q2]) - (((3*I)/16)*cWB*g1*gw^3*sw^3*vev^2*z*
+    B0[q1 + q2, z, w]*sp[Ep1, Ep2])/(cw*(-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*g1*gw^3*nd*sw^3*vev^2*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   (cw*(-2 + nd)*sp[q1, q2]) - ((I/4)*cWB*gw^2*sw^2*w*z*B0[q1 + q2, z, w]*
+    sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) - 
   ((I/4)*cWB*gw^2*sw^2*w*z*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) + (((3*I)/4)*cWB*gw^2*sw^2*z^2*B0[q1 + q2, z, w]*
+   ((-2 + nd)*sp[q1, q2]) + ((I/8)*cWB*gw^2*sw^2*z^2*B0[q1 + q2, z, w]*
+    sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*z^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
+   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*nd*sw^2*z^2*B0[q1 + q2, z, w]*
     sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*nd*sw^2*z^2*B0[q1 + q2, z, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2]*
-    sp[q1, q2])/q1^2 + ((I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2]*sp[q1, q2])/
-   q1^2 - ((5*I)/2)*cWB*gw^2*sw^2*B0[-q1, w, z]*sp[Ep1, Ep2]*sp[q1, q2] + 
+  ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 + 
+  ((I/2)*cWB*gw^2*sw^2*A0[z]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 - 
+  ((5*I)/2)*cWB*gw^2*sw^2*B0[-q1, w, z]*sp[Ep1, Ep2]*sp[q1, q2] + 
   ((I/2)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 - 
   ((I/2)*cWB*gw^2*sw^2*z*B0[-q1, w, z]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 - 
   ((5*I)/2)*cWB*gw^2*sw^2*B0[q2, w, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
@@ -3288,9 +3578,12 @@ postPVdiag=
   ((I/16)*cWB*g1*gw^3*nd^2*sw^3*vev^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
    (cw*(-2 + nd)*sp[q1, q2]^2) + ((I/4)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
-  ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/8)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
+  ((I/16)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
+  (((3*I)/8)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]^2) + ((I/16)*cWB*gw^2*nd*sw^2*z*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) - 
   ((I/4)*cWB*gw^2*nd^2*sw^2*z*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/4)*cW*gw^4*nd*sw^2*vev^2*A0[z]*
     sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
@@ -3300,9 +3593,12 @@ postPVdiag=
   ((I/16)*cWB*g1*gw^3*nd^2*sw^3*vev^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
    (cw*(-2 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
-  ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) - (((3*I)/8)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
+  ((I/16)*cWB*gw^2*nd*sw^2*w*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) + ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[z]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
+  (((3*I)/8)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]^2) - ((I/16)*cWB*gw^2*nd*sw^2*z*A0[z]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
   ((I/4)*cWB*gw^2*nd^2*sw^2*z*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/2)*cW*gw^4*nd*sw^2*vev^2*w*
     B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
@@ -3332,48 +3628,56 @@ postPVdiag=
   ((I/16)*cWB*g1*gw^3*nd^2*sw^3*vev^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/(cw*(-2 + nd)*sp[q1, q2]^2) + 
   ((I/4)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*nd^2*sw^2*w^2*B0[q1 + q2, z, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
-  (((3*I)/4)*cW*gw^4*nd*sw^2*vev^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
+   ((-2 + nd)*sp[q1, q2]^2) + ((I/16)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) - 
+  ((I/4)*cWB*gw^2*nd^2*sw^2*w^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/4)*cW*gw^4*nd*sw^2*vev^2*z*
+    B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
   ((I/2)*cW*gw^4*nd^2*sw^2*vev^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/32)*cWB*g1*gw^3*nd*sw^3*vev^2*z*
     B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/(cw*(-2 + nd)*sp[q1, q2]^2) - 
   ((I/16)*cWB*g1*gw^3*nd^2*sw^3*vev^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/(cw*(-2 + nd)*sp[q1, q2]^2) + 
   ((I/8)*cWB*gw^2*nd*sw^2*w*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) - (((3*I)/8)*cWB*gw^2*nd*sw^2*z^2*
-    B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
+   ((-2 + nd)*sp[q1, q2]^2) - ((I/8)*cWB*gw^2*nd*sw^2*w*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) - 
+  (((3*I)/8)*cWB*gw^2*nd*sw^2*z^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]^2) + ((I/16)*cWB*gw^2*nd*sw^2*z^2*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
   ((I/4)*cWB*gw^2*nd^2*sw^2*z^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2] - ((2*I)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+    sp[q2, Ep1])/sp[q1, q2] - ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) - 
+  ((2*I)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) + (((3*I)/8)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) + 
   ((I/2)*cWB*gw^2*nd^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]) + ((I/4)*cWB*gw^2*sw^2*A0[z]*sp[q1, Ep2]*
     sp[q2, Ep1])/sp[q1, q2] + ((2*I)*cWB*gw^2*nd*sw^2*A0[z]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*nd^2*sw^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, z]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
-  ((I/8)*cWB*g1*gw^3*sw^3*vev^2*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   (cw*sp[q1, q2]) - ((2*I)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2] + ((4*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, z]*
-    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  (I*cWB*gw^2*nd^2*sw^2*w*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + (((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, w, z]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
-  ((4*I)*cWB*gw^2*nd*sw^2*z*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + (I*cWB*gw^2*nd^2*sw^2*z*B0[-q1, w, z]*sp[q1, Ep2]*
+  ((I/8)*cWB*gw^2*nd*sw^2*A0[z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*nd^2*sw^2*A0[z]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - ((I/8)*cWB*g1*gw^3*sw^3*vev^2*B0[q2, w, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/(cw*sp[q1, q2]) - ((I/2)*cWB*gw^2*sw^2*z*B0[q2, w, w]*
+  ((I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   sp[q1, q2] + ((I/8)*cWB*g1*gw^3*sw^3*vev^2*B0[-q1, w, z]*sp[q1, Ep2]*
+    sp[q2, Ep1])/(cw*sp[q1, q2]) - ((2*I)*cWB*gw^2*sw^2*w*B0[-q1, w, z]*
     sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
-  (I*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - ((6*I)*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*
+  ((4*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) - (I*cWB*gw^2*nd^2*sw^2*w*B0[-q1, w, z]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
-  (((11*I)/2)*cW*gw^4*nd*sw^2*vev^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
+  (((3*I)/2)*cWB*gw^2*sw^2*z*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   sp[q1, q2] - ((4*I)*cWB*gw^2*nd*sw^2*z*B0[-q1, w, z]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+  (I*cWB*gw^2*nd^2*sw^2*z*B0[-q1, w, z]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
+  ((I/8)*cWB*g1*gw^3*sw^3*vev^2*B0[q2, w, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   (cw*sp[q1, q2]) - ((I/2)*cWB*gw^2*sw^2*z*B0[q2, w, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/sp[q1, q2] + (I*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
+  ((6*I)*cW*gw^4*sw^2*vev^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) + (((11*I)/2)*cW*gw^4*nd*sw^2*vev^2*
+    B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
   (I*cW*gw^4*nd^2*sw^2*vev^2*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]) - (((3*I)/4)*cWB*g1*gw^3*sw^3*vev^2*
     B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/(cw*(-2 + nd)*sp[q1, q2]) + 
@@ -3385,17 +3689,22 @@ postPVdiag=
    sp[q1, q2] + ((2*I)*cWB*gw^2*sw^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
   (((9*I)/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + (I*cWB*gw^2*nd^2*sw^2*w*B0[q1 + q2, z, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  (((5*I)/4)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] + ((3*I)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
+   ((-2 + nd)*sp[q1, q2]) - ((I/4)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) + 
+  (I*cWB*gw^2*nd^2*sw^2*w*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) - (((5*I)/4)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((3*I)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*sw^2*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) - 
   (((3*I)/4)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/2)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
-  ((6*I)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + ((4*I)*cW*gw^4*nd*sw^2*vev^2*w*
-    C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+   ((-2 + nd)*sp[q1, q2]) + ((I/4)*cWB*gw^2*nd*sw^2*z*B0[q1 + q2, z, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]) + 
+  ((I/2)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   sp[q1, q2] - ((6*I)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+  ((4*I)*cW*gw^4*nd*sw^2*vev^2*w*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
   ((I/8)*cWB*g1*gw^3*sw^3*vev^2*w*C0[-q1, q2, w, z, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/(cw*sp[q1, q2]) - (((3*I)/4)*cWB*g1*gw^3*sw^3*vev^2*w*
     C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q2, Ep1])/(cw*(-2 + nd)*sp[q1, q2]) + 
@@ -3415,23 +3724,34 @@ postPVdiag=
     sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - (4*I)*cWB*gw^2*sw^2*
    C0[-q1, q2, w, z, w]*sp[q1, Ep2]*sp[q1, q2]*sp[q2, Ep1], 
  (-I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2] - 
+  ((2*I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) - 
   ((4*I)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2])/(-2 + nd) + 
+  (((3*I)/2)*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(1 - nd) + 
   (I*cWB*gw^2*nd*sw^2*A0[w]*sp[Ep1, Ep2])/(-2 + nd) - 
+  (((3*I)/4)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) + 
+  ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
   (I/4)*cw*cWB*g1*gw^3*sw*vev^2*B0[-q1, w, 0]*sp[Ep1, Ep2] + 
   (I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, 0]*sp[Ep1, Ep2] - 
-  ((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2] + 
-  ((8*I)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(-2 + nd) - 
-  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(-2 + nd) - 
+  ((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2] - 
+  (((3*I)/2)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(1 - nd) + 
+  ((8*I)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(-2 + nd) + 
+  (I*cWB*gw^2*nd*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(1 - nd) - 
+  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/(-2 + nd) + 
+  (((3*I)/4)*cWB*gw^2*sw^2*w^2*B0[-q1, w, 0]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
+  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[-q1, w, 0]*sp[Ep1, Ep2])/((1 - nd)*q1^2) - 
   (I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[q2, w, w]*sp[Ep1, Ep2] + 
   (I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*sp[Ep1, Ep2] - 
-  I*cWB*gw^2*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2] + 
+  I*cWB*gw^2*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2] - 
+  ((3*I)*cWB*gw^2*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2])/(1 - nd) + 
+  ((2*I)*cWB*gw^2*nd*sw^2*w*B0[q2, w, w]*sp[Ep1, Ep2])/(1 - nd) + 
   (I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2] + 
   (((3*I)/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
    (-2 + nd) - ((I/4)*cw*cWB*g1*gw^3*nd*sw*vev^2*B0[q1 + q2, 0, w]*
     sp[Ep1, Ep2])/(-2 + nd) + I*cW*gw^4*sw^2*vev^2*B0[q1 + q2, 0, w]*
    sp[Ep1, Ep2] - ((3*I)*cW*gw^4*sw^2*vev^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
    (-2 + nd) + ((2*I)*cW*gw^4*nd*sw^2*vev^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
-   (-2 + nd) + I*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2] - 
+   (-2 + nd) + I*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2] + 
+  ((I/2)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/(1 - nd) - 
   ((3*I)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/(-2 + nd) - 
   (I/8)*cw*cWB*g1*gw^3*sw*vev^2*w*C0[-q1, q2, w, 0, w]*sp[Ep1, Ep2] + 
   (((3*I)/4)*cw*cWB*g1*gw^3*sw*vev^2*w*C0[-q1, q2, w, 0, w]*sp[Ep1, Ep2])/
@@ -3447,6 +3767,7 @@ postPVdiag=
     sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   (((3*I)/2)*cW*gw^4*sw^2*vev^2*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
   (I*cW*gw^4*nd*sw^2*vev^2*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
   ((I/2)*cWB*gw^2*sw^2*w*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   ((I/2)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
   (((3*I)/8)*cw*cWB*g1*gw^3*sw*vev^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2])/
@@ -3463,13 +3784,15 @@ postPVdiag=
    ((-2 + nd)*sp[q1, q2]) - (((3*I)/2)*cW*gw^4*sw^2*vev^2*w*B0[q1 + q2, 0, w]*
     sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
   (I*cW*gw^4*nd*sw^2*vev^2*w*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/2)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, 0, w]*
-    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2]*
-    sp[q1, q2])/q1^2 + ((5*I)/2)*cWB*gw^2*sw^2*B0[-q1, w, 0]*sp[Ep1, Ep2]*
-   sp[q1, q2] - ((I/2)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2]*sp[q1, q2])/
-   q1^2 + ((5*I)/2)*cWB*gw^2*sw^2*B0[q2, w, w]*sp[Ep1, Ep2]*sp[q1, q2] + 
+   ((-2 + nd)*sp[q1, q2]) - ((I/8)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, 0, w]*
+    sp[Ep1, Ep2])/((1 - nd)*sp[q1, q2]) + 
+  ((I/2)*cWB*gw^2*sw^2*w^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2])/
+   ((-2 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, 0, w]*
+    sp[Ep1, Ep2])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 + 
+  ((5*I)/2)*cWB*gw^2*sw^2*B0[-q1, w, 0]*sp[Ep1, Ep2]*sp[q1, q2] - 
+  ((I/2)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[Ep1, Ep2]*sp[q1, q2])/q1^2 + 
+  ((5*I)/2)*cWB*gw^2*sw^2*B0[q2, w, w]*sp[Ep1, Ep2]*sp[q1, q2] + 
   (2*I)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2] - 
   ((I/2)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2])/(1 - nd) - 
   ((8*I)*cWB*gw^2*sw^2*B0[q1 + q2, 0, w]*sp[Ep1, Ep2]*sp[q1, q2])/(-2 + nd) + 
@@ -3504,10 +3827,11 @@ postPVdiag=
    ((-2 + nd)*sp[q1, q2]^2) - ((I/2)*cW*gw^4*nd^2*sw^2*vev^2*A0[w]*
     sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
   ((I/4)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) + ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
-  (((3*I)/16)*cw*cWB*g1*gw^3*nd*sw*vev^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
+   ((-2 + nd)*sp[q1, q2]^2) + ((I/16)*cWB*gw^2*nd*sw^2*w*A0[w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-1 + nd)*sp[q1, q2]^2) + 
+  ((I/4)*cWB*gw^2*nd^2*sw^2*w*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]^2) + (((3*I)/16)*cw*cWB*g1*gw^3*nd*sw*vev^2*w*
+    B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
   ((I/8)*cw*cWB*g1*gw^3*nd^2*sw*vev^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
   (((3*I)/2)*cW*gw^4*nd*sw^2*vev^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
@@ -3524,24 +3848,28 @@ postPVdiag=
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
   ((I/2)*cW*gw^4*nd^2*sw^2*vev^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]^2) - ((I/4)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, 0, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) - 
+  ((I/16)*cWB*gw^2*nd*sw^2*w^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]^2) + ((I/4)*cWB*gw^2*nd^2*sw^2*w^2*B0[q1 + q2, 0, w]*
     sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]^2) + 
-  ((I/4)*cWB*gw^2*nd^2*sw^2*w^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]^2) + ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/sp[q1, q2] + ((2*I)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*
+  ((I/4)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
+  ((I/2)*cWB*gw^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) + ((2*I)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  ((I/2)*cWB*gw^2*nd^2*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[-q1, w, 0]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
-  ((I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] + ((2*I)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - ((4*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*
+  (((3*I)/8)*cWB*gw^2*nd*sw^2*A0[w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - ((I/2)*cWB*gw^2*nd^2*sw^2*A0[w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
-  (I*cWB*gw^2*nd^2*sw^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) - ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[q2, w, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] + 
-  ((I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   sp[q1, q2] - (((3*I)/4)*cw*cWB*g1*gw^3*sw*vev^2*B0[q1 + q2, 0, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
+   sp[q1, q2] + ((I/2)*cW*gw^4*sw^2*vev^2*B0[-q1, w, 0]*sp[q1, Ep2]*
+    sp[q2, Ep1])/sp[q1, q2] + ((2*I)*cWB*gw^2*sw^2*w*B0[-q1, w, 0]*
+    sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
+  ((4*I)*cWB*gw^2*nd*sw^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-2 + nd)*sp[q1, q2]) + (I*cWB*gw^2*nd^2*sw^2*w*B0[-q1, w, 0]*sp[q1, Ep2]*
+    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
+  ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*B0[q2, w, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   sp[q1, q2] + ((I/2)*cW*gw^4*sw^2*vev^2*B0[q2, w, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/sp[q1, q2] - (((3*I)/4)*cw*cWB*g1*gw^3*sw*vev^2*
+    B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
   (((11*I)/16)*cw*cWB*g1*gw^3*nd*sw*vev^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
   ((I/8)*cw*cWB*g1*gw^3*nd^2*sw*vev^2*B0[q1 + q2, 0, w]*sp[q1, Ep2]*
@@ -3556,12 +3884,13 @@ postPVdiag=
     sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
   ((2*I)*cWB*gw^2*sw^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
    ((-2 + nd)*sp[q1, q2]) + (((9*I)/2)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, 0, w]*
-    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
-  (I*cWB*gw^2*nd^2*sw^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
-   ((-2 + nd)*sp[q1, q2]) + ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*w*
-    C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/sp[q1, q2] - 
-  (((3*I)/4)*cw*cWB*g1*gw^3*sw*vev^2*w*C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*
-    sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/4)*cWB*gw^2*nd*sw^2*w*B0[q1 + q2, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
+   ((-1 + nd)*sp[q1, q2]) - (I*cWB*gw^2*nd^2*sw^2*w*B0[q1 + q2, 0, w]*
+    sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
+  ((I/8)*cw*cWB*g1*gw^3*sw*vev^2*w*C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*
+    sp[q2, Ep1])/sp[q1, q2] - (((3*I)/4)*cw*cWB*g1*gw^3*sw*vev^2*w*
+    C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) + 
   ((I/2)*cw*cWB*g1*gw^3*nd*sw*vev^2*w*C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*
     sp[q2, Ep1])/((-2 + nd)*sp[q1, q2]) - 
   ((I/2)*cW*gw^4*sw^2*vev^2*w*C0[-q1, q2, w, 0, w]*sp[q1, Ep2]*sp[q2, Ep1])/
@@ -3676,69 +4005,237 @@ postPVdiag=
    (cw*g1*sp[q1, q2]) - ((I/4)*cW*gw^5*sw*vev^2*w*C0[-q1, q2, w, h, w]*
     sp[q1, Ep2]*sp[q2, Ep1])/(cw*g1*(-2 + nd)*sp[q1, q2])}
 
-diagdiv=
-{0, 0, 0, 0, 0, 0, 0, (-I/6)*gw^2*sw^2*
-  (sp[Ep1, Ep2]*(9*cW*gw^2*vev^2 - 12*cWB*w + 13*cWB*sp[q1, q2]) + 
-   cWB*sp[q1, Ep2]*sp[q2, Ep1]), (I/6)*gw^2*sw^2*
-  (sp[Ep1, Ep2]*(3*(3*cW*gw^2*vev^2 - 4*cWB*(w + z)) + 13*cWB*sp[q1, q2]) + 
-   cWB*sp[q1, Ep2]*sp[q2, Ep1]), 
- ((I/4)*sw*(-(cw^2*cWB*g1*gw) + 2*cw*(cB*g1^2 - cW*gw^2)*sw + cWB*g1*gw*sw^2)*
-   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/cw, 
- (I/2)*(cB*cw^2*g1^2 + gw*sw*(cw*cWB*g1 + cW*gw*sw))*
-  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- ((3*I)/4)*cWB*gw*sw*(cw*g1 + gw*sw)*(sp[Ep1, Ep2]*sp[q1, q2] - 
-   sp[q1, Ep2]*sp[q2, Ep1]), ((3*I)/4)*cw*cWB*gw*(cw*gw - g1*sw)*
-  (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- (2*I)*cWB*lam*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- (I/4)*cWB*(cw*g1 + gw*sw)^2*(sp[Ep1, Ep2]*sp[q1, q2] - 
-   sp[q1, Ep2]*sp[q2, Ep1]), 
- ((I/4)*cWB*sw*(-(cw^2*g1*gw) + cw*(g1^2 - gw^2)*sw + g1*gw*sw^2)*
-   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/cw, 
- ((I/2)*(cw*g1 + gw*sw)*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*
-   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/(cw*g1), 
- (-I/4)*cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- (I/4)*cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- ((-I/4)*(cw*gw - g1*sw)*(cw^2*cWB*g1*gw + 2*cw*(cB*g1^2 - cW*gw^2)*sw - 
-    cWB*g1*gw*sw^2)*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/
-  (cw*g1), ((-3*I)/16)*cw^2*cWB*g1^2*gw^2*vev^2*sp[Ep1, Ep2], 
- ((-3*I)/16)*cWB*g1^2*gw^2*sw^2*vev^2*sp[Ep1, Ep2], 
- I*cWB*gw^2*sw^2*(sp[Ep1, Ep2]*(w + 3*sp[q1, q2]) - 
-   3*sp[q1, Ep2]*sp[q2, Ep1]), (-I)*cWB*gw^2*
-  (sp[Ep1, Ep2]*(sw^2*(w + z) - 3*cw^2*sp[q1, q2]) + 
-   3*cw^2*sp[q1, Ep2]*sp[q2, Ep1]), 
- (I/2)*cW*gw^2*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- (I/4)*cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- ((3*I)/4)*cWB*gw^2*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]), 
- ((2*I)*gw*sw*(cB*cw^2*g1^2 + gw*sw*(-(cw*cWB*g1) + cW*gw*sw))*
-   (sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/(cw*g1), 
- (I*gw*(-(cw^2*cWB*g1*gw) - 2*cB*cw*g1^2*sw + 2*cw*cW*gw^2*sw + 
-    cWB*g1*gw*sw^2)*(sp[Ep1, Ep2]*sp[q1, q2] - sp[q1, Ep2]*sp[q2, Ep1]))/g1, 
- (-I/16)*cw*gw*(cw*gw - g1*sw)*
-  (sp[Ep1, Ep2]*(3*cW*gw^2*vev^2 + 16*cWB*sp[q1, q2]) - 
-   16*cWB*sp[q1, Ep2]*sp[q2, Ep1]), (-I/16)*gw*sw*(cw*g1 + gw*sw)*
-  (sp[Ep1, Ep2]*(3*cW*gw^2*vev^2 + 16*cWB*sp[q1, q2]) - 
-   16*cWB*sp[q1, Ep2]*sp[q2, Ep1]), 
- ((-I/48)*gw^2*sw^2*
-   (sp[Ep1, Ep2]*(3*(72*cw*cW*gw^2*vev^2 + 9*cWB*g1*gw*sw*vev^2 - 
-        56*cw*cWB*w - 36*cw*cWB*z) + 344*cw*cWB*sp[q1, q2]) - 
-    232*cw*cWB*sp[q1, Ep2]*sp[q2, Ep1]))/cw, 
- (-I/48)*gw^2*sw*
-  (sp[Ep1, Ep2]*(3*(9*cw*cWB*g1*gw*vev^2 - 72*cW*gw^2*sw*vev^2 + 
-       56*cWB*sw*w) - 344*cWB*sw*sp[q1, q2]) + 232*cWB*sw*sp[q1, Ep2]*
-    sp[q2, Ep1]), ((-I/16)*cW*gw^3*sw*
-   (sp[Ep1, Ep2]*(3*gw^2*vev^2 + 32*sp[q1, q2]) - 
-    32*sp[q1, Ep2]*sp[q2, Ep1]))/(cw*g1)}
+total=
+(cB*(-(g1^2*w)/2 + (g1^2*(gw^2*(2*h - 3*z) + g1^2*(2*h - z)))/
+      (2*(g1^2 + gw^2)) + (g1^2*gw^2*w*B0[0, 0, w])/(g1^2 + gw^2) + 
+     (-(g1^2*h)/2 + (g1^2*w)/2)*B0[0, h, w] - (g1^4*(h - z)*B0[0, h, z])/
+      (2*(g1^2 + gw^2)) - (g1^2*gw^2*(h - z)*B0[0, z, h])/(2*(g1^2 + gw^2)) + 
+     (-((g1^2*gw^2*w)/(g1^2 + gw^2)) + (g1^2*gw^2*z)/(g1^2 + gw^2))*
+      B0[0, z, w] - g1^2*h*Log[h] + (g1^2*w*Log[w])/2 + 
+     (g1^2*(g1^2 + 3*gw^2)*z*Log[z])/(2*(g1^2 + gw^2))) + 
+   cW*((-5*gw^2*w)/2 + (gw^2*(g1^2*(2*h + z) + gw^2*(2*h + 3*z)))/
+      (2*(g1^2 + gw^2)) + vev^2*((gw^4*w)/(8*h) - 
+       (gw^4*(g1^2*(h - 41*z) + gw^2*(h + z)))/(16*(g1^2 + gw^2)*h)) + 
+     ((g1^2*gw^2*w)/(g1^2 + gw^2) - (21*g1^2*gw^4*vev^2*w)/
+        (4*(g1^2 + gw^2)*h))*B0[0, 0, w] + (-(gw^2*h) + gw^2*w)*B0[0, h, w] + 
+     (g1^2*gw^2*(h - z)*B0[0, h, z])/(2*(g1^2 + gw^2)) + 
+     (-(gw^2*h)/2 + (gw^2*w)/2 + vev^2*((3*gw^4)/8 - (gw^4*w)/(8*h)))*
+      B0[0, w, h] + (3*gw^4*vev^2*B0[0, w, w])/4 + 
+     vev^2*(((41*g1^2*gw^4 - gw^6)*w)/(8*g1^2*h + 8*gw^2*h) + 
+       (gw^4*(g1^2*(4*h - 41*z) + gw^2*(4*h + z)))/(8*(g1^2 + gw^2)*h))*
+      B0[0, w, z] + (gw^4*(h - z)*B0[0, z, h])/(2*(g1^2 + gw^2)) + 
+     ((gw^4*w)/(g1^2 + gw^2) - (gw^4*z)/(g1^2 + gw^2))*B0[0, z, w] + 
+     vev^2*((-17*g1^2*gw^4)/(8*(g1^2 + gw^2)) + (21*g1^2*gw^4*w)/
+        (8*(g1^2 + gw^2)*h))*B0[h, 0, w] + 
+     vev^2*((-5*gw^4)/8 + (gw^4*w)/(16*h))*B0[h, h, w] + 
+     vev^2*(((-41*g1^2*gw^4 + gw^6)*w)/(16*(g1^2 + gw^2)*h) + 
+       (gw^4*(-(gw^2*(9*h + z)) + g1^2*(25*h + 41*z)))/(16*(g1^2 + gw^2)*h))*
+      B0[h, z, w] - (g1^2*gw^4*vev^2*w*C0[0, h, 0, w, w])/(g1^2 + gw^2) + 
+     vev^2*((gw^4*h)/4 - (gw^4*w)/4)*C0[0, h, h, w, w] + 
+     vev^2*((g1^2*gw^4*w)/(g1^2 + gw^2) - 
+       (gw^4*(g1^2*(h - 3*z) + gw^2*(h - z)))/(4*(g1^2 + gw^2)))*
+      C0[0, h, z, w, w] + (-(gw^2*h) + (gw^4*vev^2)/16)*Log[h] + 
+     ((5*gw^2*w)/2 - (gw^4*vev^2*w)/(8*h))*Log[w] + 
+     (-(gw^2*(g1^2 + 3*gw^2)*z)/(2*(g1^2 + gw^2)) + 
+       (gw^4*(-41*g1^2 + gw^2)*vev^2*z)/(16*(g1^2 + gw^2)*h))*Log[z]) + 
+   cWB*(vev^2*(-(g1^2*gw^2*w)/(4*h) - (g1^2*gw^2*(gw^2*h + g1^2*(h - z)))/
+        (4*(g1^2 + gw^2)*h)) + (w*(3*g1^4*h + gw^4*h + g1^2*gw^2*(4*h - z)))/
+      (4*(g1^2 + gw^2)*h) - (-(gw^4*h*(h - 2*z)) + g1^4*h*(2*h + z) + 
+       g1^2*gw^2*(h^2 + 3*h*z + 5*z^2))/(4*(g1^2 + gw^2)*h) + 
+     (-((g1^2*gw^2*w)/(g1^2 + gw^2)) + (3*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h) + 
+       vev^2*(-(g1^2*gw^4)/(8*(g1^2 + gw^2)) + (g1^2*gw^4*w)/
+          (2*g1^2*h + 2*gw^2*h)))*B0[0, 0, w] + 
+     (((g1^2 + gw^2)*h)/4 + ((-g1^2 - gw^2)*w)/4)*B0[0, h, w] + 
+     (g1^2*(g1^2 - gw^2)*(h - z)*B0[0, h, z])/(4*(g1^2 + gw^2)) + 
+     (-(gw^2*h)/4 + (gw^2*w)/4)*B0[0, w, h] + (g1^2*gw^2*vev^2*B0[0, w, w])/
+      8 + (((-3*g1^2*gw^2)/((g1^2 + gw^2)*h) + (5*g1^2*gw^2)/
+          (12*(g1^2 + gw^2)*q1^2))*w^2 + 
+       ((6*g1^4*h - 3*gw^4*h - 5*g1^2*gw^2*(5*h - 6*z))*z)/
+        (12*(g1^2 + gw^2)*h) + (5*g1^2*gw^2*z^2)/(12*(g1^2 + gw^2)*q1^2) + 
+       vev^2*((g1^4*gw^2*w)/(2*g1^2*h + 2*gw^2*h) + 
+         (g1^2*gw^4*h - 4*g1^4*gw^2*z)/(8*g1^2*h + 8*gw^2*h)) + 
+       w*((-5*g1^2*gw^2*z)/(6*(g1^2 + gw^2)*q1^2) + 
+         (-6*g1^4*h + 3*gw^4*h + g1^2*gw^2*(-7*h + 6*z))/(12*(g1^2 + gw^2)*
+           h)))*B0[0, w, z] + (gw^2*(g1^2 - gw^2)*(h - z)*B0[0, z, h])/
+      (4*(g1^2 + gw^2)) + ((-5*g1^2*gw^2*w^2)/(12*(g1^2 + gw^2)*q1^2) + 
+       ((11*g1^2*gw^2 + 3*gw^4)*z)/(6*(g1^2 + gw^2)) - 
+       (5*g1^2*gw^2*z^2)/(12*(g1^2 + gw^2)*q1^2) + 
+       w*((5*g1^2*gw^2 - 3*gw^4)/(6*(g1^2 + gw^2)) + (5*g1^2*gw^2*z)/
+          (6*(g1^2 + gw^2)*q1^2)))*B0[0, z, w] + 
+     ((3*g1^2*gw^2*w)/(2*(g1^2 + gw^2)) - (3*g1^2*gw^2*w^2)/
+        (2*(g1^2 + gw^2)*h) + vev^2*((7*g1^2*gw^4)/(8*(g1^2 + gw^2)) - 
+         (g1^2*gw^4*w)/(4*(g1^2 + gw^2)*h)))*B0[h, 0, w] + 
+     ((3*g1^2*gw^2*w^2)/(2*(g1^2 + gw^2)*h) + (g1^2*gw^2*(3*h - 5*z)*z)/
+        (4*(g1^2 + gw^2)*h) - (g1^2*gw^2*w*(6*h + z))/(4*(g1^2 + gw^2)*h) + 
+       vev^2*(-(g1^4*gw^2*w)/(4*(g1^2 + gw^2)*h) + 
+         (g1^2*gw^2*(-2*gw^2*h + g1^2*(5*h + 2*z)))/(8*(g1^2 + gw^2)*h)))*
+      B0[h, z, w] + vev^2*((g1^2*gw^4*h)/(8*(g1^2 + gw^2)) + 
+       (g1^2*gw^4*w)/(2*(g1^2 + gw^2)))*C0[0, h, 0, w, w] + 
+     (-((g1^2*gw^2*w*z)/(g1^2 + gw^2)) + 
+       vev^2*(((3*g1^4*gw^2 - g1^2*gw^4)*w)/(8*(g1^2 + gw^2)) + 
+         (g1^2*gw^2*(g1^2*z + gw^2*(-h + z)))/(8*(g1^2 + gw^2))))*
+      C0[0, h, z, w, w] + ((2*g1^2 - gw^2)*h*Log[h])/4 + 
+     ((g1^2*gw^2*vev^2*w)/(4*h) - 
+       (w*(3*g1^4*h + gw^4*h + g1^2*gw^2*(4*h + 5*z)))/(4*(g1^2 + gw^2)*h))*
+      Log[w] + (-(g1^4*gw^2*vev^2*z)/(4*(g1^2 + gw^2)*h) + 
+       (3*g1^2*gw^2*w*z)/(2*(g1^2 + gw^2)*h) + 
+       ((g1^4*h + 2*gw^4*h - g1^2*gw^2*(h - 5*z))*z)/(4*(g1^2 + gw^2)*h))*
+      Log[z]))*sp[Ep1, Ep2] + 
+ AAAA*(cB*(((-3*g1^2)/(2*h) + g1^2/(2*q1^2))*w + 
+     (g1^2*(gw^2*(5*h - 7*z) + g1^2*(5*h - z)))/(2*(g1^2 + gw^2)*h) + 
+     (g1^2*(-g1^2 + gw^2)*z)/(2*(g1^2 + gw^2)*q1^2) + 
+     ((3*g1^2*gw^2)/(g1^2 + gw^2) + (2*g1^2*gw^2*lam*vev^2)/
+        ((g1^2 + gw^2)*h) + ((3*g1^2*gw^2)/((g1^2 + gw^2)*h) - 
+         (g1^2*gw^2)/((g1^2 + gw^2)*q1^2))*w)*B0[0, 0, w] + 
+     (-2*g1^2 - (g1^2*gw^2*vev^2)/(2*h) + (2*g1^2*w)/h)*B0[0, h, w] - 
+     (g1^2*(g1^2 - gw^2)*(h - z)*B0[0, h, z])/((g1^2 + gw^2)*h) + 
+     (g1^4/(2*(g1^2 + gw^2)) - (g1^4*w)/(2*(g1^2 + gw^2)*q1^2) + 
+       (g1^4*z)/(2*(g1^2 + gw^2)*q1^2))*B0[0, w, z] - 
+     (2*g1^2*gw^2*(h - z)*B0[0, z, h])/((g1^2 + gw^2)*h) + 
+     ((2*g1^4*lam*vev^2)/((g1^2 + gw^2)*h) + 
+       ((-3*g1^2*gw^2)/((g1^2 + gw^2)*h) + (g1^2*gw^2)/(2*(g1^2 + gw^2)*
+           q1^2))*w - (g1^2*gw^2*(5*h - 6*z))/(2*(g1^2 + gw^2)*h) - 
+       (g1^2*gw^2*z)/(2*(g1^2 + gw^2)*q1^2))*B0[0, z, w] + 
+     ((3*g1^2*gw^2)/(g1^2 + gw^2) + (g1^2*gw^4*vev^2)/(2*g1^2*h + 2*gw^2*h) - 
+       (g1^2*gw^2*w)/((g1^2 + gw^2)*h))*B0[h, 0, w] + 
+     ((-2*g1^2*lam*vev^2)/h - (g1^2*gw^2*z)/((g1^2 + gw^2)*h))*B0[h, w, h] + 
+     ((g1^4*gw^2*vev^2)/(2*g1^2*h + 2*gw^2*h) - ((g1^4 - g1^2*gw^2)*w)/
+        (2*g1^2*h + 2*gw^2*h) + (g1^2*(g1^2 - gw^2)*(3*h - z))/
+        (2*(g1^2 + gw^2)*h))*B0[h, w, z] + 
+     ((6*g1^2*gw^2*h)/(g1^2 + gw^2) + (g1^2*(gw^4 + 4*gw^2*lam)*vev^2)/
+        (2*(g1^2 + gw^2)) - (g1^2*gw^2*w)/(g1^2 + gw^2))*C0[0, h, w, h, 0] + 
+     ((g1^4*(gw^2 + 4*lam)*vev^2*(h - z))/(2*(g1^2 + gw^2)*h) - 
+       (g1^4*w*(h - z))/((g1^2 + gw^2)*h) + 
+       (g1^2*(g1^2*h*(2*h - z) - gw^2*(4*h^2 - 2*h*z + z^2)))/
+        ((g1^2 + gw^2)*h))*C0[0, h, w, h, z] - 2*g1^2*Log[h] + 
+     ((3*g1^2)/(2*h) - g1^2/(2*q1^2))*w*Log[w] + 
+     ((g1^2*(g1^2 + 7*gw^2)*z)/(2*(g1^2 + gw^2)*h) + (g1^2*(g1^2 - gw^2)*z)/
+        (2*(g1^2 + gw^2)*q1^2))*Log[z]) + 
+   cW*(((-11*gw^2)/(2*h) + gw^2/(2*q1^2))*w + (gw^2*(g1^2 - gw^2)*z)/
+      (2*(g1^2 + gw^2)*q1^2) + vev^2*((gw^4*w)/(2*h^2) - 
+       (gw^4*(-41*g1^2 + gw^2)*z)/(4*(g1^2 + gw^2)*h^2)) + 
+     (gw^2*(g1^2*(5*h + z) + gw^2*(5*h + 7*z)))/(2*(g1^2 + gw^2)*h) + 
+     ((3*g1^2*gw^2)/(g1^2 + gw^2) + ((3*g1^2*gw^2)/((g1^2 + gw^2)*h) - 
+         (g1^2*gw^2)/((g1^2 + gw^2)*q1^2))*w + 
+       vev^2*((2*g1^2*gw^2*lam)/((g1^2 + gw^2)*h) - (21*g1^2*gw^4*w)/
+          ((g1^2 + gw^2)*h^2)))*B0[0, 0, w] + (-2*gw^2 + (2*gw^2*w)/h)*
+      B0[0, h, w] - (gw^2*(-g1^2 + gw^2)*(h - z)*B0[0, h, z])/
+      ((g1^2 + gw^2)*h) + (-2*gw^2 + (2*gw^2*w)/h + 
+       vev^2*((3*gw^4)/(2*h) - (gw^4*w)/(2*h^2)))*B0[0, w, h] + 
+     (-2*gw^2 + ((3*gw^4 + 4*gw^2*lam)*vev^2)/(2*h))*B0[0, w, w] + 
+     (-(g1^2*gw^2)/(2*(g1^2 + gw^2)) + (g1^2*gw^2*w)/(2*(g1^2 + gw^2)*q1^2) - 
+       (g1^2*gw^2*z)/(2*(g1^2 + gw^2)*q1^2) + 
+       vev^2*(-((-41*g1^2*gw^4 + gw^6)*w)/(2*(g1^2 + gw^2)*h^2) + 
+         (gw^4*(g1^2*(h - 41*z) + gw^2*(h + z)))/(2*(g1^2 + gw^2)*h^2)))*
+      B0[0, w, z] + (2*gw^4*(h - z)*B0[0, z, h])/((g1^2 + gw^2)*h) + 
+     ((-2*g1^2*gw^2*lam*vev^2)/((g1^2 + gw^2)*h) + 
+       ((3*gw^4)/((g1^2 + gw^2)*h) - gw^4/(2*(g1^2 + gw^2)*q1^2))*w + 
+       (gw^4*(5*h - 6*z))/(2*(g1^2 + gw^2)*h) + 
+       (gw^4*z)/(2*(g1^2 + gw^2)*q1^2))*B0[0, z, w] + 
+     ((3*g1^2*gw^2)/(g1^2 + gw^2) - (g1^2*gw^2*w)/((g1^2 + gw^2)*h) + 
+       vev^2*(-(g1^2*gw^4)/(2*(g1^2 + gw^2)*h) + (21*g1^2*gw^4*w)/
+          (2*(g1^2 + gw^2)*h^2)))*B0[h, 0, w] + 
+     (gw^2 - (gw^2*w)/(2*h) + vev^2*(-(7*gw^4 + 8*gw^2*lam)/(4*h) + 
+         (gw^4*w)/(4*h^2)))*B0[h, h, w] + 
+     (-(gw^2*w)/(2*h) + (-(g1^2*gw^2*h) + gw^4*(-h + z))/((g1^2 + gw^2)*h))*
+      B0[h, w, h] + (-(g1^2*gw^4*vev^2)/(2*(g1^2 + gw^2)*h) + 
+       ((g1^2*gw^2 - gw^4)*w)/(2*g1^2*h + 2*gw^2*h) + 
+       (gw^2*(-g1^2 + gw^2)*(3*h - z))/(2*(g1^2 + gw^2)*h))*B0[h, w, z] + 
+     vev^2*(((-41*g1^2*gw^4 + gw^6)*w)/(4*(g1^2 + gw^2)*h^2) - 
+       (gw^4*(g1^2*(2*h - 41*z) + gw^2*(6*h + z)))/(4*(g1^2 + gw^2)*h^2))*
+      B0[h, z, w] + vev^2*((-6*g1^2*gw^4)/(g1^2 + gw^2) + 
+       (19*g1^2*gw^4*w)/(2*(g1^2 + gw^2)*h))*C0[0, h, 0, w, w] + 
+     (-2*gw^2*h + vev^2*(-gw^4/2 + 2*gw^2*lam - ((gw^4 + 8*gw^2*lam)*w)/
+          (4*h)))*C0[0, h, h, w, w] + ((6*g1^2*gw^2*h)/(g1^2 + gw^2) + 
+       (g1^2*(gw^4 + 4*gw^2*lam)*vev^2)/(2*(g1^2 + gw^2)) - 
+       (g1^2*gw^2*w)/(g1^2 + gw^2))*C0[0, h, w, h, 0] + 
+     (-(g1^2*(gw^4 + 4*gw^2*lam)*vev^2*(h - z))/(2*(g1^2 + gw^2)*h) + 
+       (g1^2*gw^2*w*(h - z))/((g1^2 + gw^2)*h) + 
+       (gw^2*(g1^2*h*(-2*h + z) + gw^2*(4*h^2 - 2*h*z + z^2)))/
+        ((g1^2 + gw^2)*h))*C0[0, h, w, h, z] + 
+     vev^2*(-(((41*g1^2*gw^4 + 3*gw^6)*w)/(4*g1^2*h + 4*gw^2*h)) + 
+       (5*g1^2*gw^4*h + gw^6*(-h + z))/((g1^2 + gw^2)*h))*C0[0, h, z, w, w] + 
+     (-2*gw^2 + (gw^4*vev^2)/(4*h))*Log[h] + 
+     (((11*gw^2)/(2*h) - gw^2/(2*q1^2))*w - (gw^4*vev^2*w)/(2*h^2))*Log[w] + 
+     (-(gw^2*(g1^2 + 7*gw^2)*z)/(2*(g1^2 + gw^2)*h) + (gw^2*(-g1^2 + gw^2)*z)/
+        (2*(g1^2 + gw^2)*q1^2) + (gw^4*(-41*g1^2 + gw^2)*vev^2*z)/
+        (4*(g1^2 + gw^2)*h^2))*Log[z]) + 
+   cWB*(vev^2*(-((g1^2*gw^2*w)/h^2) - (g1^2*gw^2*(gw^2*h + g1^2*(h - 2*z)))/
+        (2*(g1^2 + gw^2)*h^2)) + w*((g1^2 - gw^2)/(4*q1^2) + 
+       (5*g1^4*h + 3*gw^4*h + 4*g1^2*gw^2*(2*h - z))/(4*(g1^2 + gw^2)*h^2)) + 
+     (gw^4*h - g1^4*z + g1^2*gw^2*(h + 3*z))/(4*(g1^2 + gw^2)*q1^2) + 
+     (-4*gw^4*h*(h + z) - g1^4*h*(3*h + z) + 
+       g1^2*gw^2*(-7*h^2 + 9*h*z - 20*z^2))/(4*(g1^2 + gw^2)*h^2) + 
+     ((2*g1^2*gw^2)/(g1^2 + gw^2) + ((-7*g1^2*gw^2)/((g1^2 + gw^2)*h) - 
+         (g1^2*gw^2)/((g1^2 + gw^2)*q1^2))*w + (12*g1^2*gw^2*w^2)/
+        ((g1^2 + gw^2)*h^2) + vev^2*(-(g1^2*(5*gw^4 + 8*gw^2*lam))/
+          (4*(g1^2 + gw^2)*h) + (2*g1^2*gw^4*w)/((g1^2 + gw^2)*h^2)))*
+      B0[0, 0, w] + (g1^2 + (5*gw^2)/4 - (gw^2*h)/(4*q1^2) + 
+       (g1^2*gw^2*vev^2)/(4*h) + (-((g1^2 + gw^2)/h) + gw^2/(4*q1^2))*w)*
+      B0[0, h, w] + ((g1^2 - gw^2)^2*(h - z)*B0[0, h, z])/
+      (2*(g1^2 + gw^2)*h) + (-gw^2 - ((gw^4 - 8*gw^2*lam)*vev^2)/(8*h) + 
+       (gw^2*w)/h)*B0[0, w, h] + (-(g1^2*gw^2*vev^2)/(2*h) + 
+       (g1^2*gw^2*z)/((g1^2 + gw^2)*h))*B0[0, w, w] + 
+     ((-12*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h^2) + 
+       ((g1^4 - 4*g1^2*gw^2 + gw^4)*z)/(4*(g1^2 + gw^2)*q1^2) + 
+       (-(gw^4*h*(3*h + 2*z)) + g1^4*h*(h + 4*z) - 2*g1^2*gw^2*
+          (4*h^2 + 3*h*z - 20*z^2))/(4*(g1^2 + gw^2)*h^2) + 
+       vev^2*((2*g1^4*gw^2*w)/((g1^2 + gw^2)*h^2) + 
+         (g1^2*gw^2*(gw^2*h - 4*g1^2*(h + 2*z)))/(4*(g1^2 + gw^2)*h^2)) + 
+       w*(-(g1^4 - 4*g1^2*gw^2 + gw^4)/(4*(g1^2 + gw^2)*q1^2) + 
+         (g1^2*(-(g1^2*h) + gw^2*(3*h + 2*z)))/((g1^2 + gw^2)*h^2)))*
+      B0[0, w, z] + (gw^2*(g1^2 - gw^2)*(h - z)*B0[0, z, h])/
+      ((g1^2 + gw^2)*h) + ((g1^2*(-g1^2 + gw^2)*lam*vev^2)/
+        ((g1^2 + gw^2)*h) + ((3*gw^2*(g1^2 - gw^2))/(2*(g1^2 + gw^2)*h) + 
+         (-(g1^2*gw^2) + gw^4)/(4*(g1^2 + gw^2)*q1^2))*w + 
+       (gw^2*(g1^2 - gw^2)*z)/(4*(g1^2 + gw^2)*q1^2) + 
+       (gw^2*(g1^2*(5*h - 6*z) + gw^2*(7*h + 6*z)))/(4*(g1^2 + gw^2)*h))*
+      B0[0, z, w] + (-((g1^2*gw^2)/(g1^2 + gw^2)) + (7*g1^2*gw^2*w)/
+        ((g1^2 + gw^2)*h) - (6*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h^2) + 
+       vev^2*((3*g1^2*gw^4)/(2*(g1^2 + gw^2)*h) - (g1^2*gw^4*w)/
+          ((g1^2 + gw^2)*h^2)))*B0[h, 0, w] + 
+     (gw^2 + 2*lam + ((gw^4 - 8*gw^2*lam)*vev^2)/(8*h) - (gw^2*w)/(2*h))*
+      B0[h, h, w] + ((g1^2*lam*vev^2)/h + (gw^2*w)/(4*h) + 
+       (gw^2*(gw^2*(h - z) + g1^2*(h + z)))/(2*(g1^2 + gw^2)*h))*
+      B0[h, w, h] - gw^2*B0[h, w, w] + 
+     (((-(g1^4*gw^2) + g1^2*gw^4)*vev^2)/(4*(g1^2 + gw^2)*h) + 
+       ((g1^4 - 3*g1^2*gw^2 + 2*gw^4)*w)/(4*g1^2*h + 4*gw^2*h) - 
+       (g1^2*(g1^2 - gw^2)*(3*h - z))/(4*(g1^2 + gw^2)*h))*B0[h, w, z] + 
+     ((6*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h^2) + 
+       (g1^2*(g1^2*h*(h - z) + 2*gw^2*(2*h - 5*z)*z))/(2*(g1^2 + gw^2)*h^2) + 
+       (w*(g1^4*h + gw^4*h - g1^2*gw^2*(9*h + 2*z)))/(2*(g1^2 + gw^2)*h^2) + 
+       vev^2*(-((g1^4*gw^2*w)/((g1^2 + gw^2)*h^2)) + 
+         (g1^2*gw^2*(-(gw^2*h) + g1^2*(3*h + 2*z)))/(2*(g1^2 + gw^2)*h^2)))*
+      B0[h, z, w] + ((-g1^2 - gw^2)*B0[h, z, z])/2 + 
+     ((-2*g1^2*gw^2*h)/(g1^2 + gw^2) + (6*g1^2*gw^2*w)/(g1^2 + gw^2) - 
+       (6*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h) + 
+       vev^2*((7*g1^2*gw^4)/(4*(g1^2 + gw^2)) - (g1^2*gw^4*w)/
+          (4*(g1^2 + gw^2)*h)))*C0[0, h, 0, w, w] + 
+     ((gw^4*vev^2)/4 - (gw^2*w)/2)*C0[0, h, h, w, w] + 
+     ((-6*g1^2*gw^2*h)/(g1^2 + gw^2) - (g1^2*(gw^4 + 4*gw^2*lam)*vev^2)/
+        (2*(g1^2 + gw^2)) + (g1^2*gw^2*w)/(g1^2 + gw^2))*C0[0, h, w, h, 0] + 
+     (-(g1^2*(g1^2 - gw^2)*(gw^2 + 4*lam)*vev^2*(h - z))/
+        (4*(g1^2 + gw^2)*h) + (g1^2*(g1^2 - gw^2)*w*(h - z))/
+        (2*(g1^2 + gw^2)*h) - ((g1^2 - gw^2)*(g1^2*h*(2*h - z) - 
+          gw^2*(4*h^2 - 2*h*z + z^2)))/(2*(g1^2 + gw^2)*h))*
+      C0[0, h, w, h, z] + ((6*g1^2*gw^2*w^2)/((g1^2 + gw^2)*h) + 
+       (g1^2*gw^2*(2*h^2 - 3*h*z + z^2))/((g1^2 + gw^2)*h) + 
+       (w*(2*g1^4*h - gw^4*h + g1^2*gw^2*(-11*h + 8*z)))/
+        (2*(g1^2 + gw^2)*h) + vev^2*(-(g1^2*gw^2*(2*g1^2 + gw^2)*w)/
+          (4*(g1^2 + gw^2)*h) + (g1^2*gw^2*(g1^2*(3*h - 2*z) + 
+            gw^2*(-4*h + z)))/(4*(g1^2 + gw^2)*h)))*C0[0, h, z, w, w] + 
+     (g1^2 - gw^2/4 - (gw^2*h)/(4*q1^2))*Log[h] + 
+     ((g1^2*gw^2*vev^2*w)/h^2 + w*((-g1^2 + gw^2)/(4*q1^2) - 
+         (5*g1^4*h + 3*gw^4*h + 4*g1^2*gw^2*(2*h + 5*z))/
+          (4*(g1^2 + gw^2)*h^2)))*Log[w] + 
+     ((g1^2*(g1^2 - 3*gw^2)*z)/(4*(g1^2 + gw^2)*q1^2) - 
+       (g1^4*gw^2*vev^2*z)/((g1^2 + gw^2)*h^2) + (6*g1^2*gw^2*w*z)/
+        ((g1^2 + gw^2)*h^2) + (z*(g1^4*h + 4*gw^4*h + g1^2*gw^2*(h + 20*z)))/
+        (4*(g1^2 + gw^2)*h^2))*Log[z] + B0[h, t, t]*yu[3, 3]^2)) + 
+ (((3*cW*gw^4*vev^2)/8 + cWB*((3*g1^2*gw^2*vev^2)/4 + 
+       (3*g1^2*gw^2*z)/(4*(g1^2 + gw^2))))*sp[Ep1, Ep2] + 
+   AAAA*(cB*g1^2 + cW*gw^2 + cWB*(gw^2 + 2*lam + yu[3, 3]^2)))/\[Epsilon]
 
 AD=
-((I/2)*cW*gw^2 + (gw^2*((I*cB + ((5*I)/2)*cW)*g1^2 + 
-      g1^4*((I*cB)/gw^2 + ((I/2)*cWB)/gw^2) + ((5*I)/2)*cW*gw^2 - 
-      (I/2)*cWB*gw^2))/(g1^2 + gw^2) + I*cWB*(gw^2 + 2*lam))*sp[Ep1, Ep2]*
-  sp[q1, q2] + sp[Ep1, Ep2]*((-I/16)*cW*gw^2*(3*gw^2*vev^2 + 32*sp[q1, q2]) + 
-   (gw^2*(((-3*I)/4)*cWB*g1^4*vev^2 - ((3*I)/16)*cW*gw^4*vev^2 + 
-      g1^2*(((-3*I)/16)*cW*gw^2*vev^2 - (I/4)*cWB*(3*(gw^2*vev^2 + z) - 
-          8*sp[q1, q2])) + (2*I)*cWB*gw^2*sp[q1, q2]))/(g1^2 + gw^2)) + 
- (((3*I)/2)*cW*gw^2 + (gw^2*(((-I)*cB - ((5*I)/2)*cW - (2*I)*cWB)*g1^2 + 
-      g1^4*(((-I)*cB)/gw^2 - ((I/2)*cWB)/gw^2) - ((5*I)/2)*cW*gw^2 - 
-      ((3*I)/2)*cWB*gw^2))/(g1^2 + gw^2) - I*cWB*(gw^2 + 2*lam))*sp[q1, Ep2]*
-  sp[q2, Ep1]
+AD
 

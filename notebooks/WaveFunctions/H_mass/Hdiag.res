@@ -13,19 +13,24 @@ diag=
   (cw^4*g1^6*nd*vev^2*pp[p, MZ]*pp[p - q1, MZ])/(2*gw^2) + 
   (cw^4*g1^2*gw^2*nd*vev^2*pp[p, MZ]*pp[p - q1, MZ])/2 + 
   (cw^4*gw^4*nd*vev^2*pp[p, MZ]*pp[p - q1, MZ])/8, 0, 
- (gw^4*nd*vev^2*pp[p, MW]*pp[p - q1, MW])/4, 0, 0, 
+ (gw^4*nd*vev^2*pp[p, MW]*pp[p - q1, MW])/4, 0, 
  -(cw^2*g1^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, p])/2 - 
   (cw^2*g1^4*pp[p, MZ]*pp[p - q1, MZ]*sp[p, p])/(4*gw^2) - 
   (cw^2*gw^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, p])/4 - 
-  cw^2*g1^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1] - 
-  (cw^2*g1^4*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1])/(2*gw^2) - 
-  (cw^2*gw^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1])/2 - 
+  (cw^2*g1^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1])/2 - 
+  (cw^2*g1^4*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1])/(4*gw^2) - 
+  (cw^2*gw^2*pp[p, MZ]*pp[p - q1, MZ]*sp[p, q1])/4 - 
+  (cw^2*g1^2*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, p])/2 - 
+  (cw^2*g1^4*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, p])/(4*gw^2) - 
+  (cw^2*gw^2*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, p])/4 - 
   (cw^2*g1^2*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, q1])/2 - 
   (cw^2*g1^4*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, q1])/(4*gw^2) - 
   (cw^2*gw^2*pp[p, MZ]*pp[p - q1, MZ]*sp[q1, q1])/4, 
  -(gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, p])/4 - 
-  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, q1])/2 - 
+  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, q1])/4 - 
+  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[q1, p])/4 - 
   (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[q1, q1])/4, 
  -(gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, p])/4 - 
-  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, q1])/2 - 
+  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[p, q1])/4 - 
+  (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[q1, p])/4 - 
   (gw^2*pp[p, MW]*pp[p - q1, MW]*sp[q1, q1])/4}
