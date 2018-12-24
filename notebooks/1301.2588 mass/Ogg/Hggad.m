@@ -199,20 +199,22 @@ diag = diag /.{ A0[m_] -> m/\[Epsilon] - m Log[m] + m, B0[x_, m1_, m2_] -> 1/\[E
 total = Normal[Series[Total[diag],{\[Epsilon], 0, 0}]];
 
 Reorder := {B0[- q1, m1_, m2_] -> B0[0, m1, m2],
-            B0[  q1, m1_, m2_] -> B0[0, m1, m2],
-            B0[- q2, m1_, m2_] -> B0[0, m1, m2],
-            B0[  q2, m1_, m2_] -> B0[0, m1, m2],
-            B0[- q1 - q2, m1_, m2_] -> B0[h, m1, m2],
-            B0[  q1 + q2, m1_, m2_] -> B0[h, m1, m2],
-            B0[q_, m_, 0] -> B0[q, 0, m],
-            B0[a_, 0, a_] -> -Log[a] + 2,
-            C0[-q1, xyz___] -> C0[0, xyz],
-            C0[-q2, xyz___] -> C0[0, xyz],
-            C0[0, q1, xyz___] -> C0[0, 0, xyz],
-            C0[0, q2, xyz___] -> C0[0, 0, xyz],
-            C0[ q3, xyz___] -> C0[h, xyz],
-            C0[p1_, -q3, xyz___] -> C0[p1, h, xyz],
-            C0[p1_, -q1 - q2 + q3, xyz___] -> C0[-p1, h, xyz]};
+    B0[  q1, m1_, m2_] -> B0[0, m1, m2],
+    B0[- q2, m1_, m2_] -> B0[0, m1, m2],
+    B0[  q2, m1_, m2_] -> B0[0, m1, m2],
+    B0[- q1 - q2, m1_, m2_] -> B0[h, m1, m2],
+    B0[  q1 + q2, m1_, m2_] -> B0[h, m1, m2],
+    B0[q_, m_, 0] -> B0[q, 0, m],
+    B0[a_, 0, a_] -> -Log[a] + 2,
+    B0[q_, w GaugeXi[W], w] -> B0[q, w, w GaugeXi[W]],
+    B0[q_, z GaugeXi[Z], z] -> B0[q, z, z GaugeXi[Z]],
+    C0[-q1, 0, xyz___] -> C0[0, 0, xyz],
+    C0[-q2, 0, xyz___] -> C0[0, 0, xyz],
+    C0[0, q1, xyz___] -> C0[0, 0, xyz],
+    C0[0, q2, xyz___] -> C0[0, 0, xyz],
+    C0[ q3, xyz___] -> C0[h, xyz],
+    C0[p1_, -q3, xyz___] -> C0[p1, h, xyz],
+    C0[-q1, q2, m1_, m2_, m3_] -> C0[0, h, m2, m1, m3]};
 
 total = Collect[total //. Reorder /. q1 + q2 -> h
                 , {e, Log[_], B0[___], C0[___]}

@@ -71,29 +71,17 @@ ftrans[exp_] := Module[
   amp2 = ftrans /@ amp2;
 
 
-amp3 = {0};
-finaldiag = {0};
-Do[check = 0;
-   temp = 0;
-   Do[
-      i = 1;
-      While[i <= Length[amp2[[DIAG, TERM]]],
-            If[
-               amp2[[DIAG, TERM, i]] == 1/LAMBDA^2,
-               temp = temp + amp2[[DIAG, TERM]];
-               check++
-               ];
-            i++],
-      {TERM, Length[amp2[[DIAG]]]}
-      ];
-   If[check > 0,
-      amp3 = Append[amp3, temp];
-      finaldiag = Append[finaldiag, DIAG]
+amp3 = {};
+finaldiag = {};
+Do[check = Coefficient[amp2[[i]], LAMBDA, -2];
+   If[!MatchQ[check, 0],
+      amp3 = Append[amp3, check/LAMBDA^2];
+      finaldiag = Append[finaldiag, i]
       ]
-   ,{DIAG, Length[amp2]}
-   ];
-amp2 = Rest[amp3];
-finaldiag = Rest[finaldiag];
+   ,{i, Length[amp2]}];
+
+amp2 = amp3;
+
 Print["Diagrams included: ",finaldiag];
 Print["Total number of diagrams included: ",Length[amp2],"/",Length[amp1]];
 Paint[DiagramExtract[ins1, finaldiag], DisplayFunction -> (Export["Hgg_included.pdf",#]&), ColumnsXRows ->{3,4}];

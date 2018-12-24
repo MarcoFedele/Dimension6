@@ -166,7 +166,7 @@ Module[{temp, checkdiag, count, temp0, temp1},
                 If[count[[DIAG]][[1]] == {1, 0},
                    temp1 = temp[[DIAG]] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
                    temp1 = temp1 //. PVsub;
-                   temp0 = Append[temp0, temp1[[1]]],
+                   temp0 = Append[temp0, temp1],
                    If[count[[DIAG]] == {1, 1},
                       temp1 = ExpandSProducts[temp[[DIAG]] /. rule11shift /. rule11];
                       temp1 = diagSimplify[{temp1}] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0};
@@ -180,7 +180,7 @@ Module[{temp, checkdiag, count, temp0, temp1},
                          If[count[[DIAG]][[1]] == {2, 0},
                             temp1 = temp[[DIAG]] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0} ;
                             temp1 = temp1 //. PVsub;
-                            temp0 = Append[temp0, temp1[[1]]],
+                            temp0 = Append[temp0, temp1],
                             If[count[[DIAG]][[1]] == {2, 1},
                                temp1 = ExpandSProducts[temp[[DIAG]] /. rule21shift /. rule21];
                                temp1 = diagSimplify[{temp1}] /. {Power[q1, n_] :> 0 /; n > 0, Power[q2, n_] :> 0 /; n > 0} ;
@@ -276,9 +276,10 @@ Reorder := {B0[- q1, m1_, m2_] -> B0[0, m1, m2],
             B0[  q1 + q2, m1_, m2_] -> B0[h, m1, m2],
             B0[q_, m_, 0] -> B0[q, 0, m],
             B0[a_, 0, a_] -> -Log[a] + 2,
-            B0[0, m_ GaugeXi[Q], m_] -> B0[0, m, m GaugeXi[Q]]
-            C0[-q1, xyz___] -> C0[0, xyz],
-            C0[-q2, xyz___] -> C0[0, xyz],
+            B0[0, m_, m_] -> -Log[m],
+            B0[p_, m_ GaugeXi[Q], m_] -> B0[p, m, m GaugeXi[Q]],
+            (*C0[-q1, xyz___] -> C0[0, xyz],
+            C0[-q2, xyz___] -> C0[0, xyz],*)
             C0[0, q1, xyz___] -> C0[0, 0, xyz],
             C0[0, q2, xyz___] -> C0[0, 0, xyz],
             C0[ q3, xyz___] -> C0[h, xyz],
@@ -289,11 +290,13 @@ total = Collect[total //. Reorder /. q1 + q2 -> h
                 , {e, Log[_], B0[___], C0[___]}
                 , Simplify];
 
-total = total + c\[Gamma]\[Gamma] e^2 HWF 4 (sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1]);
-total = total /. sp[q1, Ep2] sp[q2, Ep1] -> - AAAA + sp[Ep1, Ep2] sp[q1, q2] /. sp[q1, q2] -> h/2;
+total = total + c\[Gamma]\[Gamma] e^2 HWF 4 AAAA;
+total = total /. sp[q1, Ep2] sp[q2, Ep1] -> AAAA + sp[Ep1, Ep2] sp[q1, q2] /. sp[q1, q2] -> h/2;
 total = total /. cB -> c\[Gamma]\[Gamma] + cWB - cW;
 total = total /. sw -> cw*g1/gw /. cw -> e/g1;
 total = total /. EL -> e /. h -> 2 lam vev^2 /. w -> (vev*gw/2)^2;
+
+total = total /. v2flag ->1;
 
 total = Collect[total
         , {\[Epsilon], e, AAAA, sp[Ep1, Ep2],
@@ -317,7 +320,7 @@ If[!MatchQ[Coefficient[totale, AAAA], 0] ,
    ad = Coefficient[totale, AAAA];
    Print["ANOMALOUS DIMENSION ENTRIES (divergent terms proportional to sp[Ep1, Ep2] sp[q1, q2] - sp[q1, Ep2] sp[q2, Ep1])."];
    Print[""];
-   Table[Print["Entry relative to ", c, " : ", Expand[Coefficient[2*ad/4, c e^2]] ,"\n"],{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}],
+   Table[Print["Entry relative to ", c, " : ", Expand[Coefficient[-2*ad/4, c e^2]] ,"\n"],{c,{c\[Gamma]\[Gamma],cB,cW,cWB}}],
    
    Print["There's something rotten in the state of Denmark..."];
    

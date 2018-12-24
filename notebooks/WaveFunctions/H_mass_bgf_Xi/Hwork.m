@@ -182,9 +182,10 @@ diag = diag /. nd -> 4 - 2 e;
 
 Reorder := {B0[-q1, m1_, m2_] -> B0[h, m1, m2],
             B0[m_, m_, 0] -> B0[m, 0, m],
+            B0[p_, m_ GaugeXi[Q], n_] -> B0[p, n, m GaugeXi[Q]],
             B0[m_, 0, m_] -> -Log[m] + 2};
 
-total = Coefficient[Total[diag], q1, 2]  /.{A0[m_] -> m/\[Epsilon] + A0[m], B0[x_, m1_, m2_] -> 1/\[Epsilon] + B0[x, m1, m2]} //. Reorder;
+total = -Coefficient[Total[diag], q1, 2]  /.{A0[m_] -> m/\[Epsilon] + A0[m], B0[x_, m1_, m2_] -> 1/\[Epsilon] + B0[x, m1, m2]} //. Reorder;
 
 total = Normal[Series[total, {\[Epsilon], 0, 0}]];
 

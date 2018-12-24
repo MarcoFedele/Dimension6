@@ -1,6 +1,6 @@
 HWF=
-(-3*g1^2 - 9*gw^2 + 2*gw^2*GaugeXi[W] + (g1^2 + gw^2)*GaugeXi[Z] + 
-   4*yu[3, 3]^2)/(4*\[Epsilon]) + 
+(3*g1^2 + 9*gw^2 - 2*gw^2*GaugeXi[W] - (g1^2 + gw^2)*GaugeXi[Z] - 
+   4*yu[3, 3]^2)/(4*\[Epsilon]) - 
  (-8*gw^6*z*A0[w] - 4*gw^4*(g1^2 + gw^2)*w*A0[z] + 
    8*gw^6*z*A0[w*GaugeXi[W]] + 4*g1^2*gw^4*w*A0[z*GaugeXi[Z]] + 
    4*gw^6*w*A0[z*GaugeXi[Z]] - 4*gw^8*vev^2*z*B0[h, w, w] + 

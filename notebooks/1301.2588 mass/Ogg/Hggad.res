@@ -24,12 +24,12 @@ extradiv=
 finterm=
 e^2*(cWB*(2*gw^2 + (-gw^2 - ((gw^4 - 8*gw^2*lam)*vev^2)/(4*h) + (gw^2*w)/h)*
      B0[0, w, w] + (4*lam + ((gw^4 - 8*gw^2*lam)*vev^2)/(4*h) - (gw^2*w)/h)*
-     B0[h, w, w] + (-2*gw^4*vev^2 + 4*gw^2*w)*C0[0, 0, w, w, w]) + 
+     B0[h, w, w] + (-2*gw^4*vev^2 + 4*gw^2*w)*C0[0, h, w, w, w]) + 
   cW*((-5*gw^4*vev^2)/h + (11*gw^2*w)/h + 
     (-4*gw^2 - (2*gw^4*vev^2)/h + (4*gw^2*w)/h)*B0[0, w, w] + 
     ((2*gw^4*vev^2)/h - (4*gw^2*w)/h)*B0[h, w, w] + 
     (4*gw^2*h - 18*gw^2*w + (22*gw^2*w^2)/h + 
-      vev^2*((13*gw^4)/2 - (10*gw^4*w)/h))*C0[0, 0, w, w, w]) + 
+      vev^2*((13*gw^4)/2 - (10*gw^4*w)/h))*C0[0, h, w, w, w]) + 
   c\[Gamma]\[Gamma]*(3*lam*B0[h, h, h] + (-gw^2 + 2*lam)*B0[h, w, w] + 
     (-g1^2/2 - gw^2/2 + lam)*B0[h, z, z] + B0[h, t, t]*yu[3, 3]^2))
 
@@ -37,8 +37,8 @@ e^2*(cWB*(2*gw^2 + (-gw^2 - ((gw^4 - 8*gw^2*lam)*vev^2)/(4*h) + (gw^2*w)/h)*
 
 extrafin=
 cW*e^2*gw^2*(2*gw^2*vev^2 - gw^2*vev^2*B0[0, w, w] + 
-  (-5*gw^2*vev^2 + 3*w)*B0[h, w, w] - 4*gw^2*vev^2*w*C0[0, 0, w, w, w] + 
-  4*w^2*C0[0, 0, w, w, w])*sp[Ep1, Ep2]
+  (-5*gw^2*vev^2 + 3*w)*B0[h, w, w] - 4*gw^2*vev^2*w*C0[0, h, w, w, w] + 
+  4*w^2*C0[0, h, w, w, w])*sp[Ep1, Ep2]
 
 
 ########  intermediate steps  ########
@@ -523,7 +523,7 @@ total=
         8*cWB*lam*vev^2 - 16*cW*w - 4*cWB*w)*sp[Ep1, Ep2])/2 + 
     (4*(4*cW + cWB)*h + 8*cW*gw^2*vev^2 + cWB*gw^2*vev^2 - 8*cWB*lam*vev^2 - 
       16*cW*w - 4*cWB*w)*(-AAAA + (h*sp[Ep1, Ep2])/2)))/(2*h) + 
- (2*e^2*gw^2*C0[0, 0, w, w, w]*
+ (2*e^2*gw^2*C0[0, h, w, w, w]*
    ((h*(4*cW*h^2 + 2*cW*w*(-7*gw^2*vev^2 + 13*w) + 
        (h*(13*cW*gw^2*vev^2 - 4*cWB*gw^2*vev^2 - 36*cW*w + 8*cWB*w))/2)*
       sp[Ep1, Ep2])/2 + (-4*cW*h^2 + 2*cW*(5*gw^2*vev^2 - 11*w)*w + 

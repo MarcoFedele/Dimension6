@@ -171,7 +171,7 @@ Do[Print[ppspcounter[[i]]],{i,Length[ppspcounter]}];
 Print[""];
 Print["diag after PV:"];
 Print[diag];*)
-diag = diag /. nd -> 4 - 2 e;
+diag = diag /. nd -> 4 - 2 \[Epsilon];
 
 Reorder := {B0[-q1, m1_, m2_] -> B0[h, m1, m2],
             B0[m_, m_, 0] -> B0[m, 0, m],
