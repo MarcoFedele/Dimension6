@@ -1,0 +1,365 @@
+(**************************************************************************************************)
+(* ***     definitions of dimension 6 operators in the U(3)^5 flavor symmetric framework      *** *)
+(* ***            all the flavor indices are contracted within the operators                  *** *)
+(* ***  (those with LR currents are defined containing insertions of the Yukawa/CKM matrices) *** *)
+(**************************************************************************************************)
+
+
+(*** replacement to remove corrections proportional to Wilson coefficients from the operators. (give higher order terms in the Lag.) ***)
+
+redefCtoZero= {Alternatives@@WC6 -> 0, vevT -> vevhat};
+
+
+
+(*** class 1 ***)
+
+OG:= Block[{mu,nu,ro,aa,bb,cc},
+	f[aa,bb,cc] FS[G,mu,nu,aa] FS[G,nu,ro,bb] FS[G,ro,mu,cc]/.redefCtoZero
+      ]//OptimizeIndex;
+
+OGtil:= Block[{mu,nu,ro,sig,lam,aa,bb,cc},
+	f[aa,bb,cc] 1/2 Eps[mu,nu,sig,lam] FS[G,sig,lam,aa] FS[G,nu,ro,bb] FS[G,ro,mu,cc]/.redefCtoZero
+      ]//OptimizeIndex;
+
+OW:= Block[{mu,nu,ro,ii,jj,kk},
+	ExpandIndices[	Eps[ii,jj,kk] FS[Wi,mu,nu,ii] FS[Wi,nu,ro,jj] FS[Wi,ro,mu,kk] , FlavorExpand->{SU2D,SU2W}]/.redefCtoZero
+      ]//OptimizeIndex;
+
+OWtil:= Block[{mu,nu,ro,lam,sig,ii,jj,kk},
+	ExpandIndices[	Eps[ii,jj,kk] 1/2 Eps[mu,nu,lam,sig] FS[Wi,lam,sig,ii] FS[Wi,nu,ro,jj] FS[Wi,ro,mu,kk] , FlavorExpand->{SU2D,SU2W}]/.redefCtoZero
+      ]//OptimizeIndex;
+
+L6cl1:= (cG OG + cGtil OGtil + cW OW + cWtil OWtil) / LambdaSMEFT^2;
+
+
+(*** class 2 ***)
+
+OH:= Block[{ii,jj,kk},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+ 	ExpandIndices[ Phibar[ii] Phi[ii] Phibar[jj] Phi[jj] Phibar[kk] Phi[kk] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+L6cl2:= cH OH / LambdaSMEFT^2;
+
+
+(*** class 3 ***)	
+	
+OHbox:= Block[{ii,jj,mu},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+ 	ExpandIndices[ Phibar[ii]Phi[ii] del[del[Phibar[jj] Phi[jj],mu],mu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OHD:= Block[{ii,jj,mu},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+ 	ExpandIndices[ DC[Phibar[ii],mu] Phi[ii] Phibar[jj] DC[Phi[jj],mu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+L6cl3:= (cHbox OHbox + cHD OHD) / LambdaSMEFT^2;
+
+
+(*** class 4 ***)
+
+OHG:= Block[{mu,nu,ii,aa},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] FS[G,mu,nu,aa] FS[G,mu,nu,aa], FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHGtil:= Block[{mu,nu,ro,sig,ii,aa},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] 1/2 Eps[mu,nu,ro,sig] FS[G,ro,sig,aa] FS[G,mu,nu,aa], FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHW:= Block[{mu,nu,ii,kk},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] FS[Wi,mu,nu,kk] FS[Wi,mu,nu,kk] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHWtil:= Block[{mu,nu,ro,sig,ii},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] 1/2 Eps[mu,nu,ro,sig] FS[Wi,ro,sig,kk] FS[Wi,mu,nu,kk] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHB:= Block[{mu,nu,ii},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] FS[B,mu,nu] FS[B,mu,nu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHBtil:= Block[{mu,nu,ro,sig,ii},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] Phi[ii] 1/2 Eps[mu,nu,ro,sig] FS[B,ro,sig] FS[B,mu,nu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHWB:= Block[{mu,nu,ii,jj,kk},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] PauliSigma[kk,ii,jj] Phi[jj] FS[Wi,mu,nu,kk] FS[B,mu,nu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+OHWBtil:= Block[{mu,nu,ro,sig,ii,jj,kk},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[	Phibar[ii] PauliSigma[kk,ii,jj] Phi[jj] 1/2 Eps[mu,nu,ro,sig] FS[Wi,ro,sig,kk] FS[B,mu,nu] , FlavorExpand->{SU2D,SU2W}]/.feynmangaugerules/.redefCtoZero
+      ]//OptimizeIndex;
+
+L6cl4:= (cHG OHG + cHGtil OHGtil + cHW OHW + cHWtil OHWtil + cHB OHB + cHBtil OHBtil + cHWB OHWB + cHWBtil OHWBtil )/ LambdaSMEFT^2;
+
+
+(*** class 5 ***)	
+
+OeH:= Block[{sp1,ii,jj,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[ Phibar[jj] Phi[jj]  Conjugate[yl[ff2, ff1]] LLbar[sp1,ii,ff1].lR[sp1,ff2] Phi[ii], FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OuH:= Block[{sp1,ii,jj,kk,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[ Phibar[kk] Phi[kk]  Conjugate[yu[ff2, ff1]] QLmbar[sp1,ii,ff1,cc].uR[sp1,ff2,cc] Eps[ii,jj] Phibar[jj], FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OdH:= Block[{sp1,ii,jj,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[ Phibar[jj] Phi[jj]  Conjugate[yd[ff2, ff1]] QLmbar[sp1,ii,ff1,cc].dR[sp1,ff2,cc] Phi[ii] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+L6cl50:= ( ceH OeH + cuH OuH + cdH OdH )/ LambdaSMEFT^2 //OptimizeIndex;
+
+L6cl5 := L6cl50 + HC[L6cl50]
+
+
+(*** class 6 ***)	
+
+OeW:= Block[{sp1,sp2,mu,nu,ii,jj,kk,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[LLbar[sp1,ii,ff1].lR[sp2,ff2] Conjugate[yl[ff2, ff1]] sigmaT[mu,nu,sp1,sp2]  PauliSigma[kk,ii,jj] Phi[jj] FS[Wi,mu,nu,kk] , FlavorExpand-> {SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OeB:= Block[{sp1,sp2,mu,nu,ii,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[LLbar[sp1,ii,ff1].lR[sp2,ff2]  Conjugate[yl[ff2, ff1]] sigmaT[mu,nu,sp1,sp2]  Phi[ii] FS[B,mu,nu] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OuG:= Block[{sp1,sp2,mu,nu,ii,jj,aa,bb,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,aa].uR[sp2,ff2,bb]  Conjugate[yu[ff2, ff1]] sigmaT[mu,nu,sp1,sp2] T[cc,aa,bb] Eps[ii,jj] Phibar[jj] FS[G,mu,nu,cc], FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OuW:= Block[{sp1,sp2,mu,nu,ii,jj1,jj2,kk,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc].uR[sp2,ff2,cc]  Conjugate[yu[ff2, ff1]] sigmaT[mu,nu,sp1,sp2]  PauliSigma[kk,ii,jj1] Eps[jj1,jj2] Phibar[jj2] FS[Wi,mu,nu,kk] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OuB:= Block[{sp1,sp2,mu,nu,ii,jj,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc].uR[sp2,ff2,cc]  Conjugate[yu[ff2, ff1]] sigmaT[mu,nu,sp1,sp2] Eps[ii,jj] Phibar[jj] FS[B,mu,nu] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OdG:= Block[{sp1,sp2,mu,nu,ii,aa,bb,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,aa].dR[sp2,ff2,bb]  Conjugate[yd[ff2, ff1]] sigmaT[mu,nu,sp1,sp2] T[cc,aa,bb] Phi[ii] FS[G,mu,nu,cc], FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OdW:= Block[{sp1,sp2,mu,nu,ii,jj,kk,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc].dR[sp2,ff2,cc]  Conjugate[yd[ff2, ff1]] sigmaT[mu,nu,sp1,sp2] PauliSigma[kk,ii,jj] Phi[jj] FS[Wi,mu,nu,kk] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OdB:= Block[{sp1,sp2,mu,nu,ii,cc,ff1,ff2},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc].dR[sp2,ff2,cc] Conjugate[yd[ff2, ff1]]  sigmaT[mu,nu,sp1,sp2] Phi[ii] FS[B,mu,nu] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+L6cl60:= (ceW OeW + ceB OeB + cuG OuG + cuW OuW + cuB OuB + cdG OdG + cdW OdW + cdB OdB)/ LambdaSMEFT^2 //OptimizeIndex;
+
+L6cl6 := L6cl60 + HC[L6cl60]
+
+
+(*** class 7 ***)	
+
+OHl1:= Block[{mu,sp1,sp2,ii,ff},
+	ExpandIndices[ HDH[mu] LLbar[sp1,ii,ff].LL[sp2,ii,ff] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.redefCtoZero
+	]//OptimizeIndex;
+
+OHl3:= Block[{mu,sp1,sp2,ii,jj,jj1,jj2,kk,ff},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[ I( Phibar[jj1] DC[Phi[jj2],mu] - DC[Phibar[jj1],mu] Phi[jj2]) PauliSigma[kk,jj1,jj2]
+ LLbar[sp1,ii,ff].LL[sp2,jj,ff] PauliSigma[kk,ii,jj] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}
+]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OHe:= Block[{mu,sp1,sp2,ff},
+	ExpandIndices[HDH[mu] lRbar[sp1,ff].lR[sp2,ff] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.redefCtoZero
+	]//OptimizeIndex;
+
+OHq1:= Block[{sp1,sp2,mu,ii,cc,ff},
+	ExpandIndices[HDH[mu] QLmbar[sp1,ii,ff,cc].QLm[sp2,ii,ff,cc] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.redefCtoZero
+	]//OptimizeIndex;
+
+OHq3:= Block[{sp1,sp2,mu,ii,kk,jj1,jj2,cc,ff},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[ I( Phibar[jj1] DC[Phi[jj2],mu] - DC[Phibar[jj1],mu] Phi[jj2]) PauliSigma[kk,jj1,jj2] QLmbar[sp1,ii,ff,cc].QLm[sp2,jj,ff,cc] PauliSigma[kk,ii,jj] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+OHu:= Block[{mu,sp1,sp2,cc,ff},
+	ExpandIndices[HDH[mu] uRbar[sp1,ff,cc].uR[sp2,ff,cc] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.redefCtoZero
+	]//OptimizeIndex;
+
+OHd:= Block[{mu,sp1,sp2,cc,ff},
+	ExpandIndices[HDH[mu] dRbar[sp1,ff,cc].dR[sp2,ff,cc] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.redefCtoZero
+	]//OptimizeIndex;
+
+OHud:= Block[{ii,mu,sp1,sp2,cc,ff1,ff2,ff3,ff4},
+	feynmangaugerules = If[Not[FeynmanGauge], {G0|GP|GPbar ->0}, {}]; 
+	ExpandIndices[I Eps[jj,ii] Phi[jj] DC[Phi[ii],mu]  yu[ff1, ff2] CKM[ff2,ff3] Conjugate[yd[ff4, ff3]] uRbar[sp1,ff1,cc].dR[sp2,ff4,cc] Ga[mu,sp1,sp2] , FlavorExpand->{SU2W,SU2D}]/.feynmangaugerules/.redefCtoZero
+	]//OptimizeIndex;
+
+L6cl7:= (cHl1 OHl1 + cHl3 OHl3 + cHe OHe + cHq1 OHq1 + cHq3 OHq3 + cHu OHu + cHd OHd + (cHud OHud + HC[cHud OHud] ))/ LambdaSMEFT^2 //OptimizeIndex;
+
+
+(*** class 8a ***)	
+
+Oll:= Block[{mu,sp1,sp2,sp3,sp4,ii,jj,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff1] Ga[mu,sp1,sp2] LLbar[sp3,jj,ff2].LL[sp4,jj,ff2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+Oll1:= Block[{mu,sp1,sp2,sp3,sp4,ii,jj,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff2] Ga[mu,sp1,sp2] LLbar[sp3,jj,ff2].LL[sp4,jj,ff1] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Oqq1:= Block[{mu,sp1,sp2,sp3,sp4,ii,jj,cc1,cc2,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff1,cc1] Ga[mu,sp1,sp2] QLmbar[sp3,jj,ff2,cc2].QLm[sp4,jj,ff2,cc2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+Oqq11:= Block[{mu,sp1,sp2,sp3,sp4,ii,jj,cc1,cc2,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff2,cc1] Ga[mu,sp1,sp2] QLmbar[sp3,jj,ff2,cc2].QLm[sp4,jj,ff1,cc2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Oqq3:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ii1,jj1,ii2,jj2,kk,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii1,ff1,cc1].QLm[sp2,jj1,ff1,cc1] PauliSigma[kk,ii1,jj1] Ga[mu,sp1,sp2] QLmbar[sp3,ii2,ff2,cc2].QLm[sp4,jj2,ff2,cc2] PauliSigma[kk,ii2,jj2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Oqq31:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ii1,jj1,ii2,jj2,kk,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii1,ff1,cc1].QLm[sp2,jj1,ff2,cc1] PauliSigma[kk,ii1,jj1] Ga[mu,sp1,sp2] QLmbar[sp3,ii2,ff2,cc2].QLm[sp4,jj2,ff1,cc2] PauliSigma[kk,ii2,jj2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Olq1:= Block[{mu,sp1,sp2,sp3,sp4,ii,jj,cc,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff1] Ga[mu,sp1,sp2] QLmbar[sp3,jj,ff2,cc].QLm[sp4,jj,ff2,cc] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Olq3:= Block[{mu,sp1,sp2,sp3,sp4,cc,ii1,jj1,ii2,jj2,kk,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii1,ff1].LL[sp2,jj1,ff1] PauliSigma[kk,ii1,jj1] Ga[mu,sp1,sp2] QLmbar[sp3,ii2,ff2,cc].QLm[sp4,jj2,ff2,cc] PauliSigma[kk,ii2,jj2] Ga[mu,sp3,sp4]  , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+L6cl8a:= (cll Oll + cll1 Oll1 + cqq1 Oqq1 + cqq11 Oqq11 + cqq3 Oqq3 + cqq31 Oqq31 + clq1 Olq1 + clq3 Olq3)/ LambdaSMEFT^2 //OptimizeIndex;
+
+
+(*** class 8b ***)	
+
+Oee:= Block[{mu,sp1,sp2,sp3,sp4,ff1,ff2},
+	ExpandIndices[ lRbar[sp1,ff1].lR[sp2,ff1] lRbar[sp3,ff2].lR[sp4,ff2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Ouu:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ff1,ff2},
+	ExpandIndices[ uRbar[sp1,ff1,cc1].uR[sp2,ff1,cc1] uRbar[sp3,ff2,cc2].uR[sp4,ff2,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Ouu1:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ff1,ff2},
+	ExpandIndices[ uRbar[sp1,ff1,cc1].uR[sp2,ff2,cc1] uRbar[sp3,ff2,cc2].uR[sp4,ff1,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Odd:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ff1,ff2},
+	ExpandIndices[ dRbar[sp1,ff1,cc1].dR[sp2,ff1,cc1] dRbar[sp3,ff2,cc2].dR[sp4,ff2,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Odd1:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ff1,ff2},
+	ExpandIndices[ dRbar[sp1,ff1,cc1].dR[sp2,ff2,cc1] dRbar[sp3,ff2,cc2].dR[sp4,ff1,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oeu:= Block[{mu,sp1,sp2,sp3,sp4,cc,ff1,ff2},
+	ExpandIndices[ lRbar[sp1,ff1].lR[sp2,ff1] uRbar[sp3,ff2,cc].uR[sp4,ff2,cc] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oed:= Block[{mu,sp1,sp2,sp3,sp4,cc,ff1,ff2},
+	ExpandIndices[ lRbar[sp1,ff1].lR[sp2,ff1] dRbar[sp3,ff2,cc].dR[sp4,ff2,cc] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oud1:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,ff1,ff2},
+	ExpandIndices[ uRbar[sp1,ff1,cc1].uR[sp2,ff1,cc1] dRbar[sp3,ff2,cc2].dR[sp4,ff2,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oud8:= Block[{mu,sp1,sp2,sp3,sp4,cc1,cc2,cc3,cc4,aa,ff1,ff2},
+	ExpandIndices[ uRbar[sp1,ff1,cc1].uR[sp2,ff1,cc2] dRbar[sp3,ff2,cc3].dR[sp4,ff2,cc4] T[aa,cc1,cc2] T[aa,cc3,cc4] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4], FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+L6cl8b:= (cee Oee + cuu Ouu + cuu1 Ouu1 + cdd Odd + cdd1 Odd1 + ceu Oeu + ced Oed + cud1 Oud1 + cud8 Oud8)/ LambdaSMEFT^2 //OptimizeIndex;
+
+
+(*** class 8c ***)	
+
+Ole:= Block[{mu,sp1,sp2,sp3,sp4,ii,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff1] lRbar[sp3,ff2].lR[sp4,ff2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Olu:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff1] uRbar[sp3,ff2,cc].uR[sp4,ff2,cc] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Old:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc,ff1,ff2},
+	ExpandIndices[LLbar[sp1,ii,ff1].LL[sp2,ii,ff1] dRbar[sp3,ff2,cc].dR[sp4,ff2,cc] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oqe:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc].QLm[sp2,ii,ff1,cc] lRbar[sp3,ff2].lR[sp4,ff2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oqu1:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc1,cc2,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff1,cc1] uRbar[sp3,ff2,cc2].uR[sp4,ff2,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oqu8:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc1,cc2,cc3,cc4,aa,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff1,cc2] uRbar[sp3,ff2,cc3].uR[sp4,ff2,cc4] T[aa,cc1,cc2] T[aa,cc3,cc4] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oqd1:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc1,cc2,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff1,cc1] dRbar[sp3,ff2,cc2].dR[sp4,ff2,cc2] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+Oqd8:= Block[{mu,sp1,sp2,sp3,sp4,ii,cc1,cc2,cc3,cc4,aa,ff1,ff2},
+	ExpandIndices[QLmbar[sp1,ii,ff1,cc1].QLm[sp2,ii,ff1,cc2] dRbar[sp3,ff2,cc3].dR[sp4,ff2,cc4] T[aa,cc1,cc2] T[aa,cc3,cc4] Ga[mu,sp1,sp2] Ga[mu,sp3,sp4] , FlavorExpand-> {SU2D, SU2W}]
+	]//OptimizeIndex;
+
+L6cl8c:= (cle Ole + clu Olu + cld Old + cqe Oqe + cqu1 Oqu1 + cqu8 Oqu8 + cqd1 Oqd1 + cqd8 Oqd8)/ LambdaSMEFT^2 //OptimizeIndex;
+
+
+(*** class 8d ***)	
+
+Oledq:= Block[{sp1,sp2,ii,cc,ff1,ff2,ff3,ff4,ff5},
+	ExpandIndices[ Conjugate[yl[ff2, ff1]] yd[ff3, ff4] Conjugate[CKM[ff5,ff4]] LLbar[sp1,ii,ff1].lR[sp1,ff2] dRbar[sp2,ff3,cc].QL[sp2,ii,ff5,cc] , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Oquqd1:= Block[{sp1,sp2,cc1,cc2,ii,jj,ff1,ff2,ff3,ff4,ff5},
+	ExpandIndices[ Conjugate[yu[ff2, ff1]] Conjugate[yd[ff5, ff4]] CKM[ff3,ff4] QLbar[sp1,ii,ff1,cc1].uR[sp1,ff2,cc1] Eps[ii,jj] QLbar[sp2,jj,ff3,cc2].dR[sp2,ff5,cc2] , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Oquqd8:= Block[{sp1,sp2,cc1,cc2,cc3,cc4,aa,ii,jj,ff1,ff2,ff3,ff4,ff5},
+	ExpandIndices[ Conjugate[yu[ff2, ff1]] Conjugate[yd[ff5, ff4]]  CKM[ff3,ff4] QLbar[sp1,ii,ff1,cc1].uR[sp1,ff2,cc2] T[aa,cc1,cc2] Eps[ii,jj] QLbar[sp2,jj,ff3,cc3].dR[sp2,ff5,cc4] T[aa,cc3,cc4] , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Olequ1:= Block[{sp1,sp2,cc,ii,jj,ff1,ff2,ff3,ff4},
+	ExpandIndices[ Conjugate[yl[ff2, ff1]] Conjugate[yu[ff4, ff3]] LLbar[sp1,ii,ff1].lR[sp1,ff2] Eps[ii,jj] QLbar[sp2,jj,ff3,cc].uR[sp2,ff4,cc] , FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+Olequ3:= Block[{mu,nu,sp1,sp2,sp3,sp4,ii,jj,cc,ff1,ff2,ff3,ff4},
+	ExpandIndices[ Conjugate[yl[ff2, ff1]] Conjugate[yu[ff4, ff3]] LLbar[sp1,ii,ff1].lR[sp2,ff2] sigmaT[mu,nu,sp1,sp2] Eps[ii,jj] QLbar[sp3,jj,ff3,cc].uR[sp4,ff4,cc] sigmaT[mu,nu,sp3,sp4], FlavorExpand->{SU2W,SU2D}]
+	]//OptimizeIndex;
+
+L6cl8d0:= (cledq Oledq + cquqd1 Oquqd1 + cquqd8 Oquqd8 + clequ1 Olequ1 + clequ3 Olequ3)/ LambdaSMEFT^2 //OptimizeIndex;
+
+L6cl8d := L6cl8d0 + HC[L6cl8d0];
+
+L6cl8:= L6cl8a + L6cl8b + L6cl8c + L6cl8d;
+
+
+
+(*** sum of d=6 terms ***)	
+
+L6no4f:= L6cl1 + L6cl2 + L6cl3 + L6cl4 + L6cl5 + L6cl6 + L6cl7;
+
+L6:= L6cl1 + L6cl2 + L6cl3 + L6cl4 + L6cl5 + L6cl6 + L6cl7 + L6cl8;
+
+

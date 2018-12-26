@@ -1,0 +1,1619 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     61782,       1611]
+NotebookOptionsPosition[     57286,       1478]
+NotebookOutlinePosition[     57699,       1496]
+CellTagsIndexPosition[     57656,       1493]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"/Users/marco/Documents/universita\:0300/Dimension6/Louvain/HAA\"\
+\>", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.6602069779447002`*^9, 
+   3.6602127176003847`*^9, 3.6602196554630938`*^9, 3.660400353344141*^9, 
+   3.66040413362358*^9, 3.660404331758814*^9, 3.660406041820696*^9, 
+   3.660741909957954*^9, 3.660745593450818*^9, 3.6607457085630093`*^9, 
+   3.660746104826651*^9, 3.660746270511573*^9, 3.660746620072111*^9, 
+   3.660825035236155*^9, 3.660826897660808*^9, 3.6608317882084837`*^9, 
+   3.660832163611127*^9, 3.66088963971243*^9, 3.660896211214645*^9, 
+   3.660979197389175*^9, 3.6609792436213093`*^9, 3.660979290898686*^9, 
+   3.6609794054461117`*^9, 3.660981823688012*^9, 3.660982362519328*^9, 
+   3.660992735621365*^9, 3.66109716809476*^9, 3.6611536269102993`*^9, 
+   3.6611547724584713`*^9, 3.661154919058196*^9, 3.661155028738475*^9, 
+   3.6611551969285307`*^9, 3.661156047262452*^9, 3.661180718751596*^9, 
+   3.662294905120191*^9, 3.663158622145872*^9, 3.663316011424945*^9, 
+   3.664354942076264*^9, 3.664549386570977*^9, 3.664552435434869*^9, 
+   3.664623132991301*^9, 3.664624268721506*^9, 3.6646959868831167`*^9, 
+   3.664696089464628*^9, {3.6650616202868967`*^9, 3.665061622972602*^9}, {
+   3.665758904227647*^9, 3.665758907929119*^9}, 3.696577334035618*^9, 
+   3.697364603627783*^9, 3.697372003185419*^9, 3.6973742654295893`*^9, 
+   3.6973762797768297`*^9, 3.69744194916671*^9, 3.697804992038445*^9, 
+   3.69995541544277*^9, 3.6999585293358593`*^9, 3.699958889783915*^9, 
+   3.699960076084446*^9, 3.7009074330944242`*^9, 3.7040094084786158`*^9, 
+   3.704192107804822*^9, 3.704280142146036*^9, 3.7044290355718203`*^9, {
+   3.704444700440524*^9, 3.70444471495322*^9}, 3.704451074875284*^9, 
+   3.704452733780987*^9, 3.704519712107922*^9, 3.7045205476738157`*^9, 
+   3.704523102304274*^9, 3.7045249452138987`*^9, 3.704533950094767*^9, 
+   3.704608749184444*^9, 3.7046928698993883`*^9, 3.704694053650806*^9, 
+   3.704695325602034*^9, 3.70470887481277*^9, 3.704709019207389*^9, 
+   3.704719057444363*^9, 3.7047201029343*^9, 3.704781751447122*^9, 
+   3.704786688385745*^9, 3.70478838931518*^9, 3.704789537191307*^9, 
+   3.704793666745545*^9, 3.704802277286498*^9, 3.704803027993843*^9, 
+   3.704804078768549*^9, 3.704971185962246*^9, 3.704972650883144*^9, 
+   3.704973429948716*^9, 3.705040696978779*^9, 3.705045458154093*^9, 
+   3.705153250516077*^9, 3.705153798307912*^9, 3.7051541529528017`*^9, 
+   3.705155049013891*^9, 3.7053230483091516`*^9, 3.705324202549776*^9, {
+   3.7053251744918213`*^9, 3.705325179002033*^9}, 3.7053360207099752`*^9, 
+   3.705821541763088*^9, 3.7086975655696487`*^9, 3.717763154042602*^9, 
+   3.717783202998749*^9, 3.7178267875714197`*^9, 3.717844192578566*^9, 
+   3.717909688342783*^9, {3.717914227234146*^9, 3.717914238598967*^9}, 
+   3.73562198665315*^9, 3.735626088441505*^9, 3.735725314753723*^9, 
+   3.73597957630521*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Haa1.m"}]], "Input",
+ CellChangeTimes->{{3.7356251986407843`*^9, 3.735625199269478*^9}, {
+  3.735887948219664*^9, 3.7358879489982643`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["\<\"\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577701758*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"FeynArts 3.9\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577714159*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"by Hagen Eck, Sepp Kueblbeck, and Thomas Hahn\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577726495*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"last revised 2 Dec 14\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577736575*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577746457*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"\"\>", "\[InvisibleSpace]", "\<\"loading \"\>", 
+    "\[InvisibleSpace]", "\<\"generic\"\>", 
+    "\[InvisibleSpace]", "\<\" model file \"\>", 
+    "\[InvisibleSpace]", \
+"\<\"/Users/marco/FeynArts/FeynArts/Models/Mine/1505.02646.bgf.3.gen\"\>"}],
+   SequenceForm[
+   "", "loading ", "generic", " model file ", 
+    "/Users/marco/FeynArts/FeynArts/Models/Mine/1505.02646.bgf.3.gen"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577756028*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"> $GenericMixing is OFF\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.73597957776621*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"generic model \"\>", "\[InvisibleSpace]", 
+    RowBox[{"{", "\<\"Mine/1505.02646.bgf.3\"\>", "}"}], 
+    "\[InvisibleSpace]", "\<\" initialized\"\>"}],
+   SequenceForm["generic model ", {"Mine/1505.02646.bgf.3"}, " initialized"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577775691*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577785252*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"\"\>", "\[InvisibleSpace]", "\<\"loading \"\>", 
+    "\[InvisibleSpace]", "\<\"classes\"\>", 
+    "\[InvisibleSpace]", "\<\" model file \"\>", 
+    "\[InvisibleSpace]", \
+"\<\"/Users/marco/FeynArts/FeynArts/Models/Mine/1505.02646.bgf.3.mod\"\>"}],
+   SequenceForm[
+   "", "loading ", "classes", " model file ", 
+    "/Users/marco/FeynArts/FeynArts/Models/Mine/1505.02646.bgf.3.mod"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.73597957779468*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> \"\>", "\[InvisibleSpace]", "51", 
+    "\[InvisibleSpace]", "\<\" particles (incl. antiparticles) in \"\>", 
+    "\[InvisibleSpace]", "22", "\[InvisibleSpace]", "\<\" classes\"\>"}],
+   SequenceForm[
+   "> ", 51, " particles (incl. antiparticles) in ", 22, " classes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795778043203`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"> $CounterTerms are ON\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577989925*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> \"\>", "\[InvisibleSpace]", "776", 
+    "\[InvisibleSpace]", "\<\" vertices\"\>"}],
+   SequenceForm["> ", 776, " vertices"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979577999578*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"classes model \"\>", "\[InvisibleSpace]", 
+    RowBox[{"{", "\<\"Mine/1505.02646.bgf.3\"\>", "}"}], 
+    "\[InvisibleSpace]", "\<\" initialized\"\>"}],
+   SequenceForm["classes model ", {"Mine/1505.02646.bgf.3"}, " initialized"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795781308823`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578142263*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"inserting at level(s) \"\>", "\[InvisibleSpace]", 
+    RowBox[{"{", "Particles", "}"}]}],
+   SequenceForm["inserting at level(s) ", {FeynArts`Particles}],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795781522284`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"32 Particles insertions\"\>"}],
+   SequenceForm["> Top. ", 1, ": ", "32 Particles insertions"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578202547*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"1 Particles insertion\"\>"}],
+   SequenceForm["> Top. ", 2, ": ", "1 Particles insertion"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795782142076`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "3", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"5 Particles insertions\"\>"}],
+   SequenceForm["> Top. ", 3, ": ", "5 Particles insertions"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578224283*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "4", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"5 Particles insertions\"\>"}],
+   SequenceForm["> Top. ", 4, ": ", "5 Particles insertions"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578233982*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "5", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"8 Particles insertions\"\>"}],
+   SequenceForm["> Top. ", 5, ": ", "8 Particles insertions"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.73597957824362*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"in total: \"\>", 
+    "\[InvisibleSpace]", "\<\"51 Particles insertions\"\>"}],
+   SequenceForm["in total: ", "51 Particles insertions"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578253215*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578263027*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"creating amplitudes at level(s) \"\>", "\[InvisibleSpace]", 
+    RowBox[{"{", "Particles", "}"}]}],
+   SequenceForm["creating amplitudes at level(s) ", {FeynArts`Particles}],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578273272*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"32 Particles amplitudes\"\>"}],
+   SequenceForm["> Top. ", 1, ": ", "32 Particles amplitudes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578334319*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"1 Particles amplitude\"\>"}],
+   SequenceForm["> Top. ", 2, ": ", "1 Particles amplitude"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795783445787`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "3", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"5 Particles amplitudes\"\>"}],
+   SequenceForm["> Top. ", 3, ": ", "5 Particles amplitudes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578354765*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "4", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"5 Particles amplitudes\"\>"}],
+   SequenceForm["> Top. ", 4, ": ", "5 Particles amplitudes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359795784031267`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "5", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"8 Particles amplitudes\"\>"}],
+   SequenceForm["> Top. ", 5, ": ", "8 Particles amplitudes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578414507*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"in total: \"\>", 
+    "\[InvisibleSpace]", "\<\"51 Particles amplitudes\"\>"}],
+   SequenceForm["in total: ", "51 Particles amplitudes"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578422621*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\\nAmplitudes created.\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578467906*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Relevant part of the amplitudes extracted.\\n\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979578476651*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Basic Lorentz contraction rules and scalar product rules \
+applied.\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979632492196*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Diagrams included: \"\>", "\[InvisibleSpace]", 
+    RowBox[{"{", 
+     RowBox[{
+     "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", ",", "9", ",", 
+      "10", ",", "13", ",", "14", ",", "17", ",", "18", ",", "29", ",", "30", 
+      ",", "31", ",", "32", ",", "33", ",", "34", ",", "39", ",", "44", ",", 
+      "45", ",", "46", ",", "47", ",", "48", ",", "49", ",", "50", ",", 
+      "51"}], "}"}]}],
+   SequenceForm[
+   "Diagrams included: ", {3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 17, 18, 29, 30, 
+    31, 32, 33, 34, 39, 44, 45, 46, 47, 48, 49, 50, 51}],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979632573105*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Total number of diagrams included: \"\>", "\[InvisibleSpace]",
+     "27", "\[InvisibleSpace]", "\<\"/\"\>", "\[InvisibleSpace]", "51"}],
+   SequenceForm["Total number of diagrams included: ", 27, "/", 51],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359796325831423`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"16 diagrams\"\>"}],
+   SequenceForm["> Top. ", 1, ": ", "16 diagrams"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979632593652*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"1 diagram\"\>"}],
+   SequenceForm["> Top. ", 2, ": ", "1 diagram"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979632603628*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "3", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"1 diagram\"\>"}],
+   SequenceForm["> Top. ", 3, ": ", "1 diagram"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359796326148663`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "4", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"1 diagram\"\>"}],
+   SequenceForm["> Top. ", 4, ": ", "1 diagram"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.7359796326246853`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "5", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"8 diagrams\"\>"}],
+   SequenceForm["> Top. ", 5, ": ", "8 diagrams"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979632634618*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Included diagrams printed.\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979634669052*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "1", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"16 diagrams\"\>"}],
+   SequenceForm["> Top. ", 1, ": ", "16 diagrams"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979634681918*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "2", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"4 diagrams\"\>"}],
+   SequenceForm["> Top. ", 2, ": ", "4 diagrams"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979634692276*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"> Top. \"\>", "\[InvisibleSpace]", "3", 
+    "\[InvisibleSpace]", "\<\": \"\>", 
+    "\[InvisibleSpace]", "\<\"4 diagrams\"\>"}],
+   SequenceForm["> Top. ", 3, ": ", "4 diagrams"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979634702361*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Excluded diagrams printed.\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7356253191171417`*^9, 3.735625365625555*^9, 
+  3.735626089949922*^9, 3.735725315851316*^9, 3.735979635502263*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.735725708512536*^9, 3.7357257099093533`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"/Users/marco/Documents/universita\:0300/Dimension6/Louvain/HAA\"\
+\>", TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.6602069779447002`*^9, 
+   3.6602127176003847`*^9, 3.6602196554630938`*^9, 3.660400353344141*^9, 
+   3.66040413362358*^9, 3.660404331758814*^9, 3.660406041820696*^9, 
+   3.660741909957954*^9, 3.660745593450818*^9, 3.6607457085630093`*^9, 
+   3.660746104826651*^9, 3.660746270511573*^9, 3.660746620072111*^9, 
+   3.660825035236155*^9, 3.660826897660808*^9, 3.6608317882084837`*^9, 
+   3.660832163611127*^9, 3.66088963971243*^9, 3.660896211214645*^9, 
+   3.660979197389175*^9, 3.6609792436213093`*^9, 3.660979290898686*^9, 
+   3.6609794054461117`*^9, 3.660981823688012*^9, 3.660982362519328*^9, 
+   3.660992735621365*^9, 3.66109716809476*^9, 3.6611536269102993`*^9, 
+   3.6611547724584713`*^9, 3.661154919058196*^9, 3.661155028738475*^9, 
+   3.6611551969285307`*^9, 3.661156047262452*^9, 3.661180718751596*^9, 
+   3.662294905120191*^9, 3.663158622145872*^9, 3.663316011424945*^9, 
+   3.664354942076264*^9, 3.664549386570977*^9, 3.664552435434869*^9, 
+   3.664623132991301*^9, 3.664624268721506*^9, 3.6646959868831167`*^9, 
+   3.664696089464628*^9, {3.6650616202868967`*^9, 3.665061622972602*^9}, {
+   3.665758904227647*^9, 3.665758907929119*^9}, 3.696577334035618*^9, 
+   3.697364603627783*^9, 3.697372003185419*^9, 3.6973742654295893`*^9, 
+   3.6973762797768297`*^9, 3.69744194916671*^9, 3.697804992038445*^9, 
+   3.69995541544277*^9, 3.6999585293358593`*^9, 3.699958889783915*^9, 
+   3.699960076084446*^9, 3.7009074330944242`*^9, 3.7040094084786158`*^9, 
+   3.704192107804822*^9, 3.704280142146036*^9, 3.7044290355718203`*^9, {
+   3.704444700440524*^9, 3.70444471495322*^9}, 3.704451074875284*^9, 
+   3.704452733780987*^9, 3.704519712107922*^9, 3.7045205476738157`*^9, 
+   3.704523102304274*^9, 3.7045249452138987`*^9, 3.704533950094767*^9, 
+   3.704608749184444*^9, 3.7046928698993883`*^9, 3.704694053650806*^9, 
+   3.704695325602034*^9, 3.70470887481277*^9, 3.704709019207389*^9, 
+   3.704719057444363*^9, 3.7047201029343*^9, 3.704781751447122*^9, 
+   3.704786688385745*^9, 3.70478838931518*^9, 3.704789537191307*^9, 
+   3.704793666745545*^9, 3.704802277286498*^9, 3.704803027993843*^9, 
+   3.704804078768549*^9, 3.704971185962246*^9, 3.704972650883144*^9, 
+   3.704973429948716*^9, 3.705040696978779*^9, 3.705045458154093*^9, 
+   3.705153250516077*^9, 3.705153798307912*^9, 3.7051541529528017`*^9, 
+   3.705155049013891*^9, 3.7053230483091516`*^9, 3.705324202549776*^9, {
+   3.7053251744918213`*^9, 3.705325179002033*^9}, 3.7053360207099752`*^9, 
+   3.705821541763088*^9, 3.7086975655696487`*^9, 3.717763154042602*^9, 
+   3.717783202998749*^9, 3.7178267875714197`*^9, 3.717844192578566*^9, 
+   3.717909688342783*^9, {3.717914227234146*^9, 3.717914238598967*^9}, 
+   3.73562198665315*^9, 3.735626088441505*^9, 3.735725314753723*^9, 
+   3.7357257147586517`*^9, 3.735734120622284*^9, 3.7359796899064913`*^9, 
+   3.735979790997542*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Haa2.m"}]], "Input",
+ CellChangeTimes->{{3.735725721557673*^9, 3.735725721620187*^9}, {
+  3.735887952584947*^9, 3.7358879529823017`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  TemplateBox[{
+   "Remove","rmnsm",
+    "\"There are no symbols matching \
+\\\"\\!\\(\\*FormBox[\\\"\\\\\\\"Tracer`Private`*\\\\\\\"\\\", \
+TraditionalForm]\\)\\\".\"",2,2,1,26406178512445608872,"New Kernel"},
+   "MessageTemplate"], TraditionalForm]], "Message", "MSG",
+ CellChangeTimes->{3.735979791550899*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox["\<\" \\n                               T R A C E R\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791558215*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"                              =============\\n \\n\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791565419*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"     A MATHEMATICA PACKAGE FOR GAMMA-ALGEBRA IN ARBITRARY \
+DIMENSIONS\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359797915750732`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"                     by M. Jamin and M.E. Lautenbacher\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791584732*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"              Physics Dept. T31, Technical University Munich\\n \
+\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791594304*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"             Version \"\>", 
+    "\[InvisibleSpace]", "\<\"1.1.1\"\>", 
+    "\[InvisibleSpace]", "\<\" from \"\>", 
+    "\[InvisibleSpace]", "\<\"Mon Dec 30 15:36:00 MET 1991\"\>"}],
+   SequenceForm[
+   "             Version ", "1.1.1", " from ", "Mon Dec 30 15:36:00 MET 1991"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791604233*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"                    (based on MATHEMATICA Version \"\>", 
+    "\[InvisibleSpace]", "\<\"1.2\"\>", 
+    "\[InvisibleSpace]", "\<\")\\n \\n\"\>"}],
+   SequenceForm[
+   "                    (based on MATHEMATICA Version ", "1.2", ")\n \n"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791613995*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"The package defines the following \
+commands:\\n\\n\\\"AntiCommute\\\", \\\"ContractEpsGamma\\\", \\\"Eps\\\", \\\
+\"G\\\",\\n\\\"GammaTrace\\\", \\\"G5\\\", \\\"H\\\",\\n\\\"ListCommands\\\", \
+\\\"NoSpur\\\",\\n\\\"OnShell\\\", \\\"OutputFormat\\\", \\\"RemoveHatMomenta\
+\\\",\\n\\n\\\"RemoveNCM\\\", \\\"S\\\", \\\"Sigma\\\", \\\"SortLine\\\", \
+\\\"Spur\\\", \\\"T\\\",\\n\\\"ToDiracBasis\\\",\\n\\\"ToHatTilde\\\", \
+\\\"ToOtimes\\\", \\\"ToUG5\\\", \\\"U\\\",\\n\\\"VectorDimension\\\", \
+\\\"Version\\\".\\n\\n                                    Help on usage as \
+usual per ?Name.\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791623835*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"DEFAULT SETTINGS ON \
+STARTUP:\\n\\n----------------------------\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791631028*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"NonCommutativeMultiply will be \"\>", 
+    "\[InvisibleSpace]", "\<\"removed.\"\>"}],
+   SequenceForm["NonCommutativeMultiply will be ", "removed."],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359797916384153`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Current OutputFormat is set to \"\>", 
+    "\[InvisibleSpace]", "\<\"\\\"texlike\\\"\"\>", 
+    "\[InvisibleSpace]", "\<\".\"\>"}],
+   SequenceForm["Current OutputFormat is set to ", "\"texlike\"", "."],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791645735*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Package uses a non anticommuting G5 in \\\"\"\>", 
+    "\[InvisibleSpace]", "\<\"d\"\>", 
+    "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+   SequenceForm[
+   "Package uses a non anticommuting G5 in \"", "d", "\" dimensions."],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359797916533833`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Dimension set to \\\"\"\>", "\[InvisibleSpace]", "\<\"nd\"\>",
+     "\[InvisibleSpace]", "\<\"\\\". Used type of G5 left unchanged.\"\>"}],
+   SequenceForm[
+   "Dimension set to \"", "nd", "\". Used type of G5 left unchanged."],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791660831*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"Package uses the usual anticommuting G5 in \\\"\"\>", 
+    "\[InvisibleSpace]", "\<\"nd\"\>", 
+    "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+   SequenceForm[
+   "Package uses the usual anticommuting G5 in \"", "nd", "\" dimensions."],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.73597979166825*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"WARNING: Use of the Epsilon tensor in d != 4 dimensions with\\n \
+        anticommuting G5 is algebraically inconsistent.\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359797916756563`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"The gamma matrix line(s) \\\"lferm\\\" will be traced.\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791683074*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"\\nStarting to compute matrix traces. This will take a while to \
+run, bottleneck diagrams are number 7 and 8.\\n\"\>", 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735979791729149*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Matrix traces computed.\\n\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980335547427*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"N\[Degree] of original diagrams in diag: \"\>", 
+    "\[InvisibleSpace]", "27"}],
+   SequenceForm["N\[Degree] of original diagrams in diag: ", 27],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337094718*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"N\[Degree] of diagrams in Diag, after removing duplicates: \"\
+\>", "\[InvisibleSpace]", "16"}],
+   SequenceForm[
+   "N\[Degree] of diagrams in Diag, after removing duplicates: ", 16],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803371067543`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "1", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"23"},
+       {"24"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 1, " in Diag correspond to diagram n. ", {{23}, {24}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803371192417`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "2", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"3"},
+       {"4"},
+       {"5"},
+       {"6"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 2, " in Diag correspond to diagram n. ", {{3}, {4}, {5}, {
+    6}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337131444*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "3", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"1"},
+       {"2"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 3, " in Diag correspond to diagram n. ", {{1}, {2}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337157908*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "4", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"17"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 4, " in Diag correspond to diagram n. ", {{17}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803371700974`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "5", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"20"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 5, " in Diag correspond to diagram n. ", {{20}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337182135*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "6", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"22"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 6, " in Diag correspond to diagram n. ", {{22}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337194199*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "7", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"21"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 7, " in Diag correspond to diagram n. ", {{21}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803372063007`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "8", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"19"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 8, " in Diag correspond to diagram n. ", {{19}}, " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337218354*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "9", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"11"},
+       {"12"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 9, " in Diag correspond to diagram n. ", {{11}, {12}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337230454*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "10", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"9"},
+       {"10"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 10, " in Diag correspond to diagram n. ", {{9}, {10}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803372425613`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "11", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"18"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 11, " in Diag correspond to diagram n. ", {{18}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803372546873`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "12", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"15"},
+       {"16"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 12, " in Diag correspond to diagram n. ", {{15}, {16}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337264632*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "13", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"7"},
+       {"8"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 13, " in Diag correspond to diagram n. ", {{7}, {8}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803372897167`*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "14", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"13"},
+       {"14"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 14, " in Diag correspond to diagram n. ", {{13}, {14}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337300186*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "15", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"25"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 15, " in Diag correspond to diagram n. ", {{25}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735980337310381*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{"\<\"diagram n. \"\>", "\[InvisibleSpace]", "16", 
+    "\[InvisibleSpace]", "\<\" in Diag correspond to diagram n. \"\>", 
+    "\[InvisibleSpace]", 
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {"26"},
+       {"27"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}], 
+    "\[InvisibleSpace]", "\<\" in diag\"\>"}],
+   SequenceForm[
+   "diagram n. ", 16, " in Diag correspond to diagram n. ", {{26}, {27}}, 
+    " in diag"],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.7359803373201323`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData["Quit"], "Input",
+ CellChangeTimes->{{3.735736318460013*^9, 3.735736318928659*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ FormBox["\<\"/Users/marco/Documents/universita\:0300/Dimension6/Louvain/HAA\"\
+\>", TraditionalForm]], "Output",
+ CellChangeTimes->{3.735884693227323*^9, 3.73588477915132*^9, 
+  3.7358848456313877`*^9, 3.73588600977837*^9, 3.735980555433844*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Haa3.m"}]], "Input",
+ CellChangeTimes->{{3.735884694581727*^9, 3.735884699106803*^9}, {
+  3.7358879566807537`*^9, 3.735887957054154*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynCalc \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"9.1.0 (development version). For help, use the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"documentation", " ", "center"}],
+       BaseStyle->"Link",
+       ButtonData:>"paclet:FeynCalc/",
+       ButtonNote->"paclet:FeynCalc/"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\", check out the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["wiki",
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None},
+       ButtonNote->"https://github.com/FeynCalc/feyncalc/wiki"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or write to the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"mailing", " ", 
+        RowBox[{"list", "."}]}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feyncalc.org/forum/"], None},
+       ButtonNote->"http://www.feyncalc.org/forum/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynCalc ", "Text", Bold], 
+    Style["9.1.0 (development version). For help, use the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "documentation center", BaseStyle -> "Link", ButtonData :> 
+       "paclet:FeynCalc/", ButtonNote -> "paclet:FeynCalc/"]], "Text"], 
+    Style[", check out the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["wiki", ButtonData :> {
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> 
+       "https://github.com/FeynCalc/feyncalc/wiki"]], "Text"], 
+    Style[" or write to the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["mailing list.", ButtonData :> {
+         URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.735980558716488*^9}],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"See also the supplied \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"examples", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" If you use FeynCalc in your research, please cite\"\>", 
+     "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["See also the supplied ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+       Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" If you use FeynCalc in your research, please cite", "Text"]],
+   Editable->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.735980558723386*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
+Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.735980558726185*^9}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
+Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.7359805587289057`*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"Starting PV reduction.\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.73598055888363*^9}],
+
+Cell[BoxData[
+ FormBox["\<\"PV reduction finished.\"\>", TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.735980908702056*^9}],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox["A", "\[Alpha]\[Beta]"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"cWB", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["gw", "2"], "-", 
+           RowBox[{"4", " ", "lam"}]}], ")"}], " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"B\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"h", ",", "w", ",", "w"}], ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}], "+", 
+        RowBox[{
+         SuperscriptBox["e", "2"], " ", "w", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           FractionBox[
+            RowBox[{"4", " ", 
+             SuperscriptBox["gw", "2"]}], 
+            SuperscriptBox["g1", "2"]], "+", 
+           FractionBox[
+            RowBox[{"3", " ", 
+             SuperscriptBox["gw", "2"]}], "lam"], "-", "8"}], ")"}], " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"C\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"0", ",", "0", ",", "h", ",", "w", ",", "w", ",", "w"}], 
+             ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}], "+", 
+        RowBox[{
+         SuperscriptBox["e", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           FractionBox[
+            RowBox[{"3", " ", 
+             SuperscriptBox["gw", "2"]}], 
+            RowBox[{"2", " ", "lam"}]], "+", "2"}], ")"}]}], "-", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["gw", "2"], " ", 
+         RowBox[{"log", "(", "w", ")"}]}], "-", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["gw", "2"]}]}], ")"}]}], "+", 
+     RowBox[{"c\[Gamma]\[Gamma]", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         FractionBox["1", "4"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"\[Xi]", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               SuperscriptBox["g1", "2"], "+", 
+               SuperscriptBox["gw", "2"]}], ")"}]}]}], "-", 
+           RowBox[{"4", " ", "lam"}]}], ")"}], " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"B\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"h", ",", 
+              RowBox[{"z", " ", "\[Xi]"}], ",", 
+              RowBox[{"z", " ", "\[Xi]"}]}], ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}], "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["gw", "2"], " ", "\[Xi]"}], "2"]}], "-", 
+           RowBox[{"2", " ", "lam"}]}], ")"}], " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"B\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"h", ",", 
+              RowBox[{"w", " ", "\[Xi]"}], ",", 
+              RowBox[{"w", " ", "\[Xi]"}]}], ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}], "-", 
+        RowBox[{"3", " ", "lam", " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"B\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"h", ",", "h", ",", "h"}], ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}]}], ")"}]}], "+", 
+     RowBox[{"cW", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         SuperscriptBox["vev", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox[
+             RowBox[{"3", " ", 
+              SuperscriptBox["gw", "6"]}], 
+             RowBox[{"4", " ", "lam"}]]}], "+", 
+           RowBox[{"4", " ", 
+            SuperscriptBox["gw", "4"]}], "-", 
+           RowBox[{"8", " ", 
+            SuperscriptBox["gw", "2"], " ", "lam"}]}], ")"}], " ", 
+         FormBox[
+          TagBox[
+           FormBox[
+            RowBox[{
+             SubscriptBox["\<\"C\"\>", "\<\"0\"\>"], "(", 
+             RowBox[{"0", ",", "0", ",", "h", ",", "w", ",", "w", ",", "w"}], 
+             ")"}],
+            TraditionalForm],
+           HoldForm],
+          TraditionalForm]}], "-", 
+        FractionBox[
+         RowBox[{"3", " ", 
+          SuperscriptBox["gw", "4"]}], 
+         RowBox[{"2", " ", "lam"}]]}], ")"}]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"c\[Gamma]\[Gamma]", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{
+            FractionBox["1", "4"], " ", "\[Xi]", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox["g1", "2"], "+", 
+              RowBox[{"3", " ", 
+               SuperscriptBox["gw", "2"]}]}], ")"}]}]}], "-", 
+          RowBox[{"6", " ", "lam"}]}], ")"}]}], "+", 
+       RowBox[{"cWB", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"3", " ", 
+           SuperscriptBox["gw", "2"]}], "-", 
+          RowBox[{"4", " ", "lam"}]}], ")"}]}]}], "\[Epsilon]"]}], ")"}]}], 
+  TraditionalForm]], "Print",
+ CellChangeTimes->{3.735884700727778*^9, 3.7358848056821117`*^9, 
+  3.735884847775633*^9, 3.735886012243623*^9, 3.735980908858811*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+Evaluator->"New Kernel",
+WindowSize->{1440, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 196, 4, 47, "Input"],
+Cell[778, 28, 2956, 43, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3771, 76, 169, 3, 47, "Input"],
+Cell[CellGroupData[{
+Cell[3965, 83, 197, 3, 31, "Print"],
+Cell[4165, 88, 209, 3, 32, "Print"],
+Cell[4377, 93, 245, 4, 32, "Print"],
+Cell[4625, 99, 218, 3, 31, "Print"],
+Cell[4846, 104, 197, 3, 31, "Print"],
+Cell[5046, 109, 628, 13, 32, "Print"],
+Cell[5677, 124, 219, 3, 32, "Print"],
+Cell[5899, 129, 474, 9, 32, "Print"],
+Cell[6376, 140, 197, 3, 31, "Print"],
+Cell[6576, 145, 627, 13, 32, "Print"],
+Cell[7206, 160, 518, 10, 32, "Print"],
+Cell[7727, 172, 219, 3, 31, "Print"],
+Cell[7949, 177, 371, 8, 31, "Print"],
+Cell[8323, 187, 476, 9, 32, "Print"],
+Cell[8802, 198, 197, 3, 31, "Print"],
+Cell[9002, 203, 401, 8, 32, "Print"],
+Cell[9406, 213, 451, 9, 32, "Print"],
+Cell[9860, 224, 449, 9, 32, "Print"],
+Cell[10312, 235, 449, 9, 32, "Print"],
+Cell[10764, 246, 449, 9, 32, "Print"],
+Cell[11216, 257, 448, 9, 32, "Print"],
+Cell[11667, 268, 382, 8, 31, "Print"],
+Cell[12052, 278, 197, 3, 31, "Print"],
+Cell[12252, 283, 419, 8, 32, "Print"],
+Cell[12674, 293, 451, 9, 32, "Print"],
+Cell[13128, 304, 449, 9, 32, "Print"],
+Cell[13580, 315, 449, 9, 32, "Print"],
+Cell[14032, 326, 451, 9, 32, "Print"],
+Cell[14486, 337, 449, 9, 32, "Print"],
+Cell[14938, 348, 382, 8, 32, "Print"],
+Cell[15323, 358, 222, 3, 79, "Print"],
+Cell[15548, 363, 245, 4, 56, "Print"],
+Cell[15796, 369, 267, 4, 56, "Print"],
+Cell[16066, 375, 805, 16, 32, "Print"],
+Cell[16874, 393, 452, 8, 32, "Print"],
+Cell[17329, 403, 427, 9, 32, "Print"],
+Cell[17759, 414, 423, 9, 32, "Print"],
+Cell[18185, 425, 425, 9, 32, "Print"],
+Cell[18613, 436, 425, 9, 32, "Print"],
+Cell[19041, 447, 425, 9, 32, "Print"],
+Cell[19469, 458, 226, 3, 56, "Print"],
+Cell[19698, 463, 427, 9, 32, "Print"],
+Cell[20128, 474, 425, 9, 32, "Print"],
+Cell[20556, 485, 425, 9, 32, "Print"],
+Cell[20984, 496, 223, 3, 32, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[21234, 503, 98, 1, 47, "Input"],
+Cell[CellGroupData[{
+Cell[21357, 508, 196, 4, 47, "Input"],
+Cell[21556, 514, 3031, 44, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24624, 563, 167, 3, 47, "Input"],
+Cell[24794, 568, 336, 8, 34, "Message"],
+Cell[CellGroupData[{
+Cell[25155, 580, 153, 3, 55, "Print"],
+Cell[25311, 585, 157, 3, 78, "Print"],
+Cell[25471, 590, 176, 3, 31, "Print"],
+Cell[25650, 595, 161, 3, 32, "Print"],
+Cell[25814, 600, 173, 3, 79, "Print"],
+Cell[25990, 605, 431, 10, 31, "Print"],
+Cell[26424, 617, 389, 9, 78, "Print"],
+Cell[26816, 628, 696, 10, 336, "Print"],
+Cell[27515, 640, 168, 3, 78, "Print"],
+Cell[27686, 645, 303, 7, 32, "Print"],
+Cell[27992, 654, 355, 8, 32, "Print"],
+Cell[28350, 664, 387, 9, 32, "Print"],
+Cell[28740, 675, 380, 8, 32, "Print"],
+Cell[29123, 685, 394, 9, 32, "Print"],
+Cell[29520, 696, 230, 4, 56, "Print"],
+Cell[29753, 702, 161, 3, 32, "Print"],
+Cell[29917, 707, 220, 4, 79, "Print"],
+Cell[30140, 713, 130, 2, 56, "Print"],
+Cell[30273, 717, 299, 7, 32, "Print"],
+Cell[30575, 726, 338, 8, 32, "Print"],
+Cell[30916, 736, 971, 25, 57, "Print"],
+Cell[31890, 763, 1003, 27, 108, "Print"],
+Cell[32896, 792, 965, 25, 55, "Print"],
+Cell[33864, 819, 945, 23, 32, "Print"],
+Cell[34812, 844, 943, 23, 32, "Print"],
+Cell[35758, 869, 943, 23, 32, "Print"],
+Cell[36704, 894, 945, 23, 32, "Print"],
+Cell[37652, 919, 943, 23, 32, "Print"],
+Cell[38598, 944, 969, 25, 55, "Print"],
+Cell[39570, 971, 971, 25, 55, "Print"],
+Cell[40544, 998, 952, 24, 32, "Print"],
+Cell[41499, 1024, 971, 25, 55, "Print"],
+Cell[42473, 1051, 969, 25, 55, "Print"],
+Cell[43445, 1078, 971, 25, 55, "Print"],
+Cell[44419, 1105, 950, 24, 30, "Print"],
+Cell[45372, 1131, 973, 25, 55, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[46372, 1160, 96, 1, 48, "Input"],
+Cell[CellGroupData[{
+Cell[46493, 1165, 104, 2, 48, "Input"],
+Cell[46600, 1169, 260, 4, 43, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46897, 1178, 167, 3, 48, "Input"],
+Cell[CellGroupData[{
+Cell[47089, 1185, 2461, 65, 39, "Print"],
+Cell[49553, 1252, 1202, 31, 39, "Print"],
+Cell[50758, 1285, 358, 6, 38, "Print"],
+Cell[51119, 1293, 345, 6, 38, "Print"],
+Cell[51467, 1301, 218, 3, 30, "Print"],
+Cell[51688, 1306, 219, 3, 30, "Print"],
+Cell[51910, 1311, 5348, 163, 209, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

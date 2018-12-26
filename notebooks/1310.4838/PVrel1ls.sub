@@ -1,0 +1,1650 @@
+C1due[p_] :=
+sp[p,p]/nd
+
+
+C1quattro[p_] :=
+sp[p,p]^2/nd/(nd + 2)
+
+C2quattro[p_] :=
+sp[p,p]^2/nd/(nd + 2)
+
+C3quattro[p_] :=
+sp[p,p]^2/nd/(nd + 2)
+
+C1uno[p_,Q1_] :=
+sp[p, Q1]/sp[Q1, Q1]
+
+C1due[p_,Q1_] :=
+(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])/((1 - nd)*sp[Q1, Q1])
+C2due[p_,Q1_] :=
+(nd*sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
+
+C1tre[p_,Q1_] :=
+(-sp[p, Q1]^3 + sp[p, p]*sp[p, Q1]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
+C2tre[p_,Q1_] :=
+(-sp[p, Q1]^3 + sp[p, p]*sp[p, Q1]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
+C3tre[p_,Q1_] :=
+(-sp[p, Q1]^3 + sp[p, p]*sp[p, Q1]*sp[Q1, Q1])/((-1 + nd)*sp[Q1, Q1]^2)
+C4tre[p_,Q1_] :=
+((2 + nd)*sp[p, Q1]^3 - 3*sp[p, p]*sp[p, Q1]*sp[Q1, Q1])/
+ ((-1 + nd)*sp[Q1, Q1]^3)
+
+
+C1quattro[p_,Q1_] :=
+(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^2/((-1 + nd^2)*sp[Q1, Q1]^2)
+C2quattro[p_,Q1_] :=
+(((2 + nd)*sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])*
+  (-sp[p, Q1]^2 + sp[p, p]*sp[Q1, Q1]))/((-1 + nd^2)*sp[Q1, Q1]^3)
+C3quattro[p_,Q1_] :=
+((8 + 6*nd + nd^2)*sp[p, Q1]^4 - 6*(2 + nd)*sp[p, p]*sp[p, Q1]^2*sp[Q1, Q1] + 
+  3*sp[p, p]^2*sp[Q1, Q1]^2)/((-1 + nd^2)*sp[Q1, Q1]^4)
+
+C1cinque[p_,Q1_] :=
+(sp[p, Q1]*(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^2)/((-1 + nd^2)*sp[Q1, Q1]^3)
+C2cinque[p_,Q1_] :=
+-((sp[p, Q1]*((4 + nd)*sp[p, Q1]^2 - 3*sp[p, p]*sp[Q1, Q1])*
+   (sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1]))/((-1 + nd^2)*sp[Q1, Q1]^4))
+C3cinque[p_,Q1_] :=
+((24 + 10*nd + nd^2)*sp[p, Q1]^5 - 10*(4 + nd)*sp[p, p]*sp[p, Q1]^3*
+   sp[Q1, Q1] + 15*sp[p, p]^2*sp[p, Q1]*sp[Q1, Q1]^2)/
+ ((-1 + nd^2)*sp[Q1, Q1]^5)
+
+C1sei[p_,Q1_] :=
+(-sp[p, Q1]^2 + sp[p, p]*sp[Q1, Q1])^3/((-3 - nd + 3*nd^2 + nd^3)*
+  sp[Q1, Q1]^3)
+C2sei[p_,Q1_] :=
+((sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^2*((4 + nd)*sp[p, Q1]^2 - 
+   sp[p, p]*sp[Q1, Q1]))/((-3 - nd + 3*nd^2 + nd^3)*sp[Q1, Q1]^4)
+C3sei[p_,Q1_] :=
+((-sp[p, Q1]^2 + sp[p, p]*sp[Q1, Q1])*((24 + 10*nd + nd^2)*sp[p, Q1]^4 - 
+   6*(4 + nd)*sp[p, p]*sp[p, Q1]^2*sp[Q1, Q1] + 3*sp[p, p]^2*sp[Q1, Q1]^2))/
+ ((-3 - nd + 3*nd^2 + nd^3)*sp[Q1, Q1]^5)
+C4sei[p_,Q1_] :=
+((192 + 104*nd + 18*nd^2 + nd^3)*sp[p, Q1]^6 - 
+  15*(24 + 10*nd + nd^2)*sp[p, p]*sp[p, Q1]^4*sp[Q1, Q1] + 
+  45*(4 + nd)*sp[p, p]^2*sp[p, Q1]^2*sp[Q1, Q1]^2 - 
+  15*sp[p, p]^3*sp[Q1, Q1]^3)/((-3 - nd + 3*nd^2 + nd^3)*sp[Q1, Q1]^6)
+
+
+C1sette[p_,Q1_] :=
+-((sp[p, Q1]*(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^3)/
+  ((-3 - nd + 3*nd^2 + nd^3)*sp[Q1, Q1]^4))
+C2sette[p_,Q1_] :=
+(sp[p, Q1]*((6 + nd)*sp[p, Q1]^2 - 3*sp[p, p]*sp[Q1, Q1])*
+  (sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^2)/((-3 - nd + 3*nd^2 + nd^3)*
+  sp[Q1, Q1]^5)
+C3sette[p_,Q1_] :=
+-((sp[p, Q1]*(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])*
+   ((48 + 14*nd + nd^2)*sp[p, Q1]^4 - 10*(6 + nd)*sp[p, p]*sp[p, Q1]^2*
+     sp[Q1, Q1] + 15*sp[p, p]^2*sp[Q1, Q1]^2))/((-3 - nd + 3*nd^2 + nd^3)*
+   sp[Q1, Q1]^6))
+C4sette[p_,Q1_] :=
+((480 + 188*nd + 24*nd^2 + nd^3)*sp[p, Q1]^7 - 
+  21*(48 + 14*nd + nd^2)*sp[p, p]*sp[p, Q1]^5*sp[Q1, Q1] + 
+  105*(6 + nd)*sp[p, p]^2*sp[p, Q1]^3*sp[Q1, Q1]^2 - 
+  105*sp[p, p]^3*sp[p, Q1]*sp[Q1, Q1]^3)/((-3 - nd + 3*nd^2 + nd^3)*
+  sp[Q1, Q1]^7)
+
+
+C1otto[p_,Q1_] :=
+(sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^4/((-1 + nd)*(1 + nd)*(3 + nd)*(5 + nd)*
+  sp[Q1, Q1]^4)
+C2otto[p_,Q1_] :=
+(((6 + nd)*sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])*
+  (-sp[p, Q1]^2 + sp[p, p]*sp[Q1, Q1])^3)/((-1 + nd)*(1 + nd)*(3 + nd)*
+  (5 + nd)*sp[Q1, Q1]^5)
+C3otto[p_,Q1_] :=
+((sp[p, Q1]^2 - sp[p, p]*sp[Q1, Q1])^2*((48 + 14*nd + nd^2)*sp[p, Q1]^4 - 
+   6*(6 + nd)*sp[p, p]*sp[p, Q1]^2*sp[Q1, Q1] + 3*sp[p, p]^2*sp[Q1, Q1]^2))/
+ ((-1 + nd)*(1 + nd)*(3 + nd)*(5 + nd)*sp[Q1, Q1]^6)
+C4otto[p_,Q1_] :=
+((-sp[p, Q1]^2 + sp[p, p]*sp[Q1, Q1])*
+  ((480 + 188*nd + 24*nd^2 + nd^3)*sp[p, Q1]^6 - 
+   15*(48 + 14*nd + nd^2)*sp[p, p]*sp[p, Q1]^4*sp[Q1, Q1] + 
+   45*(6 + nd)*sp[p, p]^2*sp[p, Q1]^2*sp[Q1, Q1]^2 - 
+   15*sp[p, p]^3*sp[Q1, Q1]^3))/((-1 + nd)*(1 + nd)*(3 + nd)*(5 + nd)*
+  sp[Q1, Q1]^7)
+C5otto[p_,Q1_] :=
+((5760 + 2736*nd + 476*nd^2 + 36*nd^3 + nd^4)*sp[p, Q1]^8 - 
+  28*(480 + 188*nd + 24*nd^2 + nd^3)*sp[p, p]*sp[p, Q1]^6*sp[Q1, Q1] + 
+  210*(48 + 14*nd + nd^2)*sp[p, p]^2*sp[p, Q1]^4*sp[Q1, Q1]^2 - 
+  420*(6 + nd)*sp[p, p]^3*sp[p, Q1]^2*sp[Q1, Q1]^3 + 
+  105*sp[p, p]^4*sp[Q1, Q1]^4)/((-1 + nd)*(1 + nd)*(3 + nd)*(5 + nd)*
+  sp[Q1, Q1]^8)
+
+
+
+C1uno[p_,Q1_, Q2_] :=
+(sp[p, Q2]*sp[Q1, Q2] - sp[p, Q1]*sp[Q2, Q2])/
+ (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])
+C2uno[p_,Q1_, Q2_] :=
+(sp[p, Q2]*sp[Q1, Q1] - sp[p, Q1]*sp[Q1, Q2])/
+ (-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])
+
+C1due[p_,Q1_, Q2_] :=
+(sp[p, Q2]^2*sp[Q1, Q1] - 2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+  sp[p, Q1]^2*sp[Q2, Q2] + sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))
+C2due[p_,Q1_, Q2_] :=
+(-2*(-1 + nd)*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]*sp[Q2, Q2] + 
+  sp[p, Q2]^2*((-2 + nd)*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[Q2, Q2]*((-1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 
+    sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C3due[p_,Q1_, Q2_] :=
+(-((-1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]*sp[Q1, Q2]) + 
+  sp[p, Q1]*sp[p, Q2]*(nd*sp[Q1, Q2]^2 + (-2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[Q1, Q2]*(-((-1 + nd)*sp[p, Q1]^2*sp[Q2, Q2]) + 
+    sp[p, p]*(-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C4due[p_,Q1_, Q2_] :=
+(-((-1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]*sp[Q1, Q2]) + 
+  sp[p, Q1]*sp[p, Q2]*(nd*sp[Q1, Q2]^2 + (-2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[Q1, Q2]*(-((-1 + nd)*sp[p, Q1]^2*sp[Q2, Q2]) + 
+    sp[p, p]*(-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C5due[p_,Q1_, Q2_] :=
+((-1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]^2 - 2*(-1 + nd)*sp[p, Q1]*sp[p, Q2]*
+   sp[Q1, Q1]*sp[Q1, Q2] + sp[p, p]*sp[Q1, Q1]*
+   (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[p, Q1]^2*((-2 + nd)*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+
+C1tre[p_,Q1_, Q2_] :=
+((sp[p, Q2]*sp[Q1, Q2] - sp[p, Q1]*sp[Q2, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+   2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+   sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C2tre[p_,Q1_, Q2_] :=
+((sp[p, Q2]*sp[Q1, Q2] - sp[p, Q1]*sp[Q2, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+   2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+   sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C3tre[p_,Q1_, Q2_] :=
+((sp[p, Q2]*sp[Q1, Q2] - sp[p, Q1]*sp[Q2, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+   2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+   sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C4tre[p_,Q1_, Q2_] :=
+((sp[p, Q2]*sp[Q1, Q2] - sp[p, Q1]*sp[Q2, Q2])*
+  (-2*(1 + nd)*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]*sp[Q2, Q2] + 
+   sp[p, Q2]^2*((-2 + nd)*sp[Q1, Q2]^2 + 3*sp[Q1, Q1]*sp[Q2, Q2]) + 
+   sp[Q2, Q2]*((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 
+     3*sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C5tre[p_,Q1_, Q2_] :=
+-(((sp[p, Q2]*sp[Q1, Q1] - sp[p, Q1]*sp[Q1, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+    2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+    sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+  ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2))
+C6tre[p_,Q1_, Q2_] :=
+(-(sp[p, Q2]^3*sp[Q1, Q1]*(nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q2]*((2 + nd)*sp[Q1, Q2]^2 + 
+    (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q1]*sp[Q1, Q2]*sp[Q2, Q2]*
+   ((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 3*sp[p, p]*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q2]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+       (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+    sp[p, p]*(-2*sp[Q1, Q2]^4 + sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + 
+      sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C7tre[p_,Q1_, Q2_] :=
+-(((sp[p, Q2]*sp[Q1, Q1] - sp[p, Q1]*sp[Q1, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+    2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+    sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+  ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2))
+C8tre[p_,Q1_, Q2_] :=
+(-(sp[p, Q2]^3*sp[Q1, Q1]*(nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q2]*((2 + nd)*sp[Q1, Q2]^2 + 
+    (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q1]*sp[Q1, Q2]*sp[Q2, Q2]*
+   ((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 3*sp[p, p]*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q2]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+       (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+    sp[p, p]*(-2*sp[Q1, Q2]^4 + sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + 
+      sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C9tre[p_,Q1_, Q2_] :=
+((1 + nd)*sp[p, Q2]^3*sp[Q1, Q1]^2*sp[Q1, Q2] - 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q1]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+    (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q2]*sp[Q1, Q2]*
+   (3*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((2 + nd)*sp[Q1, Q2]^2 + (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(nd*sp[Q1, Q2]^2 + 
+       sp[Q1, Q1]*sp[Q2, Q2])) + sp[p, p]*(-2*sp[Q1, Q2]^4 + 
+      sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C10tre[p_,Q1_, Q2_] :=
+-(((sp[p, Q2]*sp[Q1, Q1] - sp[p, Q1]*sp[Q1, Q2])*(sp[p, Q2]^2*sp[Q1, Q1] - 
+    2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + sp[p, Q1]^2*sp[Q2, Q2] + 
+    sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])))/
+  ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2))
+C11tre[p_,Q1_, Q2_] :=
+(-(sp[p, Q2]^3*sp[Q1, Q1]*(nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q2]*((2 + nd)*sp[Q1, Q2]^2 + 
+    (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q1]*sp[Q1, Q2]*sp[Q2, Q2]*
+   ((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 3*sp[p, p]*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q2]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+       (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+    sp[p, p]*(-2*sp[Q1, Q2]^4 + sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + 
+      sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C12tre[p_,Q1_, Q2_] :=
+((1 + nd)*sp[p, Q2]^3*sp[Q1, Q1]^2*sp[Q1, Q2] - 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q1]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+    (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q2]*sp[Q1, Q2]*
+   (3*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((2 + nd)*sp[Q1, Q2]^2 + (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(nd*sp[Q1, Q2]^2 + 
+       sp[Q1, Q1]*sp[Q2, Q2])) + sp[p, p]*(-2*sp[Q1, Q2]^4 + 
+      sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C13tre[p_,Q1_, Q2_] :=
+((1 + nd)*sp[p, Q2]^3*sp[Q1, Q1]^2*sp[Q1, Q2] - 
+  sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q1]*(2*(2 + nd)*sp[Q1, Q2]^2 + 
+    (-1 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q2]*sp[Q1, Q2]*
+   (3*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((2 + nd)*sp[Q1, Q2]^2 + (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*(-(sp[p, Q1]^2*sp[Q2, Q2]*(nd*sp[Q1, Q2]^2 + 
+       sp[Q1, Q1]*sp[Q2, Q2])) + sp[p, p]*(-2*sp[Q1, Q2]^4 + 
+      sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C14tre[p_,Q1_, Q2_] :=
+-(((sp[p, Q2]*sp[Q1, Q1] - sp[p, Q1]*sp[Q1, Q2])*
+   ((1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]^2 - 2*(1 + nd)*sp[p, Q1]*sp[p, Q2]*
+     sp[Q1, Q1]*sp[Q1, Q2] + 3*sp[p, p]*sp[Q1, Q1]*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((-2 + nd)*sp[Q1, Q2]^2 + 3*sp[Q1, Q1]*sp[Q2, Q2])))/
+  ((-2 + nd)*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3))
+
+
+
+C1quattro[p_,Q1_,Q2_] :=
+(sp[p, Q2]^2*sp[Q1, Q1] - 2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   sp[p, Q1]^2*sp[Q2, Q2] + sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))^
+  2/((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)
+C2quattro[p_,Q1_,Q2_] :=
+((sp[p, Q2]^2*sp[Q1, Q1] - 2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   sp[p, Q1]^2*sp[Q2, Q2] + sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))*
+  (-2*(1 + nd)*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]*sp[Q2, Q2] + 
+   sp[p, Q2]^2*(nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) + 
+   sp[Q2, Q2]*((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 
+     sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C3quattro[p_,Q1_,Q2_] :=
+((sp[p, Q2]^2*sp[Q1, Q1] - 2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   sp[p, Q1]^2*sp[Q2, Q2] + sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))*
+  ((1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]^2 - 2*(1 + nd)*sp[p, Q1]*sp[p, Q2]*
+    sp[Q1, Q1]*sp[Q1, Q2] + sp[p, p]*sp[Q1, Q1]*
+    (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+   sp[p, Q1]^2*(nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3)
+C4quattro[p_,Q1_,Q2_] :=
+-(((sp[p, Q2]^2*sp[Q1, Q1] - 2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+    sp[p, Q1]^2*sp[Q2, Q2] + sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))*
+   ((1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]*sp[Q1, Q2] - sp[p, Q1]*sp[p, Q2]*
+     ((2 + nd)*sp[Q1, Q2]^2 + nd*sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[Q1, Q2]*((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 
+      sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]))))/
+  ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^3))
+C5quattro[p_,Q1_,Q2_] :=
+(sp[p, p]^2*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2*
+   (2*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) + 
+  (1 + nd)*sp[p, Q2]^4*sp[Q1, Q1]^2*((2 + nd)*sp[Q1, Q2]^2 + 
+    sp[Q1, Q1]*sp[Q2, Q2]) + (1 + nd)*sp[p, Q1]^4*sp[Q2, Q2]^2*
+   ((2 + nd)*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) - 
+  2*(1 + nd)*sp[p, Q1]*sp[p, Q2]^3*sp[Q1, Q1]*sp[Q1, Q2]*
+   ((4 + nd)*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[p, p]*sp[p, Q1]^2*sp[Q2, Q2]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+   ((4 + 5*nd)*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) - 
+  2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]*((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2]*
+     ((4 + nd)*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+    2*sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+     ((2 + nd)*sp[Q1, Q2]^2 + (1 + 2*nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q2]^2*(sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+     ((4 + 5*nd)*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((8 + 6*nd + nd^2)*sp[Q1, Q2]^4 + 2*(4 + 9*nd + 2*nd^2)*
+       sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + (2 + nd^2)*sp[Q1, Q1]^2*
+       sp[Q2, Q2]^2)))/((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^4)
+C6quattro[p_,Q1_,Q2_] :=
+(-((3 + 4*nd + nd^2)*sp[p, Q2]^4*sp[Q1, Q1]^3*sp[Q1, Q2]) + 
+  (1 + nd)*sp[p, Q1]*sp[p, Q2]^3*sp[Q1, Q1]^2*(3*(4 + nd)*sp[Q1, Q2]^2 + 
+    nd*sp[Q1, Q1]*sp[Q2, Q2]) - 
+  sp[Q1, Q2]*(3*sp[p, p]^2*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^
+      2 + (1 + nd)*sp[p, Q1]^4*sp[Q2, Q2]*(nd*sp[Q1, Q2]^2 + 
+      3*sp[Q1, Q1]*sp[Q2, Q2]) + 3*sp[p, p]*sp[p, Q1]^2*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*(nd*sp[Q1, Q2]^2 + 
+      (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2])) - 3*(1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]*
+   sp[Q1, Q2]*(2*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((4 + nd)*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[p, Q1]*sp[p, Q2]*(3*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - 
+      sp[Q1, Q1]*sp[Q2, Q2])*((4 + 3*nd)*sp[Q1, Q2]^2 + 
+      nd*sp[Q1, Q1]*sp[Q2, Q2]) + sp[p, Q1]^2*(nd*(4 + nd)*sp[Q1, Q2]^4 + 
+      3*(4 + 3*nd + nd^2)*sp[Q1, Q1]*sp[Q1, Q2]^2*sp[Q2, Q2] + 
+      3*nd*sp[Q1, Q1]^2*sp[Q2, Q2]^2)))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^4)
+C7quattro[p_,Q1_,Q2_] :=
+(-((1 + nd)*sp[p, Q2]^4*sp[Q1, Q1]*sp[Q1, Q2]*(nd*sp[Q1, Q2]^2 + 
+     3*sp[Q1, Q1]*sp[Q2, Q2])) + sp[p, Q1]*sp[p, Q2]^3*
+   (nd*(4 + nd)*sp[Q1, Q2]^4 + 3*(4 + 3*nd + nd^2)*sp[Q1, Q1]*sp[Q1, Q2]^2*
+     sp[Q2, Q2] + 3*nd*sp[Q1, Q1]^2*sp[Q2, Q2]^2) - 
+  sp[Q1, Q2]*sp[Q2, Q2]*((3 + 4*nd + nd^2)*sp[p, Q1]^4*sp[Q2, Q2]^2 + 
+    6*(1 + nd)*sp[p, p]*sp[p, Q1]^2*sp[Q2, Q2]*(sp[Q1, Q2]^2 - 
+      sp[Q1, Q1]*sp[Q2, Q2]) + 3*sp[p, p]^2*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2) + 
+  sp[p, Q1]*sp[p, Q2]*sp[Q2, Q2]*((1 + nd)*sp[p, Q1]^2*sp[Q2, Q2]*
+     (3*(4 + nd)*sp[Q1, Q2]^2 + nd*sp[Q1, Q1]*sp[Q2, Q2]) + 
+    3*sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+     ((4 + 3*nd)*sp[Q1, Q2]^2 + nd*sp[Q1, Q1]*sp[Q2, Q2])) - 
+  3*sp[p, Q2]^2*sp[Q1, Q2]*(sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+     (nd*sp[Q1, Q2]^2 + (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2]) + 
+    (1 + nd)*sp[p, Q1]^2*sp[Q2, Q2]*((4 + nd)*sp[Q1, Q2]^2 + 
+      (2 + nd)*sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^4)
+C8quattro[p_,Q1_,Q2_] :=
+(-4*(1 + nd)*sp[p, Q1]*sp[p, Q2]^3*sp[Q1, Q2]*sp[Q2, Q2]*
+   (nd*sp[Q1, Q2]^2 + 3*sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[p, Q2]^4*((-2 + nd)*nd*sp[Q1, Q2]^4 + 6*nd*sp[Q1, Q1]*sp[Q1, Q2]^2*
+     sp[Q2, Q2] + 3*sp[Q1, Q1]^2*sp[Q2, Q2]^2) - 
+  4*(1 + nd)*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]*sp[Q2, Q2]^2*
+   ((3 + nd)*sp[p, Q1]^2*sp[Q2, Q2] + 3*sp[p, p]*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])) + 
+  sp[Q2, Q2]^2*((3 + 4*nd + nd^2)*sp[p, Q1]^4*sp[Q2, Q2]^2 + 
+    6*(1 + nd)*sp[p, p]*sp[p, Q1]^2*sp[Q2, Q2]*(sp[Q1, Q2]^2 - 
+      sp[Q1, Q1]*sp[Q2, Q2]) + 3*sp[p, p]^2*
+     (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2) + 
+  6*sp[p, Q2]^2*sp[Q2, Q2]*(sp[p, p]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+     (nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) + (1 + nd)*sp[p, Q1]^2*
+     sp[Q2, Q2]*((2 + nd)*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^4)
+C9quattro[p_,Q1_,Q2_] :=
+((3 + 4*nd + nd^2)*sp[p, Q2]^4*sp[Q1, Q1]^4 - 4*(3 + 4*nd + nd^2)*sp[p, Q1]*
+   sp[p, Q2]^3*sp[Q1, Q1]^3*sp[Q1, Q2] + 3*sp[p, p]^2*sp[Q1, Q1]^2*
+   (sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2 - 6*sp[p, p]*sp[p, Q1]^2*
+   sp[Q1, Q1]*(-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])*
+   (nd*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[p, Q1]^4*((-2 + nd)*nd*sp[Q1, Q2]^4 + 6*nd*sp[Q1, Q1]*sp[Q1, Q2]^2*
+     sp[Q2, Q2] + 3*sp[Q1, Q1]^2*sp[Q2, Q2]^2) + 
+  6*(1 + nd)*sp[p, Q2]^2*sp[Q1, Q1]^2*
+   (sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*((2 + nd)*sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2])) - 
+  4*(1 + nd)*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q1]*sp[Q1, Q2]*
+   (3*sp[p, p]*sp[Q1, Q1]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+    sp[p, Q1]^2*(nd*sp[Q1, Q2]^2 + 3*sp[Q1, Q1]*sp[Q2, Q2])))/
+ ((-2 + nd)*nd*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^4)
+
+
+
+C1cinque[p_,Q1_,Q2_] :=
+(sp[p, Q2]*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^3)
+C2cinque[p_,Q1_,Q2_] :=
+(sp[p, Q2]^3*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^4)
+C3cinque[p_,Q1_,Q2_] :=
+sp[p, Q2]^5/sp[Q1, Q2]^5
+C4cinque[p_,Q1_,Q2_] :=
+(sp[p, Q1]*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^3)
+C5cinque[p_,Q1_,Q2_] :=
+(sp[p, Q1]^3*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^4)
+C6cinque[p_,Q1_,Q2_] :=
+sp[p, Q1]^5/sp[Q1, Q2]^5
+C7cinque[p_,Q1_,Q2_] :=
+(sp[p, Q2]^3*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 4*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^5)
+C8cinque[p_,Q1_,Q2_] :=
+-((sp[p, Q2]*((4 + nd)*sp[p, Q1]*sp[p, Q2] - 2*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^4))
+C9cinque[p_,Q1_,Q2_] :=
+(sp[p, Q1]^3*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 4*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^5)
+C10cinque[p_,Q1_,Q2_] :=
+-((sp[p, Q1]*((4 + nd)*sp[p, Q1]*sp[p, Q2] - 2*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^4))
+C11cinque[p_,Q1_,Q2_] :=
+(sp[p, Q2]*((24 + 10*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   6*(4 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   6*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^5)
+C12cinque[p_,Q1_,Q2_] :=
+(sp[p, Q1]*((24 + 10*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   6*(4 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   6*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^5)
+
+
+
+C1sei[p_,Q1_,Q2_] :=
+(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^3/(nd*(-4 + nd^2)*sp[Q1, Q2]^3)
+C2sei[p_,Q1_,Q2_] :=
+(sp[p, Q2]^2*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^4)
+C3sei[p_,Q1_,Q2_] :=
+(sp[p, Q2]^4*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^5)
+C4sei[p_,Q1_,Q2_] :=
+sp[p, Q2]^6/sp[Q1, Q2]^6
+C5sei[p_,Q1_,Q2_] :=
+(((4 + nd)*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2])*
+  (-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ (nd*(-4 + nd^2)*sp[Q1, Q2]^4)
+C6sei[p_,Q1_,Q2_] :=
+-((sp[p, Q2]^2*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 3*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^5))
+C7sei[p_,Q1_,Q2_] :=
+(sp[p, Q2]^4*((8 + nd)*sp[p, Q1]*sp[p, Q2] - 5*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^6)
+C8sei[p_,Q1_,Q2_] :=
+(sp[p, Q1]^2*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^4)
+C9sei[p_,Q1_,Q2_] :=
+((-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])*
+  ((24 + 10*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   4*(4 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   2*sp[p, p]^2*sp[Q1, Q2]^2))/(nd*(-4 + nd^2)*sp[Q1, Q2]^5)
+C10sei[p_,Q1_,Q2_] :=
+(sp[p, Q2]^2*((48 + 14*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   8*(6 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   12*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^6)
+C11sei[p_,Q1_,Q2_] :=
+-((sp[p, Q1]^2*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 3*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^5))
+C12sei[p_,Q1_,Q2_] :=
+((192 + 104*nd + 18*nd^2 + nd^3)*sp[p, Q1]^3*sp[p, Q2]^3 - 
+  9*(24 + 10*nd + nd^2)*sp[p, p]*sp[p, Q1]^2*sp[p, Q2]^2*sp[Q1, Q2] + 
+  18*(4 + nd)*sp[p, p]^2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]^2 - 
+  6*sp[p, p]^3*sp[Q1, Q2]^3)/(nd*(-4 + nd^2)*sp[Q1, Q2]^6)
+C13sei[p_,Q1_,Q2_] :=
+(sp[p, Q1]^4*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^5)
+C14sei[p_,Q1_,Q2_] :=
+(sp[p, Q1]^2*((48 + 14*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   8*(6 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   12*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^6)
+C15sei[p_,Q1_,Q2_] :=
+(sp[p, Q1]^4*((8 + nd)*sp[p, Q1]*sp[p, Q2] - 5*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^6)
+C16sei[p_,Q1_,Q2_] :=
+sp[p, Q1]^6/sp[Q1, Q2]^6
+
+
+C1sette[p_,Q1_,Q2_] :=
+-((sp[p, Q2]*(2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2])^3)/
+  (nd*(-4 + nd^2)*sp[Q1, Q2]^4))
+C2sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]^3*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^5)
+C3sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]^5*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^6)
+C4sette[p_,Q1_,Q2_] :=
+sp[p, Q2]^7/sp[Q1, Q2]^7
+C5sette[p_,Q1_,Q2_] :=
+-((sp[p, Q1]*(2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2])^3)/
+  (nd*(-4 + nd^2)*sp[Q1, Q2]^4))
+C6sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 2*sp[p, p]*sp[Q1, Q2])*
+  (-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ (nd*(-4 + nd^2)*sp[Q1, Q2]^5)
+C7sette[p_,Q1_,Q2_] :=
+-((sp[p, Q2]^3*((8 + nd)*sp[p, Q1]*sp[p, Q2] - 4*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^6))
+C8sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]^5*((10 + nd)*sp[p, Q1]*sp[p, Q2] - 6*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^7)
+C9sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]*((6 + nd)*sp[p, Q1]*sp[p, Q2] - 2*sp[p, p]*sp[Q1, Q2])*
+  (-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ (nd*(-4 + nd^2)*sp[Q1, Q2]^5)
+C10sette[p_,Q1_,Q2_] :=
+-((sp[p, Q2]*(2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2])*
+   ((48 + 14*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+    6*(6 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+    6*sp[p, p]^2*sp[Q1, Q2]^2))/(nd*(-4 + nd^2)*sp[Q1, Q2]^6))
+C11sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]^3*((80 + 18*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   10*(8 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   20*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^7)
+C12sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]^3*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2])^2)/
+ ((-2 + nd)*nd*sp[Q1, Q2]^5)
+C13sette[p_,Q1_,Q2_] :=
+-((sp[p, Q1]*(2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2])*
+   ((48 + 14*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+    6*(6 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+    6*sp[p, p]^2*sp[Q1, Q2]^2))/(nd*(-4 + nd^2)*sp[Q1, Q2]^6))
+C14sette[p_,Q1_,Q2_] :=
+(sp[p, Q2]*((480 + 188*nd + 24*nd^2 + nd^3)*sp[p, Q1]^3*sp[p, Q2]^3 - 
+   12*(48 + 14*nd + nd^2)*sp[p, p]*sp[p, Q1]^2*sp[p, Q2]^2*sp[Q1, Q2] + 
+   36*(6 + nd)*sp[p, p]^2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]^2 - 
+   24*sp[p, p]^3*sp[Q1, Q2]^3))/(nd*(-4 + nd^2)*sp[Q1, Q2]^7)
+C15sette[p_,Q1_,Q2_] :=
+-((sp[p, Q1]^3*((8 + nd)*sp[p, Q1]*sp[p, Q2] - 4*sp[p, p]*sp[Q1, Q2])*
+   (2*sp[p, Q1]*sp[p, Q2] - sp[p, p]*sp[Q1, Q2]))/((-2 + nd)*nd*sp[Q1, Q2]^6))
+C16sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]*((480 + 188*nd + 24*nd^2 + nd^3)*sp[p, Q1]^3*sp[p, Q2]^3 - 
+   12*(48 + 14*nd + nd^2)*sp[p, p]*sp[p, Q1]^2*sp[p, Q2]^2*sp[Q1, Q2] + 
+   36*(6 + nd)*sp[p, p]^2*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2]^2 - 
+   24*sp[p, p]^3*sp[Q1, Q2]^3))/(nd*(-4 + nd^2)*sp[Q1, Q2]^7)
+C17sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]^5*(-2*sp[p, Q1]*sp[p, Q2] + sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^6)
+C18sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]^3*((80 + 18*nd + nd^2)*sp[p, Q1]^2*sp[p, Q2]^2 - 
+   10*(8 + nd)*sp[p, p]*sp[p, Q1]*sp[p, Q2]*sp[Q1, Q2] + 
+   20*sp[p, p]^2*sp[Q1, Q2]^2))/((-2 + nd)*nd*sp[Q1, Q2]^7)
+C19sette[p_,Q1_,Q2_] :=
+(sp[p, Q1]^5*((10 + nd)*sp[p, Q1]*sp[p, Q2] - 6*sp[p, p]*sp[Q1, Q2]))/
+ ((-2 + nd)*sp[Q1, Q2]^7)
+C20sette[p_,Q1_,Q2_] :=
+sp[p, Q1]^7/sp[Q1, Q2]^7
+
+
+
+
+
+C1uno[p_,Q1_,Q2_,Q3_] :=
+(sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3]) + 
+  sp[p, Q2]*(-(sp[Q1, Q3]*sp[Q2, Q3]) + sp[Q1, Q2]*sp[Q3, Q3]) + 
+  sp[p, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+ (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+  sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))
+C2uno[p_,Q1_,Q2_,Q3_] :=
+(sp[p, Q3]*(-(sp[Q1, Q2]*sp[Q1, Q3]) + sp[Q1, Q1]*sp[Q2, Q3]) + 
+  sp[p, Q2]*(sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3]) + 
+  sp[p, Q1]*(-(sp[Q1, Q3]*sp[Q2, Q3]) + sp[Q1, Q2]*sp[Q3, Q3]))/
+ (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+  sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))
+C3uno[p_,Q1_,Q2_,Q3_] :=
+(sp[p, Q3]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2]) + 
+  sp[p, Q2]*(-(sp[Q1, Q2]*sp[Q1, Q3]) + sp[Q1, Q1]*sp[Q2, Q3]) + 
+  sp[p, Q1]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3]))/
+ (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+  sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))
+
+C1due[p_,Q1_,Q2_,Q3_] :=
+sp[p, p]/(-3 + nd) + (sp[p, Q3]^2*(-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q2]*sp[p, Q3]*(2*sp[Q1, Q2]*sp[Q1, Q3] - 2*sp[Q1, Q1]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]*sp[p, Q3]*(-2*sp[Q1, Q3]*sp[Q2, Q2] + 2*sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q2]^2*(-sp[Q1, Q3]^2 + sp[Q1, Q1]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]*sp[p, Q2]*(2*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]^2*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3])))
+C2due[p_,Q1_,Q2_,Q3_] :=
+(-2*(-2 + nd)*sp[p, Q1]*sp[p, Q2]*(sp[Q1, Q3]*sp[Q2, Q3] - 
+    sp[Q1, Q2]*sp[Q3, Q3])*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ ((-2 + nd)*sp[p, Q1]^2*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*(-2 + nd)*sp[p, Q1]*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - 
+    sp[Q1, Q2]*sp[Q2, Q3])*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q3]^2*((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*((-2 + nd)*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q1]*sp[Q2, Q2]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*sp[p, Q2]*sp[p, Q3]*((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] - 
+    sp[Q1, Q2]*sp[Q1, Q3]*((-4 + nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*
+       sp[Q3, Q3]) + sp[Q2, Q3]*((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] + 
+      sp[Q1, Q1]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]^2*(-2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q3]^2*((-2 + nd)*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q3, Q3]*((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] + 
+      sp[Q1, Q1]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2)
+C3due[p_,Q1_,Q2_,Q3_] :=
+(-2*(-2 + nd)*sp[p, Q2]*sp[p, Q3]*(sp[Q1, Q2]*sp[Q1, Q3] - 
+    sp[Q1, Q1]*sp[Q2, Q3])*(sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ ((-2 + nd)*sp[p, Q2]^2*(sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*(-2 + nd)*sp[p, Q1]*sp[p, Q2]*(sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3])*
+   (sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(-sp[Q1, Q3]^2 + sp[Q1, Q1]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]^2*(-2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q3]^2*((-2 + nd)*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q3, Q3]*((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] + 
+      sp[Q1, Q1]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q3]^2*(-2*(-3 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*((-2 + nd)*sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3]) + 
+    sp[Q1, Q1]*(-(sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (2*sp[p, Q1]*sp[p, Q3]*(sp[Q1, Q3]^3*sp[Q2, Q2] + 
+    (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3] + 
+    (-2 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    sp[Q1, Q3]*((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2)
+C4due[p_,Q1_,Q2_,Q3_] :=
+((-2 + nd)*sp[p, Q3]^2*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*(-2 + nd)*sp[p, Q2]*sp[p, Q3]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+   (sp[Q1, Q2]*sp[Q1, Q3] - sp[Q1, Q1]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*(-2 + nd)*sp[p, Q1]*sp[p, Q3]*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+   (-(sp[Q1, Q3]*sp[Q2, Q2]) + sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(-sp[Q1, Q2]^2 + sp[Q1, Q1]*sp[Q2, Q2]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]^2*((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*((-2 + nd)*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q1]*sp[Q2, Q2]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]^2*(-2*(-3 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*((-2 + nd)*sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3]) + 
+    sp[Q1, Q1]*(-(sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) - 
+ (2*sp[p, Q1]*sp[p, Q2]*(-((-4 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]) - 
+    (-2 + nd)*sp[Q1, Q1]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] - 
+    sp[Q1, Q2]^3*sp[Q3, Q3] + sp[Q1, Q2]*((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2)
+C5due[p_,Q1_,Q2_,Q3_] :=
+-(((-2 + nd)*sp[p, Q2]^2*(sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3])*
+    (sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3]))/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+        sp[Q2, Q2]*sp[Q3, Q3]))^2)) - 
+ ((-2 + nd)*sp[p, Q1]^2*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]*sp[p, Q2]*(-2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*
+     sp[Q3, Q3] + sp[Q1, Q3]^2*(2*(-2 + nd)*sp[Q2, Q3]^2 - 
+      (-3 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q3, Q3]*((-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] - (-3 + nd)*sp[Q1, Q1]*
+       (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q1]*sp[p, Q3]*(-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3]) + 
+    2*sp[Q1, Q2]*sp[Q1, Q3]*(sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*
+       sp[Q3, Q3]) + sp[Q2, Q3]*(-((-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]) + 
+      (-3 + nd)*sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q3]^2*((-4 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3] + 
+    (-2 + nd)*sp[Q1, Q1]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^3*sp[Q3, Q3] - sp[Q1, Q2]*((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]*sp[p, Q3]*((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2] + 
+    2*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3] + 2*(-2 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*
+     sp[Q2, Q3]*sp[Q3, Q3] + sp[Q1, Q3]*
+     (-((-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]) + 
+      sp[Q1, Q1]*(-((-1 + nd)*sp[Q2, Q3]^2) - (-3 + nd)*sp[Q2, Q2]*
+         sp[Q3, Q3]))))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2)
+C6due[p_,Q1_,Q2_,Q3_] :=
+-(((-2 + nd)*sp[p, Q3]^2*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+    (-(sp[Q1, Q3]*sp[Q2, Q2]) + sp[Q1, Q2]*sp[Q2, Q3]))/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+        sp[Q2, Q2]*sp[Q3, Q3]))^2)) - 
+ ((-2 + nd)*sp[p, Q1]^2*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(-(sp[Q1, Q3]*sp[Q2, Q2]) + sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]*sp[p, Q3]*((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    (-3 + nd)*sp[Q1, Q1]*sp[Q2, Q2]*(-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*(2*(-2 + nd)*sp[Q2, Q3]^2 - (-3 + nd)*sp[Q2, Q2]*
+       sp[Q3, Q3])))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q1]*sp[p, Q2]*(-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3]) + 
+    2*sp[Q1, Q2]*sp[Q1, Q3]*(sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*
+       sp[Q3, Q3]) + sp[Q2, Q3]*(-((-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]) + 
+      (-3 + nd)*sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]^2*(sp[Q1, Q3]^3*sp[Q2, Q2] + (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*
+     sp[Q2, Q3] + (-2 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    sp[Q1, Q3]*((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3] + 
+      sp[Q1, Q1]*((-3 + nd)*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]*sp[p, Q3]*(2*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3] + 
+    2*(-2 + nd)*sp[Q1, Q1]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3] + 
+    sp[Q1, Q2]*(-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+      sp[Q1, Q1]*(-((-1 + nd)*sp[Q2, Q3]^2) - (-3 + nd)*sp[Q2, Q2]*
+         sp[Q3, Q3]))))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2)
+C7due[p_,Q1_,Q2_,Q3_] :=
+-(((-2 + nd)*sp[p, Q3]^2*(sp[Q1, Q2]^2 - sp[Q1, Q1]*sp[Q2, Q2])*
+    (sp[Q1, Q2]*sp[Q1, Q3] - sp[Q1, Q1]*sp[Q2, Q3]))/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+        sp[Q2, Q2]*sp[Q3, Q3]))^2)) - 
+ ((-2 + nd)*sp[p, Q2]^2*(sp[Q1, Q2]*sp[Q1, Q3] - sp[Q1, Q1]*sp[Q2, Q3])*
+   (sp[Q1, Q3]^2 - sp[Q1, Q1]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, p]*(sp[Q1, Q2]*sp[Q1, Q3] - sp[Q1, Q1]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]))) + 
+ (sp[p, Q1]^2*(-((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3]) + 
+    sp[Q1, Q2]*sp[Q1, Q3]*((-4 + nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*
+       sp[Q3, Q3]) + sp[Q2, Q3]*(-((-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]) + 
+      sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3] + sp[Q1, Q1]*(sp[Q2, Q3]^2 - 
+       sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q1]*sp[p, Q3]*(2*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3] + 
+    2*(-2 + nd)*sp[Q1, Q1]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3] + 
+    sp[Q1, Q2]*(-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+      sp[Q1, Q1]*(-((-1 + nd)*sp[Q2, Q3]^2) - (-3 + nd)*sp[Q2, Q2]*
+         sp[Q3, Q3]))))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q1]*sp[p, Q2]*((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2] + 
+    2*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3] + 2*(-2 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*
+     sp[Q2, Q3]*sp[Q3, Q3] + sp[Q1, Q3]*
+     (-((-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]) + 
+      sp[Q1, Q1]*(-((-1 + nd)*sp[Q2, Q3]^2) - (-3 + nd)*sp[Q2, Q2]*
+         sp[Q3, Q3]))))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2) + 
+ (sp[p, Q2]*sp[p, Q3]*(-2*(-1 + nd)*sp[Q1, Q1]*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + sp[Q1, Q2]^2*(2*(-2 + nd)*sp[Q1, Q3]^2 - 
+      (-3 + nd)*sp[Q1, Q1]*sp[Q3, Q3]) + 
+    sp[Q1, Q1]*(-((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+      sp[Q1, Q1]*((-1 + nd)*sp[Q2, Q3]^2 + (-3 + nd)*sp[Q2, Q2]*
+         sp[Q3, Q3]))))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3] + 
+     sp[Q1, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))^2)
+
+C1tre[p_,Q1_,Q2_,Q3_] :=
+(sp[p, Q3]^3*sp[Q1, Q2]^2*(-(sp[Q1, Q3]*sp[Q2, Q2]) + sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q2]^3*sp[Q1, Q3]^2*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, p]*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) + 
+ (sp[p, p]*sp[p, Q2]*(-(sp[Q1, Q3]*sp[Q2, Q3]) + sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) - (sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]*
+   (-2*sp[Q1, Q3]^2*sp[Q2, Q2] + sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, Q1]^2*sp[p, Q2]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, p]*sp[p, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) - 
+ (sp[p, Q1]^3*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, Q1]^2*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q3]^2*(-2*sp[Q1, Q3]^2*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(-3*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q2]^2*(4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    2*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*(-3*sp[Q2, Q3]^2 + 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*(4*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    4*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - 2*sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2)
+C2tre[p_,Q1_,Q2_,Q3_] :=
+(sp[p, Q3]^3*sp[Q1, Q2]^3*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (3*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^2*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - (sp[p, Q2]^3*sp[Q1, Q3]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]^2*(sp[Q1, Q3]*sp[Q2, Q3] - 
+    sp[Q1, Q2]*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - (sp[p, p]*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) + (sp[p, p]*sp[p, Q2]*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) + 
+ (sp[p, p]*sp[p, Q1]*(-(sp[Q1, Q3]*sp[Q2, Q3]) + sp[Q1, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) - (sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]*
+   (-2*sp[Q1, Q3]^2*sp[Q2, Q2] + sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^2*sp[p, Q2]*(4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    2*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*(-3*sp[Q2, Q3]^2 + 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(2*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2)
+C3tre[p_,Q1_,Q2_,Q3_] :=
+-((sp[p, Q3]^3*sp[Q1, Q2]^4)/((-3 + nd)*
+    (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3])^2)) + 
+ (3*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^3*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (3*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]^2*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + (sp[p, Q2]^3*sp[Q1, Q2]*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]^2*(-(sp[Q1, Q3]*sp[Q2, Q2]) + 
+    sp[Q1, Q2]*sp[Q2, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + (sp[p, p]*sp[p, Q3]*sp[Q1, Q2]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) - (sp[p, p]*sp[p, Q2]*sp[Q1, Q2]*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) + 
+ (sp[p, p]*sp[p, Q1]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3])) - (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q2]*
+   (-2*sp[Q1, Q3]^2*sp[Q2, Q2] + sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(-3*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]^2*sp[p, Q2]*(2*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2)
+C4tre[p_,Q1_,Q2_,Q3_] :=
+(3*sp[p, p]*sp[p, Q2]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*nd*sp[p, Q1]^2*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*nd*sp[p, Q1]^2*sp[p, Q2]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, p]*sp[p, Q1]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (nd*sp[p, Q1]^3*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q3]^3*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   ((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q2]^3*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (-2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (nd*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, Q1]*sp[p, Q3]^2*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   ((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, Q1]*sp[p, Q2]^2*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, Q2]^2*sp[p, Q3]*(-((-3 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*
+      sp[Q3, Q3]^2) + sp[Q1, Q3]^3*sp[Q2, Q2]*((-2 + nd)*sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*
+     (-((-4 + nd)*sp[Q2, Q3]^2) + (5 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*(2*(-4 + nd)*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (6*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3]) - 
+    (-1 + nd)*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      nd*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, Q2]*sp[p, Q3]^2*((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*sp[Q2, Q3] + 
+    sp[Q1, Q2]^3*sp[Q3, Q3]*(-((-2 + nd)*sp[Q2, Q3]^2) + 
+      sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*
+     (-2*(-4 + nd)*sp[Q2, Q3]^2 - (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*((-4 + nd)*sp[Q2, Q3]^2 + 
+      (-5 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C5tre[p_,Q1_,Q2_,Q3_] :=
+-((nd*sp[p, Q3]^3*sp[Q1, Q2]^3*sp[Q1, Q3]^3)/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3])^3)) + 
+ (3*nd*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^2*sp[Q1, Q3]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*nd*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3]^5)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + (nd*sp[p, Q2]^3*sp[Q1, Q3]^6)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*nd*sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]^4*(-(sp[Q1, Q3]*sp[Q2, Q3]) + 
+    sp[Q1, Q2]*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - (3*sp[p, p]*sp[p, Q2]*sp[Q1, Q3]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, p]*sp[p, Q1]*sp[Q1, Q3]^2*(sp[Q1, Q3]*sp[Q2, Q3] - 
+    sp[Q1, Q2]*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (3*sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]*sp[Q1, Q3]^2*
+   (2*sp[Q1, Q3]^2*sp[Q2, Q2] + (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 
+    (-2 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (6*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q3]^3*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - (-1 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, Q1]^2*sp[p, Q3]*sp[Q1, Q3]*(2*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] - 
+    2*(-4 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (-2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (nd*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, Q1]^2*sp[p, Q2]*sp[Q1, Q3]^2*
+   (-2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C6tre[p_,Q1_,Q2_,Q3_] :=
+(nd*sp[p, Q3]^3*sp[Q1, Q2]^6)/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*nd*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^5*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*nd*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]^4*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - (nd*sp[p, Q2]^3*sp[Q1, Q2]^3*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]^4*(-(nd*sp[Q1, Q3]*sp[Q2, Q2]) + 
+    nd*sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - (3*sp[p, p]*sp[p, Q3]*sp[Q1, Q2]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, p]*sp[p, Q2]*sp[Q1, Q2]^3*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, p]*sp[p, Q1]*sp[Q1, Q2]^2*(-(sp[Q1, Q3]*sp[Q2, Q2]) + 
+    sp[Q1, Q2]*sp[Q2, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (6*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q2]^3*
+   (-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q2]^2*sp[Q1, Q3]*
+   (-((-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, Q1]^2*sp[p, Q2]*sp[Q1, Q2]*((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - 
+    2*(-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + sp[Q1, Q2]^2*sp[Q1, Q3]*
+     ((-4 + nd)*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   ((-3 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, Q1]^2*sp[p, Q3]*sp[Q1, Q2]^2*((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C7tre[p_,Q1_,Q2_,Q3_] :=
+(nd*sp[p, Q2]^3*sp[Q1, Q3]^4*(-(sp[Q1, Q3]*sp[Q2, Q3]) + 
+    sp[Q1, Q2]*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q3]^3*sp[Q1, Q2]^2*sp[Q1, Q3]*((-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] - 
+    (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q2]*sp[Q1, Q3]^2*(sp[Q1, Q3]*sp[Q2, Q3] - 
+    sp[Q1, Q2]*sp[Q3, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, p]*sp[p, Q3]*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q3]^3*((-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*(1 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]*sp[Q1, Q3]^2*
+   (-2*(-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-8 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (4 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, p]*sp[p, Q1]*(4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    2*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*(-3*sp[Q2, Q3]^2 + 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q3]^2*(2*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-3 + nd)*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    2*sp[Q1, Q2]^4*sp[Q3, Q3]^2 + sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     (-((-4 + nd)*sp[Q2, Q3]^2) + (4 - 3*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q3]*
+   ((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] - 
+    (1 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     ((-2 + nd)*sp[Q2, Q3]^2 + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^2*sp[p, Q2]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (-2*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (3*nd*sp[Q2, Q3]^2 + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]^2*(-4*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3]*sp[Q3, Q3] + 2*(1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + 
+    sp[Q1, Q3]^2*(3*nd*sp[Q2, Q3]^2 - (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(-((1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3]^2) + 
+    sp[Q1, Q3]^3*sp[Q2, Q2]*((4 + nd)*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*
+     ((-8 + nd)*sp[Q2, Q3]^2 + (5 - 4*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    3*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*(2*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C8tre[p_,Q1_,Q2_,Q3_] :=
+(nd*sp[p, Q3]^3*sp[Q1, Q2]^4*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q3]*sp[Q1, Q2]^2*(-(sp[Q1, Q3]*sp[Q2, Q2]) + 
+    sp[Q1, Q2]*sp[Q2, Q3]))/((-3 + nd)*
+   (sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, p]*sp[p, Q2]*sp[Q1, Q2]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]^2*sp[Q1, Q3]*
+   ((4 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-8 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] - 2*(-2 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^3*sp[Q1, Q2]*sp[Q1, Q3]^2*(-2*sp[Q1, Q3]^2*sp[Q2, Q2] - 
+    (-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + (-2 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^3*(-2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + (-2 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   ((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, p]*sp[p, Q1]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(-3*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q2]^2*(2*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-3 + nd)*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    2*sp[Q1, Q2]^4*sp[Q3, Q3]^2 + sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     (-((-4 + nd)*sp[Q2, Q3]^2) + (4 - 3*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q2]*
+   ((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - (1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*
+     sp[Q2, Q2]*sp[Q2, Q3] + (1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   ((1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(3*nd*sp[Q2, Q3]^2 + 
+      (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]^2*(2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    4*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(3*nd*sp[Q2, Q3]^2 - (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q2]*(-((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*sp[Q2, Q3]) + 
+    sp[Q1, Q2]^3*sp[Q3, Q3]*((4 + nd)*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*
+     ((-8 + nd)*sp[Q2, Q3]^2 + (5 - 4*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    3*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*(2*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C9tre[p_,Q1_,Q2_,Q3_] :=
+(3*sp[p, p]*sp[p, Q1]*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (nd*sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q3]^3*sp[Q1, Q2]*((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - 
+    2*(-4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + sp[Q1, Q2]^2*sp[Q1, Q3]*
+     ((-4 + nd)*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^3*sp[Q1, Q3]^2*(-2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*
+     sp[Q3, Q3] + (-1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + 
+    sp[Q1, Q3]^2*(nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, p]*sp[p, Q2]*(4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    2*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*(-3*sp[Q2, Q3]^2 + 
+      sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, p]*sp[p, Q3]*(2*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q1]*sp[p, Q2]^2*(sp[Q1, Q3]*sp[Q2, Q3] - sp[Q1, Q2]*sp[Q3, Q3])*
+   (-2*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + sp[Q1, Q3]^2*
+     (3*nd*sp[Q2, Q3]^2 + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q2]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-4*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    2*(1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]^2 + 
+    sp[Q1, Q3]^2*(3*nd*sp[Q2, Q3]^2 - (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q3]^2*(-((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*sp[Q2, Q3]) + 
+    sp[Q1, Q2]^3*sp[Q3, Q3]*((4 + nd)*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*
+     ((-8 + nd)*sp[Q2, Q3]^2 + (5 - 4*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    3*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*(2*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] - 
+    2*(1 + nd)*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*((4 + nd)*sp[Q2, Q3]^2 + 
+      3*nd*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q3]*(-2*(-2 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]*
+     sp[Q2, Q3] + 6*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] - 
+    (1 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     ((-8 + nd)*sp[Q2, Q3]^2 + (-1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]*sp[p, Q3]^2*((-3 + nd)*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-3 + nd)*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    2*sp[Q1, Q2]^4*sp[Q3, Q3]^2 - sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 + (1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*((1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*
+     sp[Q3, Q3]^2 - (1 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*
+     (sp[Q2, Q3]^2 + 2*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q3]^3*sp[Q2, Q2]*
+     ((1 - 2*nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      (5 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C10tre[p_,Q1_,Q2_,Q3_] :=
+-((nd*sp[p, Q3]^3*sp[Q1, Q2]^5*sp[Q1, Q3])/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3])^3)) + 
+ (3*nd*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^4*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*nd*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]^3*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + (nd*sp[p, Q2]^3*sp[Q1, Q2]^2*sp[Q1, Q3]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q3]*sp[Q1, Q2]^3*sp[Q1, Q3])/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (3*sp[p, p]*sp[p, Q2]*sp[Q1, Q2]^2*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, p]*sp[p, Q1]*sp[Q1, Q2]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]^3*(-2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + (-2 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q2]^2*sp[Q1, Q3]*
+   ((1 - 2*nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q2]*sp[Q1, Q3]^2*
+   (-2*(-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-8 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (4 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^2*sp[p, Q3]*sp[Q1, Q2]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - 
+    6*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-2 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*(-((-8 + nd)*sp[Q2, Q3]^2) + 
+      (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(-((-3 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*sp[Q2, Q3]) + 
+    sp[Q1, Q2]^3*sp[Q3, Q3]*((-2 + nd)*sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*
+     (-((-4 + nd)*sp[Q2, Q3]^2) + (5 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*(2*(-4 + nd)*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q2]*((-3 + nd)*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-3 + nd)*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    2*sp[Q1, Q2]^4*sp[Q3, Q3]^2 - sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 + (1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C11tre[p_,Q1_,Q2_,Q3_] :=
+(nd*sp[p, Q1]^3*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*sp[p, p]*sp[p, Q1]*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   (-sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q2]^3*sp[Q1, Q3]*(2*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] - 
+    2*(-4 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 - 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q3]^3*sp[Q1, Q2]^2*((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 
+    2*(-1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(nd*sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, p]*sp[p, Q3]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2]^2 + 
+    4*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q2]*sp[Q2, Q3] + 
+    sp[Q1, Q2]^2*(-3*sp[Q2, Q3]^2 + sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, p]*sp[p, Q2]*(2*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - 
+    6*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*(-2 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*(-((-8 + nd)*sp[Q2, Q3]^2) + 
+      (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q3]^2*(sp[Q1, Q3]*sp[Q2, Q2] - sp[Q1, Q2]*sp[Q2, Q3])*
+   ((1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 2*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(3*nd*sp[Q2, Q3]^2 + 
+      (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]^2 - 4*(1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q2]*sp[Q2, Q3] + sp[Q1, Q2]^2*(3*nd*sp[Q2, Q3]^2 - 
+      (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q2]^2*(-((1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3]^2) + 
+    sp[Q1, Q3]^3*sp[Q2, Q2]*((4 + nd)*sp[Q2, Q3]^2 - 
+      3*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*
+     ((-8 + nd)*sp[Q2, Q3]^2 + (5 - 4*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    3*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*(2*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q2]*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-2*(1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] - 
+    2*(1 + nd)*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*((4 + nd)*sp[Q2, Q3]^2 + 
+      3*nd*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^2*sp[p, Q3]*(2*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    4*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^4*sp[Q3, Q3]^2 - sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 + (1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*
+     sp[Q2, Q3] - (1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*
+     (sp[Q2, Q3]^2 + 2*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]^3*sp[Q3, Q3]*
+     ((1 - 2*nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      (5 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C12tre[p_,Q1_,Q2_,Q3_] :=
+(nd*sp[p, Q3]^3*sp[Q1, Q2]^4*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*nd*sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^3*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (3*nd*sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]^2*sp[Q1, Q3]^4)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - (nd*sp[p, Q2]^3*sp[Q1, Q2]*sp[Q1, Q3]^5)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (3*sp[p, p]*sp[p, Q3]*sp[Q1, Q2]^2*sp[Q1, Q3]^2)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (3*sp[p, p]*sp[p, Q2]*sp[Q1, Q2]*sp[Q1, Q3]^3)/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, p]*sp[p, Q1]*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (2*sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3]^2*
+   ((1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (1 - 2*nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]^2*sp[Q1, Q3]*
+   ((4 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-8 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] - 2*(-2 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]^3*((-2 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (4 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*(1 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^2*sp[p, Q2]*sp[Q1, Q3]*(2*(-2 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]*
+     sp[Q2, Q3] - 6*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     (-((-8 + nd)*sp[Q2, Q3]^2) + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(-((-3 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3]^2) + 
+    sp[Q1, Q3]^3*sp[Q2, Q2]*((-2 + nd)*sp[Q2, Q3]^2 - 
+      sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*
+     (-((-4 + nd)*sp[Q2, Q3]^2) + (5 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*(2*(-4 + nd)*sp[Q2, Q3]^2 + 
+      (-1 + nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^2*sp[p, Q3]*(2*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    2*(-3 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    4*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-3 + nd)*sp[Q1, Q2]^4*sp[Q3, Q3]^2 - sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     ((-4 + nd)*sp[Q2, Q3]^2 + (1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+C13tre[p_,Q1_,Q2_,Q3_] :=
+-((sp[p, p]*sp[p, Q2]*sp[Q1, Q3]*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+     sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - 2*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+   ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+      sp[Q1, Q2]^2*sp[Q3, Q3])^2)) - 
+ (sp[p, p]*sp[p, Q3]*sp[Q1, Q2]*(-2*sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) + 
+ (sp[p, Q3]^3*sp[Q1, Q2]^3*(-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) + 
+    (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^3*sp[Q1, Q3]^3*(sp[Q1, Q3]^2*sp[Q2, Q2] + 
+    (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] - (-1 + nd)*sp[Q1, Q2]^2*
+     sp[Q3, Q3]))/((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 
+     2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q2]*sp[p, Q3]^2*sp[Q1, Q2]^2*sp[Q1, Q3]*
+   ((1 - 2*nd)*sp[Q1, Q3]^2*sp[Q2, Q2] + (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (1 + nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q2]^2*sp[p, Q3]*sp[Q1, Q2]*sp[Q1, Q3]^2*
+   (-((1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]) - (-2 + nd)*sp[Q1, Q2]*sp[Q1, Q3]*
+     sp[Q2, Q3] + (-1 + 2*nd)*sp[Q1, Q2]^2*sp[Q3, Q3]))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, p]*sp[p, Q1]*(2*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    2*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] - sp[Q1, Q2]*sp[Q1, Q3]*
+     (sp[Q2, Q3]^2 + 3*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^2) - 
+ (sp[p, Q1]*sp[p, Q3]^2*sp[Q1, Q2]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2 - 
+    (1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3] + sp[Q1, Q2]^2*sp[Q1, Q3]*
+     ((-2 + nd)*sp[Q2, Q3]^2 + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]*sp[p, Q2]^2*sp[Q1, Q3]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]*
+     sp[Q2, Q3] - (1 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (1 + nd)*sp[Q1, Q2]^3*sp[Q3, Q3]^2 + sp[Q1, Q2]*sp[Q1, Q3]^2*
+     ((-2 + nd)*sp[Q2, Q3]^2 + (1 - 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]^3*(sp[Q2, Q3]^2 - sp[Q2, Q2]*sp[Q3, Q3])*
+   (-((-1 + nd)*sp[Q1, Q3]^2*sp[Q2, Q2]*sp[Q2, Q3]) - 
+    (-1 + nd)*sp[Q1, Q2]^2*sp[Q2, Q3]*sp[Q3, Q3] + 
+    sp[Q1, Q2]*sp[Q1, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      nd*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) + 
+ (sp[p, Q1]*sp[p, Q2]*sp[p, Q3]*((-1 + nd)*sp[Q1, Q3]^4*sp[Q2, Q2]^2 + 
+    8*sp[Q1, Q2]*sp[Q1, Q3]^3*sp[Q2, Q2]*sp[Q2, Q3] + 
+    8*sp[Q1, Q2]^3*sp[Q1, Q3]*sp[Q2, Q3]*sp[Q3, Q3] + 
+    (-1 + nd)*sp[Q1, Q2]^4*sp[Q3, Q3]^2 + 2*sp[Q1, Q2]^2*sp[Q1, Q3]^2*
+     ((-6 + nd)*sp[Q2, Q3]^2 - (1 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^2*sp[p, Q3]*((1 + nd)*sp[Q1, Q3]^3*sp[Q2, Q2]^2*sp[Q2, Q3] - 
+    (1 + nd)*sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q2]*(sp[Q2, Q3]^2 + 
+      2*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q2]^3*sp[Q3, Q3]*
+     ((1 - 2*nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q2, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      (5 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3) - 
+ (sp[p, Q1]^2*sp[p, Q2]*((1 + nd)*sp[Q1, Q2]^3*sp[Q2, Q3]*sp[Q3, Q3]^2 - 
+    (1 + nd)*sp[Q1, Q2]^2*sp[Q1, Q3]*sp[Q3, Q3]*(sp[Q2, Q3]^2 + 
+      2*sp[Q2, Q2]*sp[Q3, Q3]) + sp[Q1, Q3]^3*sp[Q2, Q2]*
+     ((1 - 2*nd)*sp[Q2, Q3]^2 + (-2 + nd)*sp[Q2, Q2]*sp[Q3, Q3]) + 
+    sp[Q1, Q2]*sp[Q1, Q3]^2*sp[Q2, Q3]*((-2 + nd)*sp[Q2, Q3]^2 + 
+      (5 + 2*nd)*sp[Q2, Q2]*sp[Q3, Q3])))/
+  ((-3 + nd)*(sp[Q1, Q3]^2*sp[Q2, Q2] - 2*sp[Q1, Q2]*sp[Q1, Q3]*sp[Q2, Q3] + 
+     sp[Q1, Q2]^2*sp[Q3, Q3])^3)
+
+
+
+

@@ -1,0 +1,495 @@
+diag ={{0, (cw^2*g1^2*gw^2*vev*
+   (-((3*(cw^2*cWB*g1^2*vev^2 - 8*cW*w) + 9*(cw^2*cWB*g1^2*vev^2 - 12*cW*w)*
+        GaugeXi[Q] + cw^2*cWB*g1^2*vev^2*GaugeXi[Q]^2 + 
+       3*(cw^2*cWB*g1^2*vev^2 - 4*cW*w)*GaugeXi[Q]^3)*sp[Ep1, Ep2]) + 
+    16*cW*((-1 + GaugeXi[Q])^2*sp[Ep1, p]*sp[Ep2, q1] + 
+      sp[Ep1, q2]*(-((-1 + GaugeXi[Q])^2*sp[Ep2, p]) + 
+        (1 + 6*GaugeXi[Q] + GaugeXi[Q]^2)*sp[Ep2, q1]))))/
+  (2*LAMBDA^2*GaugeXi[Q]), 
+ (cw^2*g1^2*gw^2*vev*
+   (-(w*(-1 + GaugeXi[Q])*(3*GaugeXi[Q]*(cw^2*cWB*g1^2*(-30 + e + 3*e*Pi^2)*
+          vev^2 - 12*cW*(-6 + 5*e + 3*e*Pi^2)*w + 
+         6*(cw^2*cWB*(-6 + 5*e)*g1^2*vev^2 - 12*cW*(-6 + e)*w)*Log[w] + 
+         18*e*(cw^2*cWB*g1^2*vev^2 - 12*cW*w)*Log[w]^2) + 
+       3*(cw^2*cWB*g1^2*(-2 + e*(-1 + Pi^2))*vev^2 - 8*cW*(4 + e*(4 + Pi^2))*
+          w + 2*(cw^2*cWB*(-6 + e)*g1^2*vev^2 + 16*cW*(3 + e)*w)*Log[w] + 
+         6*e*(cw^2*cWB*g1^2*vev^2 - 8*cW*w)*Log[w]^2) + 
+       cw^2*cWB*g1^2*vev^2*GaugeXi[Q]^2*(6 + 3*e + e*Pi^2 + 6*e*Log[w]^2 - 
+         6*(2 + e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+         6*Log[w]*(-2 - e + 2*e*Log[GaugeXi[Q]])) + 
+       3*GaugeXi[Q]^3*(-2*cw^2*cWB*g1^2*vev^2 - cw^2*cWB*e*g1^2*vev^2 + 
+         cw^2*cWB*e*g1^2*Pi^2*vev^2 - 40*cW*w - 36*cW*e*w - 4*cW*e*Pi^2*w + 
+         6*e*(cw^2*cWB*g1^2*vev^2 - 4*cW*w)*Log[w]^2 + 
+         2*(cw^2*cWB*(-6 + e)*g1^2*vev^2 + 4*cW*(6 + 5*e)*w)*
+          Log[GaugeXi[Q]] + 6*e*(cw^2*cWB*g1^2*vev^2 - 4*cW*w)*
+          Log[GaugeXi[Q]]^2 + 2*Log[w]*(cw^2*cWB*(-6 + e)*g1^2*vev^2 + 
+           4*cW*(6 + 5*e)*w + 6*e*(cw^2*cWB*g1^2*vev^2 - 4*cW*w)*
+            Log[GaugeXi[Q]])))*sp[Ep1, Ep2]) + 
+    8*((-2*(3*cw^2*cWB*(1 + e)*g1^2*vev^2 + cW*e*Pi^2*w - 
+          3*(cw^2*cWB*e*g1^2*vev^2 + 4*cW*w)*Log[w] + 6*cW*e*w*Log[w]^2) + 
+        3*GaugeXi[Q]*(-4*cw^2*cWB*g1^2*vev^2 - 4*cw^2*cWB*e*g1^2*vev^2 - 
+          cWB*gw^2*vev^2 - cWB*e*gw^2*vev^2 + 8*cW*w + 8*cW*e*w + 
+          2*cW*e*Pi^2*w + 12*cW*e*w*Log[w]^2 - 2*cw^2*cWB*(3 + e)*g1^2*vev^2*
+           Log[GaugeXi[Q]] + 3*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]]^2 + 
+          Log[w]*(4*cw^2*cWB*e*g1^2*vev^2 + cWB*e*gw^2*vev^2 - 24*cW*w - 
+            8*cW*e*w + 6*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]])) + 
+        GaugeXi[Q]^3*(3*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 + 24*cW*w + 
+          24*cW*e*w + 2*cW*e*Pi^2*w + 12*cW*e*w*Log[w]^2 - 
+          3*(cWB*e*gw^2*vev^2 + 8*cW*(1 + e)*w)*Log[GaugeXi[Q]] + 
+          12*cW*e*w*Log[GaugeXi[Q]]^2 - 3*Log[w]*(cWB*e*gw^2*vev^2 + 
+            8*cW*(1 + e)*w - 8*cW*e*w*Log[GaugeXi[Q]])) + 
+        3*GaugeXi[Q]^2*(-2*(-3*cw^2*cWB*(1 + e)*g1^2*vev^2 + 
+            cW*(8 + e*(8 + Pi^2))*w) - 12*cW*e*w*Log[w]^2 - 
+          (2*cw^2*cWB*(1 + 3*e)*g1^2*vev^2 + cWB*(2 + e)*gw^2*vev^2 - 
+            8*cW*(1 + e)*w)*Log[GaugeXi[Q]] + e*(cw^2*cWB*g1^2*vev^2 + 
+            cWB*gw^2*vev^2 - 4*cW*w)*Log[GaugeXi[Q]]^2 + 
+          2*Log[w]*(-3*cw^2*cWB*e*g1^2*vev^2 + 4*cW*(3 + 2*e)*w + 
+            e*(cw^2*cWB*g1^2*vev^2 + cWB*gw^2*vev^2 - 4*cW*w)*
+             Log[GaugeXi[Q]])))*sp[Ep1, p]*sp[Ep2, q1] + 
+      sp[Ep1, q2]*((6*cw^2*cWB*g1^2*vev^2 + 6*cw^2*cWB*e*g1^2*vev^2 + 
+          2*cW*e*Pi^2*w - 6*cw^2*cWB*e*g1^2*vev^2*Log[w] - 24*cW*w*Log[w] + 
+          12*cW*e*w*Log[w]^2 - 3*GaugeXi[Q]*(-4*cw^2*cWB*g1^2*vev^2 - 
+            4*cw^2*cWB*e*g1^2*vev^2 - cWB*gw^2*vev^2 - cWB*e*gw^2*vev^2 + 
+            8*cW*w + 8*cW*e*w + 2*cW*e*Pi^2*w + 12*cW*e*w*Log[w]^2 - 
+            2*cw^2*cWB*(3 + e)*g1^2*vev^2*Log[GaugeXi[Q]] + 
+            3*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]]^2 + 
+            Log[w]*(4*cw^2*cWB*e*g1^2*vev^2 + cWB*e*gw^2*vev^2 - 24*cW*w - 
+              8*cW*e*w + 6*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]])) + 
+          GaugeXi[Q]^3*(-3*cWB*gw^2*vev^2 - 3*cWB*e*gw^2*vev^2 - 24*cW*w - 
+            24*cW*e*w - 2*cW*e*Pi^2*w - 12*cW*e*w*Log[w]^2 + 
+            3*(cWB*e*gw^2*vev^2 + 8*cW*(1 + e)*w)*Log[GaugeXi[Q]] - 
+            12*cW*e*w*Log[GaugeXi[Q]]^2 + 3*Log[w]*(cWB*e*gw^2*vev^2 + 
+              8*cW*(1 + e)*w - 8*cW*e*w*Log[GaugeXi[Q]])) - 
+          3*GaugeXi[Q]^2*(-2*(-3*cw^2*cWB*(1 + e)*g1^2*vev^2 + 
+              cW*(8 + e*(8 + Pi^2))*w) - 12*cW*e*w*Log[w]^2 - 
+            (2*cw^2*cWB*(1 + 3*e)*g1^2*vev^2 + cWB*(2 + e)*gw^2*vev^2 - 
+              8*cW*(1 + e)*w)*Log[GaugeXi[Q]] + e*(cw^2*cWB*g1^2*vev^2 + 
+              cWB*gw^2*vev^2 - 4*cW*w)*Log[GaugeXi[Q]]^2 + 
+            2*Log[w]*(-3*cw^2*cWB*e*g1^2*vev^2 + 4*cW*(3 + 2*e)*w + 
+              e*(cw^2*cWB*g1^2*vev^2 + cWB*gw^2*vev^2 - 4*cW*w)*Log[
+                GaugeXi[Q]])))*sp[Ep2, p] + 
+        (-2*cW*w*(e*Pi^2 - 12*Log[w] + 6*e*Log[w]^2) + 2*GaugeXi[Q]*
+           (-12*cw^2*cWB*(2 + e)*g1^2*vev^2 + 9*cWB*gw^2*vev^2 + 
+            3*cWB*e*gw^2*vev^2 + 60*cW*w + 12*cW*e*w - 5*cW*e*Pi^2*w + 
+            3*(8*cw^2*cWB*e*g1^2*vev^2 - 3*cWB*e*gw^2*vev^2 - 
+              20*cW*(-1 + e)*w)*Log[w] - 30*cW*e*w*Log[w]^2) + 
+          2*cW*w*GaugeXi[Q]^3*(12 + 12*e + e*Pi^2 + 6*e*Log[w]^2 - 
+            12*(1 + e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+            12*Log[w]*(-1 - e + e*Log[GaugeXi[Q]])) + GaugeXi[Q]^2*
+           (2*(12*cw^2*cWB*(2 + e)*g1^2*vev^2 - 3*cWB*(3 + e)*gw^2*vev^2 + 
+              cW*(-72 - 24*e + 5*e*Pi^2)*w) + 60*cW*e*w*Log[w]^2 - 
+            6*(1 + e)*(4*cw^2*cWB*g1^2*vev^2 - cWB*gw^2*vev^2 - 4*cW*w)*
+             Log[GaugeXi[Q]] + 3*e*(4*cw^2*cWB*g1^2*vev^2 - cWB*gw^2*vev^2 - 
+              4*cW*w)*Log[GaugeXi[Q]]^2 + 6*Log[w]*(-8*cw^2*cWB*e*g1^2*vev^
+                2 + 3*cWB*e*gw^2*vev^2 - 20*cW*w + 24*cW*e*w + 
+              e*(4*cw^2*cWB*g1^2*vev^2 - cWB*gw^2*vev^2 - 4*cW*w)*Log[
+                GaugeXi[Q]])))*sp[Ep2, q1]))))/
+  (24*LAMBDA^2*w*(-1 + GaugeXi[Q])*GaugeXi[Q])}
+, {0, (-2*cw^2*cW*g1^2*gw^2*h*vev*(5 + 31*GaugeXi[Q] + 6*GaugeXi[Q]^2)*
+   sp[Ep1, Ep2])/(3*LAMBDA^2*GaugeXi[Q]), 
+ (cw^2*g1^2*gw^2*h*vev*(w*(-1 + GaugeXi[Q])^2*(48*cw^2*cWB*g1^2*vev^2 + 
+      31*cw^2*cWB*e*g1^2*vev^2 - 144*cW*w + 30*cW*e*Pi^2*w - 
+      48*cw^2*cWB*e*g1^2*vev^2*Log[w] - 360*cW*w*Log[w] + 144*cW*e*w*Log[w] + 
+      180*cW*e*w*Log[w]^2 - 3*GaugeXi[Q]*(-204*cw^2*cWB*g1^2*vev^2 - 
+        51*cw^2*cWB*e*g1^2*vev^2 + 54*cWB*gw^2*vev^2 - 18*cWB*e*gw^2*vev^2 + 
+        984*cW*w + 96*cW*e*w - 52*cW*e*Pi^2*w - 312*cW*e*w*Log[w]^2 - 
+        24*cw^2*cWB*(1 + e)*g1^2*vev^2*Log[GaugeXi[Q]] + 
+        12*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]]^2 + 
+        6*Log[w]*(34*cw^2*cWB*e*g1^2*vev^2 - 9*cWB*e*gw^2*vev^2 + 104*cW*w - 
+          164*cW*e*w + 4*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]])) + 
+      GaugeXi[Q]^3*(-156*cw^2*cWB*g1^2*vev^2 - 85*cw^2*cWB*e*g1^2*vev^2 + 
+        54*cWB*gw^2*vev^2 + 54*cWB*e*gw^2*vev^2 - 432*cW*w - 432*cW*e*w - 
+        36*cW*e*Pi^2*w - 216*cW*e*w*Log[w]^2 + 
+        6*(26*cw^2*cWB*e*g1^2*vev^2 + 9*(-(cWB*e*gw^2*vev^2) + 
+            8*cW*(1 + e)*w))*Log[GaugeXi[Q]] - 216*cW*e*w*Log[GaugeXi[Q]]^2 + 
+        6*Log[w]*(26*cw^2*cWB*e*g1^2*vev^2 - 9*cWB*e*gw^2*vev^2 + 72*cW*w + 
+          72*cW*e*w - 72*cW*e*w*Log[GaugeXi[Q]])) - 
+      3*GaugeXi[Q]^2*(168*cw^2*cWB*g1^2*vev^2 + 33*cw^2*cWB*e*g1^2*vev^2 - 
+        36*cWB*gw^2*vev^2 + 36*cWB*e*gw^2*vev^2 - 1176*cW*w - 240*cW*e*w + 
+        50*cW*e*Pi^2*w + 300*cW*e*w*Log[w]^2 - 
+        6*(2*cw^2*cWB*(8 + 3*e)*g1^2*vev^2 + 3*(cWB*e*gw^2*vev^2 - 
+            8*cW*(1 + e)*w))*Log[GaugeXi[Q]] + 
+        24*e*(2*cw^2*cWB*g1^2*vev^2 - 3*cW*w)*Log[GaugeXi[Q]]^2 + 
+        12*Log[w]*(-14*cw^2*cWB*e*g1^2*vev^2 + 3*cWB*e*gw^2*vev^2 - 50*cW*w + 
+          98*cW*e*w + 4*e*(2*cw^2*cWB*g1^2*vev^2 - 3*cW*w)*Log[GaugeXi[Q]])))*
+     sp[Ep1, Ep2] + 
+    9*((2*(-(cw^2*cWB*(4 + 9*e)*g1^2*vev^2) - 8*cW*w + 
+          4*e*(cw^2*cWB*g1^2*vev^2 + 2*cW*w)*Log[w]) + 2*cWB*vev^2*GaugeXi[Q]*
+         (-((2 + 3*e)*(9*cw^2*g1^2 - 2*gw^2)) - (12*cw^2*(1 + e)*g1^2 + 
+            e*gw^2)*Log[GaugeXi[Q]] + 6*cw^2*e*g1^2*Log[GaugeXi[Q]]^2 + 
+          2*e*Log[w]*(9*cw^2*g1^2 - 2*gw^2 + 6*cw^2*g1^2*Log[GaugeXi[Q]])) - 
+        2*GaugeXi[Q]^3*(-34*cw^2*cWB*g1^2*vev^2 - 27*cw^2*cWB*e*g1^2*vev^2 - 
+          12*cWB*gw^2*vev^2 - 18*cWB*e*gw^2*vev^2 + 64*cW*w + 
+          3*cWB*(6*cw^2*e*g1^2 + (4 + 7*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 
+          6*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 2*e*Log[w]*
+           (17*cw^2*cWB*g1^2*vev^2 + 6*cWB*gw^2*vev^2 - 32*cW*w - 
+            6*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + GaugeXi[Q]^4*
+         (-12*cw^2*cWB*g1^2*vev^2 - 2*cWB*gw^2*vev^2 - 3*cWB*e*gw^2*vev^2 + 
+          48*cW*w + 2*cWB*(3 + 4*e)*gw^2*vev^2*Log[GaugeXi[Q]] - 
+          3*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 2*e*Log[w]*
+           (6*cw^2*cWB*g1^2*vev^2 + cWB*gw^2*vev^2 - 24*cW*w - 
+            3*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + 3*GaugeXi[Q]^2*
+         (-4*cw^2*cWB*g1^2*vev^2 + 6*cw^2*cWB*e*g1^2*vev^2 - 
+          10*cWB*gw^2*vev^2 - 15*cWB*e*gw^2*vev^2 + 32*cW*w + 
+          2*cWB*(-2*cw^2*(6 + 7*e)*g1^2 + (1 + 3*e)*gw^2)*vev^2*
+           Log[GaugeXi[Q]] + cWB*e*(12*cw^2*g1^2 - gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(2*cw^2*cWB*g1^2*vev^2 + 
+            5*cWB*gw^2*vev^2 - 16*cW*w + cWB*(12*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]])))*sp[Ep1, p]*sp[Ep2, q1] + 
+      sp[Ep1, q2]*((2*(cw^2*cWB*(4 + 9*e)*g1^2*vev^2 + 8*cW*w - 
+            4*e*(cw^2*cWB*g1^2*vev^2 + 2*cW*w)*Log[w]) + 
+          2*cWB*vev^2*GaugeXi[Q]*((2 + 3*e)*(9*cw^2*g1^2 - 2*gw^2) + 
+            (12*cw^2*(1 + e)*g1^2 + e*gw^2)*Log[GaugeXi[Q]] - 
+            6*cw^2*e*g1^2*Log[GaugeXi[Q]]^2 - 2*e*Log[w]*(9*cw^2*g1^2 - 
+              2*gw^2 + 6*cw^2*g1^2*Log[GaugeXi[Q]])) + 2*GaugeXi[Q]^3*
+           (-34*cw^2*cWB*g1^2*vev^2 - 27*cw^2*cWB*e*g1^2*vev^2 - 
+            12*cWB*gw^2*vev^2 - 18*cWB*e*gw^2*vev^2 + 64*cW*w + 
+            3*cWB*(6*cw^2*e*g1^2 + (4 + 7*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 
+            6*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 2*e*Log[w]*
+             (17*cw^2*cWB*g1^2*vev^2 + 6*cWB*gw^2*vev^2 - 32*cW*w - 
+              6*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + GaugeXi[Q]^4*
+           (12*cw^2*cWB*g1^2*vev^2 + 2*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 - 
+            48*cW*w - 2*cWB*(3 + 4*e)*gw^2*vev^2*Log[GaugeXi[Q]] + 
+            3*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 - 2*e*Log[w]*
+             (6*cw^2*cWB*g1^2*vev^2 + cWB*gw^2*vev^2 - 24*cW*w - 
+              3*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) - 3*GaugeXi[Q]^2*
+           (-4*cw^2*cWB*g1^2*vev^2 + 6*cw^2*cWB*e*g1^2*vev^2 - 
+            10*cWB*gw^2*vev^2 - 15*cWB*e*gw^2*vev^2 + 32*cW*w + 
+            2*cWB*(-2*cw^2*(6 + 7*e)*g1^2 + (1 + 3*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] + cWB*e*(12*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(2*cw^2*cWB*g1^2*vev^2 + 
+              5*cWB*gw^2*vev^2 - 16*cW*w + cWB*(12*cw^2*g1^2 - gw^2)*vev^
+                2*Log[GaugeXi[Q]])))*sp[Ep2, p] + 
+        (16*cW*w*(-1 + e*Log[w]) + 4*GaugeXi[Q]^4*(2*cw^2*cWB*(-1 + e)*g1^2*
+             vev^2 + cWB*gw^2*vev^2 - cWB*e*gw^2*vev^2 + 28*cW*w - 8*cW*e*w + 
+            e*(2*cw^2*cWB*g1^2*vev^2 - cWB*gw^2*vev^2 - 28*cW*w)*Log[w]) + 
+          GaugeXi[Q]*(-40*cw^2*cWB*(1 + 2*e)*g1^2*vev^2 + 14*cWB*gw^2*vev^2 + 
+            25*cWB*e*gw^2*vev^2 - 64*cW*w + 32*cW*e*w + 
+            2*e*(20*cw^2*cWB*g1^2*vev^2 - 7*cWB*gw^2*vev^2 + 32*cW*w)*
+             Log[w]) + GaugeXi[Q]^3*(72*cw^2*cWB*g1^2*vev^2 + 
+            48*cw^2*cWB*e*g1^2*vev^2 - 6*cWB*gw^2*vev^2 + 15*cWB*e*gw^2*
+             vev^2 - 320*cW*w + 96*cW*e*w - 6*cWB*(8*cw^2*e*g1^2 + 
+              (2 + e)*gw^2)*vev^2*Log[GaugeXi[Q]] + 6*cWB*e*gw^2*vev^2*
+             Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(-36*cw^2*cWB*g1^2*vev^2 + 
+              3*cWB*gw^2*vev^2 + 160*cW*w + 6*cWB*gw^2*vev^2*Log[
+                GaugeXi[Q]])) + 12*GaugeXi[Q]^2*(-2*cw^2*cWB*g1^2*vev^2 + 
+            2*cw^2*cWB*e*g1^2*vev^2 - cWB*gw^2*vev^2 - 3*cWB*e*gw^2*vev^2 + 
+            24*cW*w - 8*cW*e*w - 2*cWB*(1 + e)*(4*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]] + cWB*e*(4*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + e*Log[w]*(2*cw^2*cWB*g1^2*vev^2 + 
+              cWB*gw^2*vev^2 - 24*cW*w + 2*cWB*(4*cw^2*g1^2 - gw^2)*vev^2*Log[
+                GaugeXi[Q]])))*sp[Ep2, q1]))))/
+  (108*LAMBDA^2*w^2*(-1 + GaugeXi[Q])^3*GaugeXi[Q])}
+, {0, 0, (cw^2*g1^2*gw^2*h^2*vev*(w*(-1 + GaugeXi[Q])^2*
+     (-372*cw^2*cWB*g1^2*vev^2 - 527*cw^2*cWB*e*g1^2*vev^2 + 2016*cW*w - 
+      576*cW*e*w + 372*cw^2*cWB*e*g1^2*vev^2*Log[w] - 2016*cW*e*w*Log[w] - 
+      360*cw^2*cWB*g1^2*vev^2*Log[GaugeXi[Q]] - 192*cw^2*cWB*e*g1^2*vev^2*
+       Log[GaugeXi[Q]] + 360*cw^2*cWB*e*g1^2*vev^2*Log[w]*Log[GaugeXi[Q]] + 
+      180*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]]^2 + 
+      4*GaugeXi[Q]*(420*cw^2*cWB*g1^2*vev^2 + 2066*cw^2*cWB*e*g1^2*vev^2 + 
+        360*cWB*gw^2*vev^2 + 225*cWB*e*gw^2*vev^2 + 2880*cW*w - 1632*cW*e*w + 
+        90*cWB*(cw^2*(-2 + 5*e)*g1^2 - (-3 + e)*gw^2)*vev^2*Log[GaugeXi[Q]] + 
+        45*cWB*e*(2*cw^2*g1^2 - 3*gw^2)*vev^2*Log[GaugeXi[Q]]^2 + 
+        30*e*Log[w]*(-2*(7*cw^2*cWB*g1^2*vev^2 + 6*cWB*gw^2*vev^2 + 
+            48*cW*w) + 3*cWB*(2*cw^2*g1^2 - 3*gw^2)*vev^2*Log[GaugeXi[Q]])) + 
+      GaugeXi[Q]^4*(1956*cw^2*cWB*g1^2*vev^2 - 1793*cw^2*cWB*e*g1^2*vev^2 - 
+        1440*cWB*gw^2*vev^2 + 180*cWB*e*gw^2*vev^2 - 17568*cW*w + 
+        8256*cW*e*w - 12*cWB*(cw^2*(150 + 127*e)*g1^2 - 30*(3 + 4*e)*gw^2)*
+         vev^2*Log[GaugeXi[Q]] + 180*cWB*e*(5*cw^2*g1^2 - 3*gw^2)*vev^2*
+         Log[GaugeXi[Q]]^2 + 12*e*Log[w]*(-163*cw^2*cWB*g1^2*vev^2 + 
+          120*cWB*gw^2*vev^2 + 1464*cW*w + 30*cWB*(5*cw^2*g1^2 - 3*gw^2)*
+           vev^2*Log[GaugeXi[Q]])) - 4*GaugeXi[Q]^3*
+       (3444*cw^2*cWB*g1^2*vev^2 + 946*cw^2*cWB*e*g1^2*vev^2 - 
+        1080*cWB*gw^2*vev^2 - 135*cWB*e*gw^2*vev^2 - 12672*cW*w + 
+        6048*cW*e*w - 6*cWB*(7*cw^2*(30 + 73*e)*g1^2 - 45*(1 + 4*e)*gw^2)*
+         vev^2*Log[GaugeXi[Q]] + 45*cWB*e*(14*cw^2*g1^2 - 3*gw^2)*vev^2*
+         Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(-574*cw^2*cWB*g1^2*vev^2 + 
+          180*cWB*gw^2*vev^2 + 2112*cW*w + 15*cWB*(14*cw^2*g1^2 - 3*gw^2)*
+           vev^2*Log[GaugeXi[Q]])) - 36*GaugeXi[Q]^2*
+       (-292*cw^2*cWB*g1^2*vev^2 + 60*cw^2*cWB*e*g1^2*vev^2 + 
+        120*cWB*gw^2*vev^2 + 45*cWB*e*gw^2*vev^2 + 1296*cW*w - 640*cW*e*w - 
+        2*cWB*(cw^2*(120 + 31*e)*g1^2 + 15*(-1 + 3*e)*gw^2)*vev^2*
+         Log[GaugeXi[Q]] + 15*cWB*e*(8*cw^2*g1^2 - gw^2)*vev^2*
+         Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(146*cw^2*cWB*g1^2*vev^2 - 
+          60*cWB*gw^2*vev^2 - 648*cW*w + 15*cWB*(8*cw^2*g1^2 - gw^2)*vev^2*
+           Log[GaugeXi[Q]])))*sp[Ep1, Ep2] + 
+    8*((9*GaugeXi[Q]^6*(-6*cw^2*cWB*(1 + e)*g1^2*vev^2 + 8*cWB*gw^2*vev^2 + 
+          3*cWB*e*gw^2*vev^2 + 24*cW*w + 24*cW*e*w + 
+          2*e*(3*cw^2*cWB*g1^2*vev^2 - 4*(cWB*gw^2*vev^2 + 3*cW*w))*Log[w]) - 
+        6*GaugeXi[Q]^5*(7*(-6*cw^2*cWB*(1 + e)*g1^2*vev^2 + 
+            cWB*(12 + 7*e)*gw^2*vev^2 + 24*cW*(1 + e)*w) + 
+          42*e*(cw^2*cWB*g1^2*vev^2 - 2*cWB*gw^2*vev^2 - 4*cW*w)*Log[w] - 
+          24*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) + 
+        3*(-54*cw^2*cWB*g1^2*vev^2 - 164*cw^2*cWB*e*g1^2*vev^2 - 
+          12*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 - 24*cW*w - 24*cW*e*w + 
+          6*e*(9*cw^2*cWB*g1^2*vev^2 + 2*cWB*gw^2*vev^2 + 4*cW*w)*Log[w] + 
+          12*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) - 5*GaugeXi[Q]^4*
+         (-18*cw^2*cWB*g1^2*vev^2 - 216*cw^2*cWB*e*g1^2*vev^2 - 
+          456*cWB*gw^2*vev^2 - 557*cWB*e*gw^2*vev^2 - 360*cW*w - 360*cW*e*w + 
+          12*cWB*(9*cw^2*e*g1^2 + (3 + 26*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 
+          18*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 6*e*Log[w]*
+           (3*cw^2*cWB*g1^2*vev^2 + 76*cWB*gw^2*vev^2 + 60*cW*w - 
+            6*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + 15*GaugeXi[Q]^2*
+         (-222*cw^2*cWB*g1^2*vev^2 - 330*cw^2*cWB*e*g1^2*vev^2 + 
+          12*cWB*gw^2*vev^2 - 11*cWB*e*gw^2*vev^2 + 24*cW*w + 24*cW*e*w - 
+          12*cWB*(3*cw^2*(8 + 11*e)*g1^2 - (3 + 2*e)*gw^2)*vev^2*
+           Log[GaugeXi[Q]] + 18*cWB*e*(8*cw^2*g1^2 - gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(37*cw^2*cWB*g1^2*vev^2 - 
+            2*cWB*gw^2*vev^2 - 4*cW*w + 6*cWB*(8*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]])) + 30*GaugeXi[Q]^3*(180*cw^2*cWB*g1^2*vev^2 + 
+          272*cw^2*cWB*e*g1^2*vev^2 - 66*cWB*gw^2*vev^2 - 
+          75*cWB*e*gw^2*vev^2 - 48*cW*w - 48*cW*e*w - 
+          6*cWB*(2*cw^2*(9 + 23*e)*g1^2 + (9 + 8*e)*gw^2)*vev^2*
+           Log[GaugeXi[Q]] + 27*cWB*e*(2*cw^2*g1^2 + gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(-30*cw^2*cWB*g1^2*vev^2 + 
+            11*cWB*gw^2*vev^2 + 8*cW*w + 9*cWB*(2*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]])) + 2*GaugeXi[Q]*
+         (-2*(9*cw^2*cWB*(61 + 111*e)*g1^2*vev^2 + cWB*(3 + 28*e)*gw^2*
+             vev^2 - 36*cW*(1 + e)*w) - 90*cWB*(1 + e)*(6*cw^2*g1^2 + gw^2)*
+           vev^2*Log[GaugeXi[Q]] + 45*cWB*e*(6*cw^2*g1^2 + gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(183*cw^2*cWB*g1^2*vev^2 + 
+            cWB*gw^2*vev^2 - 12*cW*w + 15*cWB*(6*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]])))*sp[Ep1, p]*sp[Ep2, q1] + 
+      sp[Ep1, q2]*((162*cw^2*cWB*g1^2*vev^2 + 492*cw^2*cWB*e*g1^2*vev^2 + 
+          36*cWB*gw^2*vev^2 - 9*cWB*e*gw^2*vev^2 + 72*cW*w + 72*cW*e*w - 
+          162*cw^2*cWB*e*g1^2*vev^2*Log[w] - 36*cWB*e*gw^2*vev^2*Log[w] - 
+          72*cW*e*w*Log[w] - 9*GaugeXi[Q]^6*(-6*cw^2*cWB*(1 + e)*g1^2*vev^2 + 
+            8*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 + 24*cW*w + 24*cW*e*w + 
+            2*e*(3*cw^2*cWB*g1^2*vev^2 - 4*(cWB*gw^2*vev^2 + 3*cW*w))*
+             Log[w]) - 36*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]] + 
+          6*GaugeXi[Q]^5*(7*(-6*cw^2*cWB*(1 + e)*g1^2*vev^2 + 
+              cWB*(12 + 7*e)*gw^2*vev^2 + 24*cW*(1 + e)*w) + 
+            42*e*(cw^2*cWB*g1^2*vev^2 - 2*cWB*gw^2*vev^2 - 4*cW*w)*Log[w] - 
+            24*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) + 5*GaugeXi[Q]^4*
+           (-18*cw^2*cWB*g1^2*vev^2 - 216*cw^2*cWB*e*g1^2*vev^2 - 
+            456*cWB*gw^2*vev^2 - 557*cWB*e*gw^2*vev^2 - 360*cW*w - 
+            360*cW*e*w + 12*cWB*(9*cw^2*e*g1^2 + (3 + 26*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] - 18*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 
+            6*e*Log[w]*(3*cw^2*cWB*g1^2*vev^2 + 76*cWB*gw^2*vev^2 + 60*cW*w - 
+              6*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) - 15*GaugeXi[Q]^2*
+           (-222*cw^2*cWB*g1^2*vev^2 - 330*cw^2*cWB*e*g1^2*vev^2 + 
+            12*cWB*gw^2*vev^2 - 11*cWB*e*gw^2*vev^2 + 24*cW*w + 24*cW*e*w - 
+            12*cWB*(3*cw^2*(8 + 11*e)*g1^2 - (3 + 2*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] + 18*cWB*e*(8*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(37*cw^2*cWB*g1^2*vev^2 - 
+              2*cWB*gw^2*vev^2 - 4*cW*w + 6*cWB*(8*cw^2*g1^2 - gw^2)*vev^
+                2*Log[GaugeXi[Q]])) - 30*GaugeXi[Q]^3*
+           (180*cw^2*cWB*g1^2*vev^2 + 272*cw^2*cWB*e*g1^2*vev^2 - 
+            66*cWB*gw^2*vev^2 - 75*cWB*e*gw^2*vev^2 - 48*cW*w - 48*cW*e*w - 
+            6*cWB*(2*cw^2*(9 + 23*e)*g1^2 + (9 + 8*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] + 27*cWB*e*(2*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(-30*cw^2*cWB*g1^2*vev^2 + 
+              11*cWB*gw^2*vev^2 + 8*cW*w + 9*cWB*(2*cw^2*g1^2 + gw^2)*vev^
+                2*Log[GaugeXi[Q]])) - 2*GaugeXi[Q]*
+           (-2*(9*cw^2*cWB*(61 + 111*e)*g1^2*vev^2 + cWB*(3 + 28*e)*gw^2*vev^
+                2 - 36*cW*(1 + e)*w) - 90*cWB*(1 + e)*(6*cw^2*g1^2 + gw^2)*
+             vev^2*Log[GaugeXi[Q]] + 45*cWB*e*(6*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 6*e*Log[w]*(183*cw^2*cWB*g1^2*vev^2 + 
+              cWB*gw^2*vev^2 - 12*cW*w + 15*cWB*(6*cw^2*g1^2 + gw^2)*vev^
+                2*Log[GaugeXi[Q]])))*sp[Ep2, p] + 
+        4*(18*cW*w*(-1 - e + e*Log[w]) - 3*GaugeXi[Q]^5*
+           (-10*cw^2*cWB*g1^2*vev^2 + 5*cWB*gw^2*vev^2 + 154*cW*w + 
+            114*cW*e*w + e*(10*cw^2*cWB*g1^2*vev^2 - 5*cWB*gw^2*vev^2 - 
+              154*cW*w)*Log[w]) + 3*GaugeXi[Q]^6*(-2*cw^2*cWB*g1^2*vev^2 + 
+            cWB*gw^2*vev^2 + 32*cW*w + 24*cW*e*w + e*(2*cw^2*cWB*g1^2*vev^2 - 
+              cWB*gw^2*vev^2 - 32*cW*w)*Log[w]) + GaugeXi[Q]*
+           (-6*cw^2*cWB*(29 + 85*e)*g1^2*vev^2 + 57*cWB*gw^2*vev^2 + 
+            155*cWB*e*gw^2*vev^2 - 6*cW*w + 18*cW*e*w + 
+            3*e*(58*cw^2*cWB*g1^2*vev^2 - 19*cWB*gw^2*vev^2 + 2*cW*w)*
+             Log[w]) + 15*GaugeXi[Q]^3*(112*cw^2*cWB*g1^2*vev^2 + 
+            162*cw^2*cWB*e*g1^2*vev^2 - 38*cWB*gw^2*vev^2 - 
+            45*cWB*e*gw^2*vev^2 - 52*cW*w - 36*cW*e*w - 
+            18*cWB*(2*cw^2*(2 + 5*e)*g1^2 - e*gw^2)*vev^2*Log[GaugeXi[Q]] + 
+            36*cw^2*cWB*e*g1^2*vev^2*Log[GaugeXi[Q]]^2 + 
+            2*e*Log[w]*(-56*cw^2*cWB*g1^2*vev^2 + 19*cWB*gw^2*vev^2 + 
+              26*cW*w + 36*cw^2*cWB*g1^2*vev^2*Log[GaugeXi[Q]])) - 
+          5*GaugeXi[Q]^4*(-2*(3*cw^2*cWB*(4 + 17*e)*g1^2*vev^2 + 
+              cWB*(24 + 25*e)*gw^2*vev^2 + 3*cW*(29 + 21*e)*w) + 
+            6*cWB*(6*cw^2*e*g1^2 + (3 + 7*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 
+            9*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 6*e*Log[w]*
+             (4*cw^2*cWB*g1^2*vev^2 + 8*cWB*gw^2*vev^2 + 29*cW*w - 
+              3*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + 15*GaugeXi[Q]^2*
+           (-110*cw^2*cWB*g1^2*vev^2 - 162*cw^2*cWB*e*g1^2*vev^2 + 
+            19*cWB*gw^2*vev^2 + 18*cWB*e*gw^2*vev^2 + 20*cW*w + 12*cW*e*w - 
+            18*cWB*(1 + e)*(4*cw^2*g1^2 - gw^2)*vev^2*Log[GaugeXi[Q]] + 
+            9*cWB*e*(4*cw^2*g1^2 - gw^2)*vev^2*Log[GaugeXi[Q]]^2 + 
+            e*Log[w]*(110*cw^2*cWB*g1^2*vev^2 - 19*cWB*gw^2*vev^2 - 20*cW*w + 
+              18*cWB*(4*cw^2*g1^2 - gw^2)*vev^2*Log[GaugeXi[Q]])))*
+         sp[Ep2, q1]))))/(4320*LAMBDA^2*w^3*(-1 + GaugeXi[Q])^5*GaugeXi[Q])}
+, {0, 0, (cw^2*g1^2*gw^2*h^3*vev*(2*w*(-1 + GaugeXi[Q])^2*
+     (5*GaugeXi[Q]^7*(-(cw^2*cWB*(366 + 85*e)*g1^2*vev^2) + 
+        224*cWB*gw^2*vev^2 + 70*cWB*e*gw^2*vev^2 - 1504*cW*w - 892*cW*e*w + 
+        2*e*(183*cw^2*cWB*g1^2*vev^2 - 112*cWB*gw^2*vev^2 + 752*cW*w)*
+         Log[w]) - 5*cw^2*cWB*g1^2*vev^2*(-74 - 23*e + 74*e*Log[w] + 
+        74*e*Log[GaugeXi[Q]]) + GaugeXi[Q]^6*(13050*cw^2*cWB*g1^2*vev^2 + 
+        4512*cw^2*cWB*e*g1^2*vev^2 - 8960*cWB*gw^2*vev^2 - 
+        5460*cWB*e*gw^2*vev^2 + 36520*cW*w + 21460*cW*e*w - 
+        10*e*(1305*cw^2*cWB*g1^2*vev^2 - 896*cWB*gw^2*vev^2 + 3652*cW*w)*
+         Log[w] - 60*cWB*e*(71*cw^2*g1^2 - 56*gw^2)*vev^2*Log[GaugeXi[Q]]) - 
+      10*GaugeXi[Q]^2*(-403*cw^2*cWB*g1^2*vev^2 - 2730*cw^2*cWB*e*g1^2*
+         vev^2 - 728*cWB*gw^2*vev^2 - 350*cWB*e*gw^2*vev^2 - 212*cW*w - 
+        26*cW*e*w + e*(403*cw^2*cWB*g1^2*vev^2 + 728*cWB*gw^2*vev^2 + 
+          212*cW*w)*Log[w] + 10*cWB*e*(-23*cw^2*g1^2 + 42*gw^2)*vev^2*
+         Log[GaugeXi[Q]]) + 2*GaugeXi[Q]*(-775*cw^2*cWB*g1^2*vev^2 - 
+        1306*cw^2*cWB*e*g1^2*vev^2 - 420*cWB*gw^2*vev^2 + 
+        105*cWB*e*gw^2*vev^2 + 540*cW*w + 420*cW*e*w + 
+        5*e*(155*cw^2*cWB*g1^2*vev^2 + 84*cWB*gw^2*vev^2 - 108*cW*w)*Log[w] + 
+        5*cWB*e*(65*cw^2*g1^2 + 84*gw^2)*vev^2*Log[GaugeXi[Q]]) + 
+      10*GaugeXi[Q]^5*(-5497*cw^2*cWB*g1^2*vev^2 - 5844*cw^2*cWB*e*g1^2*
+         vev^2 + 1540*cWB*gw^2*vev^2 + 1855*cWB*e*gw^2*vev^2 - 6980*cW*w - 
+        4040*cW*e*w + cWB*(3847*cw^2*e*g1^2 - 420*(-2 + e)*gw^2)*vev^2*
+         Log[GaugeXi[Q]] - 420*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 
+        e*Log[w]*(5497*cw^2*cWB*g1^2*vev^2 - 1540*cWB*gw^2*vev^2 + 
+          6980*cW*w - 840*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) - 
+      25*GaugeXi[Q]^4*(826*cw^2*cWB*g1^2*vev^2 + 1487*cw^2*cWB*e*g1^2*vev^2 + 
+        112*cWB*gw^2*vev^2 + 728*cWB*e*gw^2*vev^2 - 2576*cW*w - 1448*cW*e*w - 
+        14*cWB*(cw^2*(216 + 281*e)*g1^2 - 12*(4 + 3*e)*gw^2)*vev^2*
+         Log[GaugeXi[Q]] + 168*cWB*e*(9*cw^2*g1^2 - 2*gw^2)*vev^2*
+         Log[GaugeXi[Q]]^2 + 14*e*Log[w]*(-59*cw^2*cWB*g1^2*vev^2 - 
+          8*cWB*gw^2*vev^2 + 184*cW*w + 24*cWB*(9*cw^2*g1^2 - 2*gw^2)*vev^2*
+           Log[GaugeXi[Q]])) - 25*GaugeXi[Q]^3*(-2462*cw^2*cWB*g1^2*vev^2 - 
+        2669*cw^2*cWB*e*g1^2*vev^2 + 448*cWB*gw^2*vev^2 - 
+        42*cWB*e*gw^2*vev^2 + 1072*cW*w + 556*cW*e*w - 
+        4*cWB*(cw^2*(252 + 295*e)*g1^2 + 84*(1 + 2*e)*gw^2)*vev^2*
+         Log[GaugeXi[Q]] + 168*cWB*e*(3*cw^2*g1^2 + gw^2)*vev^2*
+         Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(1231*cw^2*cWB*g1^2*vev^2 - 
+          224*cWB*gw^2*vev^2 - 536*cW*w + 168*cWB*(3*cw^2*g1^2 + gw^2)*vev^2*
+           Log[GaugeXi[Q]])))*sp[Ep1, Ep2] + 
+    5*((-12*GaugeXi[Q]^8*(-40*cw^2*cWB*(2 + 3*e)*g1^2*vev^2 + 
+          91*cWB*gw^2*vev^2 + 112*cWB*e*gw^2*vev^2 + 320*cW*w + 480*cW*e*w + 
+          e*(80*cw^2*cWB*g1^2*vev^2 - 91*cWB*gw^2*vev^2 - 320*cW*w)*Log[w]) + 
+        12*GaugeXi[Q]^9*(-6*cw^2*cWB*(2 + 3*e)*g1^2*vev^2 + 
+          13*cWB*gw^2*vev^2 + 16*cWB*e*gw^2*vev^2 + 48*cW*w + 72*cW*e*w + 
+          e*(12*cw^2*cWB*g1^2*vev^2 - 13*cWB*gw^2*vev^2 - 48*cW*w)*Log[w]) + 
+        12*cWB*gw^2*vev^2*(-5 - 4*e + 5*e*Log[w] + 5*e*Log[GaugeXi[Q]]) + 
+        4*GaugeXi[Q]*(-408*cw^2*cWB*g1^2*vev^2 - 1487*cw^2*cWB*e*g1^2*vev^2 + 
+          105*cWB*gw^2*vev^2 + 84*cWB*e*gw^2*vev^2 - 48*cW*w - 72*cW*e*w + 
+          3*e*(136*cw^2*cWB*g1^2*vev^2 - 35*cWB*gw^2*vev^2 + 16*cW*w)*
+           Log[w] - 105*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) + 
+        2*GaugeXi[Q]^7*(-1344*cw^2*cWB*g1^2*vev^2 - 2016*cw^2*cWB*e*g1^2*
+           vev^2 + 1248*cWB*gw^2*vev^2 + 1165*cWB*e*gw^2*vev^2 + 5376*cW*w + 
+          8064*cW*e*w + 96*e*(14*cw^2*cWB*g1^2*vev^2 - 13*cWB*gw^2*vev^2 - 
+            56*cW*w)*Log[w] + 390*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) + 
+        14*cWB*vev^2*GaugeXi[Q]^3*(-10080*cw^2*g1^2 - 19920*cw^2*e*g1^2 + 
+          1248*gw^2 + 901*e*gw^2 - 30*(144*cw^2*(2 + 3*e)*g1^2 + 29*e*gw^2)*
+           Log[GaugeXi[Q]] + 4320*cw^2*e*g1^2*Log[GaugeXi[Q]]^2 + 
+          96*e*Log[w]*(105*cw^2*g1^2 - 13*gw^2 + 90*cw^2*g1^2*
+             Log[GaugeXi[Q]])) - 7*GaugeXi[Q]^6*(-1296*cw^2*cWB*g1^2*vev^2 - 
+          3444*cw^2*cWB*e*g1^2*vev^2 - 1980*cWB*gw^2*vev^2 - 
+          5587*cWB*e*gw^2*vev^2 + 2304*cW*w + 3456*cW*e*w + 
+          120*cWB*(6*cw^2*e*g1^2 + (3 + 23*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 
+          180*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 36*e*Log[w]*
+           (36*cw^2*cWB*g1^2*vev^2 + 55*cWB*gw^2*vev^2 - 64*cW*w - 
+            10*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + GaugeXi[Q]^2*
+         (-52272*cw^2*cWB*g1^2*vev^2 - 111308*cw^2*cWB*e*g1^2*vev^2 - 
+          7716*cWB*gw^2*vev^2 - 9285*cWB*e*gw^2*vev^2 + 768*cW*w + 
+          1152*cW*e*w - 1260*cWB*(16*cw^2*(1 + e)*g1^2 - (-2 + e)*gw^2)*vev^2*
+           Log[GaugeXi[Q]] + 1260*cWB*e*(8*cw^2*g1^2 + gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 12*e*Log[w]*(4356*cw^2*cWB*g1^2*vev^2 + 
+            643*cWB*gw^2*vev^2 - 64*cW*w + 210*cWB*(8*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]])) + 28*GaugeXi[Q]^4*
+         (4*(16*cw^2*cWB*(27 + 53*e)*g1^2*vev^2 - cWB*(648 + 1031*e)*gw^2*
+             vev^2 - 24*cW*(2 + 3*e)*w) - 15*cWB*(32*cw^2*(15 + 32*e)*g1^2 + 
+            (48 + 25*e)*gw^2)*vev^2*Log[GaugeXi[Q]] + 
+          360*cWB*e*(10*cw^2*g1^2 + gw^2)*vev^2*Log[GaugeXi[Q]]^2 + 
+          48*e*Log[w]*(-36*cw^2*cWB*g1^2*vev^2 + 54*cWB*gw^2*vev^2 + 4*cW*w + 
+            15*cWB*(10*cw^2*g1^2 + gw^2)*vev^2*Log[GaugeXi[Q]])) + 
+        28*GaugeXi[Q]^5*(4980*cw^2*cWB*g1^2*vev^2 + 9995*cw^2*cWB*e*g1^2*
+           vev^2 + 1680*cWB*gw^2*vev^2 + 2556*cWB*e*gw^2*vev^2 + 480*cW*w + 
+          720*cW*e*w - 15*cWB*(4*cw^2*(36 + 121*e)*g1^2 + 3*(40 + 93*e)*gw^2)*
+           vev^2*Log[GaugeXi[Q]] + 180*cWB*e*(6*cw^2*g1^2 + 5*gw^2)*vev^2*
+           Log[GaugeXi[Q]]^2 + 60*e*Log[w]*(-83*cw^2*cWB*g1^2*vev^2 - 
+            28*cWB*gw^2*vev^2 - 8*cW*w + 6*cWB*(6*cw^2*g1^2 + 5*gw^2)*vev^2*
+             Log[GaugeXi[Q]])))*sp[Ep1, p]*sp[Ep2, q1] + 
+      sp[Ep1, q2]*((12*GaugeXi[Q]^8*(-40*cw^2*cWB*(2 + 3*e)*g1^2*vev^2 + 
+            91*cWB*gw^2*vev^2 + 112*cWB*e*gw^2*vev^2 + 320*cW*w + 
+            480*cW*e*w + e*(80*cw^2*cWB*g1^2*vev^2 - 91*cWB*gw^2*vev^2 - 
+              320*cW*w)*Log[w]) - 12*GaugeXi[Q]^9*(-6*cw^2*cWB*(2 + 3*e)*g1^2*
+             vev^2 + 13*cWB*gw^2*vev^2 + 16*cWB*e*gw^2*vev^2 + 48*cW*w + 
+            72*cW*e*w + e*(12*cw^2*cWB*g1^2*vev^2 - 13*cWB*gw^2*vev^2 - 
+              48*cW*w)*Log[w]) + 12*cWB*gw^2*vev^2*(5 + 4*e - 5*e*Log[w] - 
+            5*e*Log[GaugeXi[Q]]) - 4*GaugeXi[Q]*(-408*cw^2*cWB*g1^2*vev^2 - 
+            1487*cw^2*cWB*e*g1^2*vev^2 + 105*cWB*gw^2*vev^2 + 
+            84*cWB*e*gw^2*vev^2 - 48*cW*w - 72*cW*e*w + 
+            3*e*(136*cw^2*cWB*g1^2*vev^2 - 35*cWB*gw^2*vev^2 + 16*cW*w)*
+             Log[w] - 105*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]) - 
+          2*GaugeXi[Q]^7*(-1344*cw^2*cWB*g1^2*vev^2 - 2016*cw^2*cWB*e*g1^2*
+             vev^2 + 1248*cWB*gw^2*vev^2 + 1165*cWB*e*gw^2*vev^2 + 
+            5376*cW*w + 8064*cW*e*w + 96*e*(14*cw^2*cWB*g1^2*vev^2 - 
+              13*cWB*gw^2*vev^2 - 56*cW*w)*Log[w] + 390*cWB*e*gw^2*vev^2*
+             Log[GaugeXi[Q]]) - 14*cWB*vev^2*GaugeXi[Q]^3*(-10080*cw^2*g1^2 - 
+            19920*cw^2*e*g1^2 + 1248*gw^2 + 901*e*gw^2 - 
+            30*(144*cw^2*(2 + 3*e)*g1^2 + 29*e*gw^2)*Log[GaugeXi[Q]] + 
+            4320*cw^2*e*g1^2*Log[GaugeXi[Q]]^2 + 96*e*Log[w]*
+             (105*cw^2*g1^2 - 13*gw^2 + 90*cw^2*g1^2*Log[GaugeXi[Q]])) + 
+          7*GaugeXi[Q]^6*(-1296*cw^2*cWB*g1^2*vev^2 - 3444*cw^2*cWB*e*g1^2*
+             vev^2 - 1980*cWB*gw^2*vev^2 - 5587*cWB*e*gw^2*vev^2 + 
+            2304*cW*w + 3456*cW*e*w + 120*cWB*(6*cw^2*e*g1^2 + 
+              (3 + 23*e)*gw^2)*vev^2*Log[GaugeXi[Q]] - 180*cWB*e*gw^2*vev^2*
+             Log[GaugeXi[Q]]^2 + 36*e*Log[w]*(36*cw^2*cWB*g1^2*vev^2 + 
+              55*cWB*gw^2*vev^2 - 64*cW*w - 10*cWB*gw^2*vev^2*Log[
+                GaugeXi[Q]])) + GaugeXi[Q]^2*(52272*cw^2*cWB*g1^2*vev^2 + 
+            111308*cw^2*cWB*e*g1^2*vev^2 + 7716*cWB*gw^2*vev^2 + 
+            9285*cWB*e*gw^2*vev^2 - 768*cW*w - 1152*cW*e*w + 
+            1260*cWB*(16*cw^2*(1 + e)*g1^2 - (-2 + e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] - 1260*cWB*e*(8*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 - 12*e*Log[w]*(4356*cw^2*cWB*g1^2*vev^2 + 
+              643*cWB*gw^2*vev^2 - 64*cW*w + 210*cWB*(8*cw^2*g1^2 + gw^2)*vev^
+                2*Log[GaugeXi[Q]])) - 28*GaugeXi[Q]^4*
+           (4*(16*cw^2*cWB*(27 + 53*e)*g1^2*vev^2 - cWB*(648 + 1031*e)*gw^
+                2*vev^2 - 24*cW*(2 + 3*e)*w) - 15*cWB*
+             (32*cw^2*(15 + 32*e)*g1^2 + (48 + 25*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] + 360*cWB*e*(10*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 48*e*Log[w]*(-36*cw^2*cWB*g1^2*vev^2 + 
+              54*cWB*gw^2*vev^2 + 4*cW*w + 15*cWB*(10*cw^2*g1^2 + gw^2)*vev^
+                2*Log[GaugeXi[Q]])) - 28*GaugeXi[Q]^5*
+           (4980*cw^2*cWB*g1^2*vev^2 + 9995*cw^2*cWB*e*g1^2*vev^2 + 
+            1680*cWB*gw^2*vev^2 + 2556*cWB*e*gw^2*vev^2 + 480*cW*w + 
+            720*cW*e*w - 15*cWB*(4*cw^2*(36 + 121*e)*g1^2 + 3*(40 + 93*e)*gw^
+                2)*vev^2*Log[GaugeXi[Q]] + 180*cWB*e*(6*cw^2*g1^2 + 5*gw^2)*
+             vev^2*Log[GaugeXi[Q]]^2 + 60*e*Log[w]*(-83*cw^2*cWB*g1^2*vev^2 - 
+              28*cWB*gw^2*vev^2 - 8*cW*w + 6*cWB*(6*cw^2*g1^2 + 5*gw^2)*vev^
+                2*Log[GaugeXi[Q]])))*sp[Ep2, p] + 
+        GaugeXi[Q]*(96*cW*w*(-2 - 3*e + 2*e*Log[w]) - 4*GaugeXi[Q]^7*
+           (-42*cw^2*cWB*(2 + e)*g1^2*vev^2 + 42*cWB*gw^2*vev^2 + 
+            21*cWB*e*gw^2*vev^2 + 1520*cW*w + 1944*cW*e*w + 
+            2*e*(42*cw^2*cWB*g1^2*vev^2 - 21*cWB*gw^2*vev^2 - 760*cW*w)*
+             Log[w]) + GaugeXi[Q]*(-8*cw^2*cWB*(834 + 3007*e)*g1^2*vev^2 + 
+            2076*cWB*gw^2*vev^2 + 7093*cWB*e*gw^2*vev^2 + 448*cW*w + 
+            864*cW*e*w + 4*e*(1668*cw^2*cWB*g1^2*vev^2 - 519*cWB*gw^2*vev^2 - 
+              112*cW*w)*Log[w]) + 4*GaugeXi[Q]^8*(-6*cw^2*cWB*(2 + e)*g1^2*
+             vev^2 + 6*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 + 224*cW*w + 
+            288*cW*e*w + 2*e*(6*cw^2*cWB*g1^2*vev^2 - 3*cWB*gw^2*vev^2 - 
+              112*cW*w)*Log[w]) + 84*GaugeXi[Q]^6*(-6*cw^2*cWB*(2 + e)*g1^2*
+             vev^2 + 6*cWB*gw^2*vev^2 + 3*cWB*e*gw^2*vev^2 + 208*cW*w + 
+            264*cW*e*w + 2*e*(6*cw^2*cWB*g1^2*vev^2 - 3*cWB*gw^2*vev^2 - 
+              104*cW*w)*Log[w]) - 7*GaugeXi[Q]^5*(-1200*cw^2*cWB*g1^2*vev^2 - 
+            3560*cw^2*cWB*e*g1^2*vev^2 - 2220*cWB*gw^2*vev^2 - 
+            3765*cWB*e*gw^2*vev^2 + 3904*cW*w + 4896*cW*e*w + 
+            60*cWB*(16*cw^2*e*g1^2 + 3*(4 + 13*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] - 360*cWB*e*gw^2*vev^2*Log[GaugeXi[Q]]^2 + 
+            4*e*Log[w]*(300*cw^2*cWB*g1^2*vev^2 + 555*cWB*gw^2*vev^2 - 
+              976*cW*w - 180*cWB*gw^2*vev^2*Log[GaugeXi[Q]])) + 
+          28*GaugeXi[Q]^2*(-6732*cw^2*cWB*g1^2*vev^2 - 13286*cw^2*cWB*e*g1^2*
+             vev^2 + 1446*cWB*gw^2*vev^2 + 2523*cWB*e*gw^2*vev^2 + 80*cW*w + 
+            72*cW*e*w - 720*cWB*(1 + e)*(4*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]] + 360*cWB*e*(4*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(3366*cw^2*cWB*g1^2*vev^2 - 
+              723*cWB*gw^2*vev^2 - 40*cW*w + 360*cWB*(4*cw^2*g1^2 - gw^2)*vev^
+                2*Log[GaugeXi[Q]])) + 252*GaugeXi[Q]^3*
+           (4*cw^2*cWB*g1^2*vev^2 + 2*cw^2*cWB*e*g1^2*vev^2 - 
+            182*cWB*gw^2*vev^2 - 331*cWB*e*gw^2*vev^2 - 48*cW*w - 56*cW*e*w - 
+            60*cWB*(16*cw^2*(1 + 2*e)*g1^2 - (2 + 5*e)*gw^2)*vev^2*
+             Log[GaugeXi[Q]] + 60*cWB*e*(8*cw^2*g1^2 - gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(-2*cw^2*cWB*g1^2*vev^2 + 
+              91*cWB*gw^2*vev^2 + 24*cW*w + 60*cWB*(8*cw^2*g1^2 - gw^2)*vev^
+                2*Log[GaugeXi[Q]])) + 140*GaugeXi[Q]^4*
+           (1332*cw^2*cWB*g1^2*vev^2 + 2650*cw^2*cWB*e*g1^2*vev^2 - 
+            90*cWB*gw^2*vev^2 - 149*cWB*e*gw^2*vev^2 + 176*cW*w + 
+            216*cW*e*w - 48*cWB*(4*cw^2*(3 + 10*e)*g1^2 + (3 + 4*e)*gw^2)*
+             vev^2*Log[GaugeXi[Q]] + 72*cWB*e*(4*cw^2*g1^2 + gw^2)*vev^2*
+             Log[GaugeXi[Q]]^2 + 2*e*Log[w]*(-666*cw^2*cWB*g1^2*vev^2 + 
+              45*cWB*gw^2*vev^2 - 88*cW*w + 72*cWB*(4*cw^2*g1^2 + gw^2)*vev^
+                2*Log[GaugeXi[Q]])))*sp[Ep2, q1]))))/
+  (50400*LAMBDA^2*w^4*(-1 + GaugeXi[Q])^7*GaugeXi[Q]^2)}
+}

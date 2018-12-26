@@ -1,0 +1,950 @@
+(* SMEFT parameters *)
+(* under MFV limit *)
+
+
+M$SMEFTParameters = Join[M$YukParameters, {
+
+  WC  == { ParameterType -> External,   Value -> 1.0,   BlockName -> NEWCOUPaux,   OrderBlock -> 0 , InteractionOrder -> {NP,0} },
+  appZERO  == { ParameterType -> External,   Definitions -> {appZERO->0} },
+
+(** MFV spurion **)
+
+  Squ == {
+    TeX -> Subsuperscript[S,q,u],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Value            -> {Squ[i_,j_]-> (Conjugate[yu[3,3]] yu[3,3]) CKM[3,i] Conjugate[CKM[3,j]] },
+    ComplexParameter -> False},
+
+  Sqd == {
+    TeX -> Subsuperscript[S,q,d],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Value            -> {Sqd[i_,j_]-> (Conjugate[yd[3,3]] yd[3,3]) CKM[3,i] Conjugate[CKM[3,j]] },
+    ComplexParameter -> False},
+
+  Su == {
+    TeX -> Superscript[S,u],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Value            -> {Su[i_,j_]:> 0 /; i!=j, 
+                         Su[1,1]-> 0, Su[2,2]-> 0, Su[3,3]-> Conjugate[yu[3,3]] yu[3,3]},
+    ComplexParameter -> False},
+
+  Sd == {
+    TeX -> Superscript[S,d],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Value            -> {Sd[i_,j_]:> 0 /; i!=j, 
+                         Sd[1,1]-> 0, Sd[2,2]-> 0, Sd[3,3]-> Conjugate[yd[3,3]] yd[3,3]},
+    ComplexParameter -> False},
+
+
+(****** Class 1 ******)
+  cW == { TeX -> Subscript[C,W],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 1, InteractionOrder -> {NP,1} },
+  cG == { TeX -> Subscript[C,G],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 2, InteractionOrder -> {NP,1} },
+
+  cWtil == { TeX -> Subscript[C, Overscript[W, "~"]],         ParameterType -> Internal,   Definitions -> {cWtil->appZERO},   InteractionOrder -> {NP,1} },
+  cGtil == { TeX -> Subscript[C, Overscript[G, "~"]],         ParameterType -> Internal,   Definitions -> {cGtil->appZERO}, InteractionOrder -> {NP,1} },
+
+(****** Class 2 ******)
+  cH  == { TeX -> Subscript[C,H],          ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 3, InteractionOrder -> {NP,1} },
+
+(****** Class 3 ******)
+  cHBox  == { TeX -> Subscript[C,H \[EmptySquare]],   ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 4, InteractionOrder -> {NP,1} },
+  cHDD  == { TeX -> Subscript[C,HD],          ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 5, InteractionOrder -> {NP,1} },
+
+(****** Class 4 ******)
+  cHB == { TeX -> Subscript[C,HB],         ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 6, InteractionOrder -> {NP,1} },
+  cHW == { TeX -> Subscript[C,HW],         ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 7, InteractionOrder -> {NP,1} },
+  cHWB == { TeX -> Subscript[C,HWB],       ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 8, InteractionOrder -> {NP,1} },
+  cHG == { TeX -> Subscript[C,HG],         ParameterType -> External,   Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 9, InteractionOrder -> {NP,1} },
+
+  cHBtil == { TeX -> Subscript[C,H Overscript[B, "~"]],         ParameterType -> Internal,   Definitions -> {cHBtil->appZERO}, InteractionOrder -> {NP,1} },
+  cHWtil == { TeX -> Subscript[C,H Overscript[W, "~"]],         ParameterType -> Internal,   Definitions -> {cHWtil->appZERO}, InteractionOrder -> {NP,1} },
+  cHWBtil == { TeX -> Subscript[C, HB Overscript[W, "~"]],      ParameterType -> Internal,   Definitions -> {cHWBtil->appZERO}, InteractionOrder -> {NP,1} },
+  cHGtil == { TeX -> Subscript[C,H Overscript[G, "~"]],         ParameterType -> Internal,   Definitions -> {cHGtil->appZERO}, InteractionOrder -> {NP,1} },
+
+(****** Class 5 ******)
+  CtH == { TeX -> Subscript[C,tH],  ParameterType -> External,  ComplexParameter -> True,  Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 10, InteractionOrder -> {NP,1} },
+
+  cuH == {
+    TeX -> Subscript[C,uH],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cuH[1,1] -> 0,cuH[2,2] -> 0,cuH[3,3] -> (CtH Conjugate[yu[3,3]]),
+            cuH[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CbH == { TeX -> Subscript[C,bH],  ParameterType -> External,  ComplexParameter -> True,  Value -> 0,   BlockName -> NEWCOUP,   OrderBlock -> 11, InteractionOrder -> {NP,1} },
+
+  cdH == {
+    TeX -> Subscript[C,dH],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cdH[1,1] -> 0,cdH[2,2] -> 0,cdH[3,3] -> (CbH Conjugate[yd[3,3]]),
+            cdH[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  ceH == {
+    TeX -> Subscript[C,eH],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {ceH[i_?NumericQ, j_?NumericQ] -> appZERO},
+    InteractionOrder -> {NP,1}},
+
+(****** Class 6 ******)
+  CtB == { TeX -> Subscript[C,tB],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 12, InteractionOrder -> {NP,1} },
+
+  cuB == {
+    TeX -> Subscript[C,uB],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cuB[1,1] -> 0,cuB[2,2] -> 0,cuB[3,3] -> (CtB Conjugate[yu[3,3]]),
+            cuB[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CtW == { TeX -> Subscript[C,tW],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 13, InteractionOrder -> {NP,1} },
+
+  cuW == {
+    TeX -> Subscript[C,uW],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cuW[1,1] -> 0,cuW[2,2] -> 0,cuW[3,3] -> (CtW Conjugate[yu[3,3]]),
+            cuW[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CtG == { TeX -> Subscript[C,tG],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 14, InteractionOrder -> {NP,1} },
+
+  cuG == {
+    TeX -> Subscript[C,uG],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cuG[1,1] -> 0,cuG[2,2] -> 0,cuG[3,3] -> (CtG Conjugate[yu[3,3]]),
+            cuG[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CbB == { TeX -> Subscript[C,bB],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 15, InteractionOrder -> {NP,1} },
+
+  cdB == {
+    TeX -> Subscript[C,dB],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cdB[1,1] -> 0,cdB[2,2] -> 0,cdB[3,3] -> (CbB Conjugate[yd[3,3]]),
+            cdB[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CbW == { TeX -> Subscript[C,bW],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 16, InteractionOrder -> {NP,1} },
+
+  cdW == {
+    TeX -> Subscript[C,dW],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cdW[1,1] -> 0,cdW[2,2] -> 0,cdW[3,3] -> (CbW Conjugate[yd[3,3]]),
+            cdW[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  CbG == { TeX -> Subscript[C,bG],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 17, InteractionOrder -> {NP,1} },
+
+  cdG == {
+    TeX -> Subscript[C,dG],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {cdG[1,1] -> 0,cdG[2,2] -> 0,cdG[3,3] -> (CbG Conjugate[yd[3,3]]),
+            cdG[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    InteractionOrder -> {NP,1}},
+
+  ceB == {
+    TeX -> Subscript[C,eB],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {ceB[i_?NumericQ, j_?NumericQ] -> appZERO},
+    InteractionOrder -> {NP,1}},
+
+  ceW == {
+    TeX -> Subscript[C,eW],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions      -> {ceW[i_?NumericQ, j_?NumericQ] -> appZERO},
+    InteractionOrder -> {NP,1}},
+
+(****** Class 7 ******)
+
+  CHq1a == { TeX -> Subsuperscript[C,Hq,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 18, InteractionOrder -> {NP,1} },
+  dCHqu1 == { TeX -> Subsuperscript[dC,Hq,"(1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 1, InteractionOrder -> {NP,1} },
+  dCHqd1 == { TeX -> Subsuperscript[dC,Hq,"(1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 2, InteractionOrder -> {NP,1} },
+
+  cHq1 == {
+    TeX -> Subscript[C,Hq],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHq1[i_, i_] :> (CHq1a+dCHqu1 Squ[i,i]+dCHqd1 Sqd[i,i]),
+                         cHq1[i_, j_] :> (dCHqu1 Squ[i,j]+dCHqd1 Sqd[i,j]) /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+  CHQ3a == { TeX -> Subsuperscript[C,Hq,"(3)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 19, InteractionOrder -> {NP,1} },
+  dCHQu3 == { TeX -> Subsuperscript[dC,Hq,"(3)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 3, InteractionOrder -> {NP,1} },
+  dCHQd3 == { TeX -> Subsuperscript[dC,Hq,"(3)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 4, InteractionOrder -> {NP,1} },
+
+  cHQ3 == {
+    TeX -> Subscript[C,HQ],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHQ3[i_, i_] :> (CHQ3a+dCHQu3 Squ[i,i]+dCHQd3 Sqd[i,i]),
+                         cHQ3[i_, j_] :> (dCHQu3 Squ[i,j]+dCHQd3 Sqd[i,j]) /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  CHl1a == { TeX -> Subsuperscript[C,Hl,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 20, InteractionOrder -> {NP,1} },
+
+  cHl1 == {
+    TeX -> Subscript[C,Hl],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHl1[1,1]-> CHl1a, cHl1[2,2]-> CHl1a, cHl1[3,3]-> CHl1a,
+                         cHl1[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+  CHL3a == { TeX -> Subsuperscript[C,Hl,"(3)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 21, InteractionOrder -> {NP,1} },
+
+  cHL3 == {
+    TeX -> Subscript[C,HL],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHL3[i_,j_] :> 0 /;(i!=j)},
+    Value            -> {cHL3[i_,i_] -> CHL3a},
+    InteractionOrder -> {NP,1}},
+
+  
+  CHu == { TeX -> Subscript[C,Hu],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 22, InteractionOrder -> {NP,1} },
+  dCHu == { TeX -> Subscript[dC,Hu],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 5, InteractionOrder -> {NP,1} },
+
+  cHu == {
+    TeX -> Subscript[C,Hu],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHu[1,1]-> (CHu+dCHu Su[1,1]), cHu[2,2]-> (CHu+dCHu Su[2,2]), cHu[3,3]-> (CHu+dCHu Su[3,3]),
+                         cHu[i_, j_] :> (dCHu Su[i,j]) /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+  CHd == { TeX -> Subscript[C,Hd],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 23, InteractionOrder -> {NP,1} },
+  dCHd == { TeX -> Subscript[dC,Hd],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 6, InteractionOrder -> {NP,1} },
+
+  cHd == {
+    TeX -> Subscript[C,Hd],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHd[1,1]-> (CHd+dCHd Sd[1,1]), cHd[2,2]-> (CHd+dCHd Sd[2,2]), cHd[3,3]-> (CHd+dCHd Sd[3,3]),
+                         cHd[i_, j_] :> (dCHd Sd[i,j]) /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+  CHe == { TeX -> Subscript[C,He],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 24, InteractionOrder -> {NP,1} },
+
+  cHe == {
+    TeX -> Subscript[C,He],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHe[1,1]-> CHe, cHe[2,2]-> CHe, cHe[3,3]-> CHe,
+                         cHe[i_?NumericQ, j_?NumericQ] :> 0 /; (i =!= j)},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP,1}},
+
+  CHud == { TeX -> Subscript[C,Hud],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 25, InteractionOrder -> {NP,1} },
+
+  cHud == {
+    TeX -> Subscript[C,Hud],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation]},
+    Definitions	     -> {cHud[1,1]-> 0, cHud[2,2]-> 0, cHud[3,3]-> (CHud yu[3,3] Conjugate[yd[3,3]]),
+                         cHud[i_, j_] :> 0 /; i!=j},
+    ComplexParameter -> False,
+    InteractionOrder -> {NP,1}},
+
+(****** Class 8 ******)
+
+ (* 4-fermion LLLL operators *)
+
+  Clla == { TeX -> Subsuperscript[C,ll,"(a)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 26, InteractionOrder -> {NP,1} },
+  Cllb == { TeX -> Subsuperscript[C,ll,"(b)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 27, InteractionOrder -> {NP,1} },
+
+  cll == {
+    TeX -> Subscript[C,ll],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cll[1,2,1,1]->0,  	cll[1,3,1,1]->0,    cll[2,1,1,1]->0,   cll[2,3,1,1]->0, 
+		    cll[3,1,1,1]->0,    cll[3,2,1,1]->0,    
+                    cll[1,2,2,2]->0,  	cll[1,3,2,2]->0,    cll[2,1,2,2]->0,   cll[2,3,2,2]->0, 
+		    cll[3,1,2,2]->0,    cll[3,2,2,2]->0,    
+                    cll[1,2,3,3]->0,  	cll[1,3,3,3]->0,    cll[2,1,3,3]->0,   cll[2,3,3,3]->0, 
+		    cll[3,1,3,3]->0,    cll[3,2,3,3]->0,    
+		    cll[1,1,1,2]->0,  	cll[1,2,1,2]->0,    cll[1,3,1,2]->0,   cll[2,2,1,2]->0,
+                    cll[2,3,1,2]->0,    cll[3,1,1,2]->0,    cll[3,2,1,2]->0,   cll[3,3,1,2]->0,
+		    cll[1,1,1,3]->0,  	cll[1,2,1,3]->0,    cll[1,3,1,3]->0,   cll[2,1,1,3]->0,
+                    cll[2,2,1,3]->0,    cll[2,3,1,3]->0,    cll[3,2,1,3]->0,   cll[3,3,1,3]->0,
+		    cll[1,1,2,1]->0,  	cll[1,3,2,1]->0,    cll[2,1,2,1]->0,   cll[2,2,2,1]->0,
+                    cll[2,3,2,1]->0,    cll[3,1,2,1]->0,    cll[3,2,2,1]->0,   cll[3,3,2,1]->0,
+		    cll[1,1,2,3]->0,  	cll[1,2,2,3]->0,    cll[1,3,2,3]->0,   cll[2,1,2,3]->0,
+                    cll[2,2,2,3]->0,    cll[2,3,2,3]->0,    cll[3,1,2,3]->0,   cll[3,3,2,3]->0,
+		    cll[1,1,3,1]->0,  	cll[1,2,3,1]->0,    cll[2,1,3,1]->0,   cll[2,2,3,1]->0,
+                    cll[2,3,3,1]->0,    cll[3,1,3,1]->0,    cll[3,2,3,1]->0,   cll[3,3,3,1]->0,
+		    cll[1,1,3,2]->0,  	cll[1,2,3,2]->0,    cll[1,3,3,2]->0,   cll[2,1,3,2]->0,
+                    cll[2,2,3,2]->0,    cll[3,1,3,2]->0,    cll[3,2,3,2]->0,   cll[3,3,3,2]->0},
+    Value      -> { cll[i_,i_,i_,i_] -> (Clla+Cllb),
+                    cll[i_,i_,j_,j_] :> Clla /; (i!=j),cll[i_,j_,j_,i_] :> Cllb /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  Cqq1a == { TeX -> Subsuperscript[C,qq,"(1a)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 28, InteractionOrder -> {NP,1} },
+  Cqq1b == { TeX -> Subsuperscript[C,qq,"(1b)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 29, InteractionOrder -> {NP,1} },
+  dCqq1ua1 == { TeX -> Subsuperscript[dC,qq,"(1a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 7, InteractionOrder -> {NP,1} },
+  dCqq1ua2 == { TeX -> Subsuperscript[dC,qq,"(1a2)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 8, InteractionOrder -> {NP,1} },
+  dCqq1ub1 == { TeX -> Subsuperscript[dC,qq,"(1b1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 9, InteractionOrder -> {NP,1} },
+  dCqq1ub2 == { TeX -> Subsuperscript[dC,qq,"(1b2)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 10, InteractionOrder -> {NP,1} },
+  dCqq1da1 == { TeX -> Subsuperscript[dC,qq,"(1a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 11, InteractionOrder -> {NP,1} },
+  dCqq1da2 == { TeX -> Subsuperscript[dC,qq,"(1a2)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 12, InteractionOrder -> {NP,1} },
+  dCqq1db1 == { TeX -> Subsuperscript[dC,qq,"(1b1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 13, InteractionOrder -> {NP,1} },
+  dCqq1db2 == { TeX -> Subsuperscript[dC,qq,"(1b2)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 14, InteractionOrder -> {NP,1} },
+
+
+  cqq1 == {
+    TeX -> Subsuperscript[C,qq,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cqq1[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cqq1[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cqq1[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cqq1[i_,i_,i_,i_] -> (Cqq1a+Cqq1b+(dCqq1ua1+dCqq1ua2+dCqq1ub1+dCqq1ub2) Squ[i,i]+(dCqq1da1+dCqq1da2+dCqq1db1+dCqq1db2) Sqd[i,i]),
+                    cqq1[i_,i_,j_,j_] :> (Cqq1a+dCqq1ua1 Squ[i,i]+dCqq1ua2 Squ[j,j]+dCqq1da1 Sqd[i,i]+dCqq1da2 Sqd[j,j]) /; (i!=j),
+                    cqq1[i_,j_,j_,i_] :> (Cqq1b+dCqq1ub1 Squ[i,i]+dCqq1ub2 Squ[j,j]+dCqq1db1 Sqd[i,i]+dCqq1db2 Sqd[j,j]) /; (i!=j),
+                    cqq1[i_,j_,k_,k_] :> (dCqq1ua1 Squ[i,j]+dCqq1da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cqq1[i_,i_,j_,k_] :> (dCqq1ua2 Squ[j,k]+dCqq1da2 Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cqq1[i_,j_,j_,k_] :> (dCqq1ub1 Squ[i,k]+dCqq1db1 Sqd[i,k]) /; (i!=j && i!=k && j!=k),
+                    cqq1[i_,j_,k_,i_] :> (dCqq1ub2 Squ[j,k]+dCqq1db2 Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cqq1[i_,j_,j_,j_] :> (dCqq1ua1 Squ[i,j] + dCqq1ub1 Squ[i,j]+dCqq1da1 Sqd[i,j] + dCqq1db1 Sqd[i,j]) /; (i!=j),
+                    cqq1[i_,j_,i_,i_] :> (dCqq1ua1 Squ[i,j] + dCqq1ub2 Squ[j,i]+dCqq1da1 Sqd[i,j] + dCqq1db2 Sqd[j,i]) /; (i!=j),
+                    cqq1[i_,i_,i_,j_] :> (dCqq1ua2 Squ[i,j] + dCqq1ub1 Squ[i,j]+dCqq1da2 Sqd[i,j] + dCqq1db1 Sqd[i,j]) /; (i!=j),
+                    cqq1[i_,i_,j_,i_] :> (dCqq1ua2 Squ[j,i] + dCqq1ub2 Squ[i,j]+dCqq1da2 Sqd[j,i] + dCqq1db2 Sqd[i,j]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  CQQ3a == { TeX -> Subsuperscript[C,qq,"(3a)"],        ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 30, InteractionOrder -> {NP,1} },
+  CQQ3b == { TeX -> Subsuperscript[C,qq,"(3b)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 31, InteractionOrder -> {NP,1} },
+  dCQQ3ua1 == { TeX -> Subsuperscript[dC,qq,"(3a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 15, InteractionOrder -> {NP,1} },
+  dCQQ3ua2 == { TeX -> Subsuperscript[dC,qq,"(3a2)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 16, InteractionOrder -> {NP,1} },
+  dCQQ3ub1 == { TeX -> Subsuperscript[dC,qq,"(3b1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 17, InteractionOrder -> {NP,1} },
+  dCQQ3ub2 == { TeX -> Subsuperscript[dC,qq,"(3b2)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 18, InteractionOrder -> {NP,1} },
+  dCQQ3da1 == { TeX -> Subsuperscript[dC,qq,"(3a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 19, InteractionOrder -> {NP,1} },
+  dCQQ3da2 == { TeX -> Subsuperscript[dC,qq,"(3a2)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 20, InteractionOrder -> {NP,1} },
+  dCQQ3db1 == { TeX -> Subsuperscript[dC,qq,"(3b1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 21, InteractionOrder -> {NP,1} },
+  dCQQ3db2 == { TeX -> Subsuperscript[dC,qq,"(3b2)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 22, InteractionOrder -> {NP,1} },
+
+  cQQ3 == {
+    TeX -> Subsuperscript[C,qq,"(3)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cQQ3[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cQQ3[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cQQ3[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cQQ3[i_,i_,i_,i_] -> (CQQ3a+CQQ3b+(dCQQ3ua1+dCQQ3ua2+dCQQ3ub1+dCQQ3ub2) Squ[i,i]+(dCQQ3da1+dCQQ3da2+dCQQ3db1+dCQQ3db2) Sqd[i,i]),
+                    cQQ3[i_,i_,j_,j_] :> (CQQ3a+dCQQ3ua1 Squ[i,i]+dCQQ3ua2 Squ[j,j]+dCQQ3da1 Sqd[i,i]+dCQQ3da2 Sqd[j,j]) /; (i!=j),
+                    cQQ3[i_,j_,j_,i_] :> (CQQ3b+dCQQ3ub1 Squ[i,i]+dCQQ3ub2 Squ[j,j]+dCQQ3db1 Sqd[i,i]+dCQQ3db2 Sqd[j,j]) /; (i!=j),
+                    cQQ3[i_,j_,k_,k_] :> (dCQQ3ua1 Squ[i,j]+dCQQ3da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cQQ3[i_,i_,j_,k_] :> (dCQQ3ua2 Squ[j,k]+dCQQ3da2 Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cQQ3[i_,j_,j_,k_] :> (dCQQ3ub1 Squ[i,k]+dCQQ3db1 Sqd[i,k]) /; (i!=j && i!=k && j!=k),
+                    cQQ3[i_,j_,k_,i_] :> (dCQQ3ub2 Squ[j,k]+dCQQ3db2 Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cQQ3[i_,j_,j_,j_] :> (dCQQ3ua1 Squ[i,j] + dCQQ3ub1 Squ[i,j]+dCQQ3da1 Sqd[i,j] + dCQQ3db1 Sqd[i,j]) /; (i!=j),
+                    cQQ3[i_,j_,i_,i_] :> (dCQQ3ua1 Squ[i,j] + dCQQ3ub2 Squ[j,i]+dCQQ3da1 Sqd[i,j] + dCQQ3db2 Sqd[j,i]) /; (i!=j),
+                    cQQ3[i_,i_,i_,j_] :> (dCQQ3ua2 Squ[i,j] + dCQQ3ub1 Squ[i,j]+dCQQ3da2 Sqd[i,j] + dCQQ3db1 Sqd[i,j]) /; (i!=j),
+                    cQQ3[i_,i_,j_,i_] :> (dCQQ3ua2 Squ[j,i] + dCQQ3ub2 Squ[i,j]+dCQQ3da2 Sqd[j,i] + dCQQ3db2 Sqd[i,j]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Clq1a == { TeX -> Subsuperscript[C,lq,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 32, InteractionOrder -> {NP,1} },
+  dClq1ua == { TeX -> Subsuperscript[dC,lq,"(1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 23, InteractionOrder -> {NP,1} },
+  dClq1da == { TeX -> Subsuperscript[dC,lq,"(1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 24, InteractionOrder -> {NP,1} },
+
+  clq1 == {
+    TeX -> Subscript[C,lq],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    clq1[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    clq1[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    clq1[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clq1[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    clq1[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clq1[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clq1[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clq1[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    clq1[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { clq1[i_,i_,i_,i_] -> (Clq1a +dClq1ua Squ[i,i]+dClq1da Sqd[i,i]),
+                    clq1[i_,i_,j_,j_] :> (Clq1a +dClq1ua Squ[j,j]+dClq1da Sqd[j,j]) /; (i!=j),
+                    clq1[i_,i_,j_,k_] :> (dClq1ua Squ[j,k]+dClq1da Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    clq1[i_,i_,i_,j_] :> (dClq1ua Squ[i,j]+dClq1da Sqd[i,j]) /; (i!=j),
+                    clq1[i_,i_,j_,i_] :> (dClq1ua Squ[j,i]+dClq1da Sqd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  CLQ3a == { TeX -> Subsuperscript[C,lq,"(3)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 33, InteractionOrder -> {NP,1} },
+  dCLQ3ua == { TeX -> Subsuperscript[dC,lq,"(1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 25, InteractionOrder -> {NP,1} },
+  dCLQ3da == { TeX -> Subsuperscript[dC,lq,"(1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 26, InteractionOrder -> {NP,1} },
+
+  cLQ3 == {
+    TeX -> Subscript[C,LQ],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cLQ3[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cLQ3[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cLQ3[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cLQ3[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cLQ3[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cLQ3[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cLQ3[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cLQ3[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    cLQ3[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { cLQ3[i_,i_,i_,i_] -> (CLQ3a +dCLQ3ua Squ[i,i]+dCLQ3da Sqd[i,i]),
+                    cLQ3[i_,i_,j_,j_] :> (CLQ3a +dCLQ3ua Squ[j,j]+dCLQ3da Sqd[j,j]) /; (i!=j),
+                    cLQ3[i_,i_,j_,k_] :> (dCLQ3ua Squ[j,k]+dCLQ3da Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cLQ3[i_,i_,i_,j_] :> (dCLQ3ua Squ[i,j]+dCLQ3da Sqd[i,j]) /; (i!=j),
+                    cLQ3[i_,i_,j_,i_] :> (dCLQ3ua Squ[j,i]+dCLQ3da Sqd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+ (* 4-fermion RRRR operators *)
+
+  Cuua == { TeX -> Subsuperscript[C,uu,"(a)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 34, InteractionOrder -> {NP,1} },
+  Cuub == { TeX -> Subsuperscript[C,uu,"(b)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 35, InteractionOrder -> {NP,1} },
+  dCuua1 == { TeX -> Subsuperscript[dC,uu,"(a1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 27, InteractionOrder -> {NP,1} },
+  dCuua2 == { TeX -> Subsuperscript[dC,uu,"(a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 28, InteractionOrder -> {NP,1} },
+  dCuub1 == { TeX -> Subsuperscript[dC,uu,"(b1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 29, InteractionOrder -> {NP,1} },
+  dCuub2 == { TeX -> Subsuperscript[dC,uu,"(b2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 30, InteractionOrder -> {NP,1} },
+
+  cuu == {
+    TeX -> Subscript[C,uu],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cuu[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cuu[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cuu[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cuu[i_,i_,i_,i_] -> (Cuua+Cuub+(dCuua1+dCuua2+dCuub1+dCuub2) Su[i,i]),
+                    cuu[i_,i_,j_,j_] :> (Cuua+dCuua1 Su[i,i]+dCuua2 Su[j,j]) /; (i!=j),
+                    cuu[i_,j_,j_,i_] :> (Cuub+dCuub1 Su[i,i]+dCuub2 Su[j,j]) /; (i!=j),
+                    cuu[i_,j_,k_,k_] :> (dCuua1 Su[i,j]) /; (i!=j && i!=k && j!=k),
+                    cuu[i_,i_,j_,k_] :> (dCuua2 Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    cuu[i_,j_,j_,k_] :> (dCuub1 Su[i,k]) /; (i!=j && i!=k && j!=k),
+                    cuu[i_,j_,k_,i_] :> (dCuub2 Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    cuu[i_,j_,j_,j_] :> (dCuua1 Su[i,j] + dCuub1 Su[i,j]) /; (i!=j),
+                    cuu[i_,j_,i_,i_] :> (dCuua1 Su[i,j] + dCuub2 Su[j,i]) /; (i!=j),
+                    cuu[i_,i_,i_,j_] :> (dCuua2 Su[i,j] + dCuub1 Su[i,j]) /; (i!=j),
+                    cuu[i_,i_,j_,i_] :> (dCuua2 Su[j,i] + dCuub2 Su[i,j]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Cdda == { TeX -> Subsuperscript[C,dd,"(a)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 36, InteractionOrder -> {NP,1} },
+  Cddb == { TeX -> Subsuperscript[C,dd,"(b)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 37, InteractionOrder -> {NP,1} },
+
+  dCdda1 == { TeX -> Subsuperscript[dC,dd,"(a1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 31, InteractionOrder -> {NP,1} },
+  dCdda2 == { TeX -> Subsuperscript[dC,dd,"(a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 32, InteractionOrder -> {NP,1} },
+  dCddb1 == { TeX -> Subsuperscript[dC,dd,"(b1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 33, InteractionOrder -> {NP,1} },
+  dCddb2 == { TeX -> Subsuperscript[dC,dd,"(b2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 34, InteractionOrder -> {NP,1} },
+
+  cdd == {
+    TeX -> Subscript[C,dd],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cdd[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cdd[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cdd[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cdd[i_,i_,i_,i_] -> (Cdda+Cddb+(dCdda1+dCdda2+dCddb1+dCddb2) Sd[i,i]),
+                    cdd[i_,i_,j_,j_] :> (Cdda+dCdda1 Sd[i,i]+dCdda2 Sd[j,j]) /; (i!=j),
+                    cdd[i_,j_,j_,i_] :> (Cddb+dCddb1 Sd[i,i]+dCddb2 Sd[j,j]) /; (i!=j),
+                    cdd[i_,j_,k_,k_] :> (dCdda1 Sd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cdd[i_,i_,j_,k_] :> (dCdda2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cdd[i_,j_,j_,k_] :> (dCddb1 Sd[i,k]) /; (i!=j && i!=k && j!=k),
+                    cdd[i_,j_,k_,i_] :> (dCddb2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cdd[i_,j_,j_,j_] :> (dCdda1 Sd[i,j] + dCddb1 Sd[i,j]) /; (i!=j),
+                    cdd[i_,j_,i_,i_] :> (dCdda1 Sd[i,j] + dCddb2 Sd[j,i]) /; (i!=j),
+                    cdd[i_,i_,i_,j_] :> (dCdda2 Sd[i,j] + dCddb1 Sd[i,j]) /; (i!=j),
+                    cdd[i_,i_,j_,i_] :> (dCdda2 Sd[j,i] + dCddb2 Sd[i,j]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Ceea == { TeX -> Subscript[C,ee],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 38, InteractionOrder -> {NP,1} },
+
+  cee == {
+    TeX -> Subscript[C,ee],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cee[1,2,1,1]->0,  	cee[1,3,1,1]->0,    cee[2,1,1,1]->0,   cee[2,3,1,1]->0, 
+		    cee[3,1,1,1]->0,    cee[3,2,1,1]->0,    
+                    cee[1,2,2,2]->0,  	cee[1,3,2,2]->0,    cee[2,1,2,2]->0,   cee[2,3,2,2]->0, 
+		    cee[3,1,2,2]->0,    cee[3,2,2,2]->0,    
+                    cee[1,2,3,3]->0,  	cee[1,3,3,3]->0,    cee[2,1,3,3]->0,   cee[2,3,3,3]->0, 
+		    cee[3,1,3,3]->0,    cee[3,2,3,3]->0,    
+		    cee[1,1,1,2]->0,  	cee[1,2,1,2]->0,    cee[1,3,1,2]->0,   cee[2,2,1,2]->0,
+                    cee[2,3,1,2]->0,    cee[3,1,1,2]->0,    cee[3,2,1,2]->0,   cee[3,3,1,2]->0,
+		    cee[1,1,1,3]->0,  	cee[1,2,1,3]->0,    cee[1,3,1,3]->0,   cee[2,1,1,3]->0,
+                    cee[2,2,1,3]->0,    cee[2,3,1,3]->0,    cee[3,2,1,3]->0,   cee[3,3,1,3]->0,
+		    cee[1,1,2,1]->0,  	cee[1,3,2,1]->0,    cee[2,1,2,1]->0,   cee[2,2,2,1]->0,
+                    cee[2,3,2,1]->0,    cee[3,1,2,1]->0,    cee[3,2,2,1]->0,   cee[3,3,2,1]->0,
+		    cee[1,1,2,3]->0,  	cee[1,2,2,3]->0,    cee[1,3,2,3]->0,   cee[2,1,2,3]->0,
+                    cee[2,2,2,3]->0,    cee[2,3,2,3]->0,    cee[3,1,2,3]->0,   cee[3,3,2,3]->0,
+		    cee[1,1,3,1]->0,  	cee[1,2,3,1]->0,    cee[2,1,3,1]->0,   cee[2,2,3,1]->0,
+                    cee[2,3,3,1]->0,    cee[3,1,3,1]->0,    cee[3,2,3,1]->0,   cee[3,3,3,1]->0,
+		    cee[1,1,3,2]->0,  	cee[1,2,3,2]->0,    cee[1,3,3,2]->0,   cee[2,1,3,2]->0,
+                    cee[2,2,3,2]->0,    cee[3,1,3,2]->0,    cee[3,2,3,2]->0,   cee[3,3,3,2]->0,
+                    cee[i_,j_,j_,i_] :> 0 /; (i!=j)},
+    Value      -> { cee[i_,i_,i_,i_] -> Ceea,
+                    cee[i_,i_,j_,j_] :> Ceea /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Cud1a == { TeX -> Subsuperscript[C,ud,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 39, InteractionOrder -> {NP,1} },
+  dCud1a1 == { TeX -> Subsuperscript[dC,ud,"(1a1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 35, InteractionOrder -> {NP,1} },
+  dCud1a2 == { TeX -> Subsuperscript[dC,ud,"(1a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 36, InteractionOrder -> {NP,1} },
+
+  cud1 == {
+    TeX -> Subsuperscript[C,ud,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cud1[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cud1[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cud1[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cud1[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cud1[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cud1[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cud1[i_,i_,i_,i_] -> (Cud1a+dCud1a1 Su[i,i]+dCud1a2 Sd[i,i]),
+                    cud1[i_,i_,j_,j_] :> (Cud1a+dCud1a1 Su[i,i]+dCud1a2 Sd[j,j]) /; (i!=j),
+                    cud1[i_,j_,k_,k_] :> (dCud1a1 Su[i,j]) /; (i!=j && i!=k && j!=k),
+                    cud1[i_,i_,j_,k_] :> (dCud1a2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cud1[i_,j_,j_,j_] :> (dCud1a1 Su[i,j]) /; (i!=j),
+                    cud1[i_,j_,i_,i_] :> (dCud1a1 Su[i,j]) /; (i!=j),
+                    cud1[i_,i_,i_,j_] :> (dCud1a2 Sd[i,j]) /; (i!=j),
+                    cud1[i_,i_,j_,i_] :> (dCud1a2 Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  CUD8a == { TeX -> Subsuperscript[C,ud,"(8)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 40, InteractionOrder -> {NP,1} },
+  dCUD8a1 == { TeX -> Subsuperscript[dC,ud,"(1a1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 37, InteractionOrder -> {NP,1} },
+  dCUD8a2 == { TeX -> Subsuperscript[dC,ud,"(1a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 38, InteractionOrder -> {NP,1} },
+
+  cUD8 == {
+    TeX -> Subsuperscript[C,ud,"(8)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cUD8[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cUD8[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cUD8[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cUD8[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cUD8[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cUD8[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cUD8[i_,i_,i_,i_] -> (CUD8a+dCUD8a1 Su[i,i]+dCUD8a2 Sd[i,i]),
+                    cUD8[i_,i_,j_,j_] :> (CUD8a+dCUD8a1 Su[i,i]+dCUD8a2 Sd[j,j]) /; (i!=j),
+                    cUD8[i_,j_,k_,k_] :> (dCUD8a1 Su[i,j]) /; (i!=j && i!=k && j!=k),
+                    cUD8[i_,i_,j_,k_] :> (dCUD8a2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cUD8[i_,j_,j_,j_] :> (dCUD8a1 Su[i,j]) /; (i!=j),
+                    cUD8[i_,j_,i_,i_] :> (dCUD8a1 Su[i,j]) /; (i!=j),
+                    cUD8[i_,i_,i_,j_] :> (dCUD8a2 Sd[i,j]) /; (i!=j),
+                    cUD8[i_,i_,j_,i_] :> (dCUD8a2 Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Ceua == { TeX -> Subscript[C,eu],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 41, InteractionOrder -> {NP,1} },
+  dCeua == { TeX -> Subscript[dC,eu],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 39, InteractionOrder -> {NP,1} },
+
+  ceu == {
+    TeX -> Subscript[C,eu],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    ceu[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    ceu[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    ceu[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ceu[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    ceu[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ceu[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ceu[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ceu[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    ceu[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { ceu[i_,i_,i_,i_] -> (Ceua +dCeua Su[i,i]),
+                    ceu[i_,i_,j_,j_] :> (Ceua +dCeua Su[j,j]) /; (i!=j),
+                    ceu[i_,i_,j_,k_] :> (dCeua Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    ceu[i_,i_,i_,j_] :> (dCeua Su[i,j]) /; (i!=j),
+                    ceu[i_,i_,j_,i_] :> (dCeua Su[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+  
+  Ceda == { TeX -> Subscript[C,ed],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 42, InteractionOrder -> {NP,1} },
+  dCeda == { TeX -> Subscript[dC,ed],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 40, InteractionOrder -> {NP,1} },
+
+  ced == {
+    TeX -> Subscript[C,ed],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    ced[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    ced[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    ced[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ced[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    ced[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ced[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ced[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    ced[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    ced[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { ced[i_,i_,i_,i_] -> (Ceda +dCeda Sd[i,i]),
+                    ced[i_,i_,j_,j_] :> (Ceda +dCeda Sd[j,j]) /; (i!=j),
+                    ced[i_,i_,j_,k_] :> (dCeda Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    ced[i_,i_,i_,j_] :> (dCeda Sd[i,j]) /; (i!=j),
+                    ced[i_,i_,j_,i_] :> (dCeda Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+ (* 4-fermion LLRR operators *)
+  
+  Cqu1a == { TeX -> Subsuperscript[C,qu,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 43, InteractionOrder -> {NP,1} },
+  dCqu1ua1 == { TeX -> Subsuperscript[dC,qu,"(1a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 41, InteractionOrder -> {NP,1} },
+  dCqu1da1 == { TeX -> Subsuperscript[dC,qu,"(1a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 42, InteractionOrder -> {NP,1} },
+  dCqu1a2 == { TeX -> Subsuperscript[dC,qu,"(1a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 43, InteractionOrder -> {NP,1} },
+
+  cqu1 == {
+    TeX -> Subsuperscript[C,qu,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cqu1[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cqu1[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cqu1[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqu1[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cqu1[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqu1[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cqu1[i_,i_,i_,i_] -> (Cqu1a+dCqu1ua1 Squ[i,i]+dCqu1da1 Sqd[i,i]+dCqu1a2 Su[i,i]),
+                    cqu1[i_,i_,j_,j_] :> (Cqu1a+dCqu1ua1 Squ[i,i]+dCqu1da1 Sqd[i,i]+dCqu1a2 Su[j,j]) /; (i!=j),
+                    cqu1[i_,j_,k_,k_] :> (dCqu1ua1 Squ[i,j]+dCqu1da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cqu1[i_,i_,j_,k_] :> (dCqu1a2 Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    cqu1[i_,j_,j_,j_] :> (dCqu1ua1 Squ[i,j]+dCqu1da1 Sqd[i,j]) /; (i!=j),
+                    cqu1[i_,j_,i_,i_] :> (dCqu1ua1 Squ[i,j]+dCqu1da1 Sqd[i,j]) /; (i!=j),
+                    cqu1[i_,i_,i_,j_] :> (dCqu1a2 Su[i,j]) /; (i!=j),
+                    cqu1[i_,i_,j_,i_] :> (dCqu1a2 Su[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  CQU8a == { TeX -> Subsuperscript[C,qu,"(8)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 44, InteractionOrder -> {NP,1} },
+  dCQU8ua1 == { TeX -> Subsuperscript[dC,qu,"(8a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 44, InteractionOrder -> {NP,1} },
+  dCQU8da1 == { TeX -> Subsuperscript[dC,qu,"(8a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 45, InteractionOrder -> {NP,1} },
+  dCQU8a2 == { TeX -> Subsuperscript[dC,qu,"(8a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 46, InteractionOrder -> {NP,1} },
+
+  cQU8 == {
+    TeX -> Subsuperscript[C,qu,"(8)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cQU8[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cQU8[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cQU8[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cQU8[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cQU8[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cQU8[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cQU8[i_,i_,i_,i_] -> (CQU8a+dCQU8ua1 Squ[i,i]+dCQU8da1 Sqd[i,i]+dCQU8a2 Su[i,i]),
+                    cQU8[i_,i_,j_,j_] :> (CQU8a+dCQU8ua1 Squ[i,i]+dCQU8da1 Sqd[i,i]+dCQU8a2 Su[j,j]) /; (i!=j),
+                    cQU8[i_,j_,k_,k_] :> (dCQU8ua1 Squ[i,j]+dCQU8da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cQU8[i_,i_,j_,k_] :> (dCQU8a2 Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    cQU8[i_,j_,j_,j_] :> (dCQU8ua1 Squ[i,j]+dCQU8da1 Sqd[i,j]) /; (i!=j),
+                    cQU8[i_,j_,i_,i_] :> (dCQU8ua1 Squ[i,j]+dCQU8da1 Sqd[i,j]) /; (i!=j),
+                    cQU8[i_,i_,i_,j_] :> (dCQU8a2 Su[i,j]) /; (i!=j),
+                    cQU8[i_,i_,j_,i_] :> (dCQU8a2 Su[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Cqd1a == { TeX -> Subsuperscript[C,qd,"(1)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 45, InteractionOrder -> {NP,1} },
+  dCqd1ua1 == { TeX -> Subsuperscript[dC,qd,"(1a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 47, InteractionOrder -> {NP,1} },
+  dCqd1da1 == { TeX -> Subsuperscript[dC,qd,"(1a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 48, InteractionOrder -> {NP,1} },
+  dCqd1a2 == { TeX -> Subsuperscript[dC,qd,"(1a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 49, InteractionOrder -> {NP,1} },
+
+  cqd1 == {
+    TeX -> Subsuperscript[C,qd,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cqd1[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cqd1[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cqd1[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqd1[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cqd1[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqd1[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cqd1[i_,i_,i_,i_] -> (Cqd1a+dCqd1ua1 Squ[i,i]+dCqd1da1 Sqd[i,i]+dCqd1a2 Sd[i,i]),
+                    cqd1[i_,i_,j_,j_] :> (Cqd1a+dCqd1ua1 Squ[i,i]+dCqd1da1 Sqd[i,i]+dCqd1a2 Sd[j,j]) /; (i!=j),
+                    cqd1[i_,j_,k_,k_] :> (dCqd1ua1 Squ[i,j]+dCqd1da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cqd1[i_,i_,j_,k_] :> (dCqd1a2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cqd1[i_,j_,j_,j_] :> (dCqd1ua1 Squ[i,j]+dCqd1da1 Sqd[i,j]) /; (i!=j),
+                    cqd1[i_,j_,i_,i_] :> (dCqd1ua1 Squ[i,j]+dCqd1da1 Sqd[i,j]) /; (i!=j),
+                    cqd1[i_,i_,i_,j_] :> (dCqd1a2 Sd[i,j]) /; (i!=j),
+                    cqd1[i_,i_,j_,i_] :> (dCqd1a2 Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  CQD8a == { TeX -> Subsuperscript[C,qd,"(8)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 46, InteractionOrder -> {NP,1} },
+  dCQD8ua1 == { TeX -> Subsuperscript[dC,qd,"(8a1)u"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 50, InteractionOrder -> {NP,1} },
+  dCQD8da1 == { TeX -> Subsuperscript[dC,qd,"(8a1)d"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 51, InteractionOrder -> {NP,1} },
+  dCQD8a2 == { TeX -> Subsuperscript[dC,qd,"(8a2)"],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 52, InteractionOrder -> {NP,1} },
+
+  cQD8 == {
+    TeX -> Subsuperscript[C,qd,"(8)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cQD8[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cQD8[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cQD8[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cQD8[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cQD8[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cQD8[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k)},
+    Value      -> { cQD8[i_,i_,i_,i_] -> (CQD8a+dCQD8ua1 Squ[i,i]+dCQD8da1 Sqd[i,i]+dCQD8a2 Sd[i,i]),
+                    cQD8[i_,i_,j_,j_] :> (CQD8a+dCQD8ua1 Squ[i,i]+dCQD8da1 Sqd[i,i]+dCQD8a2 Sd[j,j]) /; (i!=j),
+                    cQD8[i_,j_,k_,k_] :> (dCQD8ua1 Squ[i,j]+dCQD8da1 Sqd[i,j]) /; (i!=j && i!=k && j!=k),
+                    cQD8[i_,i_,j_,k_] :> (dCQD8a2 Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cQD8[i_,j_,j_,j_] :> (dCQD8ua1 Squ[i,j]+dCQD8da1 Sqd[i,j]) /; (i!=j),
+                    cQD8[i_,j_,i_,i_] :> (dCQD8ua1 Squ[i,j]+dCQD8da1 Sqd[i,j]) /; (i!=j),
+                    cQD8[i_,i_,i_,j_] :> (dCQD8a2 Sd[i,j]) /; (i!=j),
+                    cQD8[i_,i_,j_,i_] :> (dCQD8a2 Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  
+  Clea == { TeX -> Subscript[C,le],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 47, InteractionOrder -> {NP,1} },
+
+  cle == {
+    TeX -> Subscript[C,le],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cle[1,2,1,1]->0,  	cle[1,3,1,1]->0,    cle[2,1,1,1]->0,   cle[2,3,1,1]->0, 
+		    cle[3,1,1,1]->0,    cle[3,2,1,1]->0,    
+                    cle[1,2,2,2]->0,  	cle[1,3,2,2]->0,    cle[2,1,2,2]->0,   cle[2,3,2,2]->0, 
+		    cle[3,1,2,2]->0,    cle[3,2,2,2]->0,    
+                    cle[1,2,3,3]->0,  	cle[1,3,3,3]->0,    cle[2,1,3,3]->0,   cle[2,3,3,3]->0, 
+		    cle[3,1,3,3]->0,    cle[3,2,3,3]->0,    
+		    cle[1,1,1,2]->0,  	cle[1,2,1,2]->0,    cle[1,3,1,2]->0,   cle[2,2,1,2]->0,
+                    cle[2,3,1,2]->0,    cle[3,1,1,2]->0,    cle[3,2,1,2]->0,   cle[3,3,1,2]->0,
+		    cle[1,1,1,3]->0,  	cle[1,2,1,3]->0,    cle[1,3,1,3]->0,   cle[2,1,1,3]->0,
+                    cle[2,2,1,3]->0,    cle[2,3,1,3]->0,    cle[3,2,1,3]->0,   cle[3,3,1,3]->0,
+		    cle[1,1,2,1]->0,  	cle[1,3,2,1]->0,    cle[2,1,2,1]->0,   cle[2,2,2,1]->0,
+                    cle[2,3,2,1]->0,    cle[3,1,2,1]->0,    cle[3,2,2,1]->0,   cle[3,3,2,1]->0,
+		    cle[1,1,2,3]->0,  	cle[1,2,2,3]->0,    cle[1,3,2,3]->0,   cle[2,1,2,3]->0,
+                    cle[2,2,2,3]->0,    cle[2,3,2,3]->0,    cle[3,1,2,3]->0,   cle[3,3,2,3]->0,
+		    cle[1,1,3,1]->0,  	cle[1,2,3,1]->0,    cle[2,1,3,1]->0,   cle[2,2,3,1]->0,
+                    cle[2,3,3,1]->0,    cle[3,1,3,1]->0,    cle[3,2,3,1]->0,   cle[3,3,3,1]->0,
+		    cle[1,1,3,2]->0,  	cle[1,2,3,2]->0,    cle[1,3,3,2]->0,   cle[2,1,3,2]->0,
+                    cle[2,2,3,2]->0,    cle[3,1,3,2]->0,    cle[3,2,3,2]->0,   cle[3,3,3,2]->0,
+                    cle[i_,j_,j_,i_] :> 0 /; (i!=j)},
+    Value      -> { cle[i_,i_,i_,i_] -> Clea,
+                    cle[i_,i_,j_,j_] :> Clea /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+  
+  Clua == { TeX -> Subscript[C,lu],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 48, InteractionOrder -> {NP,1} },
+  dClua == { TeX -> Subscript[dC,lu],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 53, InteractionOrder -> {NP,1} },
+
+  clu == {
+    TeX -> Subscript[C,lu],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    clu[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    clu[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    clu[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clu[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    clu[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clu[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clu[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    clu[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    clu[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { clu[i_,i_,i_,i_] -> (Clua +dClua Su[i,i]),
+                    clu[i_,i_,j_,j_] :> (Clua +dClua Su[j,j]) /; (i!=j),
+                    clu[i_,i_,j_,k_] :> (dClua Su[j,k]) /; (i!=j && i!=k && j!=k),
+                    clu[i_,i_,i_,j_] :> (dClua Su[i,j]) /; (i!=j),
+                    clu[i_,i_,j_,i_] :> (dClua Su[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Clda == { TeX -> Subscript[C,ld],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 49, InteractionOrder -> {NP,1} },
+  dClda == { TeX -> Subscript[dC,ld],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 54, InteractionOrder -> {NP,1} },
+
+  cld == {
+    TeX -> Subscript[C,ld],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cld[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cld[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cld[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cld[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cld[i_,j_,k_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cld[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cld[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cld[i_,j_,j_,j_] :> 0 /; (i!=j),
+                    cld[i_,j_,i_,i_] :> 0 /; (i!=j)},
+    Value      -> { cld[i_,i_,i_,i_] -> (Clda +dClda Sd[i,i]),
+                    cld[i_,i_,j_,j_] :> (Clda +dClda Sd[j,j]) /; (i!=j),
+                    cld[i_,i_,j_,k_] :> (dClda Sd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cld[i_,i_,i_,j_] :> (dClda Sd[i,j]) /; (i!=j),
+                    cld[i_,i_,j_,i_] :> (dClda Sd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  Cqea == { TeX -> Subscript[C,qe],         ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 50, InteractionOrder -> {NP,1} },
+  dCqeua == { TeX -> Subsuperscript[dC,qe,u],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 55, InteractionOrder -> {NP,1} },
+  dCqeda == { TeX -> Subsuperscript[dC,qe,d],         ParameterType -> External,   Value -> 0.0,   BlockName -> MFVNEWCOUP,   OrderBlock -> 56, InteractionOrder -> {NP,1} },
+
+  cqe == {
+    TeX -> Subscript[C,qe],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cqe[i_,j_,i_,j_] :> 0 /; (i!=j),  
+                    cqe[i_,j_,i_,k_] :> 0 /; (i!=j && i!=k && j!=k), 
+                    cqe[i_,j_,k_,j_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqe[i_,j_,j_,i_] :> 0 /; (i!=j),
+                    cqe[i_,i_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqe[i_,j_,j_,k_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqe[i_,j_,k_,i_] :> 0 /; (i!=j && i!=k && j!=k),
+                    cqe[i_,i_,i_,j_] :> 0 /; (i!=j),
+                    cqe[i_,i_,j_,i_] :> 0 /; (i!=j)},
+    Value      -> { cqe[i_,i_,i_,i_] :> (Cqea +dCqeua Squ[i,i]+dCqeda Sqd[i,i]),
+                    cqe[i_,i_,j_,j_] :> (Cqea +dCqeua Squ[j,j]+dCqeda Sqd[j,j]) /; (i!=j),
+                    cqe[i_,j_,k_,k_] :> (dCqeua Squ[j,k]+dCqeda Sqd[j,k]) /; (i!=j && i!=k && j!=k),
+                    cqe[i_,j_,j_,j_] :> (dCqeua Squ[i,j]+dCqeda Sqd[i,j]) /; (i!=j),
+                    cqe[i_,j_,i_,i_] :> (dCqeua Squ[j,i]+dCqeda Sqd[j,i]) /; (i!=j)},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+ (* 4-fermion LRRL operators *)
+  
+  cledq == {
+    TeX -> Subscript[C,ledq],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {cledq[i_,j_,k_,l_] :> appZERO},
+    InteractionOrder -> {NP,1}},
+
+ (* 4-fermion LRLR operators *)
+
+  Cquqd1a == { TeX -> Subsuperscript[C,quqd,"(1)"],     ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 51, InteractionOrder -> {NP,1} },
+
+  cquqd1 == {
+    TeX -> Subsuperscript[C,quqd,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cquqd1[1,2,1,1]->0,    cquqd1[1,3,1,1]->0,    cquqd1[2,1,1,1]->0,   cquqd1[2,3,1,1]->0, 
+		    cquqd1[3,1,1,1]->0,    cquqd1[3,2,1,1]->0,    
+                    cquqd1[1,2,2,2]->0,    cquqd1[1,3,2,2]->0,    cquqd1[2,1,2,2]->0,   cquqd1[2,3,2,2]->0, 
+		    cquqd1[3,1,2,2]->0,    cquqd1[3,2,2,2]->0,    
+                    cquqd1[1,2,3,3]->0,    cquqd1[1,3,3,3]->0,    cquqd1[2,1,3,3]->0,   cquqd1[2,3,3,3]->0, 
+		    cquqd1[3,1,3,3]->0,    cquqd1[3,2,3,3]->0,    
+		    cquqd1[1,1,1,2]->0,    cquqd1[1,2,1,2]->0,    cquqd1[1,3,1,2]->0,   cquqd1[2,2,1,2]->0,
+                    cquqd1[2,3,1,2]->0,    cquqd1[3,1,1,2]->0,    cquqd1[3,2,1,2]->0,   cquqd1[3,3,1,2]->0,
+		    cquqd1[1,1,1,3]->0,    cquqd1[1,2,1,3]->0,    cquqd1[1,3,1,3]->0,   cquqd1[2,1,1,3]->0,
+                    cquqd1[2,2,1,3]->0,    cquqd1[2,3,1,3]->0,    cquqd1[3,2,1,3]->0,   cquqd1[3,3,1,3]->0,
+		    cquqd1[1,1,2,1]->0,    cquqd1[1,3,2,1]->0,    cquqd1[2,1,2,1]->0,   cquqd1[2,2,2,1]->0,
+                    cquqd1[2,3,2,1]->0,    cquqd1[3,1,2,1]->0,    cquqd1[3,2,2,1]->0,   cquqd1[3,3,2,1]->0,
+		    cquqd1[1,1,2,3]->0,    cquqd1[1,2,2,3]->0,    cquqd1[1,3,2,3]->0,   cquqd1[2,1,2,3]->0,
+                    cquqd1[2,2,2,3]->0,    cquqd1[2,3,2,3]->0,    cquqd1[3,1,2,3]->0,   cquqd1[3,3,2,3]->0,
+		    cquqd1[1,1,3,1]->0,    cquqd1[1,2,3,1]->0,    cquqd1[2,1,3,1]->0,   cquqd1[2,2,3,1]->0,
+                    cquqd1[2,3,3,1]->0,    cquqd1[3,1,3,1]->0,    cquqd1[3,2,3,1]->0,   cquqd1[3,3,3,1]->0,
+		    cquqd1[1,1,3,2]->0,    cquqd1[1,2,3,2]->0,    cquqd1[1,3,3,2]->0,   cquqd1[2,1,3,2]->0,
+                    cquqd1[2,2,3,2]->0,    cquqd1[3,1,3,2]->0,    cquqd1[3,2,3,2]->0,   cquqd1[3,3,3,2]->0,
+                    cquqd1[i_,j_,j_,i_] :> 0 /; (i!=j), cquqd1[i_,i_,j_,j_] :> 0 /; (i!=j),
+                    cquqd1[1,1,1,1]->0,    cquqd1[2,2,2,2]->0},                    
+    Value      -> { cquqd1[3,3,3,3]-> (Cquqd1a Conjugate[yu[3,3]] Conjugate[yd[3,3]])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+
+  CQUQD8a == { TeX -> Subsuperscript[C,quqd,"(8)"],      ParameterType -> External,   Value -> 0.0,   BlockName -> NEWCOUP,   OrderBlock -> 52, InteractionOrder -> {NP,1} },
+ 
+  cQUQD8 == {
+    TeX -> Subsuperscript[C,quqd,"(8)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {  
+                    cQUQD8[1,2,1,1]->0,    cQUQD8[1,3,1,1]->0,    cQUQD8[2,1,1,1]->0,   cQUQD8[2,3,1,1]->0, 
+		    cQUQD8[3,1,1,1]->0,    cQUQD8[3,2,1,1]->0,    
+                    cQUQD8[1,2,2,2]->0,    cQUQD8[1,3,2,2]->0,    cQUQD8[2,1,2,2]->0,   cQUQD8[2,3,2,2]->0, 
+		    cQUQD8[3,1,2,2]->0,    cQUQD8[3,2,2,2]->0,    
+                    cQUQD8[1,2,3,3]->0,    cQUQD8[1,3,3,3]->0,    cQUQD8[2,1,3,3]->0,   cQUQD8[2,3,3,3]->0, 
+		    cQUQD8[3,1,3,3]->0,    cQUQD8[3,2,3,3]->0,    
+		    cQUQD8[1,1,1,2]->0,    cQUQD8[1,2,1,2]->0,    cQUQD8[1,3,1,2]->0,   cQUQD8[2,2,1,2]->0,
+                    cQUQD8[2,3,1,2]->0,    cQUQD8[3,1,1,2]->0,    cQUQD8[3,2,1,2]->0,   cQUQD8[3,3,1,2]->0,
+		    cQUQD8[1,1,1,3]->0,    cQUQD8[1,2,1,3]->0,    cQUQD8[1,3,1,3]->0,   cQUQD8[2,1,1,3]->0,
+                    cQUQD8[2,2,1,3]->0,    cQUQD8[2,3,1,3]->0,    cQUQD8[3,2,1,3]->0,   cQUQD8[3,3,1,3]->0,
+		    cQUQD8[1,1,2,1]->0,    cQUQD8[1,3,2,1]->0,    cQUQD8[2,1,2,1]->0,   cQUQD8[2,2,2,1]->0,
+                    cQUQD8[2,3,2,1]->0,    cQUQD8[3,1,2,1]->0,    cQUQD8[3,2,2,1]->0,   cQUQD8[3,3,2,1]->0,
+		    cQUQD8[1,1,2,3]->0,    cQUQD8[1,2,2,3]->0,    cQUQD8[1,3,2,3]->0,   cQUQD8[2,1,2,3]->0,
+                    cQUQD8[2,2,2,3]->0,    cQUQD8[2,3,2,3]->0,    cQUQD8[3,1,2,3]->0,   cQUQD8[3,3,2,3]->0,
+		    cQUQD8[1,1,3,1]->0,    cQUQD8[1,2,3,1]->0,    cQUQD8[2,1,3,1]->0,   cQUQD8[2,2,3,1]->0,
+                    cQUQD8[2,3,3,1]->0,    cQUQD8[3,1,3,1]->0,    cQUQD8[3,2,3,1]->0,   cQUQD8[3,3,3,1]->0,
+		    cQUQD8[1,1,3,2]->0,    cQUQD8[1,2,3,2]->0,    cQUQD8[1,3,3,2]->0,   cQUQD8[2,1,3,2]->0,
+                    cQUQD8[2,2,3,2]->0,    cQUQD8[3,1,3,2]->0,    cQUQD8[3,2,3,2]->0,   cQUQD8[3,3,3,2]->0,
+                    cQUQD8[i_,j_,j_,i_] :> 0 /; (i!=j), cQUQD8[i_,i_,j_,j_] :> 0 /; (i!=j),
+                    cQUQD8[1,1,1,1]->0,    cQUQD8[2,2,2,2]->0},                    
+    Value      -> { cQUQD8[3,3,3,3] -> (CQUQD8a Conjugate[yu[3,3]] Conjugate[yd[3,3]])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP,1}},
+
+  clequ1 == {
+    TeX -> Subsuperscript[C,lequ,"(1)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {clequ1[i_,j_,k_,l_] :> appZERO},
+    InteractionOrder -> {NP,1}},
+
+  cLeQu3 == {
+    TeX -> Subsuperscript[C,lequ,"(3)"],
+    ParameterType    -> Internal,
+    Indices          -> {Index[Generation], Index[Generation], Index[Generation], Index[Generation]},
+    Definitions      -> {cLeQu3[i_,j_,k_,l_] :> appZERO},
+    InteractionOrder -> {NP,1}}
+
+
+}];

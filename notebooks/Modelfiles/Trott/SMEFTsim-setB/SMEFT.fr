@@ -1,0 +1,74 @@
+(***************************************************************************************************************)
+(******     This is the FeynRules mod-file for the Standard model Effective Field Theory                  ******)
+(******                                                                                                   ******)
+(******     Authors: I. Bravio, Y. Jiang and M. Trott                                                     ******)
+(******                                                                                                   ******) 
+(****** Warsaw basis is adopted for dimension-6 operators                                                 ******)
+(****** Unitary gauge is assumed.                                                                         ******)
+(***************************************************************************************************************)
+
+(* ************************** *)
+(* *****  Information   ***** *)
+(* ************************** *)
+M$ModelName = "SMEFTsim";
+
+M$Information = {
+  Version      -> "1.0",
+  Date         -> "September 19, 2017",
+  Authors      -> {"I. Bravio, Y. Jiang and M. Trott"},
+  Institutions -> {"NBIA and Discovery Center, Niels Bohr Institute, University of Copenhagen"},
+  Emails       -> {"ilaria.brivio@nbi.ku.dk", "yunjiang@nbi.ku.dk", "michael.trott@cern.ch"},
+  URLs         -> {"https://feynrules.irmp.ucl.ac.be/wiki/SMEFT"},
+  References   -> "I. Bravio, Y. Jiang and M. Trott, The SMEFTsim package, theory and tools, arXiv:1709.06492"
+};
+
+(* ************************** *)
+(* *****  Change  log   ***** *)
+(* ************************** *)
+
+(* v1.0 (19.09.2017) The first version released *)
+(* 2017/9/19 *)
+
+
+FeynmanGauge = False;  (* False: Unitary gauge *)
+
+
+Scheme=1; (* 1: alpha scheme; 2: mW scheme *)
+Flavor=3; (* 1: flavor general; 2: MFV; 3: U(3)^5 *) 
+
+
+(* ************************** *)
+(* ***** NLO Variables ****** *)
+(******************************)
+
+FR$LoopSwitches = {{Gf, MW}};
+FR$RmDblExt = { ymb -> MB, ymc -> MC, ymdo -> MD, yme -> Me, 
+   ymm -> MMU, yms -> MS, ymt -> MT, ymtau -> MTA, ymup -> MU};
+
+
+(* ************************** *)
+(* *** Interaction orders *** *)
+(* *** (as used by mg5_aMc) *** *)
+(* ************************** *)
+
+FR$DSign=-1;
+
+M$InteractionOrderHierarchy = {
+  {QCD, 1},
+  {QED, 2},
+  {NP, 1}
+};
+
+(* M$InteractionOrderLimit = { {QCD, 99}, {QED, 99} , {NP,1}}; *)
+
+Get["SMdefs.fr"];
+
+Which[Scheme == 1, Get["SMfields_alphascheme.fr"], Scheme == 2,Get["SMfields_mWscheme.fr"]] 
+
+Get["SMYukawas.fr"];
+
+Which[Flavor == 1,Get["SMEFTparms.fr"], Flavor == 2,Get["SMEFTparms_MFV.fr"], Flavor == 3,Get["SMEFTparms_FLU.fr"]]
+
+Which[Scheme == 1, Get["parms_alphascheme.fr"], Scheme == 2,Get["parms_mWscheme.fr"]]
+
+Get["Lag.fr"];

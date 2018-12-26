@@ -1,0 +1,254 @@
+(* ************************** *)
+(* ***** SM Parameters  ***** *)
+(* ***** Gf,mZ,aEW input scheme  ***** *)
+(* ************************** *)
+
+(* The loop coefficients *)
+(* up to quadratic order *)
+Ig[x_] := 1+ 7/30 x + 2/21 x^2 + 26/525 x^3;
+Igam[xw_, xt_] := 1 + xw * 66/235 +xw^2 * 228/1645 + xw^3 * 696/8225 - xt * 56/705 - xt^2 * 32/987 - xt^3 * 416/24675;
+
+IZgam[xw_, xt_, zw_, zt_] := (1 + zt * 11/255 + zt^2 * 44/1785 + zw * 26/85 + zw^2 * 20/119 + xt * 7/255 + xt zt * 32/1785 + xt^2 * 4/357 + xw * 22/85 + zw xw * 88/595 + xw^2 * 76/595 + (1-2*sw*sw)* (47/34 - zt * 44/255 - zt^2 * 176/1785 + zw * 54/85 + zw^2 * 206/595 - xt * 28/255 - xt zt * 128/1785 - xt^2 * 16/357 + xw * 33/85 + zw xw * 32/119 + xw^2 * 114/595));
+
+
+M$Parameters = Join[M$SMEFTParameters, {
+
+  (* External parameters *)
+
+  aEWM1 == { 
+    ParameterType    -> External, 
+    BlockName        -> SMINPUTS, 
+    OrderBlock       -> 1, 
+    Value            -> 127.9,
+    InteractionOrder -> {QED,-2},
+    Description      -> "Inverse of the EW coupling constant at the Z pole"
+  },
+  Gf == {
+    ParameterType    -> External,
+    BlockName        -> SMINPUTS,
+    OrderBlock       -> 2,
+    Value            -> 1.16637*^-5, 
+    InteractionOrder -> {QED,0},
+    TeX              -> Subscript[G,f],
+    Description      -> "Fermi constant"
+  },
+  aS    == { 
+    ParameterType    -> External,
+    BlockName        -> SMINPUTS,
+    OrderBlock       -> 3,
+    Value            -> 0.1181, 
+    InteractionOrder -> {QCD,2},
+    TeX              -> Subscript[\[Alpha],s],
+    Description      -> "Strong coupling constant at the Z pole"
+  },
+
+
+  (* Internal Parameters *)
+
+  gs == { 
+    ParameterType    -> Internal, 
+    Value            -> Sqrt[4 Pi aS],
+    InteractionOrder -> {QCD,1},  
+    TeX              -> Subscript[g,s], 
+    ParameterName    -> G,
+    Description      -> "Strong coupling constant at the Z pole"
+  },
+
+  aEW == {
+    ParameterType    -> Internal,
+    Value            -> 1/aEWM1,
+    InteractionOrder -> {QED,2},
+    TeX              -> Subscript[\[Alpha], EW],
+    Description      -> "Electroweak coupling contant"
+  },
+  ee == { 
+    ParameterType    -> Internal, 
+    Value            -> Sqrt[4 Pi aEW], 
+    InteractionOrder -> {QED,1}, 
+    TeX              -> e,  
+    Description      -> "Electric coupling constant"
+  },
+
+  sw == { 
+    ParameterType -> Internal, 
+    Value         -> Sqrt[1/2 - 1/2 Sqrt[1-4 Pi aEW/(Sqrt[2] Gf MZ^2)]],
+    TeX           -> Subscript[s,w],
+    Description   -> "Sine of the Weinberg angle"
+  },
+  cw == { 
+    ParameterType -> Internal, 
+    Value         -> Sqrt[1-sw^2], 
+    TeX           -> Subscript[c,w], 
+    Description   -> "Cosine of the Weinberg angle"
+  },
+
+  gw == { 
+    ParameterType    -> Internal, 
+    Value      -> ee/sw, 
+    InteractionOrder -> {QED,1},  
+    TeX              -> Subscript[g,2],
+    ParameterName    -> g2, 
+    Description      -> "Weak coupling constant at the Z pole"
+  },
+
+  g1 == { 
+    ParameterType    -> Internal, 
+    Value      -> ee/cw, 
+    InteractionOrder -> {QED,1},  
+    TeX              -> Subscript[g,1], 
+    Description      -> "U(1)Y coupling constant at the Z pole"
+  },
+
+(* True SM vev *)
+  vevSM == {
+    ParameterType    -> Internal,
+    Value            -> Sqrt[1/(Sqrt[2] Gf)], 
+    InteractionOrder -> {QED,0},
+    TeX              -> Subscript[v,SM], 
+    Description      -> "Higgs vacuum expectation value"
+  },
+
+(* True SM vev appearing the Higgs potential and will be shifted due to L6 effect *)  
+  vev == {
+    ParameterType    -> Internal,
+    Value            -> Sqrt[1/(Sqrt[2] Gf)], 
+    InteractionOrder -> {QED,0},
+    TeX              -> Subscript[v,SM], 
+    Description      -> "Higgs vacuum expectation value"
+  },
+
+(* True SM vev used in the Higgs field expansion. It is replaced by vevT in the shifted SM Lagrangian but not in the L6 *) 
+  vevSMh == {
+    ParameterType    -> Internal,
+    Value            -> Sqrt[1/(Sqrt[2] Gf)], 
+    InteractionOrder -> {QED,0},
+    TeX              -> Subscript[v,hSM], 
+    Description      -> "Higgs vacuum expectation value"
+  },
+
+
+(* SM quadratic coupling *)
+
+  lamSM == {
+    ParameterType    -> Internal,
+    Value            -> MH^2/(2 vevSM^2),
+    InteractionOrder -> {QED, 0},
+    TeX              -> Subscript[\[Lambda],SM], 
+    Description      -> "Higgs quartic parameter"
+  },
+
+(* SM quadratic coupling and will be shifted due to L6 *)
+
+  lam == {
+    ParameterType    -> Internal,
+    Value            -> MH^2/(2*vevSM^2),
+    InteractionOrder -> {QED, 0},
+    TeX              -> \[Lambda], 
+    Description      -> "Higgs quartic coupling"
+  },
+
+
+(*** SM input shifts due to L6 ***)
+
+  dGf == {
+    ParameterType    -> Internal,
+    Value            -> 1/(2 Gf) ((cHL3[1,1] + cHL3[2,2])-(cll[2,1,1,2]+cll[1,2,2,1])/2),
+    InteractionOrder -> {NP,1},
+    TeX              -> Subscript[dG,f], 
+    ParameterName    -> dGf,
+    Description      -> "Fermi shift"
+  },
+  dvev == {
+    ParameterType    -> Internal,
+    Value            -> Sqrt[1/(Sqrt[2] Gf)] (-1/(4 Sqrt[2] Gf) (cll[2,1,1,2]+cll[1,2,2,1]) + 1/(2 Sqrt[2] Gf) (cHL3[1,1] + cHL3[2,2])),
+    InteractionOrder -> {NP,1},
+    TeX              -> d Subscript[v,T], 
+    ParameterName    -> dv,
+    Description      -> "Higgs vacuum expectation value"
+  },
+  dlam == {
+    ParameterType    -> Internal,
+    Value            -> 3*cH*vevSM^2/2+(1-2*(cHBox-1/4 cHDD)*vevSM^2)*MH^2/(2 vevSM^2),
+    InteractionOrder -> {NP, 1},
+    TeX              -> d\[Lambda], 
+    Description      -> "Higgs quartic parameter"
+  },
+
+(** The following shifts are defined in the alpha input schemes only **)
+  dM2Z == {
+    ParameterType    -> Internal,
+    Value            -> 1/(2 Sqrt[2]) MZ^2/Gf cHDD + 2^(1/4) Sqrt[Pi aEW] MZ/Gf^(3/2) cHWB,
+    InteractionOrder -> {NP,1},
+    TeX              -> Subsuperscript[dM,Z,2], 
+    ParameterName    -> dM2Z,
+    Description      -> "Mz shift"
+  },
+  dgw == { 
+    ParameterType    -> Internal, 
+    Value            -> -gw cw^2/2/(1-2 sw^2) (Sqrt[2] dGf + dM2Z/MZ^2 + 2 sw^2 sw/cw vevSM^2 cHWB), 
+    InteractionOrder -> {NP,1},  
+    TeX              -> Subscript[dg,2], 
+    ParameterName    -> dg2,
+    Description      -> "Weak coupling constant at the Z pole"
+  },
+  dg1 == { 
+    ParameterType    -> Internal, 
+    Value            -> g1 sw^2/2/(1-2 sw^2) (Sqrt[2] dGf + dM2Z/MZ^2 + 2 cw^2 cw/sw vevSM^2 cHWB), 
+    InteractionOrder -> {NP,1},  
+    TeX              -> Subscript[dg,1], 
+    ParameterName    -> dg1,
+    Description      -> "U(1)Y coupling constant at the Z pole"
+  },
+  dsw2 == { 
+    ParameterType    -> Internal, 
+    Value            -> 2 cw^2 sw^2 (dg1/g1 - dgw/gw) + cw sw (1 - 2 sw^2) vevSM^2 cHWB, 
+    InteractionOrder -> {NP,1},  
+    TeX              -> d Subsuperscript[s,w,2], 
+    ParameterName    -> ds2w,
+    Description      -> "Weinberg angle shift"
+  },
+
+(** W mass **)
+
+  MW0 == { 
+    ParameterType -> Internal, 
+    Value         -> gw vevSM/2, 
+    TeX           -> Subscript[M0,W], 
+    Description   -> "W mass at tree level"
+  },
+  dMW == { 
+    ParameterType -> Internal, 
+    Value         -> (gw dvev + dgw vevSM)/2, 
+    TeX           -> Subscript[dM,W], 
+    Description   -> "W mass shift"
+  },
+  MW == { 
+    ParameterType -> Internal, 
+    Value         -> MW0 + dMW, 
+    TeX           -> Subscript[M,W], 
+    Description   -> "W mass"
+  },
+
+
+(* Loop-induced Higgs effective couplings *)
+
+  GH  == {
+    ParameterType->Internal, 
+    Value -> -gs^2/4/Pi/(3Pi*vevSM*vevSM)*Ig[(MH/2/MT)^2], 
+    InteractionOrder -> {QCD, 2},
+    TeX->Subscript[G,H]
+  },
+  AH  == {
+    ParameterType->Internal, 
+    Value -> ee^2/4/Pi/(Pi*vevSM*vevSM)*(47/18)*Igam[(MH/2/MW)^2, (MH/2/MT)^2], 
+    InteractionOrder -> {QED, 2},
+    TeX->Subscript[A,H]
+  },
+  AZH  == {
+    ParameterType->Internal,
+    Value -> ee^2/4/Pi/(Pi*vevSM*vevSM)*(2*17/18/(sw*cw))*IZgam[(MH/2/MW)^2, (MH/2/MT)^2, (MZ/2/MW)^2, (MZ/2/MT)^2], 
+    InteractionOrder -> {QED, 2},
+    TeX->Subscript[AZ,H]
+  }
+
+}];

@@ -1,0 +1,1257 @@
+(* ********************************************************* *)
+(* *****   Wilson coefficients for the MFV framework   ***** *)
+(* ********************************************************* *)
+
+(* because MFV assumes the CKM is the only source of CP violation, none of the Wilson coefficients  *)
+(* can carry a complex phase. CP violating bosonic operators are also omitted, as they should be    *)
+(* proportional to the Jarlskog invariant  ~ 10^(-5)                                                *)
+
+
+SMEFTParametersPhases0 = {};
+
+
+SMEFTParameters0 = {
+
+(*** EFT cutoff - set to 1 TeV by default ***)
+
+  LambdaSMEFT == {
+    ParameterType    -> External,
+    Value	     -> 10^(3),
+    InteractionOrder -> {QED, -1},
+    TeX		     -> \[CapitalLambda]
+  },
+
+(*** class 1 ***)    
+  cG == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,G]
+  },
+  cW == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,W]
+  },
+
+(*** class 2 ***)  
+
+  cH == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H]
+  },
+  
+(*** class 3 ***)  
+
+  cHbox == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H \[EmptySquare]]
+  },
+  cHD == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HD]
+  },
+
+(*** class 4 ***)   
+
+  cHG == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HG]
+  },
+  cHW == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HW]
+  },
+  cHB == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HB]
+  },
+  cHWB == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HWB]
+  },
+
+(*** class 5 ***)  
+
+ ceH == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eH]
+  },
+ cuH0 == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uH]
+  },
+ cdH0 == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dH]
+  },
+ DeltacuH == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,uH]
+  },
+ DeltacdH == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,dH]
+  },
+  
+(*** class 6 ***)  
+
+  ceW == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eW]
+  },
+  ceB == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eB]
+  },
+  cuG0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uG]
+  },
+  DeltacuG == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,uG]
+  },
+  cuW0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uW]
+  },
+  DeltacuW == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,uW]
+  },
+  cuB0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uB]
+  },
+  DeltacuB == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,uB]
+  },
+  cdG0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dG]
+  },
+  DeltacdG == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,dG]
+  },
+  cdW0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dW]
+  },
+  DeltacdW == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,dW]
+  },
+  cdB0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dB]
+  },
+  DeltacdB == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,dB]
+  },
+  
+(*** class 7 ***)  
+
+ cHl1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hl,(1)]
+  },
+ cHl3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hl,(3)]
+  },
+ cHe == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,He]
+  },
+ cHq10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(1)]
+  },
+ DeltaucHq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],u]Subsuperscript[c,Hq,(1)]]
+  },
+ DeltadcHq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subsuperscript[c,Hq,(1)]]
+  },
+ cHq30 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(3)]
+  },
+ DeltaucHq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],u]Subsuperscript[c,Hq,(3)]]
+  },
+ DeltadcHq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subsuperscript[c,Hq,(3)]]
+  },
+ cHu0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hu]
+  },
+ DeltacHu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,Hu]
+  },
+ cHd0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hd]
+  },
+ DeltacHd == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,Hd]
+  },
+ cHud0 == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hud]
+  },
+ DeltaucHud == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],u]Subscript[c,Hud]]
+  },
+ DeltadcHud == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subscript[c,Hud]]
+  },
+
+
+(*** class 8a ***)  
+
+ cll == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ll]
+  },
+ cll1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ll,Prime]
+  },
+ cqq10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)]
+  },
+ Delta1ucqq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1u]Subsuperscript[c,qq,(1)]
+  },
+ Delta1dcqq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1d]Subsuperscript[c,qq,(1)]
+  },
+ Delta2ucqq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2u]Subsuperscript[c,qq,(1)]
+  },
+ Delta2dcqq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2d]Subsuperscript[c,qq,(1)]
+  },
+ cqq110 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)Prime]
+  },
+ Delta1ucqq11 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1u]Subsuperscript[c,qq,(1)Prime]
+  },
+ Delta1dcqq11 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1d]Subsuperscript[c,qq,(1)Prime]
+  },
+ Delta2ucqq11 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2u]Subsuperscript[c,qq,(1)Prime]
+  },
+ Delta2dcqq11 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2d]Subsuperscript[c,qq,(1)Prime]
+  },
+ cqq30 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)]
+  },
+ Delta1ucqq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1u]Subsuperscript[c,qq,(3)]
+  },
+ Delta1dcqq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1d]Subsuperscript[c,qq,(3)]
+  },
+ Delta2ucqq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2u]Subsuperscript[c,qq,(3)]
+  },
+ Delta2dcqq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2d]Subsuperscript[c,qq,(3)]
+  },
+ cqq310 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)Prime]
+  },
+ Delta1ucqq31 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1u]Subsuperscript[c,qq,(3)Prime]
+  },
+ Delta1dcqq31 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],1d]Subsuperscript[c,qq,(3)Prime]
+  },
+ Delta2ucqq31 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2u]Subsuperscript[c,qq,(3)Prime]
+  },
+ Delta2dcqq31 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],2d]Subsuperscript[c,qq,(3)Prime]
+  },
+ clq10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(1)]
+  },
+ Deltauclq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta],u]Subsuperscript[c,lq,(1)]
+  },
+ Deltadclq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subsuperscript[c,lq,(1)]]
+  },
+ clq30 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(3)]
+  },
+ Deltauclq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],u]Subsuperscript[c,lq,(3)]]
+  },
+ Deltadclq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subsuperscript[c,lq,(3)]]
+  },
+
+(*** class 8b ***)  
+
+ cee == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,e e]
+  },
+ cuu0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uu]
+  },
+ Delta1cuu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subscript[c,uu]]
+  },
+ Delta2cuu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subscript[c,uu]]
+  }, 
+ cuu10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,uu,Prime]
+  },
+ Delta1cuu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,uu,Prime]]
+  },
+ Delta2cuu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,uu,Prime]]
+  },
+ cdd0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dd]
+  },
+ Delta1cdd == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subscript[c,dd]]
+  },
+ Delta2cdd == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subscript[c,dd]]
+  },
+ cdd10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,dd,Prime]
+  },
+ Delta1cdd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,dd,Prime]]
+  },
+ Delta2cdd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,dd,Prime]]
+  },
+ ceu0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eu]
+  },
+ Deltaceu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,eu]
+  },
+ ced0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ed]
+  },
+ Deltaced == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,ed]
+  },
+ cud10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(1)]
+  },
+ Delta1cud1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,ud,(1)]]
+  },
+ Delta2cud1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,ud,(1)]]
+  },
+ cud80 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(8)]
+  },
+ Delta1cud8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,ud,(8)]]
+  },
+ Delta2cud8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,ud,(8)]]
+  },
+
+(*** class 8c ***)  
+
+ cle == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,le]
+  },
+ clu0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,lu]
+  },
+ Deltaclu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,lu]
+  },
+ cld0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ld]
+  },
+ Deltacld == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,ld]
+  },
+ cqe0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,qe]
+  },
+ Deltaucqe == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],u]Subscript[c,qe]]
+  },
+ Deltadcqe == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],d]Subscript[c,qe]]
+  },
+ cqu10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(1)]
+  },
+ Delta1ucqu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1u]Subsuperscript[c,qu,(1)]]
+  },
+ Delta1dcqu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1d]Subsuperscript[c,qu,(1)]]
+  },
+ Delta2cqu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,qu,(1)]]
+  },
+ cqu80 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(8)]
+  },
+ Delta1ucqu8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1u]Subsuperscript[c,qu,(8)]]
+  },
+ Delta1dcqu8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1d]Subsuperscript[c,qu,(8)]]
+  },
+ Delta2cqu8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,qu,(8)]]
+  },
+ cqd10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(1)]
+  },
+ Delta1ucqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1u]Subsuperscript[c,qd,(1)]]
+  },
+ Delta1dcqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1d]Subsuperscript[c,qd,(1)]]
+  },
+ Delta2cqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,qd,(1)]]
+  },
+ cqd80 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(8)]
+  },
+ Delta1ucqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1u]Subsuperscript[c,qd,(8)]]
+  },
+ Delta1dcqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1d]Subsuperscript[c,qd,(8)]]
+  },
+ Delta2cqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,qd,(8)]]
+  },
+  
+(*** class 8d ***)    
+
+ cledq0 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,leqd]
+  },
+ Deltacledq == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[\[CapitalDelta]c,leqd]
+  },
+ cquqd10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(1)]
+  },
+  Delta1cquqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,quqd,(1)]]
+  },
+  Delta2cquqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,quqd,(1)]]
+  },
+ cquqd80 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(8)]
+  },
+ Delta1cquqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],1]Subsuperscript[c,quqd,(8)]]
+  },
+ Delta2cquqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> HoldForm[Subscript[\[CapitalDelta],2]Subsuperscript[c,quqd,(8)]]
+  },
+ clequ10 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(1)]
+  },
+ Deltaclequ1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[\[CapitalDelta]c,lequ,(1)]
+  },
+ clequ30 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(3)]
+  },
+ Deltaclequ3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[\[CapitalDelta]c,lequ,(3)]
+  }  
+
+}; 
+
+
+(* this set of parameters is separated because it needs to be defined after the CKM definition *)
+
+(* complex parameters: only those that contain sVd *)
+
+SMEFTParameters2 = {
+
+(*** class 5 ***)  
+
+ cuH == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cuH[i_,j_] :> cuH0 IndexDelta[i,j] + DeltacuH Su[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uH]
+  },
+ cdH == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cdH[i_,j_] :> cdH0 IndexDelta[i,j] + DeltacdH Sd[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dH]
+  },
+  
+(*** class 6 ***)  
+
+ cuG == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cuG[i_,j_] :> cuG0 IndexDelta[i,j] + DeltacuG Su[i,j] },
+    ComplexParameter -> False, 
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uG]
+  },
+ cuW == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cuW[i_,j_] :> cuW0 IndexDelta[i,j] + DeltacuW Su[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uW]
+  },
+ cuB == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cuB[i_,j_] :> cuB0 IndexDelta[i,j] + DeltacuB Su[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uB]
+  },
+ cdG == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cdG[i_,j_] :> cdG0 IndexDelta[i,j] + DeltacdG Sd[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dG]
+  },
+ cdW == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cdW[i_,j_] :> cdW0 IndexDelta[i,j] + DeltacdW Sd[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dW]
+  },
+ cdB == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cdB[i_,j_] :> cdB0 IndexDelta[i,j] + DeltacdB Sd[i,j] },
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dB]
+  },  
+  
+(*** class 7 ***)    
+
+ cHq1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cHq1[i_,j_] :> cHq10 IndexDelta[i,j] + DeltaucHq1 Su[i,j] + DeltadcHq1 SVd[i,j] },
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(1)]
+  },
+ cHq3 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cHq3[i_,j_] :> cHq30 IndexDelta[i,j] + DeltaucHq3 Su[i,j] + DeltadcHq3 SVd[i,j] },
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(3)]
+  },
+ cHu == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cHu[i_,j_] :> cHu0 IndexDelta[i,j] + DeltacHu Su[i,j] },
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hu]
+  },
+ cHd == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cHd[i_,j_] :> cHd0 IndexDelta[i,j] + DeltacHd Sd[i,j] },
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hd]
+  },
+ cHud == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cHud[i_,j_] :> cHud0 IndexDelta[i,j] + DeltaucHud Su[i,j] + DeltadcHud SVd[i,j] },
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hud]
+  },
+
+(*** class 8a ***)  
+
+ cqq1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqq1[i_,j_,k_,l_] :> (cqq10 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqq1 Su[i,j] IndexDelta[k,l] + Delta1dcqq1 SVd[i,j] IndexDelta[k,l] 
+					+ Delta2ucqq1 IndexDelta[i,j] Su[k,l] + Delta2dcqq1 IndexDelta[i,j] SVd[k,l] )},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)]
+  },
+ cqq11 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqq11[i_,j_,k_,l_] :> (cqq110 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqq11 Su[i,j] IndexDelta[k,l] + Delta1dcqq11 SVd[i,j] IndexDelta[k,l] 
+					+ Delta2ucqq11 IndexDelta[i,j] Su[k,l] + Delta2dcqq11 IndexDelta[i,j] SVd[k,l] )},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)Prime]
+  },
+ cqq3 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqq3[i_,j_,k_,l_] :> (cqq30 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqq3 Su[i,j] IndexDelta[k,l] + Delta1dcqq3 SVd[i,j] IndexDelta[k,l] 
+					+ Delta2ucqq3 IndexDelta[i,j] Su[k,l] + Delta2dcqq3 IndexDelta[i,j] SVd[k,l])},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)]
+  },
+ cqq31 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqq31[i_,j_,k_,l_] :> (cqq310 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqq31 Su[i,j] IndexDelta[k,l] + Delta1dcqq31 SVd[i,j] IndexDelta[k,l] 
+					+ Delta2ucqq31 IndexDelta[i,j] Su[k,l] + Delta2dcqq31 IndexDelta[i,j] SVd[k,l])},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)Prime]
+  },
+ clq1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {clq1[k_,l_] :> clq10 IndexDelta[k,l] + Deltauclq1 Su[k,l] +  Deltadclq1 SVd[k,l]},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(1)]
+  },
+ clq3 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {clq3[k_,l_] :> clq30  IndexDelta[k,l] + Deltauclq3 Su[k,l] + Deltadclq3 SVd[k,l]},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(3)]
+  },
+  
+(*** class 8b ***)    
+
+ cuu == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cuu[i_,j_,k_,l_] :> (cuu0 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1cuu Su[i,j] IndexDelta[k,l] + Delta2cuu IndexDelta[i,j] Su[k,l] )},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,uu,(1)Prime]
+  },
+ cuu1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cuu1[i_,j_,k_,l_] :> (cuu10 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1cuu1 Su[i,j] IndexDelta[k,l] + Delta2cuu1 IndexDelta[i,j] Su[k,l])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,uu,(1)Prime]
+  },
+ cdd == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cdd[i_,j_,k_,l_] :> (cdd0 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1cdd Sd[i,j] IndexDelta[k,l] + Delta2cdd IndexDelta[i,j] Sd[k,l])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,dd,(1)Prime]
+  },
+ cdd1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cdd1[i_,j_,k_,l_] :> (cdd10 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1cdd1 Sd[i,j] IndexDelta[k,l] + Delta2cdd1 IndexDelta[i,j] Sd[k,l])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,dd,(1)Prime]
+  },
+  ceu == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {ceu[i_,j_] :> ceu0 IndexDelta[i,j] + Deltaceu  Su[i,j]},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eu]
+  },
+  ced == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {ced[i_,j_] :> ced0 IndexDelta[i,j] + Deltaced  Sd[i,j]},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ed]
+  },
+  cud1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cud1[i_,j_,k_,l_] :> (cud10 IndexDelta[i,j] IndexDelta[k,l] 
+					    + Delta1cud1  Su[i,j] IndexDelta[k,l] + Delta2cud1  IndexDelta[i,j] Sd[k,l])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(1)]
+  },
+  cud8 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cud8[i_,j_,k_,l_] :> (cud80 IndexDelta[i,j] IndexDelta[k,l] 
+					    + Delta1cud8  Su[i,j] IndexDelta[k,l] + Delta2cud8  IndexDelta[i,j] Sd[k,l])},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(8)]
+  },
+  
+(*** class 8c ***)  
+  
+  clu == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {clu[k_,l_] :> clu0 IndexDelta[k,l] + Deltaclu Su[k,l]},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,lu]
+  },
+  cld == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cld[k_,l_] :> cld0 IndexDelta[k,l] + Deltacld Sd[k,l]},
+    ComplexParameter -> False,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ld]
+  },
+  cqe == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cqe[i_,j_] :> cqe0 IndexDelta[i,j] + Deltaucqe  Su[i,j] + Deltadcqe  SVd[i,j]},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,qe]
+  },
+  cqu1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqu1[i_,j_,k_,l_] :> (cqu10 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqu1 Su[i,j] IndexDelta[k,l]+ Delta1dcqu1 SVd[i,j] IndexDelta[k,l]
+				        + Delta2cqu1 IndexDelta[i,j] Su[k,l] )},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(1)]
+  },
+  cqu8 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqu8[i_,j_,k_,l_] :> (cqu80 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqu8 Su[i,j] IndexDelta[k,l]+ Delta1dcqu8 SVd[i,j] IndexDelta[k,l]
+				        + Delta2cqu8 IndexDelta[i,j] Su[k,l])},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(8)]
+  },
+  cqd1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqd1[i_,j_,k_,l_] :> (cqd10 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqd1 Su[i,j] IndexDelta[k,l]+ Delta1dcqd1 SVd[i,j] IndexDelta[k,l]
+				        + Delta2cqd1 IndexDelta[i,j] Sd[k,l] )},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(1)]
+  },
+  cqd8 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cqd8[i_,j_,k_,l_] :> (cqd80 IndexDelta[i,j] IndexDelta[k,l] 
+					+ Delta1ucqd8 Su[i,j] IndexDelta[k,l]+ Delta1dcqd8 SVd[i,j] IndexDelta[k,l]
+				        + Delta2cqd8 IndexDelta[i,j] Sd[k,l] )},
+    ComplexParameter -> True,
+    Hermitian	     -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(8)]
+  },
+  
+  (*** class 8d ***)    
+  
+  cledq == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {cledq[k_,l_] :> cledq0 IndexDelta[k,l] + Deltacledq Sd[k,l]},
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ledq]
+  },
+  cquqd1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cquqd1[i_,j_,k_,l_] :> (cquqd10 IndexDelta[i,j] IndexDelta[k,l] 
+					    + Delta1cquqd1  Su[i,j] IndexDelta[k,l] + Delta2cquqd1  IndexDelta[i,j] SVd[k,l])},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(1)]
+  },  
+  cquqd8 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation],Index[Generation],Index[Generation]},
+    Definitions      -> {cquqd8[i_,j_,k_,l_] :> (cquqd80 IndexDelta[i,j] IndexDelta[k,l] 
+					    + Delta1cquqd8  Su[i,j] IndexDelta[k,l] + Delta2cquqd8  IndexDelta[i,j] SVd[k,l])},
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(8)]
+  },  
+  clequ1 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {clequ1[k_,l_] :> clequ10 IndexDelta[k,l] + Deltaclequ1 Su[k,l]},
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(1)]
+  },
+  clequ3 == {
+    ParameterType    -> Internal,
+    Indices	     -> {Index[Generation],Index[Generation]},
+    Definitions      -> {clequ3[k_,l_] :> clequ30 IndexDelta[k,l] + Deltaclequ3 Su[k,l]},
+    ComplexParameter -> False,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(3)]
+  }
+
+};
+
+
+(**** list names of all  Wilson coefficients ****)
+
+
+WC6 = Join[SMEFTParameters0,SMEFTParameters2][[2;; , 1]];
+
+
+(**** list of SMEFT parameters with indices in the form ff_ To be used e.g. in replacements functions ****)
+
+WC6indices = 
+  If[FreeQ[#[[-1, 2]], Indices], #[[1]], 
+     Switch[Length[#[[-1, 2, -1]]], 2, #[[1]][ff1_, ff2_], 
+      4, #[[1]][ff1_, ff2_, ff3_, ff4_]]] & /@ Join[SMEFTParameters0,SMEFTParameters2][[2;;]];
+      
+
+(**** list of SMEFT parameters with indices in the form ff To be used e.g. in replacements functions (right-hand side) ****) 
+
+WC6indices2 = 
+  If[FreeQ[#[[-1, 2]], Indices], #[[1]], 
+     Switch[Length[#[[-1, 2, -1]]], 2, #[[1]][ff1, ff2], 
+      4, #[[1]][ff1, ff2, ff3, ff4]]] & /@ Join[SMEFTParameters0,SMEFTParameters2][[2;;]];

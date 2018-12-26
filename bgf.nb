@@ -1,0 +1,309 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13902,        301]
+NotebookOptionsPosition[     13413,        280]
+NotebookOutlinePosition[     13807,        297]
+CellTagsIndexPosition[     13764,        294]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Func", "[", "str_", "]"}], ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "temp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"temp", "=", "str"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{
+       RowBox[{"StringReplaceList", "[", 
+        RowBox[{"temp", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<[1\>\"", "\[Rule]", "\"\<[10\>\""}], ",", 
+           RowBox[{"\"\<[2\>\"", "\[Rule]", "\"\<[20\>\""}], ",", 
+           RowBox[{"\"\<[3\>\"", "\[Rule]", "\"\<[30\>\""}]}], "}"}]}], "]"}],
+        "//", "Flatten"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<[100\>\"", "\[Rule]", "\"\<[10\>\""}], ",", 
+          RowBox[{"\"\<[200\>\"", "\[Rule]", "\"\<[20\>\""}], ",", 
+          RowBox[{"\"\<[300\>\"", "\[Rule]", "\"\<[30\>\""}]}], "}"}]}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"DeleteDuplicates", "[", "temp", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "temp", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.699699514792919*^9, 3.699699633628387*^9}, {
+  3.699699929510651*^9, 3.699699936143434*^9}, {3.6996999851409597`*^9, 
+  3.69970001336178*^9}, {3.699702396515101*^9, 3.699702410975622*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Func2", "[", "str_", "]"}], ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"temp", ",", "sub", ",", "sub0"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"temp", "=", "str"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"sub", "=", "pat"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"sub0", "=", 
+         RowBox[{"StringJoin", "[", 
+          RowBox[{"sub", ",", "\"\<0\>\""}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"temp", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{"temp", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"sub", ",", "\"\<] , \>\"", ",", "sub0"}], "]"}], 
+             "\[Rule]", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"sub0", ",", "\"\<] , \>\"", ",", "sub"}], "]"}]}], 
+            "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"temp", "=", 
+         RowBox[{"StringReplace", "[", 
+          RowBox[{"temp", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"StringJoin", "[", 
+              RowBox[{
+              "\"\<-\>\"", ",", "sub", ",", "\"\<] , -\>\"", ",", "sub0"}], 
+              "]"}], "\[Rule]", 
+             RowBox[{"StringJoin", "[", 
+              RowBox[{
+              "\"\<-\>\"", ",", "sub0", ",", "\"\<] , -\>\"", ",", "sub"}], 
+              "]"}]}], "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"temp", "=", 
+         RowBox[{"DeleteDuplicates", "[", "temp", "]"}]}], ";"}], 
+       "\[IndentingNewLine]", ",", 
+       RowBox[{"{", 
+        RowBox[{"pat", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<S[1\>\"", ",", "\"\<S[2\>\"", ",", "\"\<S[3\>\"", ",", 
+           "\"\<V[1\>\"", ",", "\"\<V[2\>\"", ",", "\"\<V[3\>\""}], "}"}]}], 
+        "}"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "temp", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}], "\t"}]], "Input",
+ CellChangeTimes->{
+  3.6997004078884163`*^9, {3.699700781879943*^9, 3.699700821269843*^9}, {
+   3.69970087812186*^9, 3.699700885608779*^9}, {3.6997010394260063`*^9, 
+   3.6997011521763067`*^9}, {3.699701222927083*^9, 3.699701234523097*^9}, {
+   3.699701411973422*^9, 3.699701431798715*^9}, {3.699701502188052*^9, 
+   3.6997015097270527`*^9}, {3.699701553842437*^9, 3.699701560006343*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Polish", "[", "str_", "]"}], ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "temp", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"temp", "=", "str"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{"temp", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<1]\>\"", " ", "\[Rule]", " ", "\"\<1 ]\>\""}], ",", 
+          RowBox[{"\"\<2]\>\"", " ", "\[Rule]", " ", "\"\<2 ]\>\""}], ",", 
+          RowBox[{"\"\<3]\>\"", " ", "\[Rule]", " ", "\"\<3 ]\>\""}]}], 
+         "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"temp", "=", 
+      RowBox[{"StringReplace", "[", 
+       RowBox[{
+        RowBox[{"StringJoin", "[", "temp", "]"}], ",", 
+        RowBox[{"\"\< C\>\"", "\[Rule]", "\"\< \\nC\>\""}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "temp", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Return", "[", "temp", "]"}], ";"}]}], "\[IndentingNewLine]", 
+   "]"}], "\t"}]], "Input",
+ CellChangeTimes->{{3.699701577975068*^9, 3.699701586787385*^9}, {
+  3.699701651409149*^9, 3.699701663874647*^9}, {3.699702233333425*^9, 
+  3.699702242601288*^9}, {3.699702302587063*^9, 3.699702308763207*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "str", "=", 
+   "\"\<C[ S[1] , V[3] , -V[3] , V[2] ] ==\n\
+{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"FixedPoint", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Func", "[", "#", "]"}], "&"}], ",", "str"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"Func2", "[", "res", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"res", "=", 
+   RowBox[{"Polish", "[", "res", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.69969956701416*^9, 3.699699569052164*^9}, {
+   3.69969982060771*^9, 3.699699862487784*^9}, {3.6996999060429*^9, 
+   3.6996999062607193`*^9}, {3.699699940721478*^9, 3.699699947211837*^9}, {
+   3.699699991480432*^9, 3.699699991670352*^9}, {3.6997000459539843`*^9, 
+   3.699700113722123*^9}, 3.699700649660164*^9, {3.6997006809298286`*^9, 
+   3.699700704274981*^9}, {3.699700755348466*^9, 3.69970076352785*^9}, {
+   3.699700838598036*^9, 3.699700891923132*^9}, {3.699700942267582*^9, 
+   3.699700949179661*^9}, {3.699701157013742*^9, 3.699701187703336*^9}, {
+   3.699701286435101*^9, 3.699701294147521*^9}, {3.6997013494262247`*^9, 
+   3.699701349531528*^9}, {3.69970138859118*^9, 3.6997013972396097`*^9}, {
+   3.699701492147826*^9, 3.699701550952387*^9}, {3.699701668571364*^9, 
+   3.6997017113939342`*^9}, 3.699701800774817*^9, {3.699702251333428*^9, 
+   3.6997022516862373`*^9}, {3.6997022866952257`*^9, 3.699702314568487*^9}, 
+   3.699702379069859*^9, 3.699702428297406*^9, {3.699702483374774*^9, 
+   3.6997025491044807`*^9}, {3.699702608485175*^9, 3.699702622166461*^9}, {
+   3.699702658669737*^9, 3.699702752881105*^9}, {3.6997027969227953`*^9, 
+   3.6997028316959352`*^9}, {3.699702873979621*^9, 3.6997028807489243`*^9}, {
+   3.699702935851513*^9, 3.699703007986601*^9}, {3.6997030546541452`*^9, 
+   3.699703209357692*^9}, {3.699703268549164*^9, 3.69970334808204*^9}, {
+   3.699703383712392*^9, 3.6997034444763393`*^9}, {3.699703477112152*^9, 
+   3.699703496035426*^9}}],
+
+Cell[BoxData["\<\"C[ S[10] , V[3 ] , -V[3 ] , V[2 ] ] \
+==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[30] , \
+-V[3 ] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[3 ] , \
+-V[30] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[3 ] , \
+-V[3 ] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[30] , \
+-V[30] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[30] , \
+-V[3 ] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[3 ] , \
+-V[30] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[10] , V[30] , \
+-V[30] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[30] , \
+-V[3 ] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[30] , \
+-V[30] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[30] , \
+-V[3 ] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[30] , \
+-V[30] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[3 ] , \
+-V[30] , V[2 ] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[3 ] , \
+-V[30] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \\nC[ S[1 ] , V[3 ] , \
+-V[3 ] , V[20] ] ==\\n{{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, {((-2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{(I*gw^2*(2*cw*cW*gw + \
+cWB*g1*sw)*vev)/LAMBDA^2},\\n{((2*I)*cw*cW*gw^3*vev)/LAMBDA^2}, \
+{((-I)*gw^2*(2*cw*cW*gw + cWB*g1*sw)*vev)/LAMBDA^2}}, \"\>"], "Print",
+ CellChangeTimes->{{3.699702290273232*^9, 3.699702315073187*^9}, {
+   3.699702388567786*^9, 3.699702428929597*^9}, {3.699702484829464*^9, 
+   3.699702550032*^9}, {3.699702610130047*^9, 3.6997026232917233`*^9}, {
+   3.699702665886272*^9, 3.699702721125128*^9}, 3.699702753445879*^9, {
+   3.699702805162607*^9, 3.699702832119256*^9}, 3.6997028812710342`*^9, {
+   3.699702936361678*^9, 3.699702979630941*^9}, 3.69970301074783*^9, {
+   3.69970305513103*^9, 3.6997032099313803`*^9}, {3.699703279188459*^9, 
+   3.6997033486451483`*^9}, {3.699703384998982*^9, 3.699703445057028*^9}, {
+   3.699703477797269*^9, 3.699703496830814*^9}}]
+}, Open  ]]
+},
+WindowSize->{1920, 1035},
+WindowMargins->{{Automatic, -239}, {896, Automatic}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1491, 34, 235, "Input"],
+Cell[2052, 56, 2539, 59, 390, "Input"],
+Cell[4594, 117, 1292, 28, 235, "Input"],
+Cell[CellGroupData[{
+Cell[5911, 149, 2282, 43, 235, "Input"],
+Cell[8196, 194, 5201, 83, 1313, "Print"]
+}, Open  ]]
+}
+]
+*)
+

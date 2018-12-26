@@ -1,0 +1,46 @@
+GSuno3q =
+c1uno[Q1, Q2, Q3]*S[Q1, {al}] + c2uno[Q1, Q2, Q3]*S[Q2, {al}] + 
+ c3uno[Q1, Q2, Q3]*S[Q3, {al}]
+
+GSdue3q =
+c1due[Q1, Q2, Q3]*S[{al, be}] + c2due[Q1, Q2, Q3]*S[Q1, {al}]*S[Q1, {be}] + 
+ c3due[Q1, Q2, Q3]*S[Q2, {al}]*S[Q2, {be}] + 
+ c5due[Q1, Q2, Q3]*(S[Q1, {be}]*S[Q2, {al}] + S[Q1, {al}]*S[Q2, {be}]) + 
+ c4due[Q1, Q2, Q3]*S[Q3, {al}]*S[Q3, {be}] + 
+ c6due[Q1, Q2, Q3]*(S[Q1, {be}]*S[Q3, {al}] + S[Q1, {al}]*S[Q3, {be}]) + 
+ c7due[Q1, Q2, Q3]*(S[Q2, {be}]*S[Q3, {al}] + S[Q2, {al}]*S[Q3, {be}])
+
+GStre3q =
+c4tre[Q1, Q2, Q3]*S[Q1, {al}]*S[Q1, {be}]*S[Q1, {ga}] + 
+ c1tre[Q1, Q2, Q3]*(S[{be, ga}]*S[Q1, {al}] + S[{ga, al}]*S[Q1, {be}] + 
+   S[{al, be}]*S[Q1, {ga}]) + c5tre[Q1, Q2, Q3]*S[Q2, {al}]*S[Q2, {be}]*
+  S[Q2, {ga}] + c2tre[Q1, Q2, Q3]*(S[{be, ga}]*S[Q2, {al}] + 
+   S[{ga, al}]*S[Q2, {be}] + S[{al, be}]*S[Q2, {ga}]) + 
+ c9tre[Q1, Q2, Q3]*(S[Q1, {be}]*S[Q1, {ga}]*S[Q2, {al}] + 
+   S[Q1, {al}]*S[Q1, {ga}]*S[Q2, {be}] + S[Q1, {al}]*S[Q1, {be}]*
+    S[Q2, {ga}]) + c7tre[Q1, Q2, Q3]*(S[Q1, {ga}]*S[Q2, {al}]*S[Q2, {be}] + 
+   S[Q1, {be}]*S[Q2, {al}]*S[Q2, {ga}] + S[Q1, {al}]*S[Q2, {be}]*
+    S[Q2, {ga}]) + c6tre[Q1, Q2, Q3]*S[Q3, {al}]*S[Q3, {be}]*S[Q3, {ga}] + 
+ c3tre[Q1, Q2, Q3]*(S[{be, ga}]*S[Q3, {al}] + S[{ga, al}]*S[Q3, {be}] + 
+   S[{al, be}]*S[Q3, {ga}]) + c11tre[Q1, Q2, Q3]*
+  (S[Q1, {be}]*S[Q1, {ga}]*S[Q3, {al}] + S[Q1, {al}]*S[Q1, {ga}]*
+    S[Q3, {be}] + S[Q1, {al}]*S[Q1, {be}]*S[Q3, {ga}]) + 
+ c13tre[Q1, Q2, Q3]*(S[Q1, {ga}]*S[Q2, {be}]*S[Q3, {al}] + 
+   S[Q1, {be}]*S[Q2, {ga}]*S[Q3, {al}] + S[Q1, {ga}]*S[Q2, {al}]*
+    S[Q3, {be}] + S[Q1, {al}]*S[Q2, {ga}]*S[Q3, {be}] + 
+   S[Q1, {be}]*S[Q2, {al}]*S[Q3, {ga}] + S[Q1, {al}]*S[Q2, {be}]*
+    S[Q3, {ga}]) + c12tre[Q1, Q2, Q3]*(S[Q2, {be}]*S[Q2, {ga}]*S[Q3, {al}] + 
+   S[Q2, {al}]*S[Q2, {ga}]*S[Q3, {be}] + S[Q2, {al}]*S[Q2, {be}]*
+    S[Q3, {ga}]) + c8tre[Q1, Q2, Q3]*(S[Q1, {ga}]*S[Q3, {al}]*S[Q3, {be}] + 
+   S[Q1, {be}]*S[Q3, {al}]*S[Q3, {ga}] + S[Q1, {al}]*S[Q3, {be}]*
+    S[Q3, {ga}]) + c10tre[Q1, Q2, Q3]*(S[Q2, {ga}]*S[Q3, {al}]*S[Q3, {be}] + 
+   S[Q2, {be}]*S[Q3, {al}]*S[Q3, {ga}] + S[Q2, {al}]*S[Q3, {be}]*S[Q3, {ga}])
+
+
+GSquattro3q = Error4;
+
+GScinque3q = Error4;
+
+GSsei3q = Error4;
+
+GSsette3q = Error4;

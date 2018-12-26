@@ -1,0 +1,574 @@
+(* *************************************************************************** *)
+(* *****   Wilson coefficients for the U3^5 flavor symmetric framework   ***** *)
+(* *************************************************************************** *)
+
+(* external parameters can only be real.                                                                    *)
+(* For complex Wilson coefficients phases and absolute values are defined separately as external parameters *)
+(* and subsequently joint in an internal parameter                                                          *)
+
+
+SMEFTParametersPhases0 = {
+
+  ceWPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  ceBPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cuGPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cuWPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cuBPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cdGPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cdWPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cdBPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+
+  cHudPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  
+  ceHPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cuHPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cdHPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  
+  cledqPh == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cquqd1Ph == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  cquqd8Ph == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  clequ1Ph == {ParameterType -> External, Value -> 0, ComplexParameter -> False},
+  clequ3Ph == {ParameterType -> External, Value -> 0, ComplexParameter -> False}
+
+};
+
+
+
+SMEFTParameters0 = {
+
+(*** EFT cutoff - set to 1 TeV by default ***)
+
+  LambdaSMEFT == {
+    ParameterType    -> External,
+    Value	     -> 10^(3),
+    InteractionOrder -> {QED, -1},
+    TeX		     -> \[CapitalLambda]
+  },
+
+  
+(*** class 1 ***)  
+  
+  cG == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,G]
+  },
+  cGtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,OverTilde[G]]
+  },
+  cW == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,W]
+  },
+  cWtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,OverTilde[W]]
+  },
+
+(*** class 2 ***)  
+
+  cH == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H]
+  },
+  
+(*** class 3 ***)  
+
+  cHbox == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H \[EmptySquare]]
+  },
+  cHD == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HD]
+  },
+
+(*** class 4 ***)  
+  
+  cHG == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HG]
+  },
+  cHGtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H OverTilde[G]]
+  },
+  cHW == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HW]
+  },
+  cHWtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H OverTilde[W]]
+  },
+  cHB == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HB]
+  },
+  cHBtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H OverTilde[B]]
+  },
+  cHWB == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,HWB]
+  },
+  cHWBtil == {
+    ParameterType    -> External,
+    Value	     -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,H OverTilde[W] B]
+  },  
+  
+(*** class 5 ***)  
+
+  ceHAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cuHAbs == {
+     ParameterType    -> External,
+     Value            -> 1,
+     InteractionOrder -> {NP, 1}
+   },
+  cdHAbs == {
+     ParameterType    -> External,
+     Value            -> 1,
+     InteractionOrder -> {NP, 1}
+   },
+  ceH == {
+     ParameterType    -> Internal,
+     Value	     -> ceHAbs Exp[I*ceHPh],
+     ComplexParameter -> True,
+     InteractionOrder -> {NP, 1},
+     TeX	      -> Subscript[c,eH]
+   },
+  cuH == {
+     ParameterType    -> Internal,
+     Value	      -> cuHAbs Exp[I*cuHPh],
+     ComplexParameter -> True,
+     InteractionOrder -> {NP, 1},
+     TeX	      -> Subscript[c,uH]
+   },
+  cdH == {
+     ParameterType    -> Internal,
+     Value	      -> cdHAbs Exp[I*cdHPh],
+     ComplexParameter -> True,
+     InteractionOrder -> {NP, 1},
+     TeX	      -> Subscript[c,dH]
+   },
+   
+(*** class 6 ***)  
+
+ ceWAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  ceW == {
+    ParameterType    -> Internal,
+    Value      	     -> ceWAbs Exp[I ceWPh],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eW]
+  },
+  ceBAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  ceB == {
+    ParameterType    -> Internal,
+    Value      	     -> ceBAbs Exp[I ceBPh],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eB]
+  },
+  cuGAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cuG == {
+    ParameterType    -> Internal,
+    Value      	     -> cuGAbs Exp[I cuGPh],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uG]
+  },
+  cuWAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cuW == {
+    ParameterType    -> Internal,
+    Value      	     -> cuWAbs Exp[I cuWPh],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uW]
+  },
+  cuBAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cuB == {
+    ParameterType    -> Internal,
+    Value      	     -> cuBAbs Exp[I cuBPh],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uB]
+  },
+  cdGAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cdG == {
+    ParameterType    -> Internal,
+    Value      	     -> cdGAbs Exp[(I cdGPh)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dG]
+  },
+  cdWAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cdW == {
+    ParameterType    -> Internal,
+    Value      	     -> cdWAbs Exp[(I cdWPh)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dW]
+  },
+  cdBAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+  cdB == {
+    ParameterType    -> Internal,
+    Value      	     -> cdBAbs Exp[(I cdBPh)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dB]
+  },
+
+
+(*** class 7 ***)  
+
+ cHl1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hl,(1)]
+  },
+ cHl3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hl,(3)]
+  },
+ cHe == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,He]
+  },
+ cHq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(1)]
+  },
+ cHq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,Hq,(3)]
+  },
+ cHu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hu]
+  },
+ cHd == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hd]
+  },
+ cHudAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ cHud == {
+    ParameterType    -> Internal,
+    Value	     -> cHudAbs Exp[(I cHudPh)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,Hud]
+  },
+
+(*** class 8a ***)  
+
+ cll == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ll]
+  },
+ cll1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ll,Prime]
+  },
+ cqq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)]
+  },
+ cqq11 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(1)Prime]
+  },
+ cqq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)]
+  },
+ cqq31 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qq,(3)Prime]
+  },
+ clq1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(1)]
+  },
+ clq3 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lq,(3)]
+  },
+
+(*** class 8b ***)  
+
+ cee == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,e e]
+  },
+ cuu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,uu]
+  },
+ cuu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,uu,Prime]
+  },
+ cdd == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,dd]
+  },
+ cdd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,dd,Prime]
+  },
+ ceu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,eu]
+  },
+ ced == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ed]
+  },
+ cud1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(1)]
+  },
+ cud8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,ud,(8)]
+  },
+
+(*** class 8c ***)  
+
+ cle == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,le]
+  },
+ clu == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,lu]
+  },
+ cld == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ld]
+  },
+ cqe == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,qe]
+  },
+ cqu1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(1)]
+  },
+ cqu8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qu,(8)]
+  },
+ cqd1 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(1)]
+  },
+ cqd8 == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,qd,(8)]
+  },
+  
+(*** class 8d ***)  
+
+ cledqAbs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ cledq == {
+    ParameterType    -> Internal,
+    Value      	     -> cledqAbs Exp[(I cledqPh)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subscript[c,ledq]
+  },
+ cquqd1Abs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ cquqd1 == {
+    ParameterType    -> Internal,
+    Value      	     -> cquqd1Abs Exp[(I cquqd1Ph)],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(1)]
+  },
+ cquqd8Abs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ cquqd8 == {
+    ParameterType    -> Internal,
+    Value      	     -> cquqd8Abs Exp[I cquqd8Ph],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,quqd,(8)]
+  },
+ clequ1Abs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ clequ1 == {
+    ParameterType    -> Internal,
+    Value      	     -> clequ1Abs Exp[I clequ1Ph],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(1)]
+  },
+ clequ3Abs == {
+    ParameterType    -> External,
+    Value            -> 1,
+    InteractionOrder -> {NP, 1}
+  },
+ clequ3 == {
+    ParameterType    -> Internal,
+    Value      	     -> clequ3Abs Exp[I clequ3Ph],
+    ComplexParameter -> True,
+    InteractionOrder -> {NP, 1},
+    TeX		     -> Subsuperscript[c,lequ,(3)]
+  }  
+}; 
+
+
+(**** list names of all  Wilson coefficients ****)
+
+WC6 = SMEFTParameters0[[2;; , 1]];
+

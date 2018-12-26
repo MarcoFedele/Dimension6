@@ -1,0 +1,27 @@
+diag ={{0, (-2*cw^2*g1^2*gw^2*vev*(3*cW*w*(3 + GaugeXi[Q]^2)*sp[Ep1, Ep2] + 
+    sp[Ep1, q2]*(2*cW*(-7 + GaugeXi[Q])*sp[Ep2, p] - 
+      (2*cW - cWB)*(-5 + GaugeXi[Q])*sp[Ep2, q1])))/LAMBDA^2, 
+ -(cw^2*g1^2*gw^2*vev*(3*cW*w*(6 + 7*e + 3*e*Pi^2 - 6*(6 + e)*Log[w] + 
+       18*e*Log[w]^2 + GaugeXi[Q]^2*(10 + 9*e + e*Pi^2 + 6*e*Log[w]^2 - 
+         2*(6 + 5*e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+         2*Log[w]*(-6 - 5*e + 6*e*Log[GaugeXi[Q]])))*sp[Ep1, Ep2] + 
+     sp[Ep1, q2]*(2*cW*(36 - 12*e - 7*e*Pi^2 + 84*Log[w] - 36*e*Log[w] - 
+         42*e*Log[w]^2 + GaugeXi[Q]*(12 + 12*e + e*Pi^2 + 6*e*Log[w]^2 - 
+           12*(1 + e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+           12*Log[w]*(-1 - e + e*Log[GaugeXi[Q]])))*sp[Ep2, p] - 
+       (2*cW - cWB)*(-12 - 12*e - 5*e*Pi^2 + 60*Log[w] + 12*e*Log[w] - 
+         30*e*Log[w]^2 + GaugeXi[Q]*(12 + 12*e + e*Pi^2 + 6*e*Log[w]^2 - 
+           12*(1 + e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+           12*Log[w]*(-1 - e + e*Log[GaugeXi[Q]])))*sp[Ep2, q1])))/
+  (6*LAMBDA^2)}
+, {0, (cw^2*(2*cW - cWB)*g1^2*gw^2*h*vev*(3 + GaugeXi[Q])*sp[Ep1, Ep2])/
+  LAMBDA^2, (cw^2*(2*cW - cWB)*g1^2*gw^2*h*vev*
+   (w*(3*(-4 + e*(-4 + Pi^2) + 4*(-3 + e)*Log[w] + 6*e*Log[w]^2) + 
+      GaugeXi[Q]*(12 + 12*e + e*Pi^2 + 6*e*Log[w]^2 - 
+        12*(1 + e)*Log[GaugeXi[Q]] + 6*e*Log[GaugeXi[Q]]^2 + 
+        12*Log[w]*(-1 - e + e*Log[GaugeXi[Q]])))*sp[Ep1, Ep2] - 
+    6*Log[GaugeXi[Q]]*(-2 + 2*e*Log[w] + e*Log[GaugeXi[Q]])*sp[Ep1, q2]*
+     sp[Ep2, p]))/(12*LAMBDA^2*w)}
+, {0, 0, 0}
+, {0, 0, 0}
+}

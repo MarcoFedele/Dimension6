@@ -1,0 +1,395 @@
+diag= 
+{(24*cw^2*cW*g1^2*gw^2*vev*pp[k, M]^2*pp[p, w]*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (16*cw^2*cW*g1^2*gw^2*vev*pp[k, M]^2*pp[p, w]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*pp[k, M]^2*pp[p, w]*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) + (24*cw^2*cW*g1^2*gw^2*vev*GaugeXi[Q]*pp[k, M]^2*
+    pp[p, w]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd) - (8*cw^2*cW*g1^2*gw^2*nd*vev*GaugeXi[Q]*
+    pp[k, M]^2*pp[p, w]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (48*cw^2*cW*g1^2*gw^2*vev*w*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (32*cw^2*cW*g1^2*gw^2*vev*w*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cW*g1^2*gw^2*nd*vev*w*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (24*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]*pp[k, M]^2*
+    pp[p, w]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd) + (8*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]*
+    pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (24*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (24*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (48*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (32*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cW*g1^2*gw^2*nd*vev*w^2*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (24*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]^3*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*vev*w^2*GaugeXi[Q]^3*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*w^2*GaugeXi[Q]^3*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cW*g1^2*gw^2*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)) - (20*cw^2*cW*g1^2*gw^2*nd*vev*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cW*g1^2*gw^2*nd^2*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)) + (8*cw^2*cW*g1^2*gw^2*vev*GaugeXi[Q]*pp[k, M]^2*
+    pp[p, w]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cW*g1^2*gw^2*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (40*cw^2*cW*g1^2*gw^2*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)) - (20*cw^2*cWB*g1^2*gw^2*vev*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (20*cw^2*cW*g1^2*gw^2*nd*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)) + (10*cw^2*cWB*g1^2*gw^2*nd*vev*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (2*cw^2*cWB*g1^2*gw^2*nd*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, q2]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (2*cw^2*cWB*g1^2*gw^2*nd*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cWB*g1^2*gw^2*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*nd*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cW*g1^2*gw^2*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (2*cw^2*cWB*g1^2*gw^2*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, q2]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)), 
+ (-20*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) + (10*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (10*cw^2*cW*g1^2*gw^2*h*nd*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (5*cw^2*cWB*g1^2*gw^2*h*nd*vev*pp[k, M]^2*
+    pp[p, w]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (12*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (6*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*
+    pp[p, w]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd) + (8*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*
+    pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (2*cw^2*cW*g1^2*gw^2*h*nd*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (cw^2*cWB*g1^2*gw^2*h*nd*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) - (4*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (2*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (2*cw^2*cW*g1^2*gw^2*h*nd*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (cw^2*cWB*g1^2*gw^2*h*nd*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cW*g1^2*gw^2*h*nd*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (2*cw^2*cWB*g1^2*gw^2*h*nd*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (12*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (6*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (2*cw^2*cW*g1^2*gw^2*h*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (cw^2*cWB*g1^2*gw^2*h*nd*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)) + (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd) - (16*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (64*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (32*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, Ep2])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)*GaugeXi[Q]) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*sp[Ep2, q1])/
+   (LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]^2*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (24*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (12*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (48*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (24*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^3*pp[p, w*GaugeXi[Q]]^2*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^3*
+    pp[p, w*GaugeXi[Q]]^2*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*
+    sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*GaugeXi[Q]*pp[k, M]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (64*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (32*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*pp[k, M]^2*pp[p, w]*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w*GaugeXi[Q]*pp[k, M]^2*pp[p, w]*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) - 
+  (32*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) + 
+  (16*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*GaugeXi[Q]) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*pp[k, M]^2*pp[p, w]^2*pp[p, w*GaugeXi[Q]]^3*
+    sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd*GaugeXi[Q]) - 
+  (8*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (4*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)) + 
+  (16*cw^2*cW*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd) - 
+  (8*cw^2*cWB*g1^2*gw^2*h*vev*w^2*GaugeXi[Q]*pp[k, M]^2*pp[p, w]^2*
+    pp[p, w*GaugeXi[Q]]^3*sp[Ep1, p]*sp[Ep2, q1])/(LAMBDA^2*(-2 + nd)*nd), 0, 
+ 0}

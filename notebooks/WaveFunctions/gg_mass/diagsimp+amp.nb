@@ -1,0 +1,624 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     21536,        616]
+NotebookOptionsPosition[     18641,        527]
+NotebookOutlinePosition[     18999,        543]
+CellTagsIndexPosition[     18956,        540]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData["\<\"/Users/marco/Documents/universita\:0300/Dimension6/\
+notebooks/WaveFunctions/gg_mass\"\>"], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.660206994940179*^9, 
+   3.6602071497115717`*^9, 3.660207305749024*^9, 3.660207678630128*^9, 
+   3.660210782061194*^9, 3.660210906225379*^9, 3.660218959117879*^9, 
+   3.6602192262990103`*^9, 3.6602192666532383`*^9, 3.660745459835804*^9, 
+   3.660745743767976*^9, 3.660746992729007*^9, 3.6608250743976583`*^9, 
+   3.660827685907452*^9, 3.660832311698306*^9, 3.6608903511139174`*^9, 
+   3.66089160763066*^9, 3.660892606659823*^9, 3.6608962388644876`*^9, 
+   3.660898241801324*^9, 3.6609794221917667`*^9, 3.6609929514989023`*^9, 
+   3.6610972878037567`*^9, 3.661098382643963*^9, 3.661154784090414*^9, 
+   3.661155214451932*^9, 3.6611552873363543`*^9, 3.661156056463328*^9, 
+   3.661172700249012*^9, 3.661178636648919*^9, 3.661180739012721*^9, 
+   3.662294919999524*^9, 3.663160318546132*^9, 3.663160418250904*^9, 
+   3.663315724316245*^9, 3.6633160605513763`*^9, 3.6633163488424063`*^9, 
+   3.663317260549099*^9, 3.663336651864995*^9, 3.664108531521069*^9, 
+   3.664109461002913*^9, 3.664113153646493*^9, 3.6642650376657457`*^9, 
+   3.6642652429750566`*^9, 3.664266746889572*^9, 3.664267552046486*^9, {
+   3.664709902726039*^9, 3.664709904772678*^9}, {3.664710077941268*^9, 
+   3.664710079583*^9}, {3.664710441981104*^9, 3.664710443139483*^9}, {
+   3.665914624386478*^9, 3.665914625815292*^9}, {3.665914723106372*^9, 
+   3.665914724800303*^9}, {3.665920417469269*^9, 3.665920419005303*^9}, {
+   3.6663514011276827`*^9, 3.666351402247798*^9}, 3.6671340770073566`*^9, 
+   3.66713477097573*^9, 3.667134824909278*^9, {3.6671433505546017`*^9, 
+   3.667143362962146*^9}, 3.670329038304722*^9, 3.670329093648096*^9, 
+   3.697440192379808*^9, 3.697441018449087*^9, 3.697806059886442*^9, 
+   3.6986169534114103`*^9, 3.7009744459241037`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "ggdiagsimp.m"}]], "Input",
+ CellChangeTimes->{{3.660206603989884*^9, 3.660206616600449*^9}, {
+  3.660745465849557*^9, 3.660745467440505*^9}, {3.661097289474598*^9, 
+  3.661097290050264*^9}, {3.665920413347001*^9, 3.6659204136370792`*^9}, {
+  3.700974448088911*^9, 3.700974448550214*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Remove","rmnsm",
+   "\"There are no symbols matching \
+\\\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Tracer`Private`*\\\\\\\"\\\"}]\\)\\\".\"",2,
+   4,3,26176767475222825709,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.670329038522846*^9, 3.670329094452177*^9, 3.697440193096099*^9, 
+   3.69744101953722*^9, 3.69780605997363*^9, 3.698616953497075*^9, {
+   3.7009744460144978`*^9, 3.7009744488950567`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\" \\n                               T R A C E R\"\>"], \
+"Print",
+ CellChangeTimes->{3.700974448918838*^9}],
+
+Cell[BoxData["\<\"                              =============\\n \\n\"\>"], \
+"Print",
+ CellChangeTimes->{3.700974448926601*^9}],
+
+Cell[BoxData["\<\"     A MATHEMATICA PACKAGE FOR GAMMA-ALGEBRA IN ARBITRARY \
+DIMENSIONS\"\>"], "Print",
+ CellChangeTimes->{3.700974448937711*^9}],
+
+Cell[BoxData["\<\"                     by M. Jamin and M.E. \
+Lautenbacher\"\>"], "Print",
+ CellChangeTimes->{3.7009744489480677`*^9}],
+
+Cell[BoxData["\<\"              Physics Dept. T31, Technical University \
+Munich\\n \\n\"\>"], "Print",
+ CellChangeTimes->{3.7009744489594383`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"             Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.1\"\>", 
+   "\[InvisibleSpace]", "\<\" from \"\>", 
+   "\[InvisibleSpace]", "\<\"Mon Dec 30 15:36:00 MET 1991\"\>"}],
+  SequenceForm[
+  "             Version ", "1.1.1", " from ", "Mon Dec 30 15:36:00 MET 1991"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974448969816*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"                    (based on MATHEMATICA Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2\"\>", 
+   "\[InvisibleSpace]", "\<\")\\n \\n\"\>"}],
+  SequenceForm[
+  "                    (based on MATHEMATICA Version ", "1.2", ")\n \n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974448980091*^9}],
+
+Cell[BoxData["\<\"The package defines the following \
+commands:\\n\\n\\\"AntiCommute\\\", \\\"ContractEpsGamma\\\", \\\"Eps\\\", \\\
+\"G\\\",\\n\\\"GammaTrace\\\", \\\"G5\\\", \\\"H\\\",\\n\\\"ListCommands\\\", \
+\\\"NoSpur\\\",\\n\\\"OnShell\\\", \\\"OutputFormat\\\", \\\"RemoveHatMomenta\
+\\\",\\n\\n\\\"RemoveNCM\\\", \\\"S\\\", \\\"Sigma\\\", \\\"SortLine\\\", \
+\\\"Spur\\\", \\\"T\\\",\\n\\\"ToDiracBasis\\\",\\n\\\"ToHatTilde\\\", \
+\\\"ToOtimes\\\", \\\"ToUG5\\\", \\\"U\\\",\\n\\\"VectorDimension\\\", \
+\\\"Version\\\".\\n\\n                                    Help on usage as \
+usual per ?Name.\\n\"\>"], "Print",
+ CellChangeTimes->{3.70097444899053*^9}],
+
+Cell[BoxData["\<\"DEFAULT SETTINGS ON \
+STARTUP:\\n\\n----------------------------\"\>"], "Print",
+ CellChangeTimes->{3.700974449000457*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"NonCommutativeMultiply will be \"\>", 
+   "\[InvisibleSpace]", "\<\"removed.\"\>"}],
+  SequenceForm["NonCommutativeMultiply will be ", "removed."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7009744490104723`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Current OutputFormat is set to \"\>", 
+   "\[InvisibleSpace]", "\<\"\\\"texlike\\\"\"\>", 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Current OutputFormat is set to ", "\"texlike\"", "."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974449021538*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses a non anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"d\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses a non anticommuting G5 in \"", "d", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974449031412*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Dimension set to \\\"\"\>", "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\". Used type of G5 left unchanged.\"\>"}],
+  SequenceForm[
+  "Dimension set to \"", "nd", "\". Used type of G5 left unchanged."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974449041234*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses the usual anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses the usual anticommuting G5 in \"", "nd", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974449050988*^9}],
+
+Cell[BoxData["\<\"WARNING: Use of the Epsilon tensor in d != 4 dimensions \
+with\\n         anticommuting G5 is algebraically inconsistent.\"\>"], "Print",\
+
+ CellChangeTimes->{3.7009744490582*^9}],
+
+Cell[BoxData["\<\"The gamma matrix line(s) \\\"lferm\\\" will be \
+traced.\"\>"], "Print",
+ CellChangeTimes->{3.700974449069668*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.70097444907798*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.7009744490855293`*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.7009744490928097`*^9}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{3.700974449103932*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.700974449112323*^9}],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->{3.700974449119821*^9}],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{3.7009744491271667`*^9}],
+
+Cell[BoxData["8"], "Print",
+ CellChangeTimes->{3.700974449134647*^9}],
+
+Cell[BoxData["9"], "Print",
+ CellChangeTimes->{3.7009744491421137`*^9}],
+
+Cell[BoxData["10"], "Print",
+ CellChangeTimes->{3.700974449149431*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "ggamp.m"}]], "Input",
+ CellChangeTimes->{{3.6602066912186947`*^9, 3.6602067026052*^9}, {
+  3.660745551156487*^9, 3.660745552412341*^9}, {3.661097295521875*^9, 
+  3.661097296057787*^9}, {3.66592041588486*^9, 3.665920416396801*^9}, {
+  3.7009744509424887`*^9, 3.700974452221986*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Diagrams\"\>"], "Print",
+ CellChangeTimes->{3.70097445267694*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.7009744526823683`*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.7009744526903973`*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.700974452693225*^9}],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->{3.700974452696177*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.7009744527015543`*^9}],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->{3.700974452707555*^9}],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{3.7009744527128487`*^9}],
+
+Cell[BoxData["8"], "Print",
+ CellChangeTimes->{3.700974452718091*^9}],
+
+Cell[BoxData["9"], "Print",
+ CellChangeTimes->{3.700974452723092*^9}],
+
+Cell[BoxData["10"], "Print",
+ CellChangeTimes->{3.700974452728356*^9}],
+
+Cell[BoxData["\<\"Computing color factors\"\>"], "Print",
+ CellChangeTimes->{3.700974452733815*^9}],
+
+Cell["XXXXXXXX", "Print",
+ CellChangeTimes->{3.700974452740468*^9}],
+
+Cell[BoxData["\<\"Color factors computed\"\>"], "Print",
+ CellChangeTimes->{3.700974452746073*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{"SumOver", "[", 
+    RowBox[{
+     RowBox[{"Index", "[", 
+      RowBox[{"Colour", ",", "3"}], "]"}], ",", "3"}], "]"}]}],
+  SequenceForm["Color factor of diag ", 1, ":    ", 
+   $CellContext`SumOver[
+    $CellContext`Index[$CellContext`Colour, 3], 3]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452751197*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", 
+   RowBox[{"SumOver", "[", 
+    RowBox[{
+     RowBox[{"Index", "[", 
+      RowBox[{"Colour", ",", "3"}], "]"}], ",", "3"}], "]"}]}],
+  SequenceForm["Color factor of diag ", 2, ":    ", 
+   $CellContext`SumOver[
+    $CellContext`Index[$CellContext`Colour, 3], 3]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452756496*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 3, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452761387*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 4, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452766526*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 5, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7009744527713957`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 6, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452774191*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["Color factor of diag ", 7, ":    ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.70097445277708*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "8", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["Color factor of diag ", 8, ":    ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452779871*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "9", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 9, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452782593*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "10", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 10, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452785284*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp3: \"\>", "\[InvisibleSpace]", "10"}],
+  
+  SequenceForm["N\[Degree] of diag in amp3: ", 10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452788374*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm["N\[Degree] of diag in amp2: ", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452791065*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "7", "}"}], ",", 
+     RowBox[{"{", "8", "}"}]}], "}"}], 
+   "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 1, " in amp2 correspond to diag n. ", {{7}, {8}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7009744527938747`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "9", "}"}], ",", 
+     RowBox[{"{", "10", "}"}]}], "}"}], 
+   "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 2, " in amp2 correspond to diag n. ", {{9}, {10}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452796826*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "4", "}"}], ",", 
+     RowBox[{"{", "5", "}"}]}], "}"}], 
+   "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 3, " in amp2 correspond to diag n. ", {{4}, {5}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452799831*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "3", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 4, " in amp2 correspond to diag n. ", {{3}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452802619*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "2", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 5, " in amp2 correspond to diag n. ", {{2}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452805415*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "1", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 6, " in amp2 correspond to diag n. ", {{1}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452808247*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "6", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 7, " in amp2 correspond to diag n. ", {{6}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7009744528112373`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\";   order of diag compared to amp3: \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "7", "}"}], ",", 
+       RowBox[{"{", "8", "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "9", "}"}], ",", 
+       RowBox[{"{", "10", "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "4", "}"}], ",", 
+       RowBox[{"{", "5", "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "3", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "2", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "1", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "6", "}"}], "}"}]}], "}"}]}],
+  SequenceForm[
+  "N\[Degree] of diag in amp2: ", 7, 
+   ";   order of diag compared to amp3: ", {{{7}, {8}}, {{9}, {10}}, {{4}, {
+    5}}, {{3}}, {{2}}, {{1}}, {{6}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452814258*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"If everything has been done correctly, a zero must happear \
+here: \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm[
+  "If everything has been done correctly, a zero must happear here: ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.700974452817054*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1439, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 196, 4, 32, "Input"],
+Cell[778, 28, 1917, 27, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2732, 60, 317, 5, 32, "Input"],
+Cell[3052, 67, 454, 10, 24, "Message"],
+Cell[CellGroupData[{
+Cell[3531, 81, 124, 2, 44, "Print"],
+Cell[3658, 85, 128, 2, 63, "Print"],
+Cell[3789, 89, 146, 2, 24, "Print"],
+Cell[3938, 93, 134, 2, 24, "Print"],
+Cell[4075, 97, 147, 2, 63, "Print"],
+Cell[4225, 101, 398, 10, 24, "Print"],
+Cell[4626, 113, 354, 8, 63, "Print"],
+Cell[4983, 123, 667, 9, 272, "Print"],
+Cell[5653, 134, 140, 2, 63, "Print"],
+Cell[5796, 138, 270, 6, 24, "Print"],
+Cell[6069, 146, 321, 7, 24, "Print"],
+Cell[6393, 155, 350, 8, 24, "Print"],
+Cell[6746, 165, 346, 7, 24, "Print"],
+Cell[7095, 174, 360, 8, 24, "Print"],
+Cell[7458, 184, 197, 3, 44, "Print"],
+Cell[7658, 189, 132, 2, 24, "Print"],
+Cell[7793, 193, 68, 1, 24, "Print"],
+Cell[7864, 196, 71, 1, 24, "Print"],
+Cell[7938, 199, 71, 1, 24, "Print"],
+Cell[8012, 202, 69, 1, 24, "Print"],
+Cell[8084, 205, 69, 1, 24, "Print"],
+Cell[8156, 208, 69, 1, 24, "Print"],
+Cell[8228, 211, 71, 1, 24, "Print"],
+Cell[8302, 214, 69, 1, 24, "Print"],
+Cell[8374, 217, 71, 1, 24, "Print"],
+Cell[8448, 220, 70, 1, 24, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8567, 227, 311, 5, 32, "Input"],
+Cell[CellGroupData[{
+Cell[8903, 236, 83, 1, 24, "Print"],
+Cell[8989, 239, 71, 1, 24, "Print"],
+Cell[9063, 242, 71, 1, 24, "Print"],
+Cell[9137, 245, 69, 1, 24, "Print"],
+Cell[9209, 248, 69, 1, 24, "Print"],
+Cell[9281, 251, 71, 1, 24, "Print"],
+Cell[9355, 254, 69, 1, 24, "Print"],
+Cell[9427, 257, 71, 1, 24, "Print"],
+Cell[9501, 260, 69, 1, 24, "Print"],
+Cell[9573, 263, 69, 1, 24, "Print"],
+Cell[9645, 266, 70, 1, 24, "Print"],
+Cell[9718, 269, 99, 1, 24, "Print"],
+Cell[9820, 272, 67, 1, 24, "Print"],
+Cell[9890, 275, 98, 1, 24, "Print"],
+Cell[9991, 278, 502, 12, 24, "Print"],
+Cell[10496, 292, 502, 12, 24, "Print"],
+Cell[11001, 306, 300, 6, 24, "Print"],
+Cell[11304, 314, 300, 6, 24, "Print"],
+Cell[11607, 322, 302, 6, 24, "Print"],
+Cell[11912, 330, 300, 6, 24, "Print"],
+Cell[12215, 338, 299, 6, 24, "Print"],
+Cell[12517, 346, 300, 6, 24, "Print"],
+Cell[12820, 354, 300, 6, 24, "Print"],
+Cell[13123, 362, 302, 6, 24, "Print"],
+Cell[13428, 370, 239, 6, 24, "Print"],
+Cell[13670, 378, 234, 5, 24, "Print"],
+Cell[13907, 385, 502, 13, 24, "Print"],
+Cell[14412, 400, 502, 13, 24, "Print"],
+Cell[14917, 415, 500, 13, 24, "Print"],
+Cell[15420, 430, 442, 11, 24, "Print"],
+Cell[15865, 443, 442, 11, 24, "Print"],
+Cell[16310, 456, 442, 11, 24, "Print"],
+Cell[16755, 469, 444, 11, 24, "Print"],
+Cell[17202, 482, 1095, 32, 24, "Print"],
+Cell[18300, 516, 313, 7, 24, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

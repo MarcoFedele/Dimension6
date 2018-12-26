@@ -1,0 +1,160 @@
+(***************************************************************************************************************)
+(******                       Flavor changing Higgs current feynman-rules model                           ******)
+(******                                                                                                   ******)
+(******     Authors: S. Krastanov                                                                         ******)
+(******                                                                                                   ******)
+(****** Requires the SM.fr module.                                                                        ******)
+(***************************************************************************************************************)
+
+(* ************************** *)
+(* *****  Information   ***** *)
+(* ************************** *)
+M$ModelName = "thu";
+
+M$Information = {
+  Authors      -> {"Stefan Krastanov"}, 
+  Version      -> "0.1",
+  Date         -> "August 1, 2013",
+  Institutions -> {"ENS Lyon", "UCL Belgium"}.
+  Emails       -> {"stefan.krastanov@ens-lyon.fr"},
+  URLs         -> "http://feynrules.irmp.ucl.ac.be/"
+};
+
+FeynmanGauge = False;
+
+(* ************************** *)
+(* *****  Change  log   ***** *)
+(* ************************** *)
+
+(* v0.1: Based on SM v1.4.2.                           *)
+
+(* ************************** *)
+(* *****  Gauge groups  ***** *)
+(* ************************** *)
+
+
+(* ************************** *)
+(* *****    Indices     ***** *)
+(* ************************** *)
+
+
+(* ************************** *)
+(* *** Interaction orders *** *)
+(* ***  (as used by mg5)  *** *)
+(* ************************** *)
+
+
+(* ************************** *)
+(* **** Particle classes **** *)
+(* ************************** *)
+
+
+(* ************************** *)
+(* *****     Gauge      ***** *)
+(* *****   Parameters   ***** *)
+(* *****   (FeynArts)   ***** *)
+(* ************************** *)
+
+
+(* ************************** *)
+(* *****   Parameters   ***** *)
+(* ************************** *)
+M$Parameters = {
+
+  LambdaS == {
+	ParameterType -> External,
+	ParameterName -> LambdaS,
+	BlockName -> DIM6,
+	InteractionOrder -> {NP,-1},
+	Value -> 1000,
+	TeX -> \[CapitalLambda],
+	Description -> "Scale of the new physics"},
+  O13uphi == {
+	ParameterType -> External,
+	ParameterName -> O13uphi,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,13uphi],
+	Description -> "Coupling of the eff operator"},
+  O23uphi == {
+	ParameterType -> External,
+	ParameterName -> O23uphi,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,23uphi],
+	Description -> "Coupling of the eff operator"},
+  O31uphi == {
+	ParameterType -> External,
+	ParameterName -> O31uphi,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,31uphi],
+	Description -> "Coupling of the eff operator"},
+  O32uphi == {
+	ParameterType -> External,
+	ParameterName -> O32uphi,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,32uphi],
+	Description -> "Coupling of the eff operator"},
+  O13ug == {
+	ParameterType -> External,
+	ParameterName -> O13ug,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,13ug],
+	Description -> "Coupling of the eff operator"},
+  O23ug == {
+	ParameterType -> External,
+	ParameterName -> O23ug,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,23ug],
+	Description -> "Coupling of the eff operator"},
+  O31ug == {
+	ParameterType -> External,
+	ParameterName -> O31ug,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,31ug],
+	Description -> "Coupling of the eff operator"},
+  O32ug == {
+	ParameterType -> External,
+	ParameterName -> O32ug,
+	BlockName -> DIM6,
+	InteractionOrder -> {QED,2},
+	Value -> 1,
+	TeX -> Subscript[o,32ug],
+	Description -> "Coupling of the eff operator"}
+};
+
+(* ************************** *)
+(* *****   Lagrangian   ***** *)
+(* ************************** *)
+Lthu := Block[{ii, jj, ll, sp, sp1, sp2, cc, cc1, cc2, aa, mu, nu},
+   LO13uphi = QLbar[sp, ii, 1, cc].uR[sp, 3, cc] Phibar[jj] Eps[ii, jj] Phi[ll] Phibar[ll] O13uphi;
+   LO31uphi = QLbar[sp, ii, 3, cc].uR[sp, 1, cc] Phibar[jj] Eps[ii, jj] Phi[ll] Phibar[ll] O31uphi;
+   LO23uphi = QLbar[sp, ii, 2, cc].uR[sp, 3, cc] Phibar[jj] Eps[ii, jj] Phi[ll] Phibar[ll] O23uphi;
+   LO32uphi = QLbar[sp, ii, 3, cc].uR[sp, 2, cc] Phibar[jj] Eps[ii, jj] Phi[ll] Phibar[ll] O32uphi;
+
+
+   sigma := I/2 (Ga[mu, sp1, sp] Ga[nu, sp, sp2] - Ga[nu, sp1, sp] Ga[mu, sp, sp2]);
+
+   LO13ug = QLbar[sp1, ii, 1, cc1] sigma T[aa, cc1, cc2] uR[sp2, 3, cc2] Eps[ii, jj] Phibar[jj] FS[G, mu, nu, aa] O13ug;
+   LO31ug = QLbar[sp1, ii, 3, cc1] sigma T[aa, cc1, cc2] uR[sp2, 1, cc2] Eps[ii, jj] Phibar[jj] FS[G, mu, nu, aa] O31ug;
+   LO23ug = QLbar[sp1, ii, 2, cc1] sigma T[aa, cc1, cc2] uR[sp2, 3, cc2] Eps[ii, jj] Phibar[jj] FS[G, mu, nu, aa] O23ug;
+   LO32ug = QLbar[sp1, ii, 3, cc1] sigma T[aa, cc1, cc2] uR[sp2, 2, cc2] Eps[ii, jj] Phibar[jj] FS[G, mu, nu, aa] O32ug;
+
+
+   lthu = ExpandIndices[
+    -(LO13uphi + LO31uphi + LO23uphi + LO32uphi)   (Sqrt[2] ymt/vev)^3/LambdaS^2
+    +(LO13ug   + LO31ug   + LO23ug   + LO32ug  ) gs Sqrt[2] ymt/vev   /LambdaS^2,
+     FlavorExpand -> {SU2D}];
+   lthu + HC[lthu]];

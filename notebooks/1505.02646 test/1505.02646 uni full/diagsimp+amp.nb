@@ -1,0 +1,1135 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     50331,       1127]
+NotebookOptionsPosition[     47616,       1045]
+NotebookOutlinePosition[     48030,       1063]
+CellTagsIndexPosition[     47987,       1060]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9}],
+
+Cell[BoxData["\<\"/Users/marco/Documents/universita\:0300/Dimension6/\
+notebooks/1505.02646 uni full\"\>"], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.660206994940179*^9, 
+   3.6602071497115717`*^9, 3.660207305749024*^9, 3.660207678630128*^9, 
+   3.660210782061194*^9, 3.660210906225379*^9, 3.660218959117879*^9, 
+   3.6602192262990103`*^9, 3.6602192666532383`*^9, 3.660745459835804*^9, 
+   3.660745743767976*^9, 3.660746992729007*^9, 3.6608250743976583`*^9, 
+   3.660827685907452*^9, 3.660832311698306*^9, 3.6608903511139174`*^9, 
+   3.66089160763066*^9, 3.660892606659823*^9, 3.6608962388644876`*^9, 
+   3.660898241801324*^9, 3.6609794221917667`*^9, 3.6609929514989023`*^9, 
+   3.6610972878037567`*^9, 3.661098382643963*^9, 3.661154784090414*^9, 
+   3.661155214451932*^9, 3.6611552873363543`*^9, 3.661156056463328*^9, 
+   3.661172700249012*^9, 3.661178636648919*^9, 3.661180739012721*^9, 
+   3.662294919999524*^9, 3.663160318546132*^9, 3.663160418250904*^9, 
+   3.663315724316245*^9, 3.6633160605513763`*^9, 3.6633163488424063`*^9, 
+   3.663317260549099*^9, 3.663336651864995*^9, 3.664549426446794*^9, 
+   3.664552569248905*^9, 3.664623203812386*^9, 3.664624299769856*^9, {
+   3.6650618996295767`*^9, 3.6650619012841682`*^9}, {3.6657589230456467`*^9, 
+   3.665758925535095*^9}, 3.666542298745205*^9, 3.666625668335106*^9, 
+   3.696577344918704*^9, {3.697364815220615*^9, 3.697364824609123*^9}, 
+   3.697372097647492*^9, 3.697374281566675*^9, 3.6973763002286453`*^9, 
+   3.697441996501346*^9, 3.697805003423644*^9, 3.6999571717168818`*^9, 
+   3.699958700412828*^9, 3.699958902460144*^9, 3.699960125407443*^9, 
+   3.700907489618022*^9, 3.704009468667346*^9, 3.704192215732435*^9, 
+   3.7042811993609467`*^9, 3.7044290504737873`*^9, 3.7044450584033747`*^9, 
+   3.704451504810301*^9, 3.704452816940827*^9, 3.704519836301896*^9, 
+   3.704523200778905*^9, 3.7045341535642643`*^9, 3.7046088167931013`*^9, 
+   3.704692916074708*^9, 3.7046941076667147`*^9, 3.704695369374752*^9, 
+   3.7047090679216967`*^9, 3.704719084917658*^9, 3.704720135796452*^9, 
+   3.704781789059011*^9, 3.70478671755368*^9, 3.704788417464143*^9, 
+   3.704789562859416*^9, 3.7047937240199213`*^9, 3.704802306694718*^9, 
+   3.704803054252555*^9, 3.704804106607182*^9, 3.704971217657968*^9, 
+   3.704972676516341*^9, 3.7049734580400047`*^9, 3.7050407363374033`*^9, 
+   3.7050428471109447`*^9, 3.705043043905911*^9, 3.705045484097402*^9, 
+   3.705053182236102*^9, 3.705057284616935*^9, 3.705153277009952*^9, 
+   3.705153833282194*^9, 3.705154177531631*^9, 3.705155076500844*^9, 
+   3.7053255891766243`*^9, 3.705336084099317*^9, 3.705732025891512*^9, 
+   3.705732196313074*^9, 3.705757274124556*^9, 3.70581620602561*^9, 
+   3.705819401059504*^9, 3.70694268621181*^9, 3.7069438417420464`*^9, 
+   3.7069446238224792`*^9, 3.706953583167716*^9, 3.706956179135605*^9, 
+   3.707200481459223*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Hggdiagsimp.m"}]], "Input",
+ CellChangeTimes->{{3.660206603989884*^9, 3.660206616600449*^9}, {
+  3.660745465849557*^9, 3.660745467440505*^9}, {3.661097289474598*^9, 
+  3.661097290050264*^9}, {3.664549427621663*^9, 3.664549428216256*^9}, {
+  3.69736481844636*^9, 3.6973648212151423`*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Remove","rmnsm",
+   "\"There are no symbols matching \
+\\\"\\!\\(\\*RowBox[{\\\"\\\\\\\"Tracer`Private`*\\\\\\\"\\\"}]\\)\\\".\"",2,
+   2,1,26217570431500643323,"New Kernel"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{
+  3.666542298908554*^9, 3.666625668517085*^9, 3.696577345016107*^9, {
+   3.6973648153063717`*^9, 3.697364824708589*^9}, 3.697372097734481*^9, 
+   3.6973742816496153`*^9, 3.697376300387145*^9, 3.6974419965999117`*^9, 
+   3.6978050035025377`*^9, 3.6999571718535843`*^9, 3.69995870049417*^9, 
+   3.6999589025426617`*^9, 3.699960125505473*^9, 3.700907490579071*^9, 
+   3.704009468795195*^9, 3.704192217896102*^9, 3.704281200091432*^9, 
+   3.7044290505819798`*^9, 3.704445058494349*^9, 3.704451504896789*^9, 
+   3.7044528179422903`*^9, 3.704519837350032*^9, 3.7045232025525837`*^9, 
+   3.704534155105163*^9, 3.704608817586882*^9, 3.7046929161750193`*^9, 
+   3.704694107750388*^9, 3.70469536945123*^9, 3.7047090685993547`*^9, 
+   3.704719085698422*^9, 3.7047201359026327`*^9, 3.704781789161106*^9, 
+   3.7047867176481037`*^9, 3.704788417575375*^9, 3.7047895629936647`*^9, 
+   3.7047937241015*^9, 3.704802306869923*^9, 3.70480305435664*^9, 
+   3.704804106695812*^9, 3.7049712177650843`*^9, 3.704972676602167*^9, 
+   3.7049734581448936`*^9, 3.705040736422418*^9, 3.705045484238337*^9, 
+   3.705153277096445*^9, 3.705153833369384*^9, 3.705154177631233*^9, 
+   3.705155076599825*^9, 3.7053255892913513`*^9, 3.705336084205432*^9, 
+   3.7057320274636593`*^9, 3.705732197384672*^9, 3.705757274210422*^9, 
+   3.705816206104911*^9, 3.705819401254799*^9, 3.706942686304034*^9, 
+   3.706943841827265*^9, 3.706944623906995*^9, 3.706953583494092*^9, 
+   3.706956179214961*^9, 3.707200481546163*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\" \\n                               T R A C E R\"\>"], \
+"Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZBmv2dU8wZIAwBbv/N+
+  "]],
+
+Cell[BoxData["\<\"                              =============\\n \\n\"\>"], \
+"Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZBO4TSueQOkAVja8wc=
+  "]],
+
+Cell[BoxData["\<\"     A MATHEMATICA PACKAGE FOR GAMMA-ALGEBRA IN ARBITRARY \
+DIMENSIONS\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZBuzDKueQOkAVxp84U=
+  "]],
+
+Cell[BoxData["\<\"                     by M. Jamin and M.E. \
+Lautenbacher\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZBu2mdc8wZIAwBevfPa
+  "]],
+
+Cell[BoxData["\<\"              Physics Dept. T31, Technical University \
+Munich\\n \\n\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZCOEDKpeQOkAVi/8wU=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"             Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.1\"\>", 
+   "\[InvisibleSpace]", "\<\" from \"\>", 
+   "\[InvisibleSpace]", "\<\"Mon Dec 30 15:36:00 MET 1991\"\>"}],
+  SequenceForm[
+  "             Version ", "1.1.1", " from ", "Mon Dec 30 15:36:00 MET 1991"],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZC+l2ZS8wZIAwBfO/Pf
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"                    (based on MATHEMATICA Version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2\"\>", 
+   "\[InvisibleSpace]", "\<\")\\n \\n\"\>"}],
+  SequenceForm[
+  "                    (based on MATHEMATICA Version ", "1.2", ")\n \n"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDO2GNS8wZIAwBd5fO/
+  "]],
+
+Cell[BoxData["\<\"The package defines the following \
+commands:\\n\\n\\\"AntiCommute\\\", \\\"ContractEpsGamma\\\", \\\"Eps\\\", \\\
+\"G\\\",\\n\\\"GammaTrace\\\", \\\"G5\\\", \\\"H\\\",\\n\\\"ListCommands\\\", \
+\\\"NoSpur\\\",\\n\\\"OnShell\\\", \\\"OutputFormat\\\", \\\"RemoveHatMomenta\
+\\\",\\n\\n\\\"RemoveNCM\\\", \\\"S\\\", \\\"Sigma\\\", \\\"SortLine\\\", \
+\\\"Spur\\\", \\\"T\\\",\\n\\\"ToDiracBasis\\\",\\n\\\"ToHatTilde\\\", \
+\\\"ToOtimes\\\", \\\"ToUG5\\\", \\\"U\\\",\\n\\\"VectorDimension\\\", \
+\\\"Version\\\".\\n\\n                                    Help on usage as \
+usual per ?Name.\\n\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZC2UjKteQOkAVhF8vg=
+  "]],
+
+Cell[BoxData["\<\"DEFAULT SETTINGS ON \
+STARTUP:\\n\\n----------------------------\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZBeXWVa8wZIAwBeNfPB
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"NonCommutativeMultiply will be \"\>", 
+   "\[InvisibleSpace]", "\<\"removed.\"\>"}],
+  SequenceForm["NonCommutativeMultiply will be ", "removed."],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDuOmNa8wZIAwBfa/Py
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Current OutputFormat is set to \"\>", 
+   "\[InvisibleSpace]", "\<\"\\\"texlike\\\"\"\>", 
+   "\[InvisibleSpace]", "\<\".\"\>"}],
+  SequenceForm["Current OutputFormat is set to ", "\"texlike\"", "."],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZD+Km9W8wZIAwBeDvOx
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses a non anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"d\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses a non anticommuting G5 in \"", "d", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZD+V2hW8wZIAwBglPQM
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Dimension set to \\\"\"\>", "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\". Used type of G5 left unchanged.\"\>"}],
+  SequenceForm[
+  "Dimension set to \"", "nd", "\". Used type of G5 left unchanged."],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZA2OGJW8wZIAwBcafOR
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package uses the usual anticommuting G5 in \\\"\"\>", 
+   "\[InvisibleSpace]", "\<\"nd\"\>", 
+   "\[InvisibleSpace]", "\<\"\\\" dimensions.\"\>"}],
+  SequenceForm[
+  "Package uses the usual anticommuting G5 in \"", "nd", "\" dimensions."],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDWFzWveQOkAVee8uI=
+  "]],
+
+Cell[BoxData["\<\"WARNING: Use of the Epsilon tensor in d != 4 dimensions \
+with\\n         anticommuting G5 is algebraically inconsistent.\"\>"], "Print",\
+
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZCek2le8wZIAwBdUvOj
+  "]],
+
+Cell[BoxData["\<\"The gamma matrix line(s) \\\"lferm\\\" will be \
+traced.\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDetsu85g2QBgBgWfQO
+  "]],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZC+wWdR8wZIAwBcu/OF
+  "]],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDuNYlteAOkAVxf84k=
+  "]],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZC25/nS+gZIAwBcevOv
+  "]],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDOS/za+gZIAwBgS/Q0
+  "]],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZC+lX6i7Q2QBgBizPR6
+  "]],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZDOeS/c/gZIAwBe2/Pg
+  "]],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwAuKSHPHXmj2vHVtVLCp0gfSbXNNOPSBdtLG3VR9I/zg6
+eaY/kD66uuAmQ+9rx11K9dukJ752DM+eUCoDpBW/XuwD0d+ubVCXBdJT1IL3
+vJ702jHr/az4azNeO96Ksp2tP/O144xJzHzRQPrYlWD7xUC6XChQYDWQzn8m
+a7YOSK8/ZHcLRP84vnryeSDd7BdkcRFI679JnngNSL9JM2b7DaTlDrSJqcwC
+mmNbuRpE80zU91QF0vdWTP6pDaR//Np21wBIuwv+SzAE0m7TllX7A2lmiW2P
+A4H0pxXGO4KANJ9NonswiL+5xT8UxPeLbYgE0mbrz9wF0T5rwhOjgPSma5a/
+VgPpLdlTNqwB0gHnXYXWAmmrLXxvzgLpr887bC8A6QLXJfdZZr92PDJJV5UV
+SH/KNQ0A0S9ypxwA0UILVjFFAuk/x9uV4oB03bqicvk5QHNZ1/aAaH82j9Pa
+QPrsxCMTPYD0x4mail5AepXVudl581477miw1skH0lfM/vWCaGXBj2+LgbSD
+cIZRKZB+myTa/gZIAwBfFPPW
+  "]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "Hggamp.m"}]], "Input",
+ CellChangeTimes->{{3.6602066912186947`*^9, 3.6602067026052*^9}, {
+   3.660745551156487*^9, 3.660745552412341*^9}, {3.661097295521875*^9, 
+   3.661097296057787*^9}, 3.664549434944319*^9, 3.69736482373083*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Diagrams\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kG49JNf+BkgDAMjM710=
+  "]],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kGZglG9/A6QBv2PuGA==
+  "]],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kJ5/Xan9DZAGAMpH75A=
+  "]],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kJ6zTa39DZAGAMlg73A=
+  "]],
+
+Cell[BoxData["4"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP7Cpd7+BkgDAMdy7x0=
+  "]],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kNaZp9H+BkgDAMVE7uo=
+  "]],
+
+Cell[BoxData["6"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kJ7yTaP9DZAGAMrs76o=
+  "]],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP7jqdn+BkgDAMl372Y=
+  "]],
+
+Cell[BoxData["\<\"Computing color factors\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kL41W7P9DZAGAMql75Y=
+  "]],
+
+Cell["XXXXXXX", "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxW0o43EAB/C/iyt5c1xX69zOQyT6223di3Ehv8nOSSe7HJvaLpmUZTlt
+eXiHPOvuWOJvtwil2zyU6yR11pJ2XmBnTUeMOC2/LeXFjrjy/b349EmqNqr0
+ERzHZYNPKQumD1BSmaBsycQXznmLBB967F0v8IQhUijFfOHBH26QkgUiWY7/
+Qkl45r/pGc55k/+JvX83LIixpCBXERyiRL3z8NQ3Ssn3Ci5FOkZJ6+5GbBU+
+y3AqpvCJMSyy40772tt5PE2KL9mzHeZeD9b1f5zewxb/nCtCoETTGRCn4EVp
+zBLb5fompOLqokyOx3U9ladS/F6f1yjDzqqQpRQ/+CEKleEac8a6CnutirJ3
++FGvXVuOA79q+9TYXbIWYKvSn9RrsHD0M9qBs77KV9nN0Y9fzeHtf3zcFr6S
+SV/v4OfXjr+R45RYF1L5KGwwl1ewn94mu9nOjvMRNT6WfbBpcatY1JZgpcTh
+d5+xJcrfaTz2ihJpEV6ZvWspxtZgia3BRslnH+WN2Ne+NMZu9shvmvCm3PTS
+hMO6ye4gvgfMse/u
+  "]],
+
+Cell[BoxData["\<\"Color factors computed\"\>"], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kM4t3tH+BkgDAMl/75A=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 1, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP7CK9zxBkgDAMcU7w0=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 2, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kC6IEul4A6QBxRXu1w==
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 3, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kBbbLtLxBkgDAMTQ7to=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 4, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxWsoq2EAB/CXUPLFJTWXuUWi12z5MOTIM5lLIpPDKCSkyEJbLt+QXHNb
+4j07S3FKZ3Mpp3OSYi1pfMDQdJzccml5JuUDRyj/58OvX2SNRlXnxnFcCjiU
+MlfcMCVl4cqOBHxvWdJL8Jnd1JeIZ5s8hELMZ/37y41Qskwkf0LGKXn+8aEN
+xWm5GaPs0/dJQYwlmV8UrglK1Ade145pSn6VctHSGUo6j7b9KvBNvEUxh680
+zyIT7jVtFizheZL3yF7o0Q3YcdVQ6/wJ1l8sWt0ESsp7neJovCL1WWVbrT+F
+GFyTk8DxuKG/7FqKv9alt8iwpeJBX4jdf4seinCtLn5LhY8NiqJi7DtgqizB
+zp36QTW25W862aq4wMZyLJxveJtx8nf5OrvdOyB1Ee+/8P57+EkmzT7AYf/N
+tx7fKDEsx/CeuElXUsoOfouysS09d1NqfCmrNlbiTrGoK9xAifnCdsOWKA9j
+eXwsiqA5eG3hvSMPG1z5xmYjJWMOymuwo3t1ht1ul7+24V25NkmLdbagfhf+
+BMhl71A=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 5, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxW0o43EAB/D/hNK98ZBa3AyR6G+27sUQ8ttlnER2eRiFxKXIQlse3iHh
+XMfduvibpVC6zUMRSbGWNF5gaEKe8tDym5QXHkL5/l58+kRU6jTVIo7jksCl
+Vnhi+ygplqpb4vGtbdoowydOS1cCHq3zFvIwn3F8yP2iZIbIFkMHKHmceNd/
+xinf0n+zj97+ChIs+5qq8vyhRLvje+kapGS+iIuSD1HSurceUIqv4myqMXyh
+exRbcKdlNXcaj5Pse/Zkh6HHict/No4fYOPZlF0kUFLS6ZZE4Vn5pzm23f5f
+iMaVWfEcj2u6iy/luLA6rUGBbaV3xjzstSC+y8dVhrg1Dd43qfK/Y/8eS1kB
+dm/86NViR86qm62JDa4twcLpip8VJ44ol9nNfkHJU3j7iQ/cwg8KeeYODnu2
+XnsPU2KaieZ9cJ2hoIgd8hrpYNs6bv5p8bmiwlyGWyXiNqmJEuuZ44otU+/G
+8HhfHE6z8NLkW0s2NnlyzPVmSvpdlNdhV/vcELvZqXxpwptK/Rc9DhZJuz34
+A8AQ7i4=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 6, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxVtIk2EABuDfMGF00wFhVGsZjnD8zo0uVmHRt2jqEMXJ3AlmjIzA0SjZ
+mOuuiTgr0hqRf3MIKgx3EpQigjaGyOqinI1Fhc2YyfDbCLowowm938XD02B3
+6gdqOI67AHmtqtz0kBKTVDvcjHdS8YACb2Qjoy14xlErdGP+2rcv3CNKEkTx
+6sQkJbvz+66TuLXjymP21+pTQYIVVy9pyk8oMa/VFfPPKVk2co3KKUq8n1aP
+WPGWPKWZxT+cu+IIHokku+J4juh+scM+tz+L+x/cnfuMA4VYukagxDJSkjTi
+ReWhJXY6vSDIsL29mePxrTFTUYn7Bi7fUeGUtRLoxgdeiis9+IZbvqLHuaCm
+pxcf9kdsBlx6d3PcjDOdyRJb31Q/aMHC97eiKD4/rX7D9oiOXYzhj3/4ox/w
+b5WybQ2f2ov+rH1BSTAh4w9ih9tgZB//dybDTvm2n5nxpup6yIa9EvE9aZCS
+aCGzxVZo18/yOCc+Tdvx63B1WIeD5c7Q7RAlE3nKO3H+/tIU25NV/x3C79Wu
+cy5c7ZCOlfF/yUDvXQ==
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Color factor of diag \"\>", "\[InvisibleSpace]", "7", 
+   "\[InvisibleSpace]", "\<\":    \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm["Color factor of diag ", 7, ":    ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxV9IU1EAB+CrqCC9lCEMa1niEOVubvQwlYrOomUyHE7UbcKK0UJQHBYb
+zt5SYlai1oi8zSGoIG7+AcUSQS9DZPaQm8qVEjOZxvBMgh5mkoK/8/Dx3bA7
+TY40juPKQdJrksVvKTHn6z1KfChO+lR4JxZ8VYqHWjIEI+bvb3/neiiZIqrP
+V/opSY2eua7iWw/v9rJ/nL4X5Fh177Yu+Y4SSzQrLn2kZLaBK1QPUNKxsXKp
+Ee+XiLphvOdMyYK4K7hUPYlHSNUf9linuzuGH715NrKFfbsT4TSBEmtXQl6I
+p9UXZtjh8LigwPZKJcfjJq85rsb1jjttGiw2HvmMOH1OdlSDn7hLlk1406+r
+qcUXu4O2OpxYffragiOGpQTbVJzbbMXCz8XsEC4b1C6w27MvV0zgtWM+5xv+
+q1E/iOJr/0IHGZ8o8U8p+Ezc4q5rYOf9L4iwxc7fHyz4l+ZxwIY75LIX+X5K
+QruRfbZKv17E403ZdVqJ58dOPVXYnzQEWgOU9EmUd2Lp5cwAuz2mPXmOv2pd
+N134y6HCm8Tny6vvwA==
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp3: \"\>", "\[InvisibleSpace]", "7"}],
+  SequenceForm["N\[Degree] of diag in amp3: ", 7],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kI7SVet4A6QBw5bupg==
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "6"}],
+  SequenceForm["N\[Degree] of diag in amp2: ", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP6Xo9bxBkgDAMpv74k=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "3", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 1, " in amp2 correspond to diag n. ", {{3}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kC7ZqdbxBkgDAMg670w=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "6", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 2, " in amp2 correspond to diag n. ", {{6}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJwVxW0o43EAB/A/oeSNI7UwjjjR32x5McTlNxknkcnDppCQOt1CWx7eHV0e
+c8cSf7MUSjYPRSTFWtJ4gaFd6M7JQ8tvUvfCs/L9vfj0iajSqmo8OI5LBqdS
+5o7tpaQ0XNkSj2+scwYJ/uMw/0jA4/VeQj7mM0+PuT5K5olkJeQXJfdTb7pQ
+nPolvZ998jooiLEkI03hHqBEve9z4RymZKmEi5KOUNJ6uPWhDF/GWRUT+Fx7
+LzLjDvNG3hyeJDl37Ol2fZcDV/Q0Tv7GhrNZm4dAiabDJY7CC1K/RbbNNiNE
+46rseI7HdZ2lF1JcXPO5QYatZbeGfOy5LLotwNX6uE0VPjIqCgqxf5e5vAi7
+tmu71dieu+Fiq2KDvmqw8Hfd14KTxuRr7GbfwJRZvPfAB+zi/zJp1j4Oe7Rc
+eY1SYpyP5r1xvb6ohB38EmlnW9uvh9T4n6zSVI5bxaK2cCMlljP7JVuiPIjh
+8ZHoI83Gq9OvLTnY6M41fTNR8tNJeS12fl8cYTc75E9NeEeuS9Th9OdPnW78
+Dshh71k=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "7", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 3, " in amp2 correspond to diag n. ", {{7}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kM63Vu94A6QBxKbuyg==
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "4", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 4, " in amp2 correspond to diag n. ", {{4}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP5Upd7xBkgDAMp374w=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "5", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"{", "5", "}"}], "}"}], "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  
+  SequenceForm[
+  "diag n. ", 5, " in amp2 correspond to diag n. ", {{5}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kP6xS73jDZAGAMxn79I=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"diag n. \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\" in amp2 correspond to diag n. \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "2", "}"}]}], "}"}], 
+   "\[InvisibleSpace]", "\<\" in amp3\"\>"}],
+  SequenceForm[
+  "diag n. ", 6, " in amp2 correspond to diag n. ", {{1}, {2}}, " in amp3"],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kE77rd7xBkgDAMme74E=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"N\[Degree] of diag in amp2: \"\>", "\[InvisibleSpace]", "6", 
+   "\[InvisibleSpace]", "\<\";   order of diag compared to amp3: \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", "3", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "6", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "7", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "4", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", "5", "}"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "2", "}"}]}], "}"}]}], "}"}]}],
+  SequenceForm[
+  "N\[Degree] of diag in amp2: ", 6, 
+   ";   order of diag compared to amp3: ", {{{3}}, {{6}}, {{7}}, {{4}}, {{
+    5}}, {{1}, {2}}}],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kF5qq9HxBkgDAMZq7wM=
+  "]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"If everything has been done correctly, a zero must happear \
+here: \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm[
+  "If everything has been done correctly, a zero must happear here: ", 0],
+  Editable->False]], "Print",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGCwBOJrboZvNHteO0bIu1XqAulXB9ZN0QPSdy+ubtMH0gty
+WGb5A2kd19s3GXpfO6531NsuPfG147elf0tlgLSNp0M/iL71Z/IsWSCt52zr
+9GbSa8fIC2yPr8147bglnEHFYOZrx6rLxwSjgfQTrQNOi4H0w/xvEquBdMvq
+/X7rgPQSR6/3IHpFc1nnRSAd31205DqQnnJ/7SHGWa8do1peyKoA6Q0G3JtB
+9KFDq2apAukkD10GHSCd0RHx2ABIh6XaFRoC6QPRb6f4A2mmbRJvA4F0SpnW
+kSAgfWWOU2AwkBboXB0XCqRfnEzrigTSJ3z2vwDRQZqi2VFAeta9fZxrgLTF
+XPPdILqCU9hqLZA+/11H6ByQ/mRo4H4BSMv9WPOUZfZrxznrVXVYgXROWWg4
+iJb6rXQCRB9ofjYtEkg/MEyYFwekq2QlquXnvHZcc//EExCt53ZJXQdIX5FQ
+eO0BpHeu+FPpBaTnvPGZlzfvteOEa6918oH0tabNM0F0xUXzn8VA+pR5qXEp
+kM6p1eh4A6QBxmLvCg==
+  "]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Beep", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.700907500902645*^9, 3.700907503754881*^9}}]
+},
+Evaluator->"New Kernel",
+WindowSize->{1440, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 196, 4, 39, "Input"],
+Cell[778, 28, 2888, 41, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3703, 74, 317, 5, 39, "Input"],
+Cell[4023, 81, 1748, 28, 29, "Message"],
+Cell[CellGroupData[{
+Cell[5796, 113, 699, 13, 54, "Print"],
+Cell[6498, 128, 703, 13, 78, "Print"],
+Cell[7204, 143, 721, 13, 29, "Print"],
+Cell[7928, 158, 707, 13, 29, "Print"],
+Cell[8638, 173, 720, 13, 78, "Print"],
+Cell[9361, 188, 973, 21, 29, "Print"],
+Cell[10337, 211, 929, 19, 78, "Print"],
+Cell[11269, 232, 1243, 20, 342, "Print"],
+Cell[12515, 254, 715, 13, 78, "Print"],
+Cell[13233, 269, 843, 17, 29, "Print"],
+Cell[14079, 288, 896, 18, 29, "Print"],
+Cell[14978, 308, 925, 19, 29, "Print"],
+Cell[15906, 329, 921, 18, 29, "Print"],
+Cell[16830, 349, 935, 19, 29, "Print"],
+Cell[17768, 370, 774, 14, 54, "Print"],
+Cell[18545, 386, 707, 13, 29, "Print"],
+Cell[19255, 401, 644, 12, 29, "Print"],
+Cell[19902, 415, 644, 12, 29, "Print"],
+Cell[20549, 429, 644, 12, 29, "Print"],
+Cell[21196, 443, 644, 12, 29, "Print"],
+Cell[21843, 457, 644, 12, 29, "Print"],
+Cell[22490, 471, 644, 12, 29, "Print"],
+Cell[23137, 485, 644, 12, 29, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23830, 503, 261, 4, 39, "Input"],
+Cell[CellGroupData[{
+Cell[24116, 511, 655, 12, 29, "Print"],
+Cell[24774, 525, 640, 12, 29, "Print"],
+Cell[25417, 539, 640, 12, 29, "Print"],
+Cell[26060, 553, 640, 12, 29, "Print"],
+Cell[26703, 567, 640, 12, 29, "Print"],
+Cell[27346, 581, 640, 12, 29, "Print"],
+Cell[27989, 595, 640, 12, 29, "Print"],
+Cell[28632, 609, 640, 12, 29, "Print"],
+Cell[29275, 623, 670, 12, 29, "Print"],
+Cell[29948, 637, 633, 12, 30, "Print"],
+Cell[30584, 651, 669, 12, 29, "Print"],
+Cell[31256, 665, 871, 17, 29, "Print"],
+Cell[32130, 684, 871, 17, 29, "Print"],
+Cell[33004, 703, 871, 17, 29, "Print"],
+Cell[33878, 722, 859, 17, 29, "Print"],
+Cell[34740, 741, 859, 17, 29, "Print"],
+Cell[35602, 760, 871, 17, 29, "Print"],
+Cell[36476, 779, 871, 17, 29, "Print"],
+Cell[37350, 798, 805, 16, 29, "Print"],
+Cell[38158, 816, 805, 16, 29, "Print"],
+Cell[38966, 834, 1013, 22, 29, "Print"],
+Cell[39982, 858, 1001, 22, 29, "Print"],
+Cell[40986, 882, 1013, 22, 29, "Print"],
+Cell[42002, 906, 1013, 22, 29, "Print"],
+Cell[43018, 930, 1013, 22, 29, "Print"],
+Cell[44034, 954, 1071, 24, 29, "Print"],
+Cell[45108, 980, 1472, 37, 29, "Print"],
+Cell[46583, 1019, 884, 18, 29, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[47494, 1041, 118, 2, 73, "Input"]
+}
+]
+*)
+

@@ -1,0 +1,1612 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     64359,       1603]
+NotebookOptionsPosition[     62385,       1543]
+NotebookOutlinePosition[     62740,       1559]
+CellTagsIndexPosition[     62697,       1556]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.660205865115683*^9, 3.660205871360215*^9}, 
+   3.660205948556332*^9, {3.662288514675529*^9, 3.6622885159405937`*^9}}],
+
+Cell[BoxData["\<\"/Users/marco/Documents/universita\:0300/D6/notebooks/1310.\
+4838/OHu/ttg0h\"\>"], "Output",
+ CellChangeTimes->{
+  3.660205949061784*^9, 3.6602063832852983`*^9, 3.660206994940179*^9, 
+   3.6602071497115717`*^9, 3.660207305749024*^9, 3.660207678630128*^9, 
+   3.660210782061194*^9, 3.660210906225379*^9, 3.660218959117879*^9, 
+   3.6602192262990103`*^9, 3.6602192666532383`*^9, 3.660745459835804*^9, 
+   3.660745743767976*^9, 3.660746992729007*^9, 3.6608250743976583`*^9, 
+   3.660827685907452*^9, 3.660832311698306*^9, 3.6608903511139174`*^9, 
+   3.66089160763066*^9, 3.660892606659823*^9, 3.6608962388644876`*^9, 
+   3.660898241801324*^9, 3.6609794221917667`*^9, 3.6609929514989023`*^9, 
+   3.6610972878037567`*^9, 3.661098382643963*^9, 3.661154784090414*^9, 
+   3.661155214451932*^9, 3.6611552873363543`*^9, 3.661156056463328*^9, 
+   3.661172700249012*^9, 3.661178636648919*^9, 3.661180855920467*^9, 
+   3.661256038506908*^9, 3.6613458745098333`*^9, {3.66134592205952*^9, 
+   3.661345941969511*^9}, 3.6613514237344503`*^9, 3.661351528435981*^9, 
+   3.66135498859972*^9, 3.661428217994519*^9, 3.6614845770206957`*^9, 
+   3.661493009443903*^9, 3.6614957147672663`*^9, 3.66151940901265*^9, 
+   3.661595323002302*^9, 3.661777723758951*^9, 3.66185570146383*^9, 
+   3.6618558053643303`*^9, 3.662100391984375*^9, 3.662111838002204*^9, 
+   3.662288517163456*^9, 3.662294996074739*^9, 3.6623747037548857`*^9, 
+   3.662904380117372*^9, 3.663156868608321*^9, 3.6631604283583307`*^9, 
+   3.6631611805725737`*^9, 3.6632496225057573`*^9, 3.663315736576496*^9, 
+   3.6633160785798798`*^9, 3.6633370441406717`*^9, 3.6634058779512987`*^9, 
+   3.66341979402932*^9, 3.663480203000942*^9, 3.663505113347928*^9, 
+   3.663515334263064*^9, 3.66365271893267*^9, 3.663938665837893*^9, 
+   3.663998220860654*^9, 3.66402115811709*^9, 3.664095307453219*^9, 
+   3.664095761148522*^9, 3.666421685937361*^9, 3.666422446233904*^9, 
+   3.666434412114072*^9, 3.6664648319645853`*^9, 3.666465207804996*^9, 
+   3.666465482804637*^9, 3.666625829883204*^9, 3.666689924215143*^9, 
+   3.666689963082138*^9, 3.666710233672556*^9, 3.666770095571425*^9, 
+   3.666770256649679*^9, 3.66677651529538*^9, 3.666776546721483*^9, {
+   3.6667771827288713`*^9, 3.666777200239662*^9}, 3.6667777273687563`*^9, 
+   3.666877494480279*^9, 3.66764371759683*^9, 3.667643997383974*^9, 
+   3.667644062035368*^9, 3.667644312073717*^9, 3.667672087151394*^9, 
+   3.667674764457164*^9, 3.667676393179763*^9, 3.6676810047313347`*^9, 
+   3.6677411437698593`*^9, 3.6678207696834593`*^9, {3.668608527521455*^9, 
+   3.6686085503821297`*^9}, 3.668948502994171*^9, 3.668948584500763*^9, 
+   3.668950817527149*^9, 3.6760990188801813`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "ttg0Had.m"}]], "Input",
+ CellChangeTimes->{{3.6664652111498547`*^9, 3.666465211292452*^9}, {
+  3.666625834686569*^9, 3.666625842482832*^9}, {3.666774833039279*^9, 
+  3.666774834151681*^9}, {3.6676763950269747`*^9, 3.667676395759069*^9}, {
+  3.6760990967146463`*^9, 3.676099100092914*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112787836*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112788526*^9}],
+
+Cell[BoxData["\<\"ANOMALOUS DIMENSION ENTRIES.\"\>"], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112789266*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112789761*^9}],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112790369*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHBOX", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}]}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHBOX, 
+   " : \n", -($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112791274*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHD", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}]}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHD, 
+   " : \n", -($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171127920227`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHq122", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"HC", "[", 
+     RowBox[{"yu", "[", 
+      RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}]}], "+", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"yu", "[", 
+     RowBox[{"2", ",", "3"}], "]"}]}], "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHq122, " : \n", 2 $CellContext`HC[
+     $CellContext`yu[
+     2, 3]] (-$CellContext`sp[$CellContext`q3, $CellContext`Ep] + \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) $CellContext`yu[2, 3], 
+   "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112792843*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHq123", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"HC", "[", 
+     RowBox[{"yu", "[", 
+      RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}]}], "+", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"yu", "[", 
+     RowBox[{"3", ",", "3"}], "]"}]}], "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHq123, " : \n", 2 $CellContext`HC[
+     $CellContext`yu[
+     2, 3]] (-$CellContext`sp[$CellContext`q3, $CellContext`Ep] + \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) $CellContext`yu[3, 3], 
+   "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171127936363`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHq132", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"HC", "[", 
+     RowBox[{"yu", "[", 
+      RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}]}], "+", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"yu", "[", 
+     RowBox[{"2", ",", "3"}], "]"}]}], "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHq132, " : \n", 2 $CellContext`HC[
+     $CellContext`yu[
+     3, 3]] (-$CellContext`sp[$CellContext`q3, $CellContext`Ep] + \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) $CellContext`yu[2, 3], 
+   "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112845333*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHq133", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"HC", "[", 
+     RowBox[{"yu", "[", 
+      RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"sp", "[", 
+        RowBox[{"q3", ",", "Ep"}], "]"}]}], "+", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"yu", "[", 
+     RowBox[{"3", ",", "3"}], "]"}]}], "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHq133, " : \n", 2 $CellContext`HC[
+     $CellContext`yu[
+     3, 3]] (-$CellContext`sp[$CellContext`q3, $CellContext`Ep] + \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) $CellContext`yu[3, 3], 
+   "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112846183*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHu13", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHu13, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112846929*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHu23", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHu23, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128477173`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHu31", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHu31, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 1]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 1]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128484707`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHu32", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHu32, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 2]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 2]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112849226*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHu33", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHu33, " : \n", 
+   4 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112849975*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHud31", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHud31, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yd[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yd[3, 1] + $CellContext`HC[
+       $CellContext`yd[2, 1]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yd[3, 1]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112850905*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHud32", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHud32, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yd[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yd[3, 2] + $CellContext`HC[
+       $CellContext`yd[2, 2]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yd[3, 2]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112851902*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cHud33", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cHud33, " : \n", 
+   2 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yd[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yd[3, 3] + $CellContext`HC[
+       $CellContext`yd[2, 3]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yd[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.67611711285282*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu1133", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu1133, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yu[2, 1]] $CellContext`yu[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 1]] $CellContext`yu[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128537083`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu2233", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu2233, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yu[2, 2]] $CellContext`yu[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 2]] $CellContext`yu[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112854664*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu3311", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu3311, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yu[2, 1]] $CellContext`yu[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 1]] $CellContext`yu[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128557253`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu3322", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu3322, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yu[2, 2]] $CellContext`yu[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 2]] $CellContext`yu[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112856485*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu1331", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu1331, 
+   " : \n", (-2) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 1]] $CellContext`yu[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 1]] $CellContext`yu[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112857224*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu2332", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu2332, 
+   " : \n", (-2) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 2]] $CellContext`yu[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 2]] $CellContext`yu[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128579683`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu3113", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu3113, 
+   " : \n", (-2) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 1]] $CellContext`yu[2, 1] + $CellContext`HC[
+       $CellContext`yu[3, 1]] $CellContext`yu[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112858822*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu3223", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu3223, 
+   " : \n", (-2) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 2]] $CellContext`yu[2, 2] + $CellContext`HC[
+       $CellContext`yu[3, 2]] $CellContext`yu[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128595467`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cuu3333", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{"2", " ", "NC"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cuu3333, 
+   " : \n", (-4) (1 + 
+    2 $CellContext`NC) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yu[2, 3]] $CellContext`yu[2, 3] + $CellContext`HC[
+       $CellContext`yu[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.67611711286029*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "ceu1133", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`ceu1133, " : \n", 
+   4 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yl[2, 1]] $CellContext`yl[2, 1] + $CellContext`HC[
+       $CellContext`yl[3, 1]] $CellContext`yl[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112861025*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "ceu2233", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`ceu2233, " : \n", 
+   4 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yl[2, 2]] $CellContext`yl[2, 2] + $CellContext`HC[
+       $CellContext`yl[3, 2]] $CellContext`yl[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112861895*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "ceu3333", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`ceu3333, " : \n", 
+   4 ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yl[2, 3]] $CellContext`yl[2, 3] + $CellContext`HC[
+       $CellContext`yl[3, 3]] $CellContext`yl[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128627577`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "clu2233", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`clu2233, 
+   " : \n", (-4) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yl[2, 1]] $CellContext`yl[2, 1] + $CellContext`HC[
+       $CellContext`yl[2, 2]] $CellContext`yl[2, 2] + $CellContext`HC[
+       $CellContext`yl[2, 3]] $CellContext`yl[2, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112863605*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "clu3333", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yl", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yl", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`clu3333, 
+   " : \n", (-4) ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yl[3, 1]] $CellContext`yl[3, 1] + $CellContext`HC[
+       $CellContext`yl[3, 2]] $CellContext`yl[3, 2] + $CellContext`HC[
+       $CellContext`yl[3, 3]] $CellContext`yl[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128644953`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cud13311", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cud13311, " : \n", 
+   4 $CellContext`NC ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yd[2, 1]] $CellContext`yd[2, 1] + $CellContext`HC[
+       $CellContext`yd[3, 1]] $CellContext`yd[3, 1]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112865293*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cud13322", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cud13322, " : \n", 
+   4 $CellContext`NC ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yd[2, 2]] $CellContext`yd[2, 2] + $CellContext`HC[
+       $CellContext`yd[3, 2]] $CellContext`yd[3, 2]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.67611711286604*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cud13333", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{"4", " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cud13333, " : \n", 
+   4 $CellContext`NC ($CellContext`sp[$CellContext`q3, $CellContext`Ep] - \
+$CellContext`sp[$CellContext`q4, $CellContext`Ep]) ($CellContext`HC[
+       $CellContext`yd[2, 3]] $CellContext`yd[2, 3] + $CellContext`HC[
+       $CellContext`yd[3, 3]] $CellContext`yd[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112866787*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cqu12233", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "1"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "2"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"2", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"2", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cqu12233, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yd[2, 1]] $CellContext`yd[2, 1] + $CellContext`HC[
+       $CellContext`yd[2, 2]] $CellContext`yd[2, 2] + $CellContext`HC[
+       $CellContext`yd[2, 3]] $CellContext`yd[2, 3] - $CellContext`HC[
+      $CellContext`yu[2, 1]] $CellContext`yu[2, 1] - $CellContext`HC[
+      $CellContext`yu[2, 2]] $CellContext`yu[2, 2] - $CellContext`HC[
+      $CellContext`yu[2, 3]] $CellContext`yu[2, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.6761171128676653`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Entry relative to \"\>", "\[InvisibleSpace]", "cqu13333", 
+   "\[InvisibleSpace]", "\<\" : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "4"}], " ", "NC", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"sp", "[", 
+       RowBox[{"q3", ",", "Ep"}], "]"}], "-", 
+      RowBox[{"sp", "[", 
+       RowBox[{"q4", ",", "Ep"}], "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yd", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yd", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "1"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "1"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "2"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "2"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"HC", "[", 
+        RowBox[{"yu", "[", 
+         RowBox[{"3", ",", "3"}], "]"}], "]"}], " ", 
+       RowBox[{"yu", "[", 
+        RowBox[{"3", ",", "3"}], "]"}]}]}], ")"}]}], 
+   "\[InvisibleSpace]", "\<\"\\n\"\>"}],
+  SequenceForm[
+  "Entry relative to ", $CellContext`cqu13333, 
+   " : \n", (-4) $CellContext`NC ($CellContext`sp[$CellContext`q3, \
+$CellContext`Ep] - $CellContext`sp[$CellContext`q4, $CellContext`Ep]) \
+($CellContext`HC[
+       $CellContext`yd[3, 1]] $CellContext`yd[3, 1] + $CellContext`HC[
+       $CellContext`yd[3, 2]] $CellContext`yd[3, 2] + $CellContext`HC[
+       $CellContext`yd[3, 3]] $CellContext`yd[3, 3] - $CellContext`HC[
+      $CellContext`yu[3, 1]] $CellContext`yu[3, 1] - $CellContext`HC[
+      $CellContext`yu[3, 2]] $CellContext`yu[3, 2] - $CellContext`HC[
+      $CellContext`yu[3, 3]] $CellContext`yu[3, 3]), "\n"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676099110212943*^9, 3.676100027926793*^9, 
+  3.676103972191472*^9, 3.6761132543019114`*^9, 3.676113436020762*^9, 
+  3.67611352620475*^9, 3.6761136472120867`*^9, 3.6761137231644497`*^9, 
+  3.6761138298111267`*^9, 3.676114316743232*^9, 3.676114764679394*^9, 
+  3.676114992311372*^9, 3.676115891748033*^9, 3.6761166062262278`*^9, 
+  3.676117112899206*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 851},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 244, 4, 28, "Input"],
+Cell[826, 28, 2684, 38, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3547, 71, 318, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3890, 80, 408, 6, 21, "Print"],
+Cell[4301, 88, 408, 6, 21, "Print"],
+Cell[4712, 96, 436, 6, 21, "Print"],
+Cell[5151, 104, 408, 6, 21, "Print"],
+Cell[5562, 112, 408, 6, 21, "Print"],
+Cell[5973, 120, 1604, 39, 54, "Print"],
+Cell[7580, 161, 1602, 39, 54, "Print"],
+Cell[9185, 202, 1271, 29, 54, "Print"],
+Cell[10459, 233, 1273, 29, 54, "Print"],
+Cell[11735, 264, 1271, 29, 54, "Print"],
+Cell[13009, 295, 1271, 29, 54, "Print"],
+Cell[14283, 326, 1589, 38, 54, "Print"],
+Cell[15875, 366, 1591, 38, 54, "Print"],
+Cell[17469, 406, 1591, 38, 54, "Print"],
+Cell[19063, 446, 1589, 38, 54, "Print"],
+Cell[20655, 486, 1589, 38, 54, "Print"],
+Cell[22247, 526, 2131, 52, 54, "Print"],
+Cell[24381, 580, 2131, 52, 54, "Print"],
+Cell[26515, 634, 2130, 52, 54, "Print"],
+Cell[28648, 688, 1647, 40, 54, "Print"],
+Cell[30298, 730, 1645, 40, 54, "Print"],
+Cell[31946, 772, 1647, 40, 54, "Print"],
+Cell[33596, 814, 1645, 40, 54, "Print"],
+Cell[35244, 856, 1616, 39, 54, "Print"],
+Cell[36863, 897, 1618, 39, 54, "Print"],
+Cell[38484, 938, 1616, 39, 54, "Print"],
+Cell[40103, 979, 1618, 39, 54, "Print"],
+Cell[41724, 1020, 1733, 43, 54, "Print"],
+Cell[43460, 1065, 1593, 38, 54, "Print"],
+Cell[45056, 1105, 1593, 38, 54, "Print"],
+Cell[46652, 1145, 1595, 38, 54, "Print"],
+Cell[48250, 1185, 1886, 46, 54, "Print"],
+Cell[50139, 1233, 1888, 46, 54, "Print"],
+Cell[52030, 1281, 1622, 38, 54, "Print"],
+Cell[53655, 1321, 1621, 38, 54, "Print"],
+Cell[55279, 1361, 1622, 38, 54, "Print"],
+Cell[56904, 1401, 2726, 68, 54, "Print"],
+Cell[59633, 1471, 2724, 68, 54, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
